@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#6d5dfc">
+  <title>SafeSpend — What can I safely spend?</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <div class="brand">SafeSpend</div>
+    <div class="tagline">Know what you can safely spend.</div>
+  </div>
+  <button id="resetBtn" class="ghost small">Reset</button>
+</header>
+
+<main>
+  <section id="dashboard" class="screen active">
+    <div class="hero-card">
+      <div class="label">Safe to spend</div>
+      <div id="safeSpend" class="big">$0.00</div>
+      <div id="safeNote" class="muted">Add your balance, income, and bills to get started.</div>
+    </div>
+
+    <div class="grid2">
+      <div class="stat"><span>Current balance</span><strong id="balanceOut">$0.00</strong></div>
+      <div class="stat"><span>Upcoming bills</span><strong id="billsOut">$0.00</strong></div>
+    </div>
+
+    <div id="warning" class="notice hidden"></div>
+
+    <div class="card">
+      <h2>Can I afford this?</h2>
+      <div class="row">
+        <input id="affordAmount" type="number" min="0" step="0.01" placeholder="Amount">
+        <button id="affordBtn">Check</button>
+      </div>
+      <div id="affordResult" class="result muted">Enter an amount to check.</div>
+    </div>
+
+    <div class="card">
+      <div class="section-head"><h2>Next bills</h2><button class="textbtn" data-screen="bills">View all</button></div>
+      <div id="nextBills"></div>
+    </div>
+  </section>
+
+  <section id="income" class="screen">
+    <div class="section-title"><h1>Income</h1><p>Add money you expect to receive.</p></div>
+    <form id="incomeForm" class="card form">
+      <label>Source<input id="incomeSource" required placeholder="Paycheck, VA, BAH, etc."></label>
+      <label>Amount<input id="incomeAmount" required type="number" min="0" step="0.01"></label>
+      <label>Date<input id="incomeDate" required type="date"></label>
+      <label class="check"><input id="incomeRecurring" type="checkbox"> Repeats monthly</label>
+      <button>Add income</button>
+    </form>
+    <div id="incomeList"></div>
+  </section>
+
+  <section id="bills" class="screen">
+    <div class="section-title"><h1>Bills</h1><p>Track what must be paid and when.</p></div>
+    <form id="billForm" class="card form">
+      <label>Bill name<input id="billName" required placeholder="Rent, electric, internet..."></label>
+      <label>Amount<input id="billAmount" required type="number" min="0" step="0.01"></label>
+      <label>Due date<input id="billDate" required type="date"></label>
+      <label class="check"><input id="billPaid" type="checkbox"> Already paid</label>
+      <label class="check"><input id="billRecurring" type="checkbox"> Repeats monthly</label>
+      <button>Add bill</button>
+    </form>
+    <div id="billList"></div>
+  </section>
+
+  <section id="calendar" class="screen">
+    <div class="section-title"><h1>Calendar</h1><p>See income and bills together.</p></div>
+    <div class="card">
+      <div id="calendarList"></div>
+    </div>
+  </section>
+</main>
+
+<nav class="nav">
+  <button class="navbtn active" data-screen="dashboard">🏠<span>Home</span></button>
+  <button class="navbtn" data-screen="income">💵<span>Income</span></button>
+  <button class="navbtn" data-screen="bills">🧾<span>Bills</span></button>
+  <button class="navbtn" data-screen="calendar">📅<span>Calendar</span></button>
+</nav>
+
+<script src="app.js"></script>
+</body>
+</html>
