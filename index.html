@@ -3,90 +3,298 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#6d5dfc">
-  <title>SafeSpend — What can I safely spend?</title>
+  <meta name="theme-color" content="#718c78">
+  <title>SafeSpend — Know where you stand.</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
 <header class="topbar">
-  <div>
-    <div class="brand">SafeSpend</div>
-    <div class="tagline">Know what you can safely spend.</div>
+  <div class="brand-area">
+    <div class="fox-mark">🦊</div>
+    <div>
+      <div class="brand">SafeSpend</div>
+      <div class="tagline">Know where you stand.</div>
+    </div>
   </div>
+
   <button id="resetBtn" class="ghost small">Reset</button>
 </header>
 
 <main>
+
+  <!-- HOME -->
   <section id="dashboard" class="screen active">
+
+    <div class="welcome">
+      <div>
+        <div class="eyebrow">GOOD MORNING</div>
+        <h1>Let's see where you stand.</h1>
+      </div>
+
+      <div class="fox-hello">🦊</div>
+    </div>
+
+    <!-- SAFE TO SPEND -->
     <div class="hero-card">
-      <div class="label">Safe to spend</div>
+
+      <div class="hero-label">
+        <span class="status-dot"></span>
+        SAFE TO SPEND
+      </div>
+
       <div id="safeSpend" class="big">$0.00</div>
-      <div id="safeNote" class="muted">Add your balance, income, and bills to get started.</div>
+
+      <div id="safeNote" class="hero-note">
+        Add your balance, income, and bills to get started.
+      </div>
+
+      <div class="hero-leaf">🌿</div>
     </div>
 
-    <div class="grid2">
-      <div class="stat"><span>Current balance</span><strong id="balanceOut">$0.00</strong></div>
-      <div class="stat"><span>Upcoming bills</span><strong id="billsOut">$0.00</strong></div>
+    <!-- SPENDING ROOM -->
+    <div class="card spending-card">
+
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">YOUR MONEY</div>
+          <h2>Spending room</h2>
+        </div>
+      </div>
+
+      <div class="spending-grid">
+
+        <div class="spending-stat">
+          <span>Current balance</span>
+          <strong id="balanceOut">$0.00</strong>
+        </div>
+
+        <div class="spending-stat">
+          <span>Upcoming bills</span>
+          <strong id="billsOut">$0.00</strong>
+        </div>
+
+      </div>
+
+      <div class="pace-message">
+        <span>🌿</span>
+        <div>
+          <strong>Your spending pace</strong>
+          <p>We'll help you understand what your money means day to day.</p>
+        </div>
+      </div>
+
     </div>
 
+    <!-- WARNING -->
     <div id="warning" class="notice hidden"></div>
 
-    <div class="card">
-      <h2>Can I afford this?</h2>
-      <div class="row">
-        <input id="affordAmount" type="number" min="0" step="0.01" placeholder="Amount">
-        <button id="affordBtn">Check</button>
+    <!-- CAN I AFFORD THIS -->
+    <div class="card afford-card">
+
+      <div class="fox-small">🦊</div>
+
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">BEFORE YOU BUY</div>
+          <h2>Can I afford this?</h2>
+        </div>
       </div>
-      <div id="affordResult" class="result muted">Enter an amount to check.</div>
+
+      <p class="muted">
+        Check a purchase before you make it.
+      </p>
+
+      <div class="row">
+        <div class="money-input">
+          <span>$</span>
+          <input
+            id="affordAmount"
+            type="number"
+            min="0"
+            step="0.01"
+            placeholder="0.00"
+          >
+        </div>
+
+        <button id="affordBtn" class="primary-btn">
+          Check
+        </button>
+      </div>
+
+      <div id="affordResult" class="result muted">
+        Enter an amount to check.
+      </div>
+
     </div>
 
-    <div class="card">
-      <div class="section-head"><h2>Next bills</h2><button class="textbtn" data-screen="bills">View all</button></div>
+    <!-- UPCOMING BILLS -->
+    <div class="card bills-card">
+
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">WHAT'S COMING</div>
+          <h2>Upcoming bills</h2>
+        </div>
+
+        <button class="textbtn" data-screen="bills">
+          See all →
+        </button>
+      </div>
+
       <div id="nextBills"></div>
+
     </div>
+
+    <!-- FOX MESSAGE -->
+    <div class="fox-message">
+
+      <div class="fox-message-icon">🦊</div>
+
+      <div>
+        <strong>Take a breath.</strong>
+        <p>
+          I'm here to help you figure out what your money can actually do.
+        </p>
+      </div>
+
+    </div>
+
   </section>
 
+
+  <!-- INCOME -->
   <section id="income" class="screen">
-    <div class="section-title"><h1>Income</h1><p>Add money you expect to receive.</p></div>
+
+    <div class="section-title">
+      <div class="eyebrow">MONEY COMING IN</div>
+      <h1>Income</h1>
+      <p>Add money you expect to receive.</p>
+    </div>
+
     <form id="incomeForm" class="card form">
-      <label>Source<input id="incomeSource" required placeholder="Paycheck, VA, BAH, etc."></label>
-      <label>Amount<input id="incomeAmount" required type="number" min="0" step="0.01"></label>
-      <label>Date<input id="incomeDate" required type="date"></label>
-      <label class="check"><input id="incomeRecurring" type="checkbox"> Repeats monthly</label>
-      <button>Add income</button>
+
+      <label>
+        Source
+        <input id="incomeSource" required placeholder="Paycheck, VA, BAH, etc.">
+      </label>
+
+      <label>
+        Amount
+        <input id="incomeAmount" required type="number" min="0" step="0.01">
+      </label>
+
+      <label>
+        Date
+        <input id="incomeDate" required type="date">
+      </label>
+
+      <label class="check">
+        <input id="incomeRecurring" type="checkbox">
+        Repeats monthly
+      </label>
+
+      <button class="primary-btn">Add income</button>
+
     </form>
+
     <div id="incomeList"></div>
+
   </section>
 
+
+  <!-- BILLS -->
   <section id="bills" class="screen">
-    <div class="section-title"><h1>Bills</h1><p>Track what must be paid and when.</p></div>
+
+    <div class="section-title">
+      <div class="eyebrow">MONEY GOING OUT</div>
+      <h1>Bills</h1>
+      <p>Track what must be paid and when.</p>
+    </div>
+
     <form id="billForm" class="card form">
-      <label>Bill name<input id="billName" required placeholder="Rent, electric, internet..."></label>
-      <label>Amount<input id="billAmount" required type="number" min="0" step="0.01"></label>
-      <label>Due date<input id="billDate" required type="date"></label>
-      <label class="check"><input id="billPaid" type="checkbox"> Already paid</label>
-      <label class="check"><input id="billRecurring" type="checkbox"> Repeats monthly</label>
-      <button>Add bill</button>
+
+      <label>
+        Bill name
+        <input id="billName" required placeholder="Rent, electric, internet...">
+      </label>
+
+      <label>
+        Amount
+        <input id="billAmount" required type="number" min="0" step="0.01">
+      </label>
+
+      <label>
+        Due date
+        <input id="billDate" required type="date">
+      </label>
+
+      <label class="check">
+        <input id="billPaid" type="checkbox">
+        Already paid
+      </label>
+
+      <label class="check">
+        <input id="billRecurring" type="checkbox">
+        Repeats monthly
+      </label>
+
+      <button class="primary-btn">Add bill</button>
+
     </form>
+
     <div id="billList"></div>
+
   </section>
 
+
+  <!-- CALENDAR -->
   <section id="calendar" class="screen">
-    <div class="section-title"><h1>Calendar</h1><p>See income and bills together.</p></div>
+
+    <div class="section-title">
+      <div class="eyebrow">YOUR TIMELINE</div>
+      <h1>Calendar</h1>
+      <p>See income and bills together.</p>
+    </div>
+
     <div class="card">
       <div id="calendarList"></div>
     </div>
+
   </section>
+
 </main>
 
+
+<!-- BOTTOM NAVIGATION -->
 <nav class="nav">
-  <button class="navbtn active" data-screen="dashboard">🏠<span>Home</span></button>
-  <button class="navbtn" data-screen="income">💵<span>Income</span></button>
-  <button class="navbtn" data-screen="bills">🧾<span>Bills</span></button>
-  <button class="navbtn" data-screen="calendar">📅<span>Calendar</span></button>
+
+  <button class="navbtn active" data-screen="dashboard">
+    <span class="nav-icon">⌂</span>
+    <span>Home</span>
+  </button>
+
+  <button class="navbtn" data-screen="income">
+    <span class="nav-icon">＋</span>
+    <span>Income</span>
+  </button>
+
+  <button class="navbtn" data-screen="bills">
+    <span class="nav-icon">▤</span>
+    <span>Bills</span>
+  </button>
+
+  <button class="navbtn" data-screen="calendar">
+    <span class="nav-icon">□</span>
+    <span>Calendar</span>
+  </button>
+
 </nav>
 
+
 <script src="app.js"></script>
+
 </body>
 </html>
