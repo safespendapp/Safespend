@@ -1,841 +1,1375 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#718774">
-  <meta name="description" content="SafeSpend — know what you can safely spend.">
-  <title>SafeSpend — Know what you can safely spend.</title>
+:root {
+  --ivory: #faf8f2;
+  --cream: #f3e9dc;
+  --paper: #fffefa;
 
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="styles.css">
-</head>
+  --sage: #718774;
+  --sage-dark: #506957;
+  --sage-light: #e7eee6;
 
-<body>
-
-<header class="topbar">
+  --olive: #929b72;
+  --terracotta: #c87958;
+  --terracotta-dark: #a96048;
 
-  <div class="brand-area">
-
-    <div class="brand-leaf">
-      <svg viewBox="0 0 50 50" aria-hidden="true">
-        <path
-          d="M24 43C24 30 27 19 38 9"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.7"
-          stroke-linecap="round"
-        />
-        <path
-          d="M26 29C17 28 11 22 12 13C21 13 27 19 26 29Z"
-          fill="currentColor"
-        />
-        <path
-          d="M28 22C29 14 35 9 43 10C42 18 36 23 28 22Z"
-          fill="currentColor"
-          opacity=".65"
-        />
-      </svg>
-    </div>
-
-    <div>
-      <div class="brand">SafeSpend</div>
-      <div class="tagline">Know what you can safely spend.</div>
-    </div>
-
-  </div>
-
-  <button id="resetBtn" class="ghost small">Reset</button>
-
-</header>
-
-
-<main>
-
-<!-- ================= HOME ================= -->
-
-<section id="dashboard" class="screen active">
-
-  <div class="welcome">
-
-    <div class="welcome-copy">
-
-      <div class="eyebrow">A CALMER WAY TO MANAGE MONEY</div>
-
-      <h1>
-        Spend with<br>
-        confidence.
-      </h1>
-
-      <p>
-        Know what's yours to spend—and what's already spoken for.
-      </p>
-
-    </div>
-
-
-    <!-- FOX CHARACTER -->
-
-    <div class="fox-wrap">
-
-      <div class="fox-glow"></div>
-
-      <svg class="fox" viewBox="0 0 220 230" aria-label="SafeSpend fox">
-
-        <!-- tail -->
-        <path
-          class="fox-fur"
-          d="M153 174
-             C205 160 210 111 176 101
-             C185 128 165 145 137 145Z"
-        />
-
-        <!-- body -->
-        <ellipse
-          class="fox-fur"
-          cx="111"
-          cy="164"
-          rx="55"
-          ry="51"
-        />
-
-        <!-- cream chest -->
-        <path
-          class="fox-cream"
-          d="M79 145
-             C79 184 96 204 113 204
-             C132 202 145 181 143 143
-             C124 155 97 156 79 145Z"
-        />
-
-        <!-- ears -->
-        <path
-          class="fox-fur"
-          d="M73 86L58 30L99 62Z"
-        />
-
-        <path
-          class="fox-fur"
-          d="M125 62L166 30L151 88Z"
-        />
-
-        <!-- inner ears -->
-        <path
-          class="fox-ear-inner"
-          d="M72 72L66 45L87 64Z"
-        />
-
-        <path
-          class="fox-ear-inner"
-          d="M135 64L157 45L150 73Z"
-        />
-
-        <!-- head -->
-        <path
-          class="fox-fur"
-          d="M65 89
-             C66 57 86 42 112 42
-             C140 42 160 59 160 91
-             C160 124 140 144 112 145
-             C83 144 63 123 65 89Z"
-        />
-
-        <!-- cheeks -->
-        <ellipse
-          class="fox-cream"
-          cx="87"
-          cy="105"
-          rx="28"
-          ry="25"
-        />
-
-        <ellipse
-          class="fox-cream"
-          cx="137"
-          cy="105"
-          rx="28"
-          ry="25"
-        />
-
-        <!-- muzzle -->
-        <path
-          class="fox-muzzle"
-          d="M88 105
-             C91 91 103 88 112 99
-             C121 88 134 91 137 105
-             C135 121 125 130 112 130
-             C99 130 89 121 88 105Z"
-        />
-
-        <!-- eyes -->
-        <ellipse
-          class="fox-eye"
-          cx="91"
-          cy="91"
-          rx="8"
-          ry="10"
-        />
-
-        <ellipse
-          class="fox-eye"
-          cx="133"
-          cy="91"
-          rx="8"
-          ry="10"
-        />
-
-        <!-- eye highlights -->
-        <circle class="fox-glint" cx="94" cy="87" r="3"/>
-        <circle class="fox-glint" cx="136" cy="87" r="3"/>
-
-        <!-- brows -->
-        <path
-          class="fox-brow"
-          d="M81 78C87 74 94 74 100 78"
-        />
-
-        <path
-          class="fox-brow"
-          d="M124 78C130 74 137 74 143 78"
-        />
-
-        <!-- nose -->
-        <ellipse
-          class="fox-nose"
-          cx="112"
-          cy="105"
-          rx="7"
-          ry="5"
-        />
-
-        <!-- smile -->
-        <path
-          class="fox-smile"
-          d="M112 109
-             C109 116 103 119 98 117"
-        />
-
-        <path
-          class="fox-smile"
-          d="M112 109
-             C115 116 121 119 126 117"
-        />
-
-        <!-- scarf -->
-        <path
-          class="fox-scarf"
-          d="M77 133
-             C98 145 128 145 148 132
-             L144 151
-             C124 162 99 161 81 151Z"
-        />
-
-        <!-- scarf end -->
-        <path
-          class="fox-scarf"
-          d="M132 150L158 187L134 174Z"
-        />
-
-        <!-- paws -->
-        <ellipse
-          class="fox-fur"
-          cx="78"
-          cy="201"
-          rx="21"
-          ry="13"
-        />
-
-        <ellipse
-          class="fox-fur"
-          cx="143"
-          cy="201"
-          rx="21"
-          ry="13"
-        />
-
-        <!-- tiny paw marks -->
-        <circle class="paw-mark" cx="74" cy="201" r="2"/>
-        <circle class="paw-mark" cx="81" cy="199" r="2"/>
-        <circle class="paw-mark" cx="139" cy="199" r="2"/>
-        <circle class="paw-mark" cx="146" cy="201" r="2"/>
-
-      </svg>
-
-      <span class="floating-leaf leaf-a">❧</span>
-      <span class="floating-leaf leaf-b">❧</span>
-
-    </div>
-
-  </div>
-
-
-  <!-- SAFE TO SPEND -->
-
-  <div class="hero-card">
-
-    <div class="botanical-corner corner-one"></div>
-    <div class="botanical-corner corner-two"></div>
-    <div class="botanical-corner corner-three"></div>
-    <div class="botanical-corner corner-four"></div>
-
-    <div class="hero-top">
-
-      <div class="hero-label">
-        <span class="status-dot"></span>
-        SAFE TO SPEND
-      </div>
-
-      <span class="hero-star">✦</span>
-
-    </div>
-
-    <div id="safeSpend" class="big">$0.00</div>
-
-    <div id="safeNote" class="hero-note">
-      Add your balance, income, and bills to get started.
-    </div>
-
-    <div class="hero-bottom">
-      <span>Based on your current plan</span>
-      <span>✦ Plan first. Spend freely.</span>
-    </div>
-
-  </div>
-
-
-  <!-- SNAPSHOT -->
-
-  <div class="section-heading">
-
-    <div class="eyebrow">YOUR MONEY</div>
-
-    <h2>Your snapshot</h2>
-
-  </div>
-
-
-  <div class="money-grid">
-
-    <div class="money-card">
-
-      <div class="luxury-icon green">
-
-        <svg viewBox="0 0 40 40">
-
-          <rect
-            x="7"
-            y="11"
-            width="26"
-            height="18"
-            rx="4"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-          />
-
-          <circle
-            cx="20"
-            cy="20"
-            r="4"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-          />
-
-          <path
-            d="M11 8h18"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-          />
-
-          <path
-            d="M27 20h2"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-          />
-
-        </svg>
-
-      </div>
-
-      <span>Current balance</span>
-
-      <strong id="balanceOut">$0.00</strong>
-
-    </div>
-
-
-    <div class="money-card">
-
-      <div class="luxury-icon terracotta">
-
-        <svg viewBox="0 0 40 40">
-
-          <rect
-            x="9"
-            y="6"
-            width="22"
-            height="28"
-            rx="4"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-          />
-
-          <path
-            d="M14 13h12M14 19h12M14 25h7"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-          />
-
-          <path
-            d="M27 27c3-2 4-5 2-8"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.2"
-            stroke-linecap="round"
-          />
-
-        </svg>
-
-      </div>
-
-      <span>Upcoming bills</span>
+  --gold: #b49a68;
 
-      <strong id="billsOut">$0.00</strong>
+  --ink: #303832;
+  --muted: #858d86;
 
-    </div>
+  --line: #e2e6df;
 
-  </div>
+  --serif: Georgia, "Times New Roman", serif;
 
+  --sans:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 
-  <div id="warning" class="notice hidden"></div>
+  --shadow:
+    0 18px 45px rgba(52,67,55,.075);
+}
 
 
-  <!-- FOX MESSAGE -->
+* {
+  box-sizing: border-box;
+}
 
-  <div class="fox-message">
 
-    <div class="mini-fox-holder">
+html {
+  background: var(--ivory);
+}
 
-      <svg class="mini-fox" viewBox="0 0 220 230">
 
-        <path class="fox-fur" d="M153 174C205 160 210 111 176 101C185 128 165 145 137 145Z"/>
-        <ellipse class="fox-fur" cx="111" cy="164" rx="55" ry="51"/>
-        <path class="fox-cream" d="M79 145C79 184 96 204 113 204C132 202 145 181 143 143C124 155 97 156 79 145Z"/>
-        <path class="fox-fur" d="M73 86L58 30L99 62Z"/>
-        <path class="fox-fur" d="M125 62L166 30L151 88Z"/>
-        <path class="fox-ear-inner" d="M72 72L66 45L87 64Z"/>
-        <path class="fox-ear-inner" d="M135 64L157 45L150 73Z"/>
-        <path class="fox-fur" d="M65 89C66 57 86 42 112 42C140 42 160 59 160 91C160 124 140 144 112 145C83 144 63 123 65 89Z"/>
-        <ellipse class="fox-cream" cx="87" cy="105" rx="28" ry="25"/>
-        <ellipse class="fox-cream" cx="137" cy="105" rx="28" ry="25"/>
-        <path class="fox-muzzle" d="M88 105C91 91 103 88 112 99C121 88 134 91 137 105C135 121 125 130 112 130C99 130 89 121 88 105Z"/>
-        <ellipse class="fox-eye" cx="91" cy="91" rx="8" ry="10"/>
-        <ellipse class="fox-eye" cx="133" cy="91" rx="8" ry="10"/>
-        <circle class="fox-glint" cx="94" cy="87" r="3"/>
-        <circle class="fox-glint" cx="136" cy="87" r="3"/>
-        <ellipse class="fox-nose" cx="112" cy="105" rx="7" ry="5"/>
-        <path class="fox-smile" d="M112 109C109 116 103 119 98 117"/>
-        <path class="fox-smile" d="M112 109C115 116 121 119 126 117"/>
-        <path class="fox-scarf" d="M77 133C98 145 128 145 148 132L144 151C124 162 99 161 81 151Z"/>
-        <path class="fox-scarf" d="M132 150L158 187L134 174Z"/>
+body {
+  margin: 0;
+  min-height: 100vh;
 
-      </svg>
+  background:
+    radial-gradient(
+      circle at 92% 4%,
+      rgba(146,155,114,.13),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 0% 38%,
+      rgba(200,121,88,.06),
+      transparent 28%
+    ),
+    var(--ivory);
 
-    </div>
+  color: var(--ink);
+  font-family: var(--sans);
 
-    <div>
+  padding-bottom: 96px;
+}
 
-      <div class="message-title">Your little money companion.</div>
 
-      <p>
-        I'll help you slow down, look ahead, and make spending decisions with confidence.
-      </p>
+button,
+input {
+  font: inherit;
+}
 
-    </div>
 
-  </div>
+button {
+  cursor: pointer;
+}
 
 
-  <!-- AFFORD -->
+/* ================= BRAND ================= */
 
-  <div class="card">
+.topbar {
+  width: min(calc(100% - 30px), 720px);
+  margin: auto;
 
-    <div class="card-top">
+  padding: 18px 0 9px;
 
-      <div>
-        <div class="eyebrow">BEFORE YOU BUY</div>
-        <h2>Can I afford this?</h2>
-      </div>
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-      <div class="question-mark">?</div>
 
-    </div>
+.brand-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-    <p class="card-description">
-      Check a purchase against your projected safe-to-spend amount.
-    </p>
 
-    <div class="afford-row">
+.brand-leaf {
+  width: 45px;
+  height: 45px;
 
-      <div class="money-input">
-        <span>$</span>
+  display: grid;
+  place-items: center;
 
-        <input
-          id="affordAmount"
-          type="number"
-          min="0"
-          step="0.01"
-          placeholder="Amount"
-        >
-      </div>
+  border-radius: 15px;
 
-      <button id="affordBtn">Check</button>
+  background:
+    linear-gradient(
+      145deg,
+      #eef3eb,
+      #dce8dc
+    );
 
-    </div>
+  border: 1px solid rgba(80,105,87,.15);
 
-    <div id="affordResult" class="result muted">
-      Enter an amount to check.
-    </div>
+  color: var(--sage-dark);
 
-  </div>
+  box-shadow:
+    0 7px 18px rgba(80,105,87,.08);
+}
 
 
-  <!-- BILLS -->
+.brand-leaf svg {
+  width: 31px;
+  height: 31px;
+}
 
-  <div class="section-heading">
 
-    <div class="eyebrow">WHAT'S COMING</div>
+.brand {
+  font-family: var(--serif);
 
-    <div class="section-row">
-      <h2>Next bills</h2>
+  font-size: 25px;
+  font-weight: 500;
 
-      <button class="textbtn" data-screen="bills">
-        View all →
-      </button>
-    </div>
+  letter-spacing: -1px;
 
-  </div>
+  color: #29352d;
+}
 
-  <div class="card list-card">
-    <div id="nextBills"></div>
-  </div>
 
-</section>
+.tagline {
+  margin-top: 2px;
 
+  color: var(--muted);
 
-<!-- ================= INCOME ================= -->
+  font-size: 9px;
 
-<section id="income" class="screen">
+  letter-spacing: .15px;
+}
 
-  <div class="section-title">
-    <div class="eyebrow">MONEY COMING IN</div>
-    <h1>Income</h1>
-    <p>Add money you expect to receive.</p>
-  </div>
 
-  <form id="incomeForm" class="card form">
+.ghost {
+  border: 1px solid var(--line);
 
-    <label>
-      Source
-      <input
-        id="incomeSource"
-        required
-        placeholder="Paycheck, VA, BAH, etc."
-      >
-    </label>
+  background: rgba(255,255,255,.75);
 
-    <label>
-      Amount
-      <input
-        id="incomeAmount"
-        required
-        type="number"
-        min="0"
-        step="0.01"
-      >
-    </label>
+  color: var(--muted);
 
-    <label>
-      Date
-      <input id="incomeDate" required type="date">
-    </label>
+  border-radius: 12px;
+}
 
-    <label class="check">
-      <input id="incomeRecurring" type="checkbox">
-      Repeats monthly
-    </label>
 
-    <button class="primary-btn">Add income</button>
+.ghost.small {
+  padding: 7px 10px;
+  font-size: 10px;
+}
 
-  </form>
 
-  <div id="incomeList"></div>
+/* ================= MAIN ================= */
 
-</section>
+main {
+  width: min(calc(100% - 30px), 720px);
+  margin: auto;
+}
 
 
-<!-- ================= BILLS ================= -->
+.screen {
+  display: none;
+  padding-bottom: 28px;
+}
 
-<section id="bills" class="screen">
 
-  <div class="section-title">
-    <div class="eyebrow">MONEY GOING OUT</div>
-    <h1>Bills</h1>
-    <p>Track what must be paid and when.</p>
-  </div>
+.screen.active {
+  display: block;
+}
 
-  <form id="billForm" class="card form">
 
-    <label>
-      Bill name
-      <input
-        id="billName"
-        required
-        placeholder="Rent, electric, internet..."
-      >
-    </label>
+/* ================= WELCOME ================= */
 
-    <label>
-      Amount
-      <input
-        id="billAmount"
-        required
-        type="number"
-        min="0"
-        step="0.01"
-      >
-    </label>
+.welcome {
+  padding: 23px 2px 10px;
 
-    <label>
-      Due date
-      <input id="billDate" required type="date">
-    </label>
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    <label class="check">
-      <input id="billPaid" type="checkbox">
-      Already paid
-    </label>
 
-    <label class="check">
-      <input id="billRecurring" type="checkbox">
-      Repeats monthly
-    </label>
+.welcome-copy {
+  position: relative;
+  z-index: 3;
+}
 
-    <button class="primary-btn">Add bill</button>
 
-  </form>
+.eyebrow {
+  color: var(--sage-dark);
 
-  <div id="billList"></div>
+  font-size: 8px;
+  font-weight: 850;
 
-</section>
+  letter-spacing: 1.7px;
+}
 
 
-<!-- ================= CALENDAR ================= -->
+.welcome h1 {
+  margin: 7px 0 0;
 
-<section id="calendar" class="screen">
+  font-family: var(--serif);
 
-  <div class="section-title">
-    <div class="eyebrow">YOUR MONEY TIMELINE</div>
-    <h1>Calendar</h1>
-    <p>See income and bills together.</p>
-  </div>
+  font-size: clamp(31px, 8vw, 43px);
 
-  <div class="card">
-    <div id="calendarList"></div>
-  </div>
+  font-weight: 500;
 
-</section>
+  line-height: 1.01;
 
-</main>
+  letter-spacing: -1.8px;
+}
 
 
-<!-- ================= NAVIGATION ================= -->
+.welcome p {
+  max-width: 270px;
 
-<nav class="nav">
+  margin: 11px 0 0;
 
-  <button class="navbtn active" data-screen="dashboard">
+  color: var(--muted);
 
-    <span class="nav-icon">
+  font-size: 11px;
 
-      <svg viewBox="0 0 40 40">
+  line-height: 1.5;
+}
 
-        <path
-          d="M8 19L20 9L32 19"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
 
-        <path
-          d="M11 17v14h18V17"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.4"
-        />
+/* ================= FOX ================= */
 
-        <path
-          d="M16 31v-8h8v8"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.4"
-        />
+.fox-wrap {
+  position: relative;
 
-        <path
-          d="M6 34C10 31 13 31 16 34"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1"
-          opacity=".55"
-        />
+  width: 145px;
+  height: 158px;
 
-      </svg>
+  flex: 0 0 145px;
 
-    </span>
+  display: grid;
+  place-items: center;
+}
 
-    <span>Home</span>
 
-  </button>
+.fox-glow {
+  position: absolute;
 
+  width: 110px;
+  height: 90px;
 
-  <button class="navbtn" data-screen="income">
+  border-radius: 50%;
 
-    <span class="nav-icon">
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(200,121,88,.15),
+      transparent 68%
+    );
 
-      <svg viewBox="0 0 40 40">
+  bottom: 12px;
+}
 
-        <rect
-          x="7"
-          y="11"
-          width="26"
-          height="18"
-          rx="4"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.4"
-        />
 
-        <circle
-          cx="20"
-          cy="20"
-          r="4"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.4"
-        />
+.fox {
+  position: relative;
+  z-index: 2;
 
-        <path
-          d="M11 8h18"
-          stroke="currentColor"
-          stroke-width="1.4"
-          stroke-linecap="round"
-        />
+  width: 138px;
+  height: 150px;
 
-        <path
-          d="M28 7l2-2"
-          stroke="currentColor"
-          stroke-width="1"
-          stroke-linecap="round"
-        />
+  filter:
+    drop-shadow(
+      0 9px 9px rgba(66,51,42,.12)
+    );
+}
 
-      </svg>
 
-    </span>
+.fox-fur {
+  fill: #c87958;
+}
 
-    <span>Income</span>
 
-  </button>
+.fox-cream {
+  fill: #fff1e3;
+}
 
 
-  <button class="navbtn" data-screen="bills">
+.fox-muzzle {
+  fill: #fff8ef;
+}
 
-    <span class="nav-icon">
 
-      <svg viewBox="0 0 40 40">
+.fox-ear-inner {
+  fill: #a85e48;
+  opacity: .65;
+}
 
-        <path
-          d="M10 6h20v28l-3-2-3 2-4-2-4 2-3-2-3 2Z"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.4"
-          stroke-linejoin="round"
-        />
 
-        <path
-          d="M15 13h10M15 19h10M15 25h6"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.4"
-          stroke-linecap="round"
-        />
+.fox-eye {
+  fill: #343a34;
+}
 
-        <path
-          d="M26 28c3-2 4-4 3-7"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1"
-        />
 
-      </svg>
+.fox-glint {
+  fill: white;
+}
 
-    </span>
 
-    <span>Bills</span>
+.fox-brow {
+  fill: none;
 
-  </button>
+  stroke: #7d4537;
 
+  stroke-width: 2;
 
-  <button class="navbtn" data-screen="calendar">
+  stroke-linecap: round;
 
-    <span class="nav-icon">
+  opacity: .8;
+}
 
-      <svg viewBox="0 0 40 40">
 
-        <rect
-          x="7"
-          y="9"
-          width="26"
-          height="24"
-          rx="4"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.4"
-        />
+.fox-nose {
+  fill: #3b3530;
+}
 
-        <path
-          d="M13 6v7M27 6v7M7 16h26"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.4"
-          stroke-linecap="round"
-        />
 
-        <path
-          d="M13 21h2M19 21h2M25 21h2M13 26h2M19 26h2"
-          stroke="currentColor"
-          stroke-width="1.4"
-          stroke-linecap="round"
-        />
+.fox-smile {
+  fill: none;
 
-      </svg>
+  stroke: #543e37;
 
-    </span>
+  stroke-width: 2.2;
 
-    <span>Calendar</span>
+  stroke-linecap: round;
+}
 
-  </button>
 
-</nav>
+.fox-scarf {
+  fill: var(--sage);
+}
 
 
-<script src="app.js"></script>
+.paw-mark {
+  fill: #a85e48;
+  opacity: .55;
+}
 
-</body>
-</html>
+
+.floating-leaf {
+  position: absolute;
+
+  z-index: 4;
+
+  color: var(--sage);
+
+  font-size: 18px;
+
+  opacity: .65;
+}
+
+
+.leaf-a {
+  right: 1px;
+  bottom: 17px;
+  transform: rotate(25deg);
+}
+
+
+.leaf-b {
+  left: 4px;
+  bottom: 4px;
+  transform: rotate(-25deg);
+}
+
+
+/* ================= HERO ================= */
+
+.hero-card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 30px 27px 23px;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffefa,
+      #eef4ed
+    );
+
+  border: 1px solid #dbe4d9;
+
+  box-shadow:
+    0 20px 50px rgba(57,76,61,.10),
+    inset 0 0 0 1px rgba(255,255,255,.85);
+}
+
+
+.hero-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 7px;
+
+  border: 1px solid rgba(113,135,116,.20);
+
+  border-radius: 24px;
+
+  pointer-events: none;
+}
+
+
+.hero-top {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.hero-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--sage-dark);
+
+  font-size: 9px;
+  font-weight: 850;
+
+  letter-spacing: 1.5px;
+}
+
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: var(--sage);
+
+  box-shadow:
+    0 0 0 4px rgba(113,135,116,.11);
+}
+
+
+.hero-star {
+  color: var(--gold);
+  font-size: 17px;
+}
+
+
+.big {
+  position: relative;
+  z-index: 3;
+
+  margin-top: 12px;
+
+  font-family: var(--serif);
+
+  font-size: clamp(55px, 15vw, 75px);
+
+  font-weight: 500;
+
+  line-height: .94;
+
+  letter-spacing: -3px;
+
+  color: #303b32;
+}
+
+
+.hero-note {
+  position: relative;
+  z-index: 3;
+
+  max-width: 520px;
+
+  margin-top: 14px;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  line-height: 1.55;
+}
+
+
+.hero-bottom {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 21px;
+
+  padding: 13px 8px 0;
+
+  border-top: 1px solid rgba(113,135,116,.16);
+
+  color: #8a928b;
+
+  font-size: 9px;
+}
+
+
+.botanical-corner {
+  position: absolute;
+
+  width: 55px;
+  height: 55px;
+
+  opacity: .38;
+}
+
+
+.botanical-corner::before,
+.botanical-corner::after {
+  content: "";
+
+  position: absolute;
+
+  width: 18px;
+  height: 29px;
+
+  background: var(--sage);
+
+  border-radius: 100% 0 100% 0;
+}
+
+
+.botanical-corner::before {
+  left: 5px;
+  top: 4px;
+
+  transform: rotate(-38deg);
+}
+
+
+.botanical-corner::after {
+  right: 3px;
+  bottom: 2px;
+
+  transform: rotate(40deg);
+}
+
+
+.corner-one {
+  left: 5px;
+  top: 5px;
+}
+
+
+.corner-two {
+  right: 5px;
+  top: 5px;
+
+  transform: scaleX(-1);
+}
+
+
+.corner-three {
+  left: 5px;
+  bottom: 5px;
+
+  transform: scaleY(-1);
+}
+
+
+.corner-four {
+  right: 5px;
+  bottom: 5px;
+
+  transform: scale(-1);
+}
+
+
+/* ================= HEADINGS ================= */
+
+.section-heading {
+  margin: 30px 2px 12px;
+}
+
+
+.section-heading h2 {
+  margin: 5px 0 0;
+
+  font-family: var(--serif);
+
+  font-size: 24px;
+
+  font-weight: 500;
+
+  letter-spacing: -.7px;
+}
+
+
+.section-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.section-title {
+  padding: 28px 2px 12px;
+}
+
+
+.section-title h1 {
+  margin: 6px 0 4px;
+
+  font-family: var(--serif);
+
+  font-size: 39px;
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: -1.5px;
+}
+
+
+.section-title p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 12px;
+}
+
+
+.textbtn {
+  border: 0;
+
+  background: transparent;
+
+  color: var(--sage-dark);
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+
+/* ================= MONEY ================= */
+
+.money-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+}
+
+
+.money-card {
+  position: relative;
+
+  min-height: 142px;
+
+  padding: 18px;
+
+  border-radius: 22px;
+
+  background: var(--paper);
+
+  border: 1px solid var(--line);
+
+  box-shadow: var(--shadow);
+}
+
+
+.luxury-icon {
+  width: 45px;
+  height: 45px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 15px;
+
+  border: 1px solid currentColor;
+
+  position: relative;
+}
+
+
+.luxury-icon::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 4px;
+
+  border: 1px solid currentColor;
+
+  border-radius: 11px;
+
+  opacity: .12;
+}
+
+
+.luxury-icon svg {
+  position: relative;
+  z-index: 2;
+
+  width: 31px;
+  height: 31px;
+}
+
+
+.luxury-icon.green {
+  color: var(--sage-dark);
+
+  background:
+    linear-gradient(
+      145deg,
+      #edf3eb,
+      #e4ede2
+    );
+}
+
+
+.luxury-icon.terracotta {
+  color: var(--terracotta-dark);
+
+  background:
+    linear-gradient(
+      145deg,
+      #f6e9df,
+      #f2e1d5
+    );
+}
+
+
+.money-card > span {
+  display: block;
+
+  margin-top: 14px;
+
+  color: var(--muted);
+
+  font-size: 10px;
+}
+
+
+.money-card strong {
+  display: block;
+
+  margin-top: 5px;
+
+  font-family: var(--serif);
+
+  font-size: 25px;
+
+  font-weight: 500;
+
+  letter-spacing: -.8px;
+}
+
+
+/* ================= CARDS ================= */
+
+.card {
+  margin-top: 16px;
+
+  padding: 21px;
+
+  border-radius: 23px;
+
+  background: var(--paper);
+
+  border: 1px solid var(--line);
+
+  box-shadow: var(--shadow);
+}
+
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+.card-top h2 {
+  margin: 5px 0 0;
+
+  font-family: var(--serif);
+
+  font-size: 22px;
+
+  font-weight: 500;
+}
+
+
+.card-description {
+  margin: 8px 0 16px;
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  line-height: 1.45;
+}
+
+
+.question-mark {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--cream);
+
+  color: var(--terracotta-dark);
+
+  font-family: var(--serif);
+
+  font-size: 19px;
+}
+
+
+/* ================= FOX MESSAGE ================= */
+
+.fox-message {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin: 18px 2px;
+
+  padding: 17px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f5eee7,
+      #faf5ed
+    );
+
+  border: 1px solid #e8ddd2;
+}
+
+
+.mini-fox-holder {
+  width: 60px;
+  height: 60px;
+
+  flex: 0 0 60px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 18px;
+
+  background: #ecdfd3;
+
+  overflow: hidden;
+}
+
+
+.mini-fox {
+  width: 58px;
+  height: 58px;
+
+  transform: translateY(4px);
+}
+
+
+.message-title {
+  font-family: var(--serif);
+
+  font-size: 17px;
+}
+
+
+.fox-message p {
+  margin: 3px 0 0;
+
+  color: var(--muted);
+
+  font-size: 10px;
+
+  line-height: 1.45;
+}
+
+
+/* ================= AFFORD ================= */
+
+.afford-row {
+  display: flex;
+  gap: 9px;
+}
+
+
+.money-input {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+
+  min-width: 0;
+  height: 51px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 15px;
+
+  background: var(--ivory);
+
+  padding-left: 14px;
+}
+
+
+.money-input span {
+  color: var(--muted);
+
+  font-weight: 750;
+}
+
+
+.money-input input {
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  padding: 0 12px 0 7px;
+}
+
+
+.afford-row button,
+.primary-btn {
+  min-height: 51px;
+
+  border: 0;
+
+  border-radius: 15px;
+
+  padding: 0 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--sage),
+      var(--sage-dark)
+    );
+
+  color: white;
+
+  font-weight: 750;
+
+  box-shadow:
+    0 8px 18px rgba(80,105,87,.20);
+
+  transition: transform .2s ease;
+}
+
+
+.afford-row button:hover,
+.primary-btn:hover {
+  transform: translateY(-1px);
+}
+
+
+.result {
+  margin-top: 12px;
+
+  padding: 12px 14px;
+
+  border-radius: 13px;
+
+  background: var(--sage-light);
+
+  font-size: 11px;
+
+  line-height: 1.45;
+}
+
+
+.result.good {
+  color: #56725c;
+  background: #edf5ed;
+}
+
+
+.result.bad {
+  color: #925b55;
+  background: #f8eae8;
+}
+
+
+/* ================= WARNING ================= */
+
+.notice {
+  margin-top: 15px;
+
+  padding: 15px;
+
+  border-radius: 17px;
+
+  background: #f8eae8;
+
+  color: #a55f58;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+
+/* ================= LISTS ================= */
+
+.item {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 14px;
+
+  padding: 15px 0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+
+.item:last-child {
+  border-bottom: 0;
+
+  padding-bottom: 2px;
+}
+
+
+.item-title {
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+.item-sub {
+  margin-top: 4px;
+
+  color: var(--muted);
+
+  font-size: 9px;
+}
+
+
+.item-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.item-actions strong {
+  font-size: 13px;
+}
+
+
+.delete {
+  width: 28px;
+  height: 28px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #f1f1ec;
+
+  color: var(--muted);
+}
+
+
+.pill {
+  display: inline-block;
+
+  padding: 3px 7px;
+
+  border-radius: 99px;
+
+  background: var(--sage-light);
+
+  color: var(--sage-dark);
+
+  font-size: 8px;
+
+  font-weight: 750;
+}
+
+
+.pill.paid {
+  background: #edf3ed;
+
+  color: #58715c;
+}
+
+
+.empty {
+  padding: 16px 0;
+
+  color: var(--muted);
+
+  font-size: 11px;
+}
+
+
+/* ================= FORMS ================= */
+
+.form {
+  display: grid;
+
+  gap: 16px;
+}
+
+
+.form label {
+  display: grid;
+
+  gap: 7px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.form input {
+  width: 100%;
+
+  min-height: 49px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 14px;
+
+  background: var(--ivory);
+
+  padding: 0 13px;
+
+  outline: none;
+}
+
+
+.form input:focus {
+  border-color: var(--sage);
+
+  box-shadow:
+    0 0 0 3px rgba(113,135,116,.1);
+}
+
+
+.form .check {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-weight: 550;
+}
+
+
+.form .check input {
+  width: 17px;
+
+  min-height: 17px;
+
+  accent-color: var(--sage);
+}
+
+
+/* ================= NAV ================= */
+
+.nav {
+  position: fixed;
+
+  z-index: 50;
+
+  left: 50%;
+  bottom: 0;
+
+  transform: translateX(-50%);
+
+  width: min(100%,720px);
+
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+
+  padding:
+    8px
+    10px
+    max(9px,env(safe-area-inset-bottom));
+
+  background: rgba(255,255,255,.96);
+
+  backdrop-filter: blur(20px);
+
+  border-top: 1px solid rgba(220,225,218,.9);
+
+  box-shadow:
+    0 -10px 30px rgba(45,58,48,.05);
+}
+
+
+.navbtn {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 4px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #969d96;
+
+  padding: 5px 2px;
+
+  font-size: 8px;
+
+  font-weight: 750;
+
+  letter-spacing: .2px;
+}
+
+
+.nav-icon {
+  width: 44px;
+  height: 35px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 13px;
+
+  transition: .2s ease;
+}
+
+
+.nav-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+
+.navbtn.active {
+  color: var(--sage-dark);
+}
+
+
+.navbtn.active .nav-icon {
+  background: var(--sage-light);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(113,135,116,.08);
+}
+
+
+.navbtn:nth-child(2) .nav-icon {
+  color: var(--gold);
+}
+
+
+.navbtn:nth-child(3) .nav-icon {
+  color: var(--terracotta);
+}
+
+
+.navbtn:nth-child(4) .nav-icon {
+  color: var(--olive);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width:430px) {
+
+  main,
+  .topbar {
+    width: calc(100% - 24px);
+  }
+
+  .welcome h1 {
+    font-size: 29px;
+  }
+
+  .fox-wrap {
+    width: 124px;
+    flex-basis: 124px;
+  }
+
+  .fox {
+    width: 123px;
+    height: 140px;
+  }
+
+  .big {
+    font-size: 54px;
+  }
+
+}
+
+
+@media (max-width:360px) {
+
+  .money-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .afford-row {
+    flex-direction: column;
+  }
+
+  .afford-row button {
+    width: 100%;
+  }
+
+  .fox-wrap {
+    width: 105px;
+    flex-basis: 105px;
+  }
+
+  .fox {
+    width: 108px;
+  }
+
+}
