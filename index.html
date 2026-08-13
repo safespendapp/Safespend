@@ -1,1375 +1,320 @@
-:root {
-  --ivory: #faf8f2;
-  --cream: #f3e9dc;
-  --paper: #fffefa;
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#6d5dfc">
+  <title>SafeSpend — What can I safely spend?</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-  --sage: #718774;
-  --sage-dark: #506957;
-  --sage-light: #e7eee6;
+<body>
 
-  --olive: #929b72;
-  --terracotta: #c87958;
-  --terracotta-dark: #a96048;
+<header class="topbar">
 
-  --gold: #b49a68;
+  <div class="brand-wrap">
 
-  --ink: #303832;
-  --muted: #858d86;
+    <div class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 40 40">
+        <path
+          d="M19 34C19 24 22 15 31 7"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        />
+        <path
+          d="M20 23C13 23 8 18 8 11C16 11 21 16 20 23Z"
+          fill="currentColor"
+        />
+        <path
+          d="M22 17C22 11 27 7 33 8C32 14 28 18 22 17Z"
+          fill="currentColor"
+          opacity=".58"
+        />
+      </svg>
+    </div>
 
-  --line: #e2e6df;
+    <div>
+      <div class="brand">SafeSpend</div>
+      <div class="tagline">Know what you can safely spend.</div>
+    </div>
 
-  --serif: Georgia, "Times New Roman", serif;
+  </div>
 
-  --sans:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+  <button id="resetBtn" class="ghost small">Reset</button>
 
-  --shadow:
-    0 18px 45px rgba(52,67,55,.075);
-}
+</header>
 
 
-* {
-  box-sizing: border-box;
-}
+<main>
 
+  <section id="dashboard" class="screen active">
 
-html {
-  background: var(--ivory);
-}
+    <div class="hero-card">
 
+      <div class="label">Safe to spend</div>
 
-body {
-  margin: 0;
-  min-height: 100vh;
+      <div id="safeSpend" class="big">$0.00</div>
 
-  background:
-    radial-gradient(
-      circle at 92% 4%,
-      rgba(146,155,114,.13),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 0% 38%,
-      rgba(200,121,88,.06),
-      transparent 28%
-    ),
-    var(--ivory);
+      <div id="safeNote" class="muted">
+        Add your balance, income, and bills to get started.
+      </div>
 
-  color: var(--ink);
-  font-family: var(--sans);
+    </div>
 
-  padding-bottom: 96px;
-}
 
+    <div class="grid2">
 
-button,
-input {
-  font: inherit;
-}
+      <div class="stat">
+        <span>Current balance</span>
+        <strong id="balanceOut">$0.00</strong>
+      </div>
 
+      <div class="stat">
+        <span>Upcoming bills</span>
+        <strong id="billsOut">$0.00</strong>
+      </div>
 
-button {
-  cursor: pointer;
-}
+    </div>
 
 
-/* ================= BRAND ================= */
+    <div id="warning" class="notice hidden"></div>
 
-.topbar {
-  width: min(calc(100% - 30px), 720px);
-  margin: auto;
 
-  padding: 18px 0 9px;
+    <div class="card">
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+      <h2>Can I afford this?</h2>
 
+      <div class="row">
 
-.brand-area {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+        <input
+          id="affordAmount"
+          type="number"
+          min="0"
+          step="0.01"
+          placeholder="Amount"
+        >
 
+        <button id="affordBtn">Check</button>
 
-.brand-leaf {
-  width: 45px;
-  height: 45px;
+      </div>
 
-  display: grid;
-  place-items: center;
+      <div id="affordResult" class="result muted">
+        Enter an amount to check.
+      </div>
 
-  border-radius: 15px;
+    </div>
 
-  background:
-    linear-gradient(
-      145deg,
-      #eef3eb,
-      #dce8dc
-    );
 
-  border: 1px solid rgba(80,105,87,.15);
+    <div class="card">
 
-  color: var(--sage-dark);
+      <div class="section-head">
 
-  box-shadow:
-    0 7px 18px rgba(80,105,87,.08);
-}
+        <h2>Next bills</h2>
 
+        <button
+          class="textbtn"
+          data-screen="bills"
+        >
+          View all
+        </button>
 
-.brand-leaf svg {
-  width: 31px;
-  height: 31px;
-}
+      </div>
 
+      <div id="nextBills"></div>
 
-.brand {
-  font-family: var(--serif);
+    </div>
 
-  font-size: 25px;
-  font-weight: 500;
+  </section>
 
-  letter-spacing: -1px;
 
-  color: #29352d;
-}
+  <section id="income" class="screen">
 
+    <div class="section-title">
 
-.tagline {
-  margin-top: 2px;
+      <h1>Income</h1>
 
-  color: var(--muted);
+      <p>Add money you expect to receive.</p>
 
-  font-size: 9px;
+    </div>
 
-  letter-spacing: .15px;
-}
 
+    <form id="incomeForm" class="card form">
 
-.ghost {
-  border: 1px solid var(--line);
+      <label>
+        Source
+        <input
+          id="incomeSource"
+          required
+          placeholder="Paycheck, VA, BAH, etc."
+        >
+      </label>
 
-  background: rgba(255,255,255,.75);
+      <label>
+        Amount
+        <input
+          id="incomeAmount"
+          required
+          type="number"
+          min="0"
+          step="0.01"
+        >
+      </label>
 
-  color: var(--muted);
+      <label>
+        Date
+        <input
+          id="incomeDate"
+          required
+          type="date"
+        >
+      </label>
 
-  border-radius: 12px;
-}
+      <label class="check">
+        <input
+          id="incomeRecurring"
+          type="checkbox"
+        >
+        Repeats monthly
+      </label>
 
+      <button>Add income</button>
 
-.ghost.small {
-  padding: 7px 10px;
-  font-size: 10px;
-}
+    </form>
 
+    <div id="incomeList"></div>
 
-/* ================= MAIN ================= */
+  </section>
 
-main {
-  width: min(calc(100% - 30px), 720px);
-  margin: auto;
-}
 
+  <section id="bills" class="screen">
 
-.screen {
-  display: none;
-  padding-bottom: 28px;
-}
+    <div class="section-title">
 
+      <h1>Bills</h1>
 
-.screen.active {
-  display: block;
-}
+      <p>Track what must be paid and when.</p>
 
+    </div>
 
-/* ================= WELCOME ================= */
 
-.welcome {
-  padding: 23px 2px 10px;
+    <form id="billForm" class="card form">
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+      <label>
+        Bill name
+        <input
+          id="billName"
+          required
+          placeholder="Rent, electric, internet..."
+        >
+      </label>
 
+      <label>
+        Amount
+        <input
+          id="billAmount"
+          required
+          type="number"
+          min="0"
+          step="0.01"
+        >
+      </label>
 
-.welcome-copy {
-  position: relative;
-  z-index: 3;
-}
+      <label>
+        Due date
+        <input
+          id="billDate"
+          required
+          type="date"
+        >
+      </label>
 
+      <label class="check">
+        <input
+          id="billPaid"
+          type="checkbox"
+        >
+        Already paid
+      </label>
 
-.eyebrow {
-  color: var(--sage-dark);
+      <label class="check">
+        <input
+          id="billRecurring"
+          type="checkbox"
+        >
+        Repeats monthly
+      </label>
 
-  font-size: 8px;
-  font-weight: 850;
+      <button>Add bill</button>
 
-  letter-spacing: 1.7px;
-}
+    </form>
 
+    <div id="billList"></div>
 
-.welcome h1 {
-  margin: 7px 0 0;
+  </section>
 
-  font-family: var(--serif);
 
-  font-size: clamp(31px, 8vw, 43px);
+  <section id="calendar" class="screen">
 
-  font-weight: 500;
+    <div class="section-title">
 
-  line-height: 1.01;
+      <h1>Calendar</h1>
 
-  letter-spacing: -1.8px;
-}
+      <p>See income and bills together.</p>
 
+    </div>
 
-.welcome p {
-  max-width: 270px;
+    <div class="card">
 
-  margin: 11px 0 0;
+      <div id="calendarList"></div>
 
-  color: var(--muted);
+    </div>
 
-  font-size: 11px;
+  </section>
 
-  line-height: 1.5;
-}
+</main>
 
 
-/* ================= FOX ================= */
+<nav class="nav">
 
-.fox-wrap {
-  position: relative;
+  <button
+    class="navbtn active"
+    data-screen="dashboard"
+  >
+    🏠
+    <span>Home</span>
+  </button>
 
-  width: 145px;
-  height: 158px;
+  <button
+    class="navbtn"
+    data-screen="income"
+  >
+    💵
+    <span>Income</span>
+  </button>
 
-  flex: 0 0 145px;
+  <button
+    class="navbtn"
+    data-screen="bills"
+  >
+    🧾
+    <span>Bills</span>
+  </button>
 
-  display: grid;
-  place-items: center;
-}
+  <button
+    class="navbtn"
+    data-screen="calendar"
+  >
+    📅
+    <span>Calendar</span>
+  </button>
 
+</nav>
 
-.fox-glow {
-  position: absolute;
 
-  width: 110px;
-  height: 90px;
+<script src="app.js"></script>
 
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      ellipse,
-      rgba(200,121,88,.15),
-      transparent 68%
-    );
-
-  bottom: 12px;
-}
-
-
-.fox {
-  position: relative;
-  z-index: 2;
-
-  width: 138px;
-  height: 150px;
-
-  filter:
-    drop-shadow(
-      0 9px 9px rgba(66,51,42,.12)
-    );
-}
-
-
-.fox-fur {
-  fill: #c87958;
-}
-
-
-.fox-cream {
-  fill: #fff1e3;
-}
-
-
-.fox-muzzle {
-  fill: #fff8ef;
-}
-
-
-.fox-ear-inner {
-  fill: #a85e48;
-  opacity: .65;
-}
-
-
-.fox-eye {
-  fill: #343a34;
-}
-
-
-.fox-glint {
-  fill: white;
-}
-
-
-.fox-brow {
-  fill: none;
-
-  stroke: #7d4537;
-
-  stroke-width: 2;
-
-  stroke-linecap: round;
-
-  opacity: .8;
-}
-
-
-.fox-nose {
-  fill: #3b3530;
-}
-
-
-.fox-smile {
-  fill: none;
-
-  stroke: #543e37;
-
-  stroke-width: 2.2;
-
-  stroke-linecap: round;
-}
-
-
-.fox-scarf {
-  fill: var(--sage);
-}
-
-
-.paw-mark {
-  fill: #a85e48;
-  opacity: .55;
-}
-
-
-.floating-leaf {
-  position: absolute;
-
-  z-index: 4;
-
-  color: var(--sage);
-
-  font-size: 18px;
-
-  opacity: .65;
-}
-
-
-.leaf-a {
-  right: 1px;
-  bottom: 17px;
-  transform: rotate(25deg);
-}
-
-
-.leaf-b {
-  left: 4px;
-  bottom: 4px;
-  transform: rotate(-25deg);
-}
-
-
-/* ================= HERO ================= */
-
-.hero-card {
-  position: relative;
-
-  overflow: hidden;
-
-  padding: 30px 27px 23px;
-
-  border-radius: 30px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #fffefa,
-      #eef4ed
-    );
-
-  border: 1px solid #dbe4d9;
-
-  box-shadow:
-    0 20px 50px rgba(57,76,61,.10),
-    inset 0 0 0 1px rgba(255,255,255,.85);
-}
-
-
-.hero-card::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 7px;
-
-  border: 1px solid rgba(113,135,116,.20);
-
-  border-radius: 24px;
-
-  pointer-events: none;
-}
-
-
-.hero-top {
-  position: relative;
-  z-index: 3;
-
-  display: flex;
-  justify-content: space-between;
-}
-
-
-.hero-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  color: var(--sage-dark);
-
-  font-size: 9px;
-  font-weight: 850;
-
-  letter-spacing: 1.5px;
-}
-
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-
-  border-radius: 50%;
-
-  background: var(--sage);
-
-  box-shadow:
-    0 0 0 4px rgba(113,135,116,.11);
-}
-
-
-.hero-star {
-  color: var(--gold);
-  font-size: 17px;
-}
-
-
-.big {
-  position: relative;
-  z-index: 3;
-
-  margin-top: 12px;
-
-  font-family: var(--serif);
-
-  font-size: clamp(55px, 15vw, 75px);
-
-  font-weight: 500;
-
-  line-height: .94;
-
-  letter-spacing: -3px;
-
-  color: #303b32;
-}
-
-
-.hero-note {
-  position: relative;
-  z-index: 3;
-
-  max-width: 520px;
-
-  margin-top: 14px;
-
-  color: var(--muted);
-
-  font-size: 12px;
-
-  line-height: 1.55;
-}
-
-
-.hero-bottom {
-  position: relative;
-  z-index: 3;
-
-  display: flex;
-  justify-content: space-between;
-
-  margin-top: 21px;
-
-  padding: 13px 8px 0;
-
-  border-top: 1px solid rgba(113,135,116,.16);
-
-  color: #8a928b;
-
-  font-size: 9px;
-}
-
-
-.botanical-corner {
-  position: absolute;
-
-  width: 55px;
-  height: 55px;
-
-  opacity: .38;
-}
-
-
-.botanical-corner::before,
-.botanical-corner::after {
-  content: "";
-
-  position: absolute;
-
-  width: 18px;
-  height: 29px;
-
-  background: var(--sage);
-
-  border-radius: 100% 0 100% 0;
-}
-
-
-.botanical-corner::before {
-  left: 5px;
-  top: 4px;
-
-  transform: rotate(-38deg);
-}
-
-
-.botanical-corner::after {
-  right: 3px;
-  bottom: 2px;
-
-  transform: rotate(40deg);
-}
-
-
-.corner-one {
-  left: 5px;
-  top: 5px;
-}
-
-
-.corner-two {
-  right: 5px;
-  top: 5px;
-
-  transform: scaleX(-1);
-}
-
-
-.corner-three {
-  left: 5px;
-  bottom: 5px;
-
-  transform: scaleY(-1);
-}
-
-
-.corner-four {
-  right: 5px;
-  bottom: 5px;
-
-  transform: scale(-1);
-}
-
-
-/* ================= HEADINGS ================= */
-
-.section-heading {
-  margin: 30px 2px 12px;
-}
-
-
-.section-heading h2 {
-  margin: 5px 0 0;
-
-  font-family: var(--serif);
-
-  font-size: 24px;
-
-  font-weight: 500;
-
-  letter-spacing: -.7px;
-}
-
-
-.section-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-
-.section-title {
-  padding: 28px 2px 12px;
-}
-
-
-.section-title h1 {
-  margin: 6px 0 4px;
-
-  font-family: var(--serif);
-
-  font-size: 39px;
-
-  font-weight: 500;
-
-  line-height: 1;
-
-  letter-spacing: -1.5px;
-}
-
-
-.section-title p {
-  margin: 0;
-
-  color: var(--muted);
-
-  font-size: 12px;
-}
-
-
-.textbtn {
-  border: 0;
-
-  background: transparent;
-
-  color: var(--sage-dark);
-
-  font-size: 10px;
-
-  font-weight: 800;
-}
-
-
-/* ================= MONEY ================= */
-
-.money-grid {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 12px;
-}
-
-
-.money-card {
-  position: relative;
-
-  min-height: 142px;
-
-  padding: 18px;
-
-  border-radius: 22px;
-
-  background: var(--paper);
-
-  border: 1px solid var(--line);
-
-  box-shadow: var(--shadow);
-}
-
-
-.luxury-icon {
-  width: 45px;
-  height: 45px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 15px;
-
-  border: 1px solid currentColor;
-
-  position: relative;
-}
-
-
-.luxury-icon::after {
-  content: "";
-
-  position: absolute;
-
-  inset: 4px;
-
-  border: 1px solid currentColor;
-
-  border-radius: 11px;
-
-  opacity: .12;
-}
-
-
-.luxury-icon svg {
-  position: relative;
-  z-index: 2;
-
-  width: 31px;
-  height: 31px;
-}
-
-
-.luxury-icon.green {
-  color: var(--sage-dark);
-
-  background:
-    linear-gradient(
-      145deg,
-      #edf3eb,
-      #e4ede2
-    );
-}
-
-
-.luxury-icon.terracotta {
-  color: var(--terracotta-dark);
-
-  background:
-    linear-gradient(
-      145deg,
-      #f6e9df,
-      #f2e1d5
-    );
-}
-
-
-.money-card > span {
-  display: block;
-
-  margin-top: 14px;
-
-  color: var(--muted);
-
-  font-size: 10px;
-}
-
-
-.money-card strong {
-  display: block;
-
-  margin-top: 5px;
-
-  font-family: var(--serif);
-
-  font-size: 25px;
-
-  font-weight: 500;
-
-  letter-spacing: -.8px;
-}
-
-
-/* ================= CARDS ================= */
-
-.card {
-  margin-top: 16px;
-
-  padding: 21px;
-
-  border-radius: 23px;
-
-  background: var(--paper);
-
-  border: 1px solid var(--line);
-
-  box-shadow: var(--shadow);
-}
-
-
-.card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-
-.card-top h2 {
-  margin: 5px 0 0;
-
-  font-family: var(--serif);
-
-  font-size: 22px;
-
-  font-weight: 500;
-}
-
-
-.card-description {
-  margin: 8px 0 16px;
-
-  color: var(--muted);
-
-  font-size: 11px;
-
-  line-height: 1.45;
-}
-
-
-.question-mark {
-  width: 38px;
-  height: 38px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 50%;
-
-  background: var(--cream);
-
-  color: var(--terracotta-dark);
-
-  font-family: var(--serif);
-
-  font-size: 19px;
-}
-
-
-/* ================= FOX MESSAGE ================= */
-
-.fox-message {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-
-  margin: 18px 2px;
-
-  padding: 17px;
-
-  border-radius: 22px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f5eee7,
-      #faf5ed
-    );
-
-  border: 1px solid #e8ddd2;
-}
-
-
-.mini-fox-holder {
-  width: 60px;
-  height: 60px;
-
-  flex: 0 0 60px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 18px;
-
-  background: #ecdfd3;
-
-  overflow: hidden;
-}
-
-
-.mini-fox {
-  width: 58px;
-  height: 58px;
-
-  transform: translateY(4px);
-}
-
-
-.message-title {
-  font-family: var(--serif);
-
-  font-size: 17px;
-}
-
-
-.fox-message p {
-  margin: 3px 0 0;
-
-  color: var(--muted);
-
-  font-size: 10px;
-
-  line-height: 1.45;
-}
-
-
-/* ================= AFFORD ================= */
-
-.afford-row {
-  display: flex;
-  gap: 9px;
-}
-
-
-.money-input {
-  flex: 1;
-
-  display: flex;
-  align-items: center;
-
-  min-width: 0;
-  height: 51px;
-
-  border: 1px solid var(--line);
-
-  border-radius: 15px;
-
-  background: var(--ivory);
-
-  padding-left: 14px;
-}
-
-
-.money-input span {
-  color: var(--muted);
-
-  font-weight: 750;
-}
-
-
-.money-input input {
-  width: 100%;
-  height: 100%;
-
-  border: 0;
-  outline: 0;
-
-  background: transparent;
-
-  padding: 0 12px 0 7px;
-}
-
-
-.afford-row button,
-.primary-btn {
-  min-height: 51px;
-
-  border: 0;
-
-  border-radius: 15px;
-
-  padding: 0 24px;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--sage),
-      var(--sage-dark)
-    );
-
-  color: white;
-
-  font-weight: 750;
-
-  box-shadow:
-    0 8px 18px rgba(80,105,87,.20);
-
-  transition: transform .2s ease;
-}
-
-
-.afford-row button:hover,
-.primary-btn:hover {
-  transform: translateY(-1px);
-}
-
-
-.result {
-  margin-top: 12px;
-
-  padding: 12px 14px;
-
-  border-radius: 13px;
-
-  background: var(--sage-light);
-
-  font-size: 11px;
-
-  line-height: 1.45;
-}
-
-
-.result.good {
-  color: #56725c;
-  background: #edf5ed;
-}
-
-
-.result.bad {
-  color: #925b55;
-  background: #f8eae8;
-}
-
-
-/* ================= WARNING ================= */
-
-.notice {
-  margin-top: 15px;
-
-  padding: 15px;
-
-  border-radius: 17px;
-
-  background: #f8eae8;
-
-  color: #a55f58;
-
-  font-size: 11px;
-
-  line-height: 1.5;
-}
-
-
-.hidden {
-  display: none !important;
-}
-
-
-/* ================= LISTS ================= */
-
-.item {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 14px;
-
-  padding: 15px 0;
-
-  border-bottom: 1px solid var(--line);
-}
-
-
-.item:last-child {
-  border-bottom: 0;
-
-  padding-bottom: 2px;
-}
-
-
-.item-title {
-  font-size: 13px;
-
-  font-weight: 700;
-}
-
-
-.item-sub {
-  margin-top: 4px;
-
-  color: var(--muted);
-
-  font-size: 9px;
-}
-
-
-.item-actions {
-  display: flex;
-
-  align-items: center;
-
-  gap: 9px;
-}
-
-
-.item-actions strong {
-  font-size: 13px;
-}
-
-
-.delete {
-  width: 28px;
-  height: 28px;
-
-  border: 0;
-
-  border-radius: 50%;
-
-  background: #f1f1ec;
-
-  color: var(--muted);
-}
-
-
-.pill {
-  display: inline-block;
-
-  padding: 3px 7px;
-
-  border-radius: 99px;
-
-  background: var(--sage-light);
-
-  color: var(--sage-dark);
-
-  font-size: 8px;
-
-  font-weight: 750;
-}
-
-
-.pill.paid {
-  background: #edf3ed;
-
-  color: #58715c;
-}
-
-
-.empty {
-  padding: 16px 0;
-
-  color: var(--muted);
-
-  font-size: 11px;
-}
-
-
-/* ================= FORMS ================= */
-
-.form {
-  display: grid;
-
-  gap: 16px;
-}
-
-
-.form label {
-  display: grid;
-
-  gap: 7px;
-
-  font-size: 11px;
-
-  font-weight: 700;
-}
-
-
-.form input {
-  width: 100%;
-
-  min-height: 49px;
-
-  border: 1px solid var(--line);
-
-  border-radius: 14px;
-
-  background: var(--ivory);
-
-  padding: 0 13px;
-
-  outline: none;
-}
-
-
-.form input:focus {
-  border-color: var(--sage);
-
-  box-shadow:
-    0 0 0 3px rgba(113,135,116,.1);
-}
-
-
-.form .check {
-  display: flex;
-
-  align-items: center;
-
-  gap: 8px;
-
-  font-weight: 550;
-}
-
-
-.form .check input {
-  width: 17px;
-
-  min-height: 17px;
-
-  accent-color: var(--sage);
-}
-
-
-/* ================= NAV ================= */
-
-.nav {
-  position: fixed;
-
-  z-index: 50;
-
-  left: 50%;
-  bottom: 0;
-
-  transform: translateX(-50%);
-
-  width: min(100%,720px);
-
-  display: grid;
-
-  grid-template-columns: repeat(4,1fr);
-
-  padding:
-    8px
-    10px
-    max(9px,env(safe-area-inset-bottom));
-
-  background: rgba(255,255,255,.96);
-
-  backdrop-filter: blur(20px);
-
-  border-top: 1px solid rgba(220,225,218,.9);
-
-  box-shadow:
-    0 -10px 30px rgba(45,58,48,.05);
-}
-
-
-.navbtn {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  gap: 4px;
-
-  border: 0;
-
-  background: transparent;
-
-  color: #969d96;
-
-  padding: 5px 2px;
-
-  font-size: 8px;
-
-  font-weight: 750;
-
-  letter-spacing: .2px;
-}
-
-
-.nav-icon {
-  width: 44px;
-  height: 35px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 13px;
-
-  transition: .2s ease;
-}
-
-
-.nav-icon svg {
-  width: 30px;
-  height: 30px;
-}
-
-
-.navbtn.active {
-  color: var(--sage-dark);
-}
-
-
-.navbtn.active .nav-icon {
-  background: var(--sage-light);
-
-  box-shadow:
-    inset 0 0 0 1px rgba(113,135,116,.08);
-}
-
-
-.navbtn:nth-child(2) .nav-icon {
-  color: var(--gold);
-}
-
-
-.navbtn:nth-child(3) .nav-icon {
-  color: var(--terracotta);
-}
-
-
-.navbtn:nth-child(4) .nav-icon {
-  color: var(--olive);
-}
-
-
-/* ================= MOBILE ================= */
-
-@media (max-width:430px) {
-
-  main,
-  .topbar {
-    width: calc(100% - 24px);
-  }
-
-  .welcome h1 {
-    font-size: 29px;
-  }
-
-  .fox-wrap {
-    width: 124px;
-    flex-basis: 124px;
-  }
-
-  .fox {
-    width: 123px;
-    height: 140px;
-  }
-
-  .big {
-    font-size: 54px;
-  }
-
-}
-
-
-@media (max-width:360px) {
-
-  .money-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .afford-row {
-    flex-direction: column;
-  }
-
-  .afford-row button {
-    width: 100%;
-  }
-
-  .fox-wrap {
-    width: 105px;
-    flex-basis: 105px;
-  }
-
-  .fox {
-    width: 108px;
-  }
-
-}
+</body>
+</html>
