@@ -61,26 +61,36 @@ function render() {
   const inc = upcomingIncome();
   const safe = safeSpend();
 
-  document.getElementById("safeSpend").textContent = money(safe);
+  document.getElementById("safeSpend").textContent =
+    money(safe);
 
   document.getElementById("balanceOut").textContent =
     money(data.balance);
 
-  document.getElementById("billsOut").textContent = money(
-    bills.reduce((s, b) => s + Number(b.amount), 0)
-  );
+  document.getElementById("billsOut").textContent =
+    money(
+      bills.reduce(
+        (s, b) => s + Number(b.amount),
+        0
+      )
+    );
 
-  const note = document.getElementById("safeNote");
+  const note =
+    document.getElementById("safeNote");
 
   note.textContent =
     safe >= 0
       ? "This is your projected amount after upcoming bills."
       : "Your upcoming bills are more than your available money.";
 
-  const warning = document.getElementById("warning");
+  const warning =
+    document.getElementById("warning");
 
   if (warning) {
-    warning.classList.toggle("hidden", safe >= 0);
+    warning.classList.toggle(
+      "hidden",
+      safe >= 0
+    );
 
     warning.textContent =
       safe < 0
@@ -104,8 +114,10 @@ function render() {
 
   document.getElementById("billList").innerHTML =
     data.bills.length
-      ? data.bills
-          .sort((a, b) => a.date.localeCompare(b.date))
+      ? [...data.bills]
+          .sort((a, b) =>
+            a.date.localeCompare(b.date)
+          )
           .map(b => itemHTML(b, "bill"))
           .join("")
       : '<div class="card empty">No bills yet.</div>';
@@ -118,9 +130,13 @@ function render() {
 
     ...data.bills.map(x => ({
       ...x,
-      type: x.paid ? "Paid bill" : "Bill"
+      type: x.paid
+        ? "Paid bill"
+        : "Bill"
     }))
-  ].sort((a, b) => a.date.localeCompare(b.date));
+  ].sort((a, b) =>
+    a.date.localeCompare(b.date)
+  );
 
   document.getElementById("calendarList").innerHTML =
     events.length
@@ -132,32 +148,37 @@ function render() {
                   <div class="item-title">${x.type}: ${esc(
                 x.name || x.source
               )}</div>
-                  <div class="item-sub">${dateText(x.date)}</div>
+                  <div class="item-sub">${dateText(
+                    x.date
+                  )}</div>
                 </div>
                 <strong>${money(x.amount)}</strong>
               </div>`
           )
           .join("")
       : '<div class="empty">Add income or bills to see your calendar.</div>';
-
-  updateBalanceField();
 }
 
 
 function esc(s) {
-  return String(s).replace(/[&<>"']/g, m => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  }[m]));
+  return String(s).replace(
+    /[&<>"']/g,
+    m => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    }[m])
+  );
 }
 
 
 function itemHTML(x, type) {
   const title =
-    type === "bill" ? esc(x.name) : esc(x.source);
+    type === "bill"
+      ? esc(x.name)
+      : esc(x.source);
 
   const status =
     type === "bill"
@@ -168,28 +189,50 @@ function itemHTML(x, type) {
 
   return `
     <div class="item">
+
       <div>
-        <div class="item-title">${title}</div>
-        <div class="item-sub">${dateText(x.date)} · ${status}</div>
+
+        <div class="item-title">
+          ${title}
+        </div>
+
+        <div class="item-sub">
+          ${dateText(x.date)} · ${status}
+        </div>
+
       </div>
 
       <div class="item-actions">
-        <strong>${money(x.amount)}</strong>
+
+        <strong>
+          ${money(x.amount)}
+        </strong>
+
         <button
           class="delete"
           onclick="removeItem('${type}','${x.id}')"
-        >×</button>
+        >
+          ×
+        </button>
+
       </div>
+
     </div>
   `;
 }
 
 
 window.removeItem = (type, id) => {
+
   if (!confirm("Delete this item?")) return;
 
-  data[type === "bill" ? "bills" : "income"] =
-    data[type === "bill" ? "bills" : "income"].filter(
+  const key =
+    type === "bill"
+      ? "bills"
+      : "income";
+
+  data[key] =
+    data[key].filter(
       x => x.id !== id
     );
 
@@ -197,144 +240,18 @@ window.removeItem = (type, id) => {
 };
 
 
-/* =========================================================
-   CURRENT BALANCE
-   Creates the balance entry inside the Income screen.
-   This does NOT change your existing HTML/design.
-========================================================= */
-
-function createBalanceEntry() {
-  const incomeScreen =
-    document.getElementById("income");
-
-  const incomeForm =
-    document.getElementById("incomeForm");
-
-  if (!incomeScreen || !incomeForm) return;
-
-  if (document.getElementById("balanceEntryCard")) return;
-
-  const card = document.createElement("div");
-
-  card.id = "balanceEntryCard";
-  card.className = "card";
-
-  card.innerHTML = `
-    <div class="section-heading">
-      <div class="eyebrow">YOUR MONEY</div>
-      <h2>Current balance</h2>
-    </div>
-
-    <p>
-      Enter the amount currently in your account.
-    </p>
-
-    <div class="row">
-      <input
-        id="balanceInput"
-        type="number"
-        min="0"
-        step="0.01"
-        inputmode="decimal"
-        placeholder="Current balance"
-      >
-
-      <button
-        id="saveBalanceBtn"
-        type="button"
-      >
-        Save
-      </button>
-    </div>
-
-    <div
-      id="balanceSaved"
-      class="result muted"
-    ></div>
-  `;
-
-  incomeScreen.insertBefore(card, incomeForm);
-
-  document
-    .getElementById("saveBalanceBtn")
-    .addEventListener("click", saveBalance);
-}
-
-
-function updateBalanceField() {
-  const input =
-    document.getElementById("balanceInput");
-
-  if (!input) return;
-
-  if (document.activeElement !== input) {
-    input.value =
-      data.balance === 0
-        ? ""
-        : data.balance;
-  }
-}
-
-
-function saveBalance() {
-  const input =
-    document.getElementById("balanceInput");
-
-  const message =
-    document.getElementById("balanceSaved");
-
-  if (!input) return;
-
-  const raw = input.value.trim();
-
-  if (raw === "") {
-    message.textContent =
-      "Enter your current balance.";
-
-    message.className =
-      "result bad";
-
-    return;
-  }
-
-  const amount = Number(raw);
-
-  if (!Number.isFinite(amount) || amount < 0) {
-    message.textContent =
-      "Enter a valid balance.";
-
-    message.className =
-      "result bad";
-
-    return;
-  }
-
-  data.balance = amount;
-
-  localStorage.setItem(
-    KEY,
-    JSON.stringify(data)
-  );
-
-  render();
-
-  message.textContent =
-    "Balance saved.";
-
-  message.className =
-    "result good";
-}
-
-
-/* =========================================================
+/* =========================
    NAVIGATION
-========================================================= */
+========================= */
 
 document
   .querySelectorAll("[data-screen]")
   .forEach(btn => {
+
     btn.addEventListener("click", () => {
-      const s = btn.dataset.screen;
+
+      const s =
+        btn.dataset.screen;
 
       document
         .querySelectorAll(".screen")
@@ -358,74 +275,195 @@ document
   });
 
 
-/* =========================================================
+/* =========================
+   CURRENT BALANCE
+========================= */
+
+const balanceInput =
+  document.getElementById("balanceInput");
+
+const saveBalanceBtn =
+  document.getElementById("saveBalanceBtn");
+
+const balanceSaved =
+  document.getElementById("balanceSaved");
+
+
+if (balanceInput) {
+
+  balanceInput.value =
+    data.balance > 0
+      ? data.balance
+      : "";
+}
+
+
+if (saveBalanceBtn) {
+
+  saveBalanceBtn.addEventListener(
+    "click",
+    () => {
+
+      const raw =
+        balanceInput.value.trim();
+
+      if (raw === "") {
+
+        if (balanceSaved) {
+
+          balanceSaved.textContent =
+            "Enter your current balance.";
+
+          balanceSaved.className =
+            "result bad";
+        }
+
+        return;
+      }
+
+      const amount =
+        Number(raw);
+
+      if (
+        !Number.isFinite(amount) ||
+        amount < 0
+      ) {
+
+        if (balanceSaved) {
+
+          balanceSaved.textContent =
+            "Please enter a valid balance.";
+
+          balanceSaved.className =
+            "result bad";
+        }
+
+        return;
+      }
+
+      data.balance = amount;
+
+      localStorage.setItem(
+        KEY,
+        JSON.stringify(data)
+      );
+
+      render();
+
+      if (balanceSaved) {
+
+        balanceSaved.textContent =
+          "Balance saved.";
+
+        balanceSaved.className =
+          "result good";
+      }
+    }
+  );
+}
+
+
+/* =========================
    INCOME
-========================================================= */
+========================= */
 
 document
   .getElementById("incomeForm")
   .addEventListener("submit", e => {
+
     e.preventDefault();
 
     data.income.push({
+
       id: crypto.randomUUID(),
-      source: incomeSource.value,
-      amount: Number(incomeAmount.value),
-      date: incomeDate.value,
-      recurring: incomeRecurring.checked
+
+      source:
+        incomeSource.value,
+
+      amount:
+        Number(
+          incomeAmount.value
+        ),
+
+      date:
+        incomeDate.value,
+
+      recurring:
+        incomeRecurring.checked
     });
 
     e.target.reset();
 
-    incomeDate.value = today();
+    incomeDate.value =
+      today();
 
     save();
   });
 
 
-/* =========================================================
+/* =========================
    BILLS
-========================================================= */
+========================= */
 
 document
   .getElementById("billForm")
   .addEventListener("submit", e => {
+
     e.preventDefault();
 
     data.bills.push({
+
       id: crypto.randomUUID(),
-      name: billName.value,
-      amount: Number(billAmount.value),
-      date: billDate.value,
-      paid: billPaid.checked,
-      recurring: billRecurring.checked
+
+      name:
+        billName.value,
+
+      amount:
+        Number(
+          billAmount.value
+        ),
+
+      date:
+        billDate.value,
+
+      paid:
+        billPaid.checked,
+
+      recurring:
+        billRecurring.checked
     });
 
     e.target.reset();
 
-    billDate.value = today();
+    billDate.value =
+      today();
 
     save();
   });
 
 
-/* =========================================================
+/* =========================
    CAN I AFFORD THIS?
-   LEFT EXACTLY AS IT WAS
-========================================================= */
+========================= */
 
 document
   .getElementById("affordBtn")
   .addEventListener("click", () => {
 
-    const amount = Number(
-      document.getElementById("affordAmount").value
-    );
+    const amount =
+      Number(
+        document.getElementById(
+          "affordAmount"
+        ).value
+      );
 
     const result =
-      document.getElementById("affordResult");
+      document.getElementById(
+        "affordResult"
+      );
 
     if (!amount) {
+
       result.textContent =
         "Enter an amount to check.";
 
@@ -440,7 +478,11 @@ document
 
     result.className =
       "result " +
-      (after >= 0 ? "good" : "bad");
+      (
+        after >= 0
+          ? "good"
+          : "bad"
+      );
 
     result.textContent =
       after >= 0
@@ -453,15 +495,19 @@ document
   });
 
 
-/* =========================================================
+/* =========================
    RESET
-========================================================= */
+========================= */
 
 document
   .getElementById("resetBtn")
   .addEventListener("click", () => {
 
-    if (!confirm("Erase all demo data?")) return;
+    if (
+      !confirm(
+        "Erase all demo data?"
+      )
+    ) return;
 
     data = {
       balance: 0,
@@ -471,11 +517,25 @@ document
 
     localStorage.removeItem(KEY);
 
+    if (balanceInput) {
+      balanceInput.value = "";
+    }
+
+    if (balanceSaved) {
+      balanceSaved.textContent = "";
+      balanceSaved.className =
+        "result muted";
+    }
+
     const affordAmount =
-      document.getElementById("affordAmount");
+      document.getElementById(
+        "affordAmount"
+      );
 
     const affordResult =
-      document.getElementById("affordResult");
+      document.getElementById(
+        "affordResult"
+      );
 
     if (affordAmount) {
       affordAmount.value = "";
@@ -491,18 +551,19 @@ document
   });
 
 
-/* =========================================================
+/* =========================
    DATES
-========================================================= */
+========================= */
 
-incomeDate.value = today();
-billDate.value = today();
+incomeDate.value =
+  today();
+
+billDate.value =
+  today();
 
 
-/* =========================================================
-   START
-========================================================= */
-
-createBalanceEntry();
+/* =========================
+   INITIAL RENDER
+========================= */
 
 render();
