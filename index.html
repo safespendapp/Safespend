@@ -19,8 +19,8 @@
 
   <div class="brand-area">
 
-    <div class="brand-leaf">
-      <svg viewBox="0 0 50 50" aria-hidden="true">
+    <div class="brand-leaf" aria-hidden="true">
+      <svg viewBox="0 0 50 50">
         <path
           d="M24 43C24 30 27 19 38 9"
           fill="none"
@@ -40,7 +40,7 @@
       </svg>
     </div>
 
-    <div>
+    <div class="brand-copy">
       <div class="brand">SafeSpend</div>
       <div class="tagline">Know what you can safely spend.</div>
     </div>
@@ -53,8 +53,6 @@
 
 
 <main>
-
-<!-- ================= HOME ================= -->
 
 <section id="dashboard" class="screen active">
 
@@ -74,9 +72,6 @@
       </p>
 
     </div>
-
-
-    <!-- FOX CHARACTER -->
 
     <div class="fox-wrap">
 
@@ -177,19 +172,8 @@
           ry="10"
         />
 
-        <circle
-          class="fox-glint"
-          cx="94"
-          cy="87"
-          r="3"
-        />
-
-        <circle
-          class="fox-glint"
-          cx="136"
-          cy="87"
-          r="3"
-        />
+        <circle class="fox-glint" cx="94" cy="87" r="3"/>
+        <circle class="fox-glint" cx="136" cy="87" r="3"/>
 
         <path
           class="fox-brow"
@@ -250,33 +234,10 @@
           ry="13"
         />
 
-        <circle
-          class="paw-mark"
-          cx="74"
-          cy="201"
-          r="2"
-        />
-
-        <circle
-          class="paw-mark"
-          cx="81"
-          cy="199"
-          r="2"
-        />
-
-        <circle
-          class="paw-mark"
-          cx="139"
-          cy="199"
-          r="2"
-        />
-
-        <circle
-          class="paw-mark"
-          cx="146"
-          cy="201"
-          r="2"
-        />
+        <circle class="paw-mark" cx="74" cy="201" r="2"/>
+        <circle class="paw-mark" cx="81" cy="199" r="2"/>
+        <circle class="paw-mark" cx="139" cy="199" r="2"/>
+        <circle class="paw-mark" cx="146" cy="201" r="2"/>
 
       </svg>
 
@@ -287,8 +248,6 @@
 
   </div>
 
-
-  <!-- SAFE TO SPEND -->
 
   <div class="hero-card">
 
@@ -321,8 +280,6 @@
 
   </div>
 
-
-  <!-- SNAPSHOT -->
 
   <div class="section-heading">
 
@@ -380,7 +337,6 @@
       </div>
 
       <span>Current balance</span>
-
       <strong id="balanceOut">$0.00</strong>
 
     </div>
@@ -424,7 +380,6 @@
       </div>
 
       <span>Upcoming bills</span>
-
       <strong id="billsOut">$0.00</strong>
 
     </div>
@@ -432,12 +387,8 @@
   </div>
 
 
-  <!-- WARNING -->
-
   <div id="warning" class="notice hidden"></div>
 
-
-  <!-- AFFORD CARD -->
 
   <div class="card">
 
@@ -446,7 +397,6 @@
       <div>
 
         <div class="eyebrow">BEFORE YOU BUY</div>
-
         <h2>Can I afford this?</h2>
 
       </div>
@@ -462,7 +412,6 @@
     <div class="afford-row">
 
       <div class="money-input">
-
         <span>$</span>
 
         <input
@@ -472,12 +421,9 @@
           step="0.01"
           placeholder="Amount"
         >
-
       </div>
 
-      <button id="affordBtn">
-        Check
-      </button>
+      <button id="affordBtn">Check</button>
 
     </div>
 
@@ -488,157 +434,51 @@
   </div>
 
 
-  <!-- FOX MESSAGE -->
-
   <div class="fox-message">
 
     <div class="mini-fox-holder">
 
-      <svg
-        class="mini-fox"
-        viewBox="0 0 220 230"
-        aria-hidden="true"
-      >
+      <svg class="mini-fox" viewBox="0 0 220 230" aria-hidden="true">
 
-        <path
-          class="fox-fur"
-          d="M153 174
-             C205 160 210 111 176 101
-             C185 128 165 145 137 145Z"
-        />
+        <path class="fox-fur"
+          d="M153 174C205 160 210 111 176 101C185 128 165 145 137 145Z"/>
 
-        <ellipse
-          class="fox-fur"
-          cx="111"
-          cy="164"
-          rx="55"
-          ry="51"
-        />
+        <ellipse class="fox-fur"
+          cx="111" cy="164" rx="55" ry="51"/>
 
-        <path
-          class="fox-cream"
-          d="M79 145
-             C79 184 96 204 113 204
-             C132 202 145 181 143 143
-             C124 155 97 156 79 145Z"
-        />
+        <path class="fox-cream"
+          d="M79 145C79 184 96 204 113 204C132 202 145 181 143 143C124 155 97 156 79 145Z"/>
 
-        <path
-          class="fox-fur"
-          d="M73 86L58 30L99 62Z"
-        />
+        <path class="fox-fur" d="M73 86L58 30L99 62Z"/>
+        <path class="fox-fur" d="M125 62L166 30L151 88Z"/>
 
-        <path
-          class="fox-fur"
-          d="M125 62L166 30L151 88Z"
-        />
+        <path class="fox-ear-inner" d="M72 72L66 45L87 64Z"/>
+        <path class="fox-ear-inner" d="M135 64L157 45L150 73Z"/>
 
-        <path
-          class="fox-ear-inner"
-          d="M72 72L66 45L87 64Z"
-        />
+        <path class="fox-fur"
+          d="M65 89C66 57 86 42 112 42C140 42 160 59 160 91C160 124 140 144 112 145C83 144 63 123 65 89Z"/>
 
-        <path
-          class="fox-ear-inner"
-          d="M135 64L157 45L150 73Z"
-        />
+        <ellipse class="fox-cream" cx="87" cy="105" rx="28" ry="25"/>
+        <ellipse class="fox-cream" cx="137" cy="105" rx="28" ry="25"/>
 
-        <path
-          class="fox-fur"
-          d="M65 89
-             C66 57 86 42 112 42
-             C140 42 160 59 160 91
-             C160 124 140 144 112 145
-             C83 144 63 123 65 89Z"
-        />
+        <path class="fox-muzzle"
+          d="M88 105C91 91 103 88 112 99C121 88 134 91 137 105C135 121 125 130 112 130C99 130 89 121 88 105Z"/>
 
-        <ellipse
-          class="fox-cream"
-          cx="87"
-          cy="105"
-          rx="28"
-          ry="25"
-        />
+        <ellipse class="fox-eye" cx="91" cy="91" rx="8" ry="10"/>
+        <ellipse class="fox-eye" cx="133" cy="91" rx="8" ry="10"/>
 
-        <ellipse
-          class="fox-cream"
-          cx="137"
-          cy="105"
-          rx="28"
-          ry="25"
-        />
+        <circle class="fox-glint" cx="94" cy="87" r="3"/>
+        <circle class="fox-glint" cx="136" cy="87" r="3"/>
 
-        <path
-          class="fox-muzzle"
-          d="M88 105
-             C91 91 103 88 112 99
-             C121 88 134 91 137 105
-             C135 121 125 130 112 130
-             C99 130 89 121 88 105Z"
-        />
+        <ellipse class="fox-nose" cx="112" cy="105" rx="7" ry="5"/>
 
-        <ellipse
-          class="fox-eye"
-          cx="91"
-          cy="91"
-          rx="8"
-          ry="10"
-        />
+        <path class="fox-smile" d="M112 109C109 116 103 119 98 117"/>
+        <path class="fox-smile" d="M112 109C115 116 121 119 126 117"/>
 
-        <ellipse
-          class="fox-eye"
-          cx="133"
-          cy="91"
-          rx="8"
-          ry="10"
-        />
+        <path class="fox-scarf"
+          d="M77 133C98 145 128 145 148 132L144 151C124 162 99 161 81 151Z"/>
 
-        <circle
-          class="fox-glint"
-          cx="94"
-          cy="87"
-          r="3"
-        />
-
-        <circle
-          class="fox-glint"
-          cx="136"
-          cy="87"
-          r="3"
-        />
-
-        <ellipse
-          class="fox-nose"
-          cx="112"
-          cy="105"
-          rx="7"
-          ry="5"
-        />
-
-        <path
-          class="fox-smile"
-          d="M112 109
-             C109 116 103 119 98 117"
-        />
-
-        <path
-          class="fox-smile"
-          d="M112 109
-             C115 116 121 119 126 117"
-        />
-
-        <path
-          class="fox-scarf"
-          d="M77 133
-             C98 145 128 145 148 132
-             L144 151
-             C124 162 99 161 81 151Z"
-        />
-
-        <path
-          class="fox-scarf"
-          d="M132 150L158 187L134 174Z"
-        />
+        <path class="fox-scarf" d="M132 150L158 187L134 174Z"/>
 
       </svg>
 
@@ -659,8 +499,6 @@
   </div>
 
 
-  <!-- NEXT BILLS -->
-
   <div class="section-heading">
 
     <div class="section-row">
@@ -668,15 +506,11 @@
       <div>
 
         <div class="eyebrow">COMING UP</div>
-
         <h2>Next bills</h2>
 
       </div>
 
-      <button
-        class="textbtn"
-        data-screen="bills"
-      >
+      <button class="textbtn" data-screen="bills">
         View all
       </button>
 
@@ -689,195 +523,105 @@
 </section>
 
 
-<!-- ================= INCOME ================= -->
-
 <section id="income" class="screen">
 
   <div class="section-title">
 
     <div class="eyebrow">MONEY COMING IN</div>
-
     <h1>Income</h1>
-
     <p>Add money you expect to receive.</p>
 
   </div>
-
 
   <form id="incomeForm" class="card form">
 
     <label>
       Source
-
-      <input
-        id="incomeSource"
-        required
-        placeholder="Paycheck, VA, BAH, etc."
-      >
-
+      <input id="incomeSource" required placeholder="Paycheck, VA, BAH, etc.">
     </label>
-
 
     <label>
       Amount
-
-      <input
-        id="incomeAmount"
-        required
-        type="number"
-        min="0"
-        step="0.01"
-      >
-
+      <input id="incomeAmount" required type="number" min="0" step="0.01">
     </label>
-
 
     <label>
       Date
-
-      <input
-        id="incomeDate"
-        required
-        type="date"
-      >
-
+      <input id="incomeDate" required type="date">
     </label>
-
 
     <label class="check">
-
-      <input
-        id="incomeRecurring"
-        type="checkbox"
-      >
-
+      <input id="incomeRecurring" type="checkbox">
       Repeats monthly
-
     </label>
 
-
-    <button class="primary-btn">
-      Add income
-    </button>
+    <button class="primary-btn">Add income</button>
 
   </form>
-
 
   <div id="incomeList"></div>
 
 </section>
 
 
-<!-- ================= BILLS ================= -->
-
 <section id="bills" class="screen">
 
   <div class="section-title">
 
     <div class="eyebrow">MONEY GOING OUT</div>
-
     <h1>Bills</h1>
-
     <p>Track what must be paid and when.</p>
 
   </div>
-
 
   <form id="billForm" class="card form">
 
     <label>
       Bill name
-
-      <input
-        id="billName"
-        required
-        placeholder="Rent, electric, internet..."
-      >
-
+      <input id="billName" required placeholder="Rent, electric, internet...">
     </label>
-
 
     <label>
       Amount
-
-      <input
-        id="billAmount"
-        required
-        type="number"
-        min="0"
-        step="0.01"
-      >
-
+      <input id="billAmount" required type="number" min="0" step="0.01">
     </label>
-
 
     <label>
       Due date
-
-      <input
-        id="billDate"
-        required
-        type="date"
-      >
-
+      <input id="billDate" required type="date">
     </label>
 
-
     <label class="check">
-
-      <input
-        id="billPaid"
-        type="checkbox"
-      >
-
+      <input id="billPaid" type="checkbox">
       Already paid
-
     </label>
-
 
     <label class="check">
-
-      <input
-        id="billRecurring"
-        type="checkbox"
-      >
-
+      <input id="billRecurring" type="checkbox">
       Repeats monthly
-
     </label>
 
-
-    <button class="primary-btn">
-      Add bill
-    </button>
+    <button class="primary-btn">Add bill</button>
 
   </form>
-
 
   <div id="billList"></div>
 
 </section>
 
 
-<!-- ================= CALENDAR ================= -->
-
 <section id="calendar" class="screen">
 
   <div class="section-title">
 
     <div class="eyebrow">YOUR MONEY TIMELINE</div>
-
     <h1>Calendar</h1>
-
     <p>See income and bills together.</p>
 
   </div>
 
-
   <div class="card">
-
     <div id="calendarList"></div>
-
   </div>
 
 </section>
@@ -885,177 +629,71 @@
 </main>
 
 
-<!-- ================= NAVIGATION ================= -->
-
 <nav class="nav">
 
-  <button
-    class="navbtn active"
-    data-screen="dashboard"
-  >
-
+  <button class="navbtn active" data-screen="dashboard">
     <span class="nav-icon">
-
       <svg viewBox="0 0 40 40" aria-hidden="true">
-
-        <path
-          d="M7 19L20 8L33 19"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.6"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-
-        <path
-          d="M10 18V32H30V18"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.6"
-          stroke-linejoin="round"
-        />
-
-        <path
-          d="M16 32V23H24V32"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.6"
-        />
-
+        <path d="M7 19L20 8L33 19"
+          fill="none" stroke="currentColor" stroke-width="1.6"
+          stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 18V32H30V18"
+          fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M16 32V23H24V32"
+          fill="none" stroke="currentColor" stroke-width="1.6"/>
       </svg>
-
     </span>
-
     <span>Home</span>
-
   </button>
 
 
-  <button
-    class="navbtn"
-    data-screen="income"
-  >
-
+  <button class="navbtn" data-screen="income">
     <span class="nav-icon">
-
       <svg viewBox="0 0 40 40" aria-hidden="true">
-
-        <rect
-          x="6"
-          y="10"
-          width="28"
-          height="20"
-          rx="5"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.6"
-        />
-
-        <circle
-          cx="20"
-          cy="20"
-          r="4"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.6"
-        />
-
-        <path
-          d="M10 7H30"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.6"
-          stroke-linecap="round"
-        />
-
+        <rect x="6" y="10" width="28" height="20" rx="5"
+          fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="20" cy="20" r="4"
+          fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M10 7H30"
+          fill="none" stroke="currentColor" stroke-width="1.6"
+          stroke-linecap="round"/>
       </svg>
-
     </span>
-
     <span>Income</span>
-
   </button>
 
 
-  <button
-    class="navbtn"
-    data-screen="bills"
-  >
-
+  <button class="navbtn" data-screen="bills">
     <span class="nav-icon">
-
       <svg viewBox="0 0 40 40" aria-hidden="true">
-
-        <rect
-          x="9"
-          y="5"
-          width="22"
-          height="30"
-          rx="4"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.6"
-        />
-
-        <path
-          d="M14 13H26M14 19H26M14 25H22"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.6"
-          stroke-linecap="round"
-        />
-
+        <rect x="9" y="5" width="22" height="30" rx="4"
+          fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M14 13H26M14 19H26M14 25H22"
+          fill="none" stroke="currentColor" stroke-width="1.6"
+          stroke-linecap="round"/>
       </svg>
-
     </span>
-
     <span>Bills</span>
-
   </button>
 
 
-  <button
-    class="navbtn"
-    data-screen="calendar"
-  >
-
+  <button class="navbtn" data-screen="calendar">
     <span class="nav-icon">
-
       <svg viewBox="0 0 40 40" aria-hidden="true">
-
-        <rect
-          x="7"
-          y="9"
-          width="26"
-          height="25"
-          rx="4"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.6"
-        />
-
-        <path
-          d="M13 6V12M27 6V12M7 16H33"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.6"
-          stroke-linecap="round"
-        />
-
+        <rect x="7" y="9" width="26" height="25" rx="4"
+          fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M13 6V12M27 6V12M7 16H33"
+          fill="none" stroke="currentColor" stroke-width="1.6"
+          stroke-linecap="round"/>
         <circle cx="14" cy="22" r="1.5" fill="currentColor"/>
         <circle cx="20" cy="22" r="1.5" fill="currentColor"/>
         <circle cx="26" cy="22" r="1.5" fill="currentColor"/>
-
         <circle cx="14" cy="28" r="1.5" fill="currentColor"/>
         <circle cx="20" cy="28" r="1.5" fill="currentColor"/>
         <circle cx="26" cy="28" r="1.5" fill="currentColor"/>
-
       </svg>
-
     </span>
-
     <span>Calendar</span>
-
   </button>
 
 </nav>
