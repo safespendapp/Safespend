@@ -28,7 +28,7 @@ const save = () => {
 
 
 /* =========================
-   UPCOMING DATA
+   UPCOMING BILLS
 ========================= */
 
 function upcomingBills() {
@@ -42,6 +42,11 @@ function upcomingBills() {
       a.date.localeCompare(b.date)
     );
 }
+
+
+/* =========================
+   UPCOMING INCOME
+========================= */
 
 function upcomingIncome() {
   return data.income
@@ -96,7 +101,7 @@ function render() {
   const balanceValue =
     Number(data.balance) || 0;
 
-  const upcomingBillsValue =
+  const billsValue =
     bills.reduce(
       (total, bill) =>
         total + (Number(bill.amount) || 0),
@@ -104,35 +109,40 @@ function render() {
     );
 
 
+  /* SAFE TO SPEND */
+
   const safeSpendEl =
     document.getElementById("safeSpend");
-
-  const balanceEl =
-    document.getElementById("balanceOut");
-
-  const billsEl =
-    document.getElementById("billsOut");
-
 
   if (safeSpendEl) {
     safeSpendEl.textContent =
       money(safe);
   }
 
+
+  /* CURRENT BALANCE */
+
+  const balanceEl =
+    document.getElementById("balanceOut");
+
   if (balanceEl) {
     balanceEl.textContent =
       money(balanceValue);
   }
 
+
+  /* UPCOMING BILLS */
+
+  const billsEl =
+    document.getElementById("billsOut");
+
   if (billsEl) {
     billsEl.textContent =
-      money(upcomingBillsValue);
+      money(billsValue);
   }
 
 
-  /* =========================
-     SAFE SPEND NOTE
-  ========================= */
+  /* SAFE NOTE */
 
   const note =
     document.getElementById("safeNote");
@@ -146,9 +156,7 @@ function render() {
   }
 
 
-  /* =========================
-     WARNING
-  ========================= */
+  /* WARNING */
 
   const warning =
     document.getElementById("warning");
@@ -169,9 +177,7 @@ function render() {
   }
 
 
-  /* =========================
-     NEXT BILLS
-  ========================= */
+  /* NEXT BILLS */
 
   const nextBills =
     document.getElementById("nextBills");
@@ -189,9 +195,7 @@ function render() {
   }
 
 
-  /* =========================
-     INCOME LIST
-  ========================= */
+  /* INCOME */
 
   const incomeList =
     document.getElementById("incomeList");
@@ -209,9 +213,7 @@ function render() {
   }
 
 
-  /* =========================
-     BILL LIST
-  ========================= */
+  /* BILLS */
 
   const billList =
     document.getElementById("billList");
@@ -232,11 +234,10 @@ function render() {
   }
 
 
-  /* =========================
-     CALENDAR
-  ========================= */
+  /* CALENDAR */
 
   const events = [
+
     ...data.income.map(x => ({
       ...x,
       type: "Income"
@@ -248,6 +249,7 @@ function render() {
         ? "Paid bill"
         : "Bill"
     }))
+
   ].sort((a, b) =>
     a.date.localeCompare(b.date)
   );
@@ -259,93 +261,102 @@ function render() {
 
     calendarList.innerHTML =
       events.length
+
         ? events
             .map(
               x =>
                 `<div class="item">
+
                   <div>
-                    <div class="item-title">${x.type}: ${esc(
-                  x.name || x.source
-                )}</div>
+
+                    <div class="item-title">
+                      ${x.type}: ${esc(
+                        x.name || x.source
+                      )}
+                    </div>
 
                     <div class="item-sub">
                       ${dateText(x.date)}
                     </div>
+
                   </div>
 
                   <strong>
                     ${money(x.amount)}
                   </strong>
+
                 </div>`
             )
             .join("")
+
         : '<div class="empty">Add income or bills to see your calendar.</div>';
   }
 }
 
 
 /* =========================
-   CURRENT BALANCE
-   TAP THE BALANCE CARD
+   BALANCE INPUT
 ========================= */
 
-const balanceOutput =
-  document.getElementById("balanceOut");
+const balanceCard =
+  document
+    .getElementById("balanceOut")
+    ?.closest(".money-card");
 
-if (balanceOutput) {
+if (balanceCard) {
 
-  const balanceCard =
-    balanceOutput.closest(".money-card");
+  const balanceInput =
+    document.createElement("input");
 
-  if (balanceCard) {
+  balanceInput.type = "number";
+  balanceInput.min = "0";
+  balanceInput.step = "0.01";
+  balanceInput.placeholder =
+    "Enter current balance";
 
-    balanceCard.style.cursor = "pointer";
+  balanceInput.value =
+    data.balance || "";
 
-    balanceCard.addEventListener(
-      "click",
-      () => {
+  balanceInput.className =
+    "balance-input";
 
-        const current =
-          Number(data.balance) || 0;
+  balanceInput.addEventListener(
+    "input",
+    () => {
 
-        const entered =
-          prompt(
-            "What is your current bank balance?",
-            current ? current : ""
-          );
+      data.balance =
+        Number(balanceInput.value) || 0;
 
-        if (
-          entered === null
-        ) {
-          return;
-        }
+      localStorage.setItem(
+        KEY,
+        JSON.stringify(data)
+      );
 
-        const cleaned =
-          entered
-            .replace(/[$,\s]/g, "");
+      const balanceEl =
+        document.getElementById(
+          "balanceOut"
+        );
 
-        const newBalance =
-          Number(cleaned);
-
-        if (
-          cleaned === "" ||
-          !Number.isFinite(newBalance)
-        ) {
-
-          alert(
-            "Please enter a valid dollar amount."
-          );
-
-          return;
-        }
-
-        data.balance =
-          newBalance;
-
-        save();
+      if (balanceEl) {
+        balanceEl.textContent =
+          money(data.balance);
       }
-    );
-  }
+
+      const safeEl =
+        document.getElementById(
+          "safeSpend"
+        );
+
+      if (safeEl) {
+        safeEl.textContent =
+          money(safeSpend());
+      }
+    }
+  );
+
+  balanceCard.appendChild(
+    balanceInput
+  );
 }
 
 
@@ -381,9 +392,11 @@ function itemHTML(x, type) {
 
   const status =
     type === "bill"
+
       ? x.paid
         ? '<span class="pill paid">Paid</span>'
         : '<span class="pill">Due</span>'
+
       : '<span class="pill">Income</span>';
 
   return `
@@ -466,12 +479,9 @@ document
             x.classList.remove("active")
           );
 
-        const screen =
-          document.getElementById(s);
-
-        if (screen) {
-          screen.classList.add("active");
-        }
+        document
+          .getElementById(s)
+          ?.classList.add("active");
 
         document
           .querySelectorAll(".navbtn")
