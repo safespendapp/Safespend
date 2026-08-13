@@ -60,17 +60,20 @@ function upcomingIncome() {
 ========================= */
 
 function safeSpend() {
-  const billsTotal = upcomingBills().reduce(
-    (total, bill) =>
-      total + (Number(bill.amount) || 0),
-    0
-  );
 
-  const incomeTotal = upcomingIncome().reduce(
-    (total, income) =>
-      total + (Number(income.amount) || 0),
-    0
-  );
+  const billsTotal =
+    upcomingBills().reduce(
+      (total, bill) =>
+        total + (Number(bill.amount) || 0),
+      0
+    );
+
+  const incomeTotal =
+    upcomingIncome().reduce(
+      (total, income) =>
+        total + (Number(income.amount) || 0),
+      0
+    );
 
   return (
     (Number(data.balance) || 0) +
@@ -90,14 +93,6 @@ function render() {
   const inc = upcomingIncome();
   const safe = safeSpend();
 
-  /*
-    SNAPSHOT VALUES
-
-    These are deliberately calculated fresh every
-    time render() runs so the dashboard cannot
-    remain stuck at $0.00 after adding data.
-  */
-
   const balanceValue =
     Number(data.balance) || 0;
 
@@ -108,6 +103,7 @@ function render() {
       0
     );
 
+
   const safeSpendEl =
     document.getElementById("safeSpend");
 
@@ -116,6 +112,7 @@ function render() {
 
   const billsEl =
     document.getElementById("billsOut");
+
 
   if (safeSpendEl) {
     safeSpendEl.textContent =
@@ -141,6 +138,7 @@ function render() {
     document.getElementById("safeNote");
 
   if (note) {
+
     note.textContent =
       safe >= 0
         ? "This is your projected amount after upcoming bills."
@@ -287,10 +285,76 @@ function render() {
 
 
 /* =========================
+   CURRENT BALANCE
+   TAP THE BALANCE CARD
+========================= */
+
+const balanceOutput =
+  document.getElementById("balanceOut");
+
+if (balanceOutput) {
+
+  const balanceCard =
+    balanceOutput.closest(".money-card");
+
+  if (balanceCard) {
+
+    balanceCard.style.cursor = "pointer";
+
+    balanceCard.addEventListener(
+      "click",
+      () => {
+
+        const current =
+          Number(data.balance) || 0;
+
+        const entered =
+          prompt(
+            "What is your current bank balance?",
+            current ? current : ""
+          );
+
+        if (
+          entered === null
+        ) {
+          return;
+        }
+
+        const cleaned =
+          entered
+            .replace(/[$,\s]/g, "");
+
+        const newBalance =
+          Number(cleaned);
+
+        if (
+          cleaned === "" ||
+          !Number.isFinite(newBalance)
+        ) {
+
+          alert(
+            "Please enter a valid dollar amount."
+          );
+
+          return;
+        }
+
+        data.balance =
+          newBalance;
+
+        save();
+      }
+    );
+  }
+}
+
+
+/* =========================
    ESCAPE HTML
 ========================= */
 
 function esc(s) {
+
   return String(s).replace(
     /[&<>"']/g,
     m => ({
@@ -651,24 +715,7 @@ document.getElementById(
 
 
 /* =========================
-   CURRENT BALANCE
+   INITIAL DISPLAY
 ========================= */
 
-const balance = prompt(
-  "SafeSpend demo: enter your current bank balance (or Cancel for $0):"
-);
-
-if (
-  balance !== null &&
-  balance.trim() !== ""
-) {
-
-  data.balance =
-    Number(balance) || 0;
-
-  save();
-
-} else {
-
-  render();
-}
+render();
