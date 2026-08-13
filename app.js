@@ -27,10 +27,6 @@ const save = () => {
 };
 
 
-/* =========================
-   UPCOMING BILLS
-========================= */
-
 function upcomingBills() {
   return data.bills
     .filter(b =>
@@ -44,10 +40,6 @@ function upcomingBills() {
 }
 
 
-/* =========================
-   UPCOMING INCOME
-========================= */
-
 function upcomingIncome() {
   return data.income
     .filter(i =>
@@ -60,37 +52,29 @@ function upcomingIncome() {
 }
 
 
-/* =========================
-   SAFE TO SPEND
-========================= */
-
 function safeSpend() {
 
-  const billsTotal =
+  const bills =
     upcomingBills().reduce(
       (total, bill) =>
         total + (Number(bill.amount) || 0),
       0
     );
 
-  const incomeTotal =
+  const income =
     upcomingIncome().reduce(
-      (total, income) =>
-        total + (Number(income.amount) || 0),
+      (total, item) =>
+        total + (Number(item.amount) || 0),
       0
     );
 
   return (
     (Number(data.balance) || 0) +
-    incomeTotal -
-    billsTotal
+    income -
+    bills
   );
 }
 
-
-/* =========================
-   RENDER
-========================= */
 
 function render() {
 
@@ -98,10 +82,10 @@ function render() {
   const inc = upcomingIncome();
   const safe = safeSpend();
 
-  const balanceValue =
+  const balance =
     Number(data.balance) || 0;
 
-  const billsValue =
+  const billsTotal =
     bills.reduce(
       (total, bill) =>
         total + (Number(bill.amount) || 0),
@@ -109,40 +93,44 @@ function render() {
     );
 
 
-  /* SAFE TO SPEND */
-
-  const safeSpendEl =
+  const safeEl =
     document.getElementById("safeSpend");
 
-  if (safeSpendEl) {
-    safeSpendEl.textContent =
+  if (safeEl) {
+    safeEl.textContent =
       money(safe);
   }
 
-
-  /* CURRENT BALANCE */
 
   const balanceEl =
     document.getElementById("balanceOut");
 
   if (balanceEl) {
     balanceEl.textContent =
-      money(balanceValue);
+      money(balance);
   }
 
-
-  /* UPCOMING BILLS */
 
   const billsEl =
     document.getElementById("billsOut");
 
   if (billsEl) {
     billsEl.textContent =
-      money(billsValue);
+      money(billsTotal);
   }
 
 
-  /* SAFE NOTE */
+  const balanceInput =
+    document.getElementById("balanceInput");
+
+  if (
+    balanceInput &&
+    document.activeElement !== balanceInput
+  ) {
+    balanceInput.value =
+      balance ? balance : "";
+  }
+
 
   const note =
     document.getElementById("safeNote");
@@ -155,8 +143,6 @@ function render() {
         : "Your upcoming bills are more than your available money.";
   }
 
-
-  /* WARNING */
 
   const warning =
     document.getElementById("warning");
@@ -177,8 +163,6 @@ function render() {
   }
 
 
-  /* NEXT BILLS */
-
   const nextBills =
     document.getElementById("nextBills");
 
@@ -195,8 +179,6 @@ function render() {
   }
 
 
-  /* INCOME */
-
   const incomeList =
     document.getElementById("incomeList");
 
@@ -212,8 +194,6 @@ function render() {
         : '<div class="card empty">No upcoming income yet.</div>';
   }
 
-
-  /* BILLS */
 
   const billList =
     document.getElementById("billList");
@@ -234,10 +214,7 @@ function render() {
   }
 
 
-  /* CALENDAR */
-
   const events = [
-
     ...data.income.map(x => ({
       ...x,
       type: "Income"
@@ -249,10 +226,10 @@ function render() {
         ? "Paid bill"
         : "Bill"
     }))
-
   ].sort((a, b) =>
     a.date.localeCompare(b.date)
   );
+
 
   const calendarList =
     document.getElementById("calendarList");
@@ -266,9 +243,7 @@ function render() {
             .map(
               x =>
                 `<div class="item">
-
                   <div>
-
                     <div class="item-title">
                       ${x.type}: ${esc(
                         x.name || x.source
@@ -278,13 +253,11 @@ function render() {
                     <div class="item-sub">
                       ${dateText(x.date)}
                     </div>
-
                   </div>
 
                   <strong>
                     ${money(x.amount)}
                   </strong>
-
                 </div>`
             )
             .join("")
@@ -295,69 +268,59 @@ function render() {
 
 
 /* =========================
-   BALANCE INPUT
+   SAVE CURRENT BALANCE
 ========================= */
 
-const balanceCard =
-  document
-    .getElementById("balanceOut")
-    ?.closest(".money-card");
-
-if (balanceCard) {
-
-  const balanceInput =
-    document.createElement("input");
-
-  balanceInput.type = "number";
-  balanceInput.min = "0";
-  balanceInput.step = "0.01";
-  balanceInput.placeholder =
-    "Enter current balance";
-
-  balanceInput.value =
-    data.balance || "";
-
-  balanceInput.className =
-    "balance-input";
-
-  balanceInput.addEventListener(
-    "input",
+document
+  .getElementById("saveBalanceBtn")
+  .addEventListener(
+    "click",
     () => {
 
-      data.balance =
-        Number(balanceInput.value) || 0;
+      const input =
+        document.getElementById(
+          "balanceInput"
+        );
+
+      const saved =
+        document.getElementById(
+          "balanceSaved"
+        );
+
+      const value =
+        Number(input.value);
+
+      if (
+        input.value.trim() === "" ||
+        !Number.isFinite(value) ||
+        value < 0
+      ) {
+
+        saved.textContent =
+          "Please enter a valid balance.";
+
+        saved.className =
+          "result bad";
+
+        return;
+      }
+
+      data.balance = value;
 
       localStorage.setItem(
         KEY,
         JSON.stringify(data)
       );
 
-      const balanceEl =
-        document.getElementById(
-          "balanceOut"
-        );
+      render();
 
-      if (balanceEl) {
-        balanceEl.textContent =
-          money(data.balance);
-      }
+      saved.textContent =
+        "Balance saved.";
 
-      const safeEl =
-        document.getElementById(
-          "safeSpend"
-        );
-
-      if (safeEl) {
-        safeEl.textContent =
-          money(safeSpend());
-      }
+      saved.className =
+        "result good";
     }
   );
-
-  balanceCard.appendChild(
-    balanceInput
-  );
-}
 
 
 /* =========================
@@ -470,7 +433,7 @@ document
       "click",
       () => {
 
-        const s =
+        const screen =
           btn.dataset.screen;
 
         document
@@ -480,7 +443,7 @@ document
           );
 
         document
-          .getElementById(s)
+          .getElementById(screen)
           ?.classList.add("active");
 
         document
@@ -488,7 +451,7 @@ document
           .forEach(x =>
             x.classList.toggle(
               "active",
-              x.dataset.screen === s
+              x.dataset.screen === screen
             )
           );
       }
@@ -683,6 +646,16 @@ document
 
       localStorage.removeItem(KEY);
 
+      const balanceInput =
+        document.getElementById(
+          "balanceInput"
+        );
+
+      const balanceSaved =
+        document.getElementById(
+          "balanceSaved"
+        );
+
       const affordAmount =
         document.getElementById(
           "affordAmount"
@@ -693,15 +666,22 @@ document
           "affordResult"
         );
 
+      if (balanceInput) {
+        balanceInput.value = "";
+      }
+
+      if (balanceSaved) {
+        balanceSaved.textContent = "";
+        balanceSaved.className =
+          "result muted";
+      }
+
       if (affordAmount) {
         affordAmount.value = "";
       }
 
       if (affordResult) {
-
-        affordResult.textContent =
-          "";
-
+        affordResult.textContent = "";
         affordResult.className =
           "result muted";
       }
