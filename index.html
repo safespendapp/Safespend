@@ -2,15 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta
-    name="viewport"
-    content="width=device-width,initial-scale=1,viewport-fit=cover"
-  >
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#718774">
-  <meta
-    name="description"
-    content="SafeSpend — know what you can safely spend."
-  >
+  <meta name="description" content="SafeSpend — know what you can safely spend.">
   <title>SafeSpend — Know what you can safely spend.</title>
 
   <link rel="manifest" href="manifest.json">
@@ -24,75 +18,22 @@
   <div class="brand-area">
 
     <div class="brand-leaf">
-      <svg viewBox="0 0 60 60" aria-hidden="true">
-
-        <!-- graceful botanical stem -->
-        <path
-          d="M18 51C20 39 27 27 43 11"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-        />
-
-        <!-- left leaf -->
-        <path
-          d="M27 35C18 34 11 28 11 18
-             C21 18 28 24 27 35Z"
-          fill="currentColor"
-        />
-
-        <!-- upper leaf -->
-        <path
-          d="M30 27C30 17 36 10 48 9
-             C47 20 41 27 30 27Z"
-          fill="currentColor"
-          opacity=".82"
-        />
-
-        <!-- small lower leaf -->
-        <path
-          d="M22 43C15 42 11 38 11 32
-             C18 32 23 36 22 43Z"
-          fill="currentColor"
-          opacity=".55"
-        />
-
-        <!-- fine leaf veins -->
-        <path
-          d="M15 21C19 24 22 27 25 31"
-          fill="none"
-          stroke="#faf8f2"
-          stroke-width=".9"
-          opacity=".35"
-        />
-
-        <path
-          d="M45 13C40 17 36 21 32 25"
-          fill="none"
-          stroke="#faf8f2"
-          stroke-width=".9"
-          opacity=".35"
-        />
-
+      <svg viewBox="0 0 70 70" aria-hidden="true">
+        <path class="leaf-stem" d="M35 61C35 42 39 25 56 10"/>
+        <path class="leaf-main" d="M38 42C25 41 15 33 16 20C29 20 39 28 38 42Z"/>
+        <path class="leaf-main leaf-soft" d="M40 34C41 21 49 12 61 12C60 25 51 34 40 34Z"/>
+        <path class="leaf-main leaf-light" d="M35 51C25 48 19 42 19 34C28 35 34 41 35 51Z"/>
       </svg>
     </div>
 
     <div>
       <div class="brand">SafeSpend</div>
-      <div class="tagline">
-        Know what you can safely spend.
-      </div>
+      <div class="tagline">Know what you can safely spend.</div>
     </div>
 
   </div>
 
-  <button
-    id="resetBtn"
-    class="ghost small"
-  >
-    Reset
-  </button>
+  <button id="resetBtn" class="ghost small">Reset</button>
 
 </header>
 
@@ -101,18 +42,13 @@
 
 <!-- ================= HOME ================= -->
 
-<section
-  id="dashboard"
-  class="screen active"
->
+<section id="dashboard" class="screen active">
 
   <div class="welcome">
 
     <div class="welcome-copy">
 
-      <div class="eyebrow">
-        A CALMER WAY TO MANAGE MONEY
-      </div>
+      <div class="eyebrow">A CALMER WAY TO MANAGE MONEY</div>
 
       <h1>
         Spend with<br>
@@ -126,226 +62,155 @@
     </div>
 
 
-    <!-- FOX CHARACTER -->
+    <!-- BOTANICAL FOX -->
 
     <div class="fox-wrap">
 
       <div class="fox-glow"></div>
 
-      <svg
-        class="fox"
-        viewBox="0 0 220 230"
-        aria-label="SafeSpend fox"
-      >
+      <svg class="fox" viewBox="0 0 220 230" aria-label="SafeSpend fox">
 
-        <path
-          class="fox-fur"
+        <path class="fox-fur"
           d="M153 174
              C205 160 210 111 176 101
-             C185 128 165 145 137 145Z"
-        />
+             C185 128 165 145 137 145Z"/>
 
-        <ellipse
-          class="fox-fur"
-          cx="111"
-          cy="164"
-          rx="55"
-          ry="51"
-        />
+        <ellipse class="fox-fur"
+          cx="111" cy="164" rx="55" ry="51"/>
 
-        <path
-          class="fox-cream"
+        <path class="fox-cream"
           d="M79 145
              C79 184 96 204 113 204
              C132 202 145 181 143 143
-             C124 155 97 156 79 145Z"
-        />
+             C124 155 97 156 79 145Z"/>
 
-        <path
-          class="fox-fur"
-          d="M73 86L58 30L99 62Z"
-        />
+        <path class="fox-fur"
+          d="M73 86L58 30L99 62Z"/>
 
-        <path
-          class="fox-fur"
-          d="M125 62L166 30L151 88Z"
-        />
+        <path class="fox-fur"
+          d="M125 62L166 30L151 88Z"/>
 
-        <path
-          class="fox-ear-inner"
-          d="M72 72L66 45L87 64Z"
-        />
+        <path class="fox-ear-inner"
+          d="M72 72L66 45L87 64Z"/>
 
-        <path
-          class="fox-ear-inner"
-          d="M135 64L157 45L150 73Z"
-        />
+        <path class="fox-ear-inner"
+          d="M135 64L157 45L150 73Z"/>
 
-        <path
-          class="fox-fur"
+        <path class="fox-fur"
           d="M65 89
              C66 57 86 42 112 42
              C140 42 160 59 160 91
              C160 124 140 144 112 145
-             C83 144 63 123 65 89Z"
-        />
+             C83 144 63 123 65 89Z"/>
 
-        <ellipse
-          class="fox-cream"
-          cx="87"
-          cy="105"
-          rx="28"
-          ry="25"
-        />
+        <ellipse class="fox-cream"
+          cx="87" cy="105" rx="28" ry="25"/>
 
-        <ellipse
-          class="fox-cream"
-          cx="137"
-          cy="105"
-          rx="28"
-          ry="25"
-        />
+        <ellipse class="fox-cream"
+          cx="137" cy="105" rx="28" ry="25"/>
 
-        <path
-          class="fox-muzzle"
+        <path class="fox-muzzle"
           d="M88 105
              C91 91 103 88 112 99
              C121 88 134 91 137 105
              C135 121 125 130 112 130
-             C99 130 89 121 88 105Z"
-        />
+             C99 130 89 121 88 105Z"/>
 
-        <ellipse
-          class="fox-eye"
-          cx="91"
-          cy="91"
-          rx="8"
-          ry="10"
-        />
+        <ellipse class="fox-eye"
+          cx="91" cy="91" rx="8" ry="10"/>
 
-        <ellipse
-          class="fox-eye"
-          cx="133"
-          cy="91"
-          rx="8"
-          ry="10"
-        />
+        <ellipse class="fox-eye"
+          cx="133" cy="91" rx="8" ry="10"/>
 
-        <circle
-          class="fox-glint"
-          cx="94"
-          cy="87"
-          r="3"
-        />
+        <circle class="fox-glint" cx="94" cy="87" r="3"/>
+        <circle class="fox-glint" cx="136" cy="87" r="3"/>
 
-        <circle
-          class="fox-glint"
-          cx="136"
-          cy="87"
-          r="3"
-        />
+        <path class="fox-brow"
+          d="M81 78C87 74 94 74 100 78"/>
 
-        <path
-          class="fox-brow"
-          d="M81 78C87 74 94 74 100 78"
-        />
+        <path class="fox-brow"
+          d="M124 78C130 74 137 74 143 78"/>
 
-        <path
-          class="fox-brow"
-          d="M124 78C130 74 137 74 143 78"
-        />
+        <ellipse class="fox-nose"
+          cx="112" cy="105" rx="7" ry="5"/>
 
-        <ellipse
-          class="fox-nose"
-          cx="112"
-          cy="105"
-          rx="7"
-          ry="5"
-        />
+        <path class="fox-smile"
+          d="M112 109C109 116 103 119 98 117"/>
 
-        <path
-          class="fox-smile"
-          d="M112 109
-             C109 116 103 119 98 117"
-        />
+        <path class="fox-smile"
+          d="M112 109C115 116 121 119 126 117"/>
 
-        <path
-          class="fox-smile"
-          d="M112 109
-             C115 116 121 119 126 117"
-        />
-
-        <path
-          class="fox-scarf"
+        <path class="fox-scarf"
           d="M77 133
              C98 145 128 145 148 132
              L144 151
-             C124 162 99 161 81 151Z"
-        />
+             C124 162 99 161 81 151Z"/>
 
-        <path
-          class="fox-scarf"
-          d="M132 150L158 187L134 174Z"
-        />
+        <path class="fox-scarf"
+          d="M132 150L158 187L134 174Z"/>
 
-        <ellipse
-          class="fox-fur"
-          cx="78"
-          cy="201"
-          rx="21"
-          ry="13"
-        />
+        <ellipse class="fox-fur"
+          cx="78" cy="201" rx="21" ry="13"/>
 
-        <ellipse
-          class="fox-fur"
-          cx="143"
-          cy="201"
-          rx="21"
-          ry="13"
-        />
+        <ellipse class="fox-fur"
+          cx="143" cy="201" rx="21" ry="13"/>
 
-        <circle
-          class="paw-mark"
-          cx="74"
-          cy="201"
-          r="2"
-        />
-
-        <circle
-          class="paw-mark"
-          cx="81"
-          cy="199"
-          r="2"
-        />
-
-        <circle
-          class="paw-mark"
-          cx="139"
-          cy="199"
-          r="2"
-        />
-
-        <circle
-          class="paw-mark"
-          cx="146"
-          cy="201"
-          r="2"
-        />
+        <circle class="paw-mark" cx="74" cy="201" r="2"/>
+        <circle class="paw-mark" cx="81" cy="199" r="2"/>
+        <circle class="paw-mark" cx="139" cy="199" r="2"/>
+        <circle class="paw-mark" cx="146" cy="201" r="2"/>
 
       </svg>
 
 
-      <!-- botanical accents -->
+      <!-- DELICATE BOTANICAL SPRIGS -->
 
-      <span class="floating-leaf leaf-a">❧</span>
-      <span class="floating-leaf leaf-b">❧</span>
+      <svg class="floating-botanical botanical-left"
+           viewBox="0 0 80 120"
+           aria-hidden="true">
+
+        <path d="M60 112C47 82 37 54 15 20"/>
+        <path d="M45 77C33 74 23 66 20 54"/>
+        <path d="M39 63C48 57 54 48 53 38"/>
+        <path d="M29 47C18 44 11 37 9 28"/>
+        <path d="M52 92C62 85 67 75 66 65"/>
+
+        <ellipse cx="20" cy="53" rx="7" ry="14"
+                 transform="rotate(-38 20 53)"/>
+        <ellipse cx="53" cy="38" rx="7" ry="14"
+                 transform="rotate(39 53 38)"/>
+        <ellipse cx="10" cy="28" rx="6" ry="12"
+                 transform="rotate(-48 10 28)"/>
+        <ellipse cx="66" cy="65" rx="6" ry="13"
+                 transform="rotate(43 66 65)"/>
+
+      </svg>
+
+
+      <svg class="floating-botanical botanical-right"
+           viewBox="0 0 80 120"
+           aria-hidden="true">
+
+        <path d="M18 112C32 83 40 53 65 15"/>
+        <path d="M34 77C45 72 54 64 58 53"/>
+        <path d="M41 62C31 56 26 47 27 37"/>
+        <path d="M52 46C63 42 70 34 71 25"/>
+
+        <ellipse cx="58" cy="53" rx="7" ry="14"
+                 transform="rotate(38 58 53)"/>
+        <ellipse cx="27" cy="37" rx="7" ry="14"
+                 transform="rotate(-39 27 37)"/>
+        <ellipse cx="71" cy="25" rx="6" ry="12"
+                 transform="rotate(48 71 25)"/>
+
+      </svg>
 
     </div>
 
   </div>
 
 
-  <!-- ================= SAFE TO SPEND ================= -->
+  <!-- SAFE TO SPEND -->
 
   <div class="hero-card">
 
@@ -357,11 +222,564 @@
     <div class="hero-top">
 
       <div class="hero-label">
-
         <span class="status-dot"></span>
-
         SAFE TO SPEND
+      </div>
+
+      <span class="hero-star">✦</span>
+
+    </div>
+
+    <div id="safeSpend" class="big">$0.00</div>
+
+    <div id="safeNote" class="hero-note">
+      Add your balance, income, and bills to get started.
+    </div>
+
+    <div class="hero-bottom">
+      <span>Based on your current plan</span>
+      <span>✦ Plan first. Spend freely.</span>
+    </div>
+
+  </div>
+
+
+  <!-- SNAPSHOT -->
+
+  <div class="section-heading">
+
+    <div class="eyebrow">YOUR MONEY</div>
+
+    <h2>Your snapshot</h2>
+
+  </div>
+
+
+  <div class="money-grid">
+
+    <div class="money-card">
+
+      <div class="luxury-icon green">
+
+        <svg viewBox="0 0 60 60" aria-hidden="true">
+
+          <path class="icon-stem"
+                d="M15 48C25 37 28 24 46 11"/>
+
+          <path class="icon-leaf"
+                d="M26 35C17 34 11 28 12 20C21 20 27 26 26 35Z"/>
+
+          <path class="icon-leaf icon-leaf-soft"
+                d="M31 28C31 19 37 13 46 12C45 21 39 27 31 28Z"/>
+
+          <path class="icon-leaf icon-leaf-light"
+                d="M21 43C15 40 12 36 13 31C19 32 22 36 21 43Z"/>
+
+          <circle cx="47" cy="11" r="2.2"/>
+
+        </svg>
 
       </div>
 
-      <span class="
+      <span>Current balance</span>
+
+      <strong id="balanceOut">$0.00</strong>
+
+    </div>
+
+
+    <div class="money-card">
+
+      <div class="luxury-icon terracotta">
+
+        <svg viewBox="0 0 60 60" aria-hidden="true">
+
+          <path class="icon-stem"
+                d="M17 47C28 35 32 23 48 12"/>
+
+          <path class="icon-leaf"
+                d="M27 35C19 33 14 28 15 21C23 21 29 27 27 35Z"/>
+
+          <path class="icon-leaf icon-leaf-soft"
+                d="M33 27C34 19 40 13 48 13C47 21 41 27 33 27Z"/>
+
+          <path class="icon-leaf icon-leaf-light"
+                d="M21 44C16 41 13 37 14 33C20 34 23 38 21 44Z"/>
+
+          <path class="icon-leaf"
+                d="M40 20C41 16 44 13 48 13"/>
+
+        </svg>
+
+      </div>
+
+      <span>Upcoming bills</span>
+
+      <strong id="billsOut">$0.00</strong>
+
+    </div>
+
+  </div>
+
+
+  <div id="warning" class="notice hidden"></div>
+
+
+  <!-- CAN I AFFORD THIS -->
+
+  <div class="card botanical-card">
+
+    <div class="card-top">
+
+      <div>
+        <div class="eyebrow">A QUICK CHECK</div>
+        <h2>Can I afford this?</h2>
+      </div>
+
+      <div class="botanical-mini-icon">
+
+        <svg viewBox="0 0 60 60" aria-hidden="true">
+          <path d="M13 48C26 37 31 22 49 11"/>
+          <path d="M28 35C19 34 14 28 15 20C24 21 29 27 28 35Z"/>
+          <path d="M34 27C34 18 40 12 49 12C48 21 42 27 34 27Z"/>
+          <path d="M22 43C17 40 14 36 15 31C21 32 24 37 22 43Z"/>
+          <circle cx="49" cy="11" r="2"/>
+        </svg>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <input
+        id="affordAmount"
+        type="number"
+        min="0"
+        step="0.01"
+        placeholder="Amount"
+      >
+
+      <button id="affordBtn">
+        Check
+      </button>
+
+    </div>
+
+    <div
+      id="affordResult"
+      class="result muted"
+    >
+      Enter an amount to check.
+    </div>
+
+  </div>
+
+
+  <!-- NEXT BILLS -->
+
+  <div class="card botanical-card">
+
+    <div class="section-head">
+
+      <div>
+        <div class="eyebrow">COMING UP</div>
+        <h2>Next bills</h2>
+      </div>
+
+      <button
+        class="textbtn"
+        data-screen="bills"
+      >
+        View all
+      </button>
+
+    </div>
+
+    <div id="nextBills"></div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= INCOME ================= -->
+
+<section id="income" class="screen">
+
+  <div class="section-title">
+
+    <div class="botanical-heading">
+      <svg viewBox="0 0 90 90" aria-hidden="true">
+        <path d="M15 78C32 59 40 35 74 12"/>
+        <path d="M35 57C23 55 16 47 17 37C28 38 36 46 35 57Z"/>
+        <path d="M45 44C45 31 54 20 68 18C67 32 57 42 45 44Z"/>
+        <path d="M26 69C18 65 14 59 15 52C24 53 28 60 26 69Z"/>
+        <path d="M57 31C66 30 73 25 77 18"/>
+      </svg>
+    </div>
+
+    <h1>Income</h1>
+
+    <p>
+      Add money you expect to receive.
+    </p>
+
+  </div>
+
+
+  <!-- CURRENT BALANCE -->
+
+  <div class="card balance-entry-card">
+
+    <div class="section-head">
+
+      <div>
+
+        <div class="eyebrow">
+          YOUR MONEY
+        </div>
+
+        <h2>
+          Current balance
+        </h2>
+
+      </div>
+
+    </div>
+
+    <p class="muted">
+      Enter the amount currently in your bank account.
+    </p>
+
+    <div class="balance-entry-row">
+
+      <span class="currency-symbol">$</span>
+
+      <input
+        id="balanceInput"
+        type="number"
+        min="0"
+        step="0.01"
+        inputmode="decimal"
+        placeholder="0.00"
+      >
+
+    </div>
+
+    <button
+      id="saveBalanceBtn"
+      type="button"
+    >
+      Save balance
+    </button>
+
+    <div
+      id="balanceSaved"
+      class="result muted"
+    ></div>
+
+  </div>
+
+
+  <form
+    id="incomeForm"
+    class="card form"
+  >
+
+    <label>
+      Source
+
+      <input
+        id="incomeSource"
+        required
+        placeholder="Paycheck, VA, BAH, etc."
+      >
+
+    </label>
+
+
+    <label>
+      Amount
+
+      <input
+        id="incomeAmount"
+        required
+        type="number"
+        min="0"
+        step="0.01"
+      >
+
+    </label>
+
+
+    <label>
+      Date
+
+      <input
+        id="incomeDate"
+        required
+        type="date"
+      >
+
+    </label>
+
+
+    <label class="check">
+
+      <input
+        id="incomeRecurring"
+        type="checkbox"
+      >
+
+      Repeats monthly
+
+    </label>
+
+
+    <button type="submit">
+      Add income
+    </button>
+
+  </form>
+
+
+  <div id="incomeList"></div>
+
+</section>
+
+
+<!-- ================= BILLS ================= -->
+
+<section id="bills" class="screen">
+
+  <div class="section-title">
+
+    <div class="botanical-heading">
+      <svg viewBox="0 0 90 90" aria-hidden="true">
+        <path d="M16 78C31 60 42 37 74 12"/>
+        <path d="M34 57C24 55 18 48 18 39C28 40 35 47 34 57Z"/>
+        <path d="M45 43C45 31 53 21 67 18C66 31 57 41 45 43Z"/>
+        <path d="M25 69C18 65 14 59 15 52C23 53 28 60 25 69Z"/>
+        <path d="M57 31C65 29 72 24 76 17"/>
+      </svg>
+    </div>
+
+    <h1>Bills</h1>
+
+    <p>
+      Track what must be paid and when.
+    </p>
+
+  </div>
+
+
+  <form
+    id="billForm"
+    class="card form"
+  >
+
+    <label>
+      Bill name
+
+      <input
+        id="billName"
+        required
+        placeholder="Rent, electric, internet..."
+      >
+
+    </label>
+
+
+    <label>
+      Amount
+
+      <input
+        id="billAmount"
+        required
+        type="number"
+        min="0"
+        step="0.01"
+      >
+
+    </label>
+
+
+    <label>
+      Due date
+
+      <input
+        id="billDate"
+        required
+        type="date"
+      >
+
+    </label>
+
+
+    <label class="check">
+
+      <input
+        id="billPaid"
+        type="checkbox"
+      >
+
+      Already paid
+
+    </label>
+
+
+    <label class="check">
+
+      <input
+        id="billRecurring"
+        type="checkbox"
+      >
+
+      Repeats monthly
+
+    </label>
+
+
+    <button type="submit">
+      Add bill
+    </button>
+
+  </form>
+
+
+  <div id="billList"></div>
+
+</section>
+
+
+<!-- ================= CALENDAR ================= -->
+
+<section id="calendar" class="screen">
+
+  <div class="section-title">
+
+    <div class="botanical-heading">
+      <svg viewBox="0 0 90 90" aria-hidden="true">
+        <path d="M17 78C31 59 43 37 74 12"/>
+        <path d="M35 57C24 55 18 48 18 39C28 40 36 47 35 57Z"/>
+        <path d="M45 43C45 31 54 21 68 18C67 31 57 41 45 43Z"/>
+        <path d="M26 69C18 65 14 59 15 52C24 53 28 60 26 69Z"/>
+        <path d="M57 31C65 29 72 24 76 17"/>
+      </svg>
+    </div>
+
+    <h1>Calendar</h1>
+
+    <p>
+      See income and bills together.
+    </p>
+
+  </div>
+
+
+  <div class="card botanical-card">
+
+    <div id="calendarList"></div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav class="nav">
+
+  <button
+    class="navbtn active"
+    data-screen="dashboard"
+  >
+
+    <span class="nav-icon botanical-nav home-botanical">
+      <svg viewBox="0 0 70 70" aria-hidden="true">
+        <path d="M13 57C26 43 34 26 57 10"/>
+        <path d="M27 43C18 41 13 35 14 27C22 28 28 34 27 43Z"/>
+        <path d="M35 32C35 22 42 14 53 12C52 23 44 31 35 32Z"/>
+        <path d="M21 53C15 50 12 46 13 40C20 41 23 47 21 53Z"/>
+        <path d="M45 22C51 21 56 17 59 12"/>
+        <path d="M31 38C38 37 43 33 46 28"/>
+      </svg>
+    </span>
+
+    <span>Home</span>
+
+  </button>
+
+
+  <button
+    class="navbtn"
+    data-screen="income"
+  >
+
+    <span class="nav-icon botanical-nav">
+      <svg viewBox="0 0 70 70" aria-hidden="true">
+        <path d="M12 58C26 43 34 26 57 10"/>
+        <path d="M28 43C18 41 13 35 14 27C23 28 29 34 28 43Z"/>
+        <path d="M36 32C36 22 43 14 54 12C53 23 45 31 36 32Z"/>
+        <path d="M21 53C15 50 12 46 13 40C20 41 23 47 21 53Z"/>
+        <path d="M47 22C52 21 57 17 59 12"/>
+        <circle cx="57" cy="10" r="2"/>
+      </svg>
+    </span>
+
+    <span>Income</span>
+
+  </button>
+
+
+  <button
+    class="navbtn"
+    data-screen="bills"
+  >
+
+    <span class="nav-icon botanical-nav">
+      <svg viewBox="0 0 70 70" aria-hidden="true">
+        <path d="M13 58C27 42 35 26 58 10"/>
+        <path d="M29 43C19 41 14 35 15 27C24 28 30 34 29 43Z"/>
+        <path d="M37 32C37 22 44 14 55 12C54 23 46 31 37 32Z"/>
+        <path d="M22 53C16 50 13 46 14 40C21 41 24 47 22 53Z"/>
+        <path d="M47 22C53 21 58 17 60 12"/>
+        <path d="M34 38C40 37 45 33 48 28"/>
+      </svg>
+    </span>
+
+    <span>Bills</span>
+
+  </button>
+
+
+  <button
+    class="navbtn"
+    data-screen="calendar"
+  >
+
+    <span class="nav-icon botanical-nav">
+      <svg viewBox="0 0 70 70" aria-hidden="true">
+        <path d="M12 58C26 43 34 26 57 10"/>
+        <path d="M28 43C18 41 13 35 14 27C23 28 29 34 28 43Z"/>
+        <path d="M36 32C36 22 43 14 54 12C53 23 45 31 36 32Z"/>
+        <path d="M21 53C15 50 12 46 13 40C20 41 23 47 21 53Z"/>
+        <path d="M47 22C53 21 58 17 59 12"/>
+        <path d="M34 38C40 37 45 33 48 28"/>
+      </svg>
+    </span>
+
+    <span>Calendar</span>
+
+  </button>
+
+</nav>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
