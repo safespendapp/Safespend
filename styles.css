@@ -98,13 +98,13 @@ button {
 .brand-area {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 12px;
 }
 
 
-.brand-leaf {
-  width: 49px;
-  height: 49px;
+.brand-botanical {
+  width: 52px;
+  height: 52px;
 
   display: grid;
   place-items: center;
@@ -112,68 +112,58 @@ button {
   border-radius: 17px;
 
   background:
-    radial-gradient(
-      circle at 35% 30%,
-      #f7faf4,
-      transparent 55%
-    ),
     linear-gradient(
       145deg,
-      #eef4eb,
-      #d9e6d9
+      #f1f5ee,
+      #dce8dc
     );
 
-  border: 1px solid rgba(80,105,87,.17);
-
-  color: var(--sage-dark);
+  border: 1px solid rgba(80,105,87,.16);
 
   box-shadow:
-    0 8px 20px rgba(80,105,87,.10);
+    0 8px 22px rgba(80,105,87,.10),
+    inset 0 0 0 1px rgba(255,255,255,.65);
+
+  color: var(--sage-dark);
 }
 
 
-.brand-leaf svg {
-  width: 42px;
-  height: 42px;
+.brand-botanical svg {
+  width: 43px;
+  height: 43px;
 }
 
 
-.leaf-stem,
-.brand-leaf path {
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-
-.leaf-stem {
+.brand-botanical .stem {
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.5;
+  stroke-width: 1.4;
+  stroke-linecap: round;
 }
 
 
-.leaf-main {
+.brand-botanical .leaf {
   fill: currentColor;
 }
 
 
-.leaf-soft {
-  opacity: .72;
+.brand-botanical .leaf-soft {
+  opacity: .76;
 }
 
 
-.leaf-light {
-  opacity: .42;
+.brand-botanical .leaf-light {
+  opacity: .48;
 }
 
 
 .brand {
   font-family: var(--serif);
 
-  font-size: 29px;
+  font-size: 30px;
   font-weight: 500;
 
-  letter-spacing: -1.2px;
+  letter-spacing: -1.4px;
 
   color: #29352d;
 }
@@ -186,7 +176,7 @@ button {
 
   font-size: 9px;
 
-  letter-spacing: .18px;
+  letter-spacing: .2px;
 }
 
 
@@ -258,13 +248,13 @@ main {
 
   font-family: var(--serif);
 
-  font-size: clamp(34px, 8vw, 46px);
+  font-size: clamp(35px, 8vw, 47px);
 
   font-weight: 500;
 
-  line-height: .98;
+  line-height: 1.01;
 
-  letter-spacing: -1.8px;
+  letter-spacing: -2px;
 }
 
 
@@ -286,10 +276,10 @@ main {
 .fox-wrap {
   position: relative;
 
-  width: 155px;
-  height: 165px;
+  width: 145px;
+  height: 158px;
 
-  flex: 0 0 155px;
+  flex: 0 0 145px;
 
   display: grid;
   place-items: center;
@@ -299,8 +289,8 @@ main {
 .fox-glow {
   position: absolute;
 
-  width: 120px;
-  height: 100px;
+  width: 110px;
+  height: 90px;
 
   border-radius: 50%;
 
@@ -311,7 +301,7 @@ main {
       transparent 68%
     );
 
-  bottom: 8px;
+  bottom: 12px;
 }
 
 
@@ -319,8 +309,8 @@ main {
   position: relative;
   z-index: 2;
 
-  width: 140px;
-  height: 152px;
+  width: 138px;
+  height: 150px;
 
   filter:
     drop-shadow(
@@ -393,60 +383,66 @@ main {
 }
 
 
-/* ================= FOX BOTANICALS ================= */
+/* ================= BOTANICAL FOX ACCENTS ================= */
 
-.floating-botanical {
+.botanical-sprig {
   position: absolute;
 
-  z-index: 4;
+  z-index: 5;
 
-  fill: none;
+  pointer-events: none;
 
-  stroke: var(--sage-dark);
+  color: var(--sage-dark);
 
-  stroke-width: 1.2;
-
-  stroke-linecap: round;
-
-  stroke-linejoin: round;
-
-  opacity: .65;
+  opacity: .72;
 
   filter:
     drop-shadow(
-      0 2px 2px rgba(80,105,87,.05)
+      0 4px 5px rgba(70,88,73,.08)
     );
 }
 
 
-.floating-botanical ellipse {
-  fill: var(--sage);
-
-  stroke: none;
-
-  opacity: .72;
+.botanical-sprig svg {
+  width: 100%;
+  height: 100%;
 }
 
 
-.botanical-left {
-  width: 62px;
-  height: 92px;
+.botanical-sprig path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.35;
+  stroke-linecap: round;
+}
 
-  left: -4px;
+
+.botanical-sprig ellipse {
+  fill: currentColor;
+}
+
+
+.sprig-one {
+  width: 50px;
+  height: 74px;
+
+  right: -2px;
   bottom: 1px;
 
-  transform: rotate(-8deg);
+  transform: rotate(5deg);
 }
 
 
-.botanical-right {
-  width: 62px;
-  height: 94px;
+.sprig-two {
+  width: 42px;
+  height: 65px;
 
-  right: -3px;
-  top: 5px;
+  left: -5px;
+  bottom: 8px;
 
-  transform: rotate(10deg);
+  opacity: .46;
+
+  transform: rotate(-14deg);
 }
 
 
@@ -593,12 +589,13 @@ main {
 .botanical-corner {
   position: absolute;
 
-  width: 76px;
-  height: 76px;
+  width: 78px;
+  height: 78px;
 
-  opacity: .32;
+  opacity: .25;
 
-  pointer-events: none;
+  color: var(--sage-dark);
+
 }
 
 
@@ -608,30 +605,26 @@ main {
 
   position: absolute;
 
-  width: 22px;
-  height: 39px;
+  width: 23px;
+  height: 40px;
 
-  background: var(--sage);
+  background: currentColor;
 
   border-radius: 100% 0 100% 0;
-
-  box-shadow:
-    11px -7px 0 -2px rgba(113,135,116,.55),
-    21px -14px 0 -5px rgba(146,155,114,.45);
 }
 
 
 .botanical-corner::before {
-  left: 7px;
-  top: 5px;
+  left: 8px;
+  top: 7px;
 
   transform: rotate(-38deg);
 }
 
 
 .botanical-corner::after {
-  right: 2px;
-  bottom: 1px;
+  right: 3px;
+  bottom: 4px;
 
   transform: rotate(40deg);
 }
@@ -646,7 +639,6 @@ main {
 .corner-two {
   right: 5px;
   top: 5px;
-
   transform: scaleX(-1);
 }
 
@@ -654,7 +646,6 @@ main {
 .corner-three {
   left: 5px;
   bottom: 5px;
-
   transform: scaleY(-1);
 }
 
@@ -662,7 +653,6 @@ main {
 .corner-four {
   right: 5px;
   bottom: 5px;
-
   transform: scale(-1);
 }
 
@@ -679,18 +669,11 @@ main {
 
   font-family: var(--serif);
 
-  font-size: 27px;
+  font-size: 25px;
 
   font-weight: 500;
 
-  letter-spacing: -.7px;
-}
-
-
-.section-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  letter-spacing: -.8px;
 }
 
 
@@ -702,21 +685,27 @@ main {
 
 
 .section-title h1 {
+  position: relative;
+  z-index: 2;
+
   margin: 6px 0 4px;
 
   font-family: var(--serif);
 
-  font-size: 43px;
+  font-size: 42px;
 
   font-weight: 500;
 
-  line-height: .95;
+  line-height: 1;
 
-  letter-spacing: -1.7px;
+  letter-spacing: -1.8px;
 }
 
 
 .section-title p {
+  position: relative;
+  z-index: 2;
+
   margin: 0;
 
   color: var(--muted);
@@ -725,45 +714,49 @@ main {
 }
 
 
-.botanical-heading {
-  width: 62px;
-  height: 47px;
-
+.section-botanical {
   position: absolute;
 
-  right: 2px;
-  top: 17px;
+  right: 5px;
+  top: 8px;
 
-  opacity: .65;
+  width: 105px;
+  height: 72px;
+
+  color: var(--sage);
+
+  opacity: .20;
+
+  transform: rotate(2deg);
 }
 
 
-.botanical-heading svg {
+.section-botanical svg {
   width: 100%;
   height: 100%;
-
-  fill: var(--sage);
-
-  stroke: var(--sage-dark);
-
-  stroke-width: 1.1;
-
-  stroke-linecap: round;
-
-  stroke-linejoin: round;
 }
 
 
-.textbtn {
-  border: 0;
+.section-botanical path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+}
 
-  background: transparent;
 
-  color: var(--sage-dark);
+.section-botanical ellipse {
+  fill: currentColor;
+}
 
-  font-size: 10px;
 
-  font-weight: 800;
+.terracotta-botanical {
+  color: var(--terracotta);
+}
+
+
+.olive-botanical {
+  color: var(--olive);
 }
 
 
@@ -792,42 +785,21 @@ main {
   border: 1px solid var(--line);
 
   box-shadow: var(--shadow);
-
-  overflow: hidden;
 }
 
 
 .luxury-icon {
-  width: 53px;
-  height: 53px;
+  width: 48px;
+  height: 48px;
 
   display: grid;
   place-items: center;
 
-  border-radius: 18px;
+  border-radius: 16px;
+
+  border: 1px solid currentColor;
 
   position: relative;
-
-  overflow: hidden;
-}
-
-
-.luxury-icon::before {
-  content: "";
-
-  position: absolute;
-
-  width: 31px;
-  height: 50px;
-
-  border-radius: 100% 0 100% 0;
-
-  transform: rotate(-35deg);
-
-  opacity: .10;
-
-  right: -2px;
-  bottom: -14px;
 }
 
 
@@ -840,9 +812,9 @@ main {
 
   border: 1px solid currentColor;
 
-  border-radius: 14px;
+  border-radius: 12px;
 
-  opacity: .14;
+  opacity: .12;
 }
 
 
@@ -850,14 +822,39 @@ main {
   position: relative;
   z-index: 2;
 
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
 }
 
 
-.luxury-icon svg path {
+.luxury-icon svg path,
+.luxury-icon svg ellipse {
+  stroke: none;
+}
+
+
+.luxury-icon .icon-stem {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
   stroke-linecap: round;
-  stroke-linejoin: round;
+}
+
+
+.luxury-icon .icon-leaf {
+  fill: currentColor;
+}
+
+
+.luxury-icon .icon-leaf-soft {
+  fill: currentColor;
+  opacity: .70;
+}
+
+
+.luxury-icon .icon-leaf-light {
+  fill: currentColor;
+  opacity: .42;
 }
 
 
@@ -868,7 +865,7 @@ main {
     linear-gradient(
       145deg,
       #edf3eb,
-      #e2ece0
+      #e4ede2
     );
 }
 
@@ -882,31 +879,6 @@ main {
       #f6e9df,
       #f2e1d5
     );
-}
-
-
-.luxury-icon .icon-stem {
-  fill: none;
-
-  stroke: currentColor;
-
-  stroke-width: 1.25;
-}
-
-
-.luxury-icon .icon-leaf {
-  fill: currentColor;
-  stroke: none;
-}
-
-
-.luxury-icon .icon-leaf-soft {
-  opacity: .72;
-}
-
-
-.luxury-icon .icon-leaf-light {
-  opacity: .42;
 }
 
 
@@ -928,7 +900,7 @@ main {
 
   font-family: var(--serif);
 
-  font-size: 27px;
+  font-size: 25px;
 
   font-weight: 500;
 
@@ -939,6 +911,8 @@ main {
 /* ================= CARDS ================= */
 
 .card {
+  position: relative;
+
   margin-top: 16px;
 
   padding: 21px;
@@ -953,23 +927,7 @@ main {
 }
 
 
-.botanical-card {
-  position: relative;
-
-  overflow: hidden;
-}
-
-
-.card-top,
-.section-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-
-.card-top h2,
-.section-head h2 {
+.card h2 {
   margin: 5px 0 0;
 
   font-family: var(--serif);
@@ -980,131 +938,43 @@ main {
 }
 
 
-.card-description {
-  margin: 8px 0 16px;
+.card-heading-botanical {
+  position: absolute;
 
-  color: var(--muted);
+  right: 13px;
+  top: 9px;
 
-  font-size: 11px;
-
-  line-height: 1.45;
-}
-
-
-.botanical-mini-icon {
-  width: 48px;
-  height: 48px;
+  width: 82px;
+  height: 55px;
 
   color: var(--sage);
 
-  opacity: .75;
+  opacity: .18;
 }
 
 
-.botanical-mini-icon svg {
+.card-heading-botanical svg {
   width: 100%;
   height: 100%;
+}
 
-  fill: currentColor;
 
-  stroke: var(--sage-dark);
-
-  stroke-width: 1;
-
+.card-heading-botanical path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.3;
   stroke-linecap: round;
 }
 
 
-.question-mark {
-  width: 38px;
-  height: 38px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 50%;
-
-  background: var(--cream);
-
-  color: var(--terracotta-dark);
-
-  font-family: var(--serif);
-
-  font-size: 19px;
-}
-
-
-/* ================= FOX MESSAGE ================= */
-
-.fox-message {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-
-  margin: 18px 2px;
-
-  padding: 17px;
-
-  border-radius: 22px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f5eee7,
-      #faf5ed
-    );
-
-  border: 1px solid #e8ddd2;
-}
-
-
-.mini-fox-holder {
-  width: 60px;
-  height: 60px;
-
-  flex: 0 0 60px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 18px;
-
-  background: #ecdfd3;
-
-  overflow: hidden;
-}
-
-
-.mini-fox {
-  width: 58px;
-  height: 58px;
-
-  transform: translateY(4px);
-}
-
-
-.message-title {
-  font-family: var(--serif);
-
-  font-size: 17px;
-}
-
-
-.fox-message p {
-  margin: 3px 0 0;
-
-  color: var(--muted);
-
-  font-size: 10px;
-
-  line-height: 1.45;
+.card-heading-botanical ellipse {
+  fill: currentColor;
 }
 
 
 /* ================= AFFORD ================= */
 
-.row,
-.afford-row {
+.row {
   display: flex;
   gap: 9px;
 
@@ -1112,15 +982,11 @@ main {
 }
 
 
-.row input,
-.money-input {
+.row input {
   flex: 1;
 
   min-width: 0;
-}
 
-
-.row input {
   height: 51px;
 
   border: 1px solid var(--line);
@@ -1136,10 +1002,8 @@ main {
 
 
 .row button,
-.afford-row button,
-.primary-btn,
 .form > button,
-#saveBalanceBtn {
+.balance-entry-card > button {
   min-height: 51px;
 
   border: 0;
@@ -1167,10 +1031,8 @@ main {
 
 
 .row button:hover,
-.afford-row button:hover,
-.primary-btn:hover,
 .form > button:hover,
-#saveBalanceBtn:hover {
+.balance-entry-card > button:hover {
   transform: translateY(-1px);
 }
 
@@ -1199,11 +1061,6 @@ main {
 .result.bad {
   color: #925b55;
   background: #f8eae8;
-}
-
-
-.result.muted {
-  color: var(--muted);
 }
 
 
@@ -1250,14 +1107,12 @@ main {
 
 .item:last-child {
   border-bottom: 0;
-
   padding-bottom: 2px;
 }
 
 
 .item-title {
   font-size: 13px;
-
   font-weight: 700;
 }
 
@@ -1273,9 +1128,7 @@ main {
 
 .item-actions {
   display: flex;
-
   align-items: center;
-
   gap: 9px;
 }
 
@@ -1318,7 +1171,6 @@ main {
 
 .pill.paid {
   background: #edf3ed;
-
   color: #58715c;
 }
 
@@ -1336,18 +1188,15 @@ main {
 
 .form {
   display: grid;
-
   gap: 16px;
 }
 
 
 .form label {
   display: grid;
-
   gap: 7px;
 
   font-size: 11px;
-
   font-weight: 700;
 }
 
@@ -1401,35 +1250,29 @@ main {
 
 /* ================= BALANCE ================= */
 
-.balance-entry-card {
-  position: relative;
-
-  overflow: hidden;
+.balance-entry-card h2 {
+  margin-top: 4px;
 }
 
 
-.balance-entry-card::after {
-  content: "✦";
+.muted {
+  color: var(--muted);
+}
 
-  position: absolute;
 
-  right: 18px;
-  top: 15px;
-
-  color: rgba(180,154,104,.45);
-
-  font-size: 22px;
+.balance-entry-card > p {
+  font-size: 11px;
+  line-height: 1.5;
 }
 
 
 .balance-entry-row {
   display: flex;
-
   align-items: center;
 
-  margin-top: 14px;
+  height: 51px;
 
-  height: 54px;
+  margin: 15px 0 10px;
 
   border: 1px solid var(--line);
 
@@ -1442,7 +1285,7 @@ main {
 
 
 .currency-symbol {
-  padding-left: 15px;
+  padding-left: 14px;
 
   color: var(--muted);
 
@@ -1454,23 +1297,14 @@ main {
   flex: 1;
 
   width: 100%;
-
   height: 100%;
 
   border: 0;
-
   outline: 0;
 
   background: transparent;
 
   padding: 0 14px 0 7px;
-}
-
-
-.balance-entry-card > button {
-  width: 100%;
-
-  margin-top: 11px;
 }
 
 
@@ -1534,34 +1368,41 @@ main {
 
 
 .nav-icon {
-  width: 48px;
-  height: 38px;
+  width: 46px;
+  height: 37px;
 
   display: grid;
   place-items: center;
 
-  border-radius: 15px;
+  border-radius: 14px;
 
   transition:
-    .2s ease;
-
-  position: relative;
+    transform .2s ease,
+    background .2s ease;
 }
 
 
 .nav-icon svg {
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
+}
 
-  fill: currentColor;
+
+.botanical-nav svg path {
+  fill: none;
 
   stroke: currentColor;
 
-  stroke-width: .8;
+  stroke-width: 1.35;
 
   stroke-linecap: round;
+}
 
-  stroke-linejoin: round;
+
+.botanical-nav svg path:not(:first-child) {
+  fill: currentColor;
+
+  stroke: none;
 }
 
 
@@ -1575,6 +1416,8 @@ main {
 
   box-shadow:
     inset 0 0 0 1px rgba(113,135,116,.08);
+
+  transform: translateY(-1px);
 }
 
 
@@ -1602,41 +1445,35 @@ main {
     width: calc(100% - 24px);
   }
 
-
   .brand {
     font-size: 27px;
   }
 
+  .brand-botanical {
+    width: 48px;
+    height: 48px;
+  }
 
   .welcome h1 {
-    font-size: 30px;
+    font-size: 31px;
   }
-
 
   .fox-wrap {
-    width: 130px;
-    flex-basis: 130px;
+    width: 124px;
+    flex-basis: 124px;
   }
-
 
   .fox {
     width: 123px;
     height: 140px;
   }
 
-
-  .floating-botanical {
-    opacity: .55;
-  }
-
-
   .big {
     font-size: 54px;
   }
 
-
   .section-title h1 {
-    font-size: 39px;
+    font-size: 38px;
   }
 
 }
@@ -1648,37 +1485,21 @@ main {
     grid-template-columns: 1fr;
   }
 
-
-  .row,
-  .afford-row {
+  .row {
     flex-direction: column;
   }
 
-
-  .row button,
-  .afford-row button {
+  .row button {
     width: 100%;
   }
-
 
   .fox-wrap {
     width: 105px;
     flex-basis: 105px;
   }
 
-
   .fox {
     width: 108px;
   }
 
-
-  .botanical-left {
-    left: -8px;
-  }
-
-
-  .botanical-right {
-    right: -8px;
-  }
-
-    }
+}
