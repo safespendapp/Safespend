@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600;700&display=swap');
-
-
 :root {
   --ivory: #faf8f2;
   --cream: #f3e9dc;
@@ -24,7 +21,6 @@
   --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
 
   --sans:
-    "DM Sans",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -34,46 +30,32 @@
     0 18px 45px rgba(52,67,55,.075);
 }
 
-
 * {
   box-sizing: border-box;
 }
 
-
 html {
   background: var(--ivory);
 }
-
 
 body {
   margin: 0;
   min-height: 100vh;
 
   background:
-    radial-gradient(
-      circle at 92% 4%,
-      rgba(146,155,114,.13),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 0% 38%,
-      rgba(200,121,88,.06),
-      transparent 28%
-    ),
+    radial-gradient(circle at 92% 4%, rgba(146,155,114,.15), transparent 28%),
+    radial-gradient(circle at 0% 38%, rgba(200,121,88,.06), transparent 28%),
     var(--ivory);
 
   color: var(--ink);
   font-family: var(--sans);
-
   padding-bottom: 96px;
 }
-
 
 button,
 input {
   font: inherit;
 }
-
 
 button {
   cursor: pointer;
@@ -93,21 +75,15 @@ button {
   align-items: center;
 }
 
-
 .brand-area {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 11px;
 }
 
-
-/* Elegant botanical brand mark */
-
 .brand-leaf {
-  width: 48px;
-  height: 48px;
-
-  position: relative;
+  width: 50px;
+  height: 50px;
 
   display: grid;
   place-items: center;
@@ -115,131 +91,40 @@ button {
   border-radius: 17px;
 
   background:
-    linear-gradient(
-      145deg,
-      #f1f5ed,
-      #dce8dc
-    );
+    linear-gradient(145deg, #f0f4ed, #dce8dc);
 
-  border: 1px solid rgba(80,105,87,.15);
+  border: 1px solid rgba(80,105,87,.16);
 
   color: var(--sage-dark);
 
   box-shadow:
-    0 8px 20px rgba(80,105,87,.10);
-
-  overflow: hidden;
+    0 8px 20px rgba(80,105,87,.09);
 }
-
-
-/* Hide the old simple SVG mark */
 
 .brand-leaf svg {
-  display: none;
+  width: 42px;
+  height: 42px;
 }
-
-
-/* Botanical stem */
-
-.brand-leaf::before {
-  content: "";
-
-  position: absolute;
-
-  width: 2px;
-  height: 29px;
-
-  left: 23px;
-  top: 11px;
-
-  background:
-    linear-gradient(
-      180deg,
-      var(--sage-dark),
-      var(--sage)
-    );
-
-  border-radius: 50%;
-
-  transform:
-    rotate(31deg)
-    translateX(1px);
-
-  transform-origin: bottom center;
-
-  opacity: .9;
-}
-
-
-/* Main elegant leaf */
-
-.brand-leaf::after {
-  content: "";
-
-  position: absolute;
-
-  width: 21px;
-  height: 30px;
-
-  left: 17px;
-  top: 8px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #718774,
-      #506957
-    );
-
-  border-radius:
-    100% 0
-    100% 0;
-
-  transform: rotate(35deg);
-
-  box-shadow:
-    9px 8px 0 -5px rgba(146,155,114,.55);
-}
-
-
-/* Additional fine botanical detail */
-
-.brand-leaf {
-  isolation: isolate;
-}
-
-
-.brand-leaf .botanical-detail {
-  display: none;
-}
-
 
 .brand {
   font-family: var(--serif);
 
-  font-size: 31px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 500;
 
-  letter-spacing: -1.4px;
-
-  line-height: .9;
+  letter-spacing: -1.3px;
 
   color: #29352d;
 }
 
-
 .tagline {
-  margin-top: 5px;
+  margin-top: 1px;
 
   color: var(--muted);
 
   font-size: 9px;
-
-  letter-spacing: .5px;
+  letter-spacing: .25px;
 }
-
-
-/* ================= BUTTON ================= */
 
 .ghost {
   border: 1px solid var(--line);
@@ -250,7 +135,6 @@ button {
 
   border-radius: 12px;
 }
-
 
 .ghost.small {
   padding: 7px 10px;
@@ -265,12 +149,10 @@ main {
   margin: auto;
 }
 
-
 .screen {
   display: none;
   padding-bottom: 28px;
 }
-
 
 .screen.active {
   display: block;
@@ -287,12 +169,10 @@ main {
   align-items: center;
 }
 
-
 .welcome-copy {
   position: relative;
   z-index: 3;
 }
-
 
 .eyebrow {
   color: var(--sage-dark);
@@ -300,31 +180,27 @@ main {
   font-size: 8px;
   font-weight: 850;
 
-  letter-spacing: 1.9px;
+  letter-spacing: 1.7px;
 }
-
 
 .welcome h1 {
   margin: 7px 0 0;
 
   font-family: var(--serif);
 
-  font-size: clamp(35px, 8vw, 47px);
+  font-size: clamp(34px, 8vw, 46px);
 
-  font-weight: 600;
+  font-weight: 500;
 
-  line-height: .94;
+  line-height: 1.01;
 
-  letter-spacing: -2px;
-
-  color: #303b32;
+  letter-spacing: -1.8px;
 }
-
 
 .welcome p {
   max-width: 270px;
 
-  margin: 12px 0 0;
+  margin: 11px 0 0;
 
   color: var(--muted);
 
@@ -348,7 +224,6 @@ main {
   place-items: center;
 }
 
-
 .fox-glow {
   position: absolute;
 
@@ -367,7 +242,6 @@ main {
   bottom: 12px;
 }
 
-
 .fox {
   position: relative;
   z-index: 2;
@@ -381,102 +255,80 @@ main {
     );
 }
 
-
 .fox-fur {
   fill: #c87958;
 }
-
 
 .fox-cream {
   fill: #fff1e3;
 }
 
-
 .fox-muzzle {
   fill: #fff8ef;
 }
-
 
 .fox-ear-inner {
   fill: #a85e48;
   opacity: .65;
 }
 
-
 .fox-eye {
   fill: #343a34;
 }
-
 
 .fox-glint {
   fill: white;
 }
 
-
 .fox-brow {
   fill: none;
-
   stroke: #7d4537;
-
   stroke-width: 2;
-
   stroke-linecap: round;
-
   opacity: .8;
 }
-
 
 .fox-nose {
   fill: #3b3530;
 }
 
-
 .fox-smile {
   fill: none;
-
   stroke: #543e37;
-
   stroke-width: 2.2;
-
   stroke-linecap: round;
 }
-
 
 .fox-scarf {
   fill: var(--sage);
 }
-
 
 .paw-mark {
   fill: #a85e48;
   opacity: .55;
 }
 
-
-.floating-leaf {
+.floating-botanical {
   position: absolute;
-
   z-index: 4;
 
-  color: var(--sage);
+  width: 43px;
+  height: 43px;
 
-  font-size: 18px;
+  color: var(--sage);
 
   opacity: .65;
 }
 
-
-.leaf-a {
-  right: 1px;
-  bottom: 17px;
-  transform: rotate(25deg);
+.botanical-a {
+  right: -2px;
+  bottom: 14px;
 }
 
-
-.leaf-b {
-  left: 4px;
-  bottom: 4px;
-  transform: rotate(-25deg);
+.botanical-b {
+  left: -3px;
+  bottom: 1px;
+  transform: scale(.82);
 }
 
 
@@ -505,7 +357,6 @@ main {
     inset 0 0 0 1px rgba(255,255,255,.85);
 }
 
-
 .hero-card::before {
   content: "";
 
@@ -520,7 +371,6 @@ main {
   pointer-events: none;
 }
 
-
 .hero-top {
   position: relative;
   z-index: 3;
@@ -528,7 +378,6 @@ main {
   display: flex;
   justify-content: space-between;
 }
-
 
 .hero-label {
   display: flex;
@@ -543,25 +392,25 @@ main {
   letter-spacing: 1.5px;
 }
 
+.botanical-status {
+  width: 24px;
+  height: 24px;
 
-.status-dot {
-  width: 8px;
-  height: 8px;
+  display: grid;
+  place-items: center;
 
-  border-radius: 50%;
-
-  background: var(--sage);
-
-  box-shadow:
-    0 0 0 4px rgba(113,135,116,.11);
+  color: var(--sage-dark);
 }
 
+.botanical-status svg {
+  width: 23px;
+  height: 23px;
+}
 
 .hero-star {
   color: var(--gold);
   font-size: 17px;
 }
-
 
 .big {
   position: relative;
@@ -582,7 +431,6 @@ main {
   color: #303b32;
 }
 
-
 .hero-note {
   position: relative;
   z-index: 3;
@@ -597,7 +445,6 @@ main {
 
   line-height: 1.55;
 }
-
 
 .hero-bottom {
   position: relative;
@@ -618,73 +465,80 @@ main {
 }
 
 
+/* ================= FULL BOTANICAL CORNERS ================= */
+
 .botanical-corner {
   position: absolute;
 
-  width: 55px;
-  height: 55px;
+  width: 82px;
+  height: 82px;
 
-  opacity: .38;
+  opacity: .32;
+
+  color: var(--sage);
 }
 
+.botanical-corner::before {
+  content: "";
 
-.botanical-corner::before,
+  position: absolute;
+
+  width: 1.5px;
+  height: 72px;
+
+  background: currentColor;
+
+  left: 38px;
+  top: 5px;
+
+  transform: rotate(42deg);
+
+  transform-origin: bottom;
+}
+
 .botanical-corner::after {
   content: "";
 
   position: absolute;
 
-  width: 18px;
-  height: 29px;
-
-  background: var(--sage);
+  width: 20px;
+  height: 34px;
 
   border-radius: 100% 0 100% 0;
+
+  background: currentColor;
+
+  left: 22px;
+  top: 25px;
+
+  transform: rotate(-42deg);
+
+  box-shadow:
+    18px -15px 0 -2px currentColor,
+    29px 8px 0 -3px currentColor,
+    9px 28px 0 -3px currentColor;
 }
-
-
-.botanical-corner::before {
-  left: 5px;
-  top: 4px;
-
-  transform: rotate(-38deg);
-}
-
-
-.botanical-corner::after {
-  right: 3px;
-  bottom: 2px;
-
-  transform: rotate(40deg);
-}
-
 
 .corner-one {
-  left: 5px;
-  top: 5px;
+  left: 2px;
+  top: 2px;
 }
 
-
 .corner-two {
-  right: 5px;
-  top: 5px;
-
+  right: 2px;
+  top: 2px;
   transform: scaleX(-1);
 }
 
-
 .corner-three {
-  left: 5px;
-  bottom: 5px;
-
+  left: 2px;
+  bottom: 2px;
   transform: scaleY(-1);
 }
 
-
 .corner-four {
-  right: 5px;
-  bottom: 5px;
-
+  right: 2px;
+  bottom: 2px;
   transform: scale(-1);
 }
 
@@ -692,51 +546,20 @@ main {
 /* ================= HEADINGS ================= */
 
 .section-heading {
-  margin: 32px 2px 14px;
-
-  position: relative;
+  margin: 30px 2px 12px;
 }
 
-
 .section-heading h2 {
-  margin: 4px 0 0;
+  margin: 5px 0 0;
 
   font-family: var(--serif);
 
-  font-size: 29px;
+  font-size: 26px;
 
-  font-weight: 600;
+  font-weight: 500;
 
-  line-height: .95;
-
-  letter-spacing: -1px;
-
-  color: #35483b;
+  letter-spacing: -.8px;
 }
-
-
-.section-heading h2::after {
-  content: "";
-
-  display: block;
-
-  width: 52px;
-  height: 2px;
-
-  margin-top: 10px;
-
-  border-radius: 50%;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--sage-dark),
-      var(--gold)
-    );
-
-  opacity: .8;
-}
-
 
 .section-row {
   display: flex;
@@ -744,26 +567,25 @@ main {
   align-items: center;
 }
 
-
 .section-title {
+  position: relative;
+
   padding: 28px 2px 12px;
 }
 
-
 .section-title h1 {
-  margin: 6px 0 4px;
+  margin: 2px 0 4px;
 
   font-family: var(--serif);
 
-  font-size: 42px;
+  font-size: 43px;
 
-  font-weight: 600;
+  font-weight: 500;
 
-  line-height: .95;
+  line-height: 1;
 
   letter-spacing: -1.7px;
 }
-
 
 .section-title p {
   margin: 0;
@@ -773,6 +595,27 @@ main {
   font-size: 12px;
 }
 
+.title-botanical {
+  width: 74px;
+  height: 34px;
+
+  margin-bottom: -2px;
+
+  color: var(--sage);
+}
+
+.title-botanical svg {
+  width: 74px;
+  height: 34px;
+}
+
+.terracotta-botanical {
+  color: var(--terracotta);
+}
+
+.olive-botanical {
+  color: var(--olive);
+}
 
 .textbtn {
   border: 0;
@@ -797,7 +640,6 @@ main {
   gap: 12px;
 }
 
-
 .money-card {
   position: relative;
 
@@ -812,23 +654,23 @@ main {
   border: 1px solid var(--line);
 
   box-shadow: var(--shadow);
+
+  overflow: hidden;
 }
 
-
 .luxury-icon {
-  width: 45px;
-  height: 45px;
+  width: 49px;
+  height: 49px;
 
   display: grid;
   place-items: center;
 
-  border-radius: 15px;
+  border-radius: 16px;
 
   border: 1px solid currentColor;
 
   position: relative;
 }
-
 
 .luxury-icon::after {
   content: "";
@@ -839,20 +681,18 @@ main {
 
   border: 1px solid currentColor;
 
-  border-radius: 11px;
+  border-radius: 12px;
 
   opacity: .12;
 }
-
 
 .luxury-icon svg {
   position: relative;
   z-index: 2;
 
-  width: 31px;
-  height: 31px;
+  width: 36px;
+  height: 36px;
 }
-
 
 .luxury-icon.green {
   color: var(--sage-dark);
@@ -865,7 +705,6 @@ main {
     );
 }
 
-
 .luxury-icon.terracotta {
   color: var(--terracotta-dark);
 
@@ -877,7 +716,6 @@ main {
     );
 }
 
-
 .money-card > span {
   display: block;
 
@@ -888,7 +726,6 @@ main {
   font-size: 10px;
 }
 
-
 .money-card strong {
   display: block;
 
@@ -896,7 +733,7 @@ main {
 
   font-family: var(--serif);
 
-  font-size: 25px;
+  font-size: 27px;
 
   font-weight: 500;
 
@@ -920,13 +757,13 @@ main {
   box-shadow: var(--shadow);
 }
 
-
 .card-top {
   display: flex;
+
   justify-content: space-between;
+
   align-items: flex-start;
 }
-
 
 .card-top h2 {
   margin: 5px 0 0;
@@ -935,9 +772,8 @@ main {
 
   font-size: 24px;
 
-  font-weight: 600;
+  font-weight: 500;
 }
-
 
 .card-description {
   margin: 8px 0 16px;
@@ -949,23 +785,23 @@ main {
   line-height: 1.45;
 }
 
-
-.question-mark {
-  width: 38px;
-  height: 38px;
+.question-botanical {
+  width: 48px;
+  height: 48px;
 
   display: grid;
   place-items: center;
 
-  border-radius: 50%;
+  border-radius: 16px;
 
   background: var(--cream);
 
   color: var(--terracotta-dark);
+}
 
-  font-family: var(--serif);
-
-  font-size: 19px;
+.question-botanical svg {
+  width: 42px;
+  height: 42px;
 }
 
 
@@ -973,7 +809,9 @@ main {
 
 .fox-message {
   display: flex;
+
   align-items: center;
+
   gap: 14px;
 
   margin: 18px 2px;
@@ -992,7 +830,6 @@ main {
   border: 1px solid #e8ddd2;
 }
 
-
 .mini-fox-holder {
   width: 60px;
   height: 60px;
@@ -1009,7 +846,6 @@ main {
   overflow: hidden;
 }
 
-
 .mini-fox {
   width: 58px;
   height: 58px;
@@ -1017,15 +853,11 @@ main {
   transform: translateY(4px);
 }
 
-
 .message-title {
   font-family: var(--serif);
 
-  font-size: 19px;
-
-  font-weight: 600;
+  font-size: 18px;
 }
-
 
 .fox-message p {
   margin: 3px 0 0;
@@ -1040,19 +872,22 @@ main {
 
 /* ================= AFFORD ================= */
 
-.afford-row {
+.afford-row,
+.row {
   display: flex;
+
   gap: 9px;
 }
-
 
 .money-input {
   flex: 1;
 
   display: flex;
+
   align-items: center;
 
   min-width: 0;
+
   height: 51px;
 
   border: 1px solid var(--line);
@@ -1064,13 +899,11 @@ main {
   padding-left: 14px;
 }
 
-
 .money-input span {
   color: var(--muted);
 
   font-weight: 750;
 }
-
 
 .money-input input {
   width: 100%;
@@ -1084,9 +917,11 @@ main {
   padding: 0 12px 0 7px;
 }
 
-
 .afford-row button,
-.primary-btn {
+.row button,
+.primary-btn,
+.form > button,
+#saveBalanceBtn {
   min-height: 51px;
 
   border: 0;
@@ -1112,12 +947,13 @@ main {
   transition: transform .2s ease;
 }
 
-
 .afford-row button:hover,
-.primary-btn:hover {
+.row button:hover,
+.primary-btn:hover,
+.form > button:hover,
+#saveBalanceBtn:hover {
   transform: translateY(-1px);
 }
-
 
 .result {
   margin-top: 12px;
@@ -1133,12 +969,10 @@ main {
   line-height: 1.45;
 }
 
-
 .result.good {
   color: #56725c;
   background: #edf5ed;
 }
-
 
 .result.bad {
   color: #925b55;
@@ -1164,7 +998,6 @@ main {
   line-height: 1.5;
 }
 
-
 .hidden {
   display: none !important;
 }
@@ -1186,20 +1019,17 @@ main {
   border-bottom: 1px solid var(--line);
 }
 
-
 .item:last-child {
   border-bottom: 0;
 
   padding-bottom: 2px;
 }
 
-
 .item-title {
   font-size: 13px;
 
   font-weight: 700;
 }
-
 
 .item-sub {
   margin-top: 4px;
@@ -1209,7 +1039,6 @@ main {
   font-size: 9px;
 }
 
-
 .item-actions {
   display: flex;
 
@@ -1218,11 +1047,9 @@ main {
   gap: 9px;
 }
 
-
 .item-actions strong {
   font-size: 13px;
 }
-
 
 .delete {
   width: 28px;
@@ -1236,7 +1063,6 @@ main {
 
   color: var(--muted);
 }
-
 
 .pill {
   display: inline-block;
@@ -1254,13 +1080,11 @@ main {
   font-weight: 750;
 }
 
-
 .pill.paid {
   background: #edf3ed;
 
   color: #58715c;
 }
-
 
 .empty {
   padding: 16px 0;
@@ -1279,7 +1103,6 @@ main {
   gap: 16px;
 }
 
-
 .form label {
   display: grid;
 
@@ -1289,7 +1112,6 @@ main {
 
   font-weight: 700;
 }
-
 
 .form input {
   width: 100%;
@@ -1307,14 +1129,14 @@ main {
   outline: none;
 }
 
-
-.form input:focus {
+.form input:focus,
+.balance-entry-row input:focus,
+.money-input:focus-within {
   border-color: var(--sage);
 
   box-shadow:
     0 0 0 3px rgba(113,135,116,.1);
 }
-
 
 .form .check {
   display: flex;
@@ -1326,13 +1148,124 @@ main {
   font-weight: 550;
 }
 
-
 .form .check input {
   width: 17px;
 
   min-height: 17px;
 
   accent-color: var(--sage);
+}
+
+
+/* ================= BALANCE ================= */
+
+.balance-entry-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.balance-entry-card::after {
+  content: "";
+
+  position: absolute;
+
+  right: -15px;
+  top: -15px;
+
+  width: 105px;
+  height: 105px;
+
+  opacity: .15;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      var(--sage),
+      transparent 68%
+    );
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.balance-entry-row {
+  display: flex;
+
+  align-items: center;
+
+  height: 55px;
+
+  margin-top: 14px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 15px;
+
+  background: var(--ivory);
+
+  padding-left: 16px;
+}
+
+.currency-symbol {
+  color: var(--sage-dark);
+
+  font-family: var(--serif);
+
+  font-size: 22px;
+
+  font-weight: 600;
+}
+
+.balance-entry-row input {
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  padding: 0 14px 0 7px;
+
+  font-family: var(--serif);
+
+  font-size: 22px;
+}
+
+
+/* ================= SECTION HEAD ================= */
+
+.section-head {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.section-head h2 {
+  margin: 5px 0 0;
+
+  font-family: var(--serif);
+
+  font-size: 23px;
+
+  font-weight: 500;
+}
+
+.small-botanical {
+  width: 44px;
+  height: 44px;
+
+  color: var(--sage);
+}
+
+.small-botanical svg {
+  width: 44px;
+  height: 44px;
 }
 
 
@@ -1369,7 +1302,6 @@ main {
     0 -10px 30px rgba(45,58,48,.05);
 }
 
-
 .navbtn {
   display: flex;
 
@@ -1377,7 +1309,7 @@ main {
 
   align-items: center;
 
-  gap: 4px;
+  gap: 3px;
 
   border: 0;
 
@@ -1385,7 +1317,7 @@ main {
 
   color: #969d96;
 
-  padding: 5px 2px;
+  padding: 3px 2px;
 
   font-size: 8px;
 
@@ -1394,30 +1326,27 @@ main {
   letter-spacing: .2px;
 }
 
-
 .nav-icon {
-  width: 44px;
-  height: 35px;
+  width: 48px;
+  height: 39px;
 
   display: grid;
+
   place-items: center;
 
-  border-radius: 13px;
+  border-radius: 14px;
 
   transition: .2s ease;
 }
 
-
 .nav-icon svg {
-  width: 30px;
-  height: 30px;
+  width: 37px;
+  height: 37px;
 }
-
 
 .navbtn.active {
   color: var(--sage-dark);
 }
-
 
 .navbtn.active .nav-icon {
   background: var(--sage-light);
@@ -1426,16 +1355,13 @@ main {
     inset 0 0 0 1px rgba(113,135,116,.08);
 }
 
-
 .navbtn:nth-child(2) .nav-icon {
   color: var(--gold);
 }
 
-
 .navbtn:nth-child(3) .nav-icon {
   color: var(--terracotta);
 }
-
 
 .navbtn:nth-child(4) .nav-icon {
   color: var(--olive);
@@ -1451,17 +1377,17 @@ main {
     width: calc(100% - 24px);
   }
 
+  .welcome h1 {
+    font-size: 31px;
+  }
+
   .brand {
-    font-size: 29px;
+    font-size: 26px;
   }
 
   .brand-leaf {
-    width: 46px;
-    height: 46px;
-  }
-
-  .welcome h1 {
-    font-size: 32px;
+    width: 48px;
+    height: 48px;
   }
 
   .fox-wrap {
@@ -1478,12 +1404,16 @@ main {
     font-size: 54px;
   }
 
-  .section-heading h2 {
-    font-size: 27px;
+  .money-card {
+    padding: 16px;
+  }
+
+  .luxury-icon {
+    width: 46px;
+    height: 46px;
   }
 
 }
-
 
 @media (max-width:360px) {
 
@@ -1491,11 +1421,13 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .afford-row {
+  .afford-row,
+  .row {
     flex-direction: column;
   }
 
-  .afford-row button {
+  .afford-row button,
+  .row button {
     width: 100%;
   }
 
@@ -1506,6 +1438,10 @@ main {
 
   .fox {
     width: 108px;
+  }
+
+  .floating-botanical {
+    display: none;
   }
 
 }
