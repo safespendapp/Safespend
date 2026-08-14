@@ -7,6 +7,14 @@
   <meta name="description" content="SafeSpend — know what you can safely spend.">
   <title>SafeSpend — Know what you can safely spend.</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -18,26 +26,25 @@
   <div class="brand-area">
 
     <div class="brand-botanical" aria-hidden="true">
-      <svg viewBox="0 0 80 80">
-        <path class="stem" d="M39 69C39 51 43 31 62 11"/>
-        <path class="stem" d="M40 57C30 47 20 40 10 38"/>
-        <path class="stem" d="M43 43C33 31 28 20 29 10"/>
 
-        <path class="leaf leaf-main"
-          d="M44 39C45 25 53 14 68 10C66 25 57 37 44 39Z"/>
+      <svg viewBox="0 0 90 90">
 
-        <path class="leaf leaf-soft"
-          d="M35 31C25 28 18 20 18 9C29 12 37 20 35 31Z"/>
+        <path class="stem" d="M43 78C43 55 48 31 67 12"/>
+        <path class="stem soft" d="M43 64C34 53 25 45 13 41"/>
+        <path class="stem soft" d="M47 48C57 39 63 29 67 18"/>
 
-        <path class="leaf leaf-soft"
-          d="M39 52C28 54 17 50 10 41C21 38 32 42 39 52Z"/>
+        <path class="leaf" d="M29 54C18 53 10 47 9 37C20 37 28 42 29 54Z"/>
+        <path class="leaf light" d="M38 43C28 39 23 31 25 21C36 24 41 32 38 43Z"/>
+        <path class="leaf" d="M51 38C49 27 54 18 64 14C66 25 61 34 51 38Z"/>
+        <path class="leaf soft" d="M57 28C62 18 72 13 82 16C77 26 68 31 57 28Z"/>
+        <path class="leaf light" d="M45 61C53 52 63 49 72 53C67 62 57 66 45 61Z"/>
 
-        <path class="leaf leaf-light"
-          d="M48 28C51 17 58 11 69 9C66 19 58 27 48 28Z"/>
+        <circle class="berry" cx="72" cy="12" r="2.2"/>
+        <circle class="berry" cx="77" cy="15" r="1.8"/>
+        <circle class="berry" cx="69" cy="18" r="1.7"/>
 
-        <path class="leaf leaf-light"
-          d="M47 59C51 48 59 42 70 41C67 52 58 59 47 59Z"/>
       </svg>
+
     </div>
 
     <div>
@@ -47,12 +54,17 @@
 
   </div>
 
-  <button id="resetBtn" class="ghost small">Reset</button>
+  <button id="resetBtn" class="ghost small">
+    Reset
+  </button>
 
 </header>
 
 
 <main>
+
+
+<!-- ================= HOME ================= -->
 
 <section id="dashboard" class="screen active">
 
@@ -60,7 +72,9 @@
 
     <div class="welcome-copy">
 
-      <div class="eyebrow">A CALMER WAY TO MANAGE MONEY</div>
+      <div class="eyebrow">
+        A CALMER WAY TO MANAGE MONEY
+      </div>
 
       <h1>
         Spend with<br>
@@ -73,20 +87,41 @@
 
     </div>
 
+
+    <!-- FOX -->
+
     <div class="fox-wrap">
 
       <div class="fox-glow"></div>
 
-      <svg class="fox" viewBox="0 0 220 230" aria-label="SafeSpend fox">
+      <svg
+        class="fox"
+        viewBox="0 0 220 230"
+        aria-label="SafeSpend fox"
+      >
 
-        <path class="fox-fur"
-          d="M153 174C205 160 210 111 176 101C185 128 165 145 137 145Z"/>
+        <path
+          class="fox-fur"
+          d="M153 174
+             C205 160 210 111 176 101
+             C185 128 165 145 137 145Z"
+        />
 
-        <ellipse class="fox-fur"
-          cx="111" cy="164" rx="55" ry="51"/>
+        <ellipse
+          class="fox-fur"
+          cx="111"
+          cy="164"
+          rx="55"
+          ry="51"
+        />
 
-        <path class="fox-cream"
-          d="M79 145C79 184 96 204 113 204C132 202 145 181 143 143C124 155 97 156 79 145Z"/>
+        <path
+          class="fox-cream"
+          d="M79 145
+             C79 184 96 204 113 204
+             C132 202 145 181 143 143
+             C124 155 97 156 79 145Z"
+        />
 
         <path class="fox-fur" d="M73 86L58 30L99 62Z"/>
         <path class="fox-fur" d="M125 62L166 30L151 88Z"/>
@@ -94,14 +129,39 @@
         <path class="fox-ear-inner" d="M72 72L66 45L87 64Z"/>
         <path class="fox-ear-inner" d="M135 64L157 45L150 73Z"/>
 
-        <path class="fox-fur"
-          d="M65 89C66 57 86 42 112 42C140 42 160 59 160 91C160 124 140 144 112 145C83 144 63 123 65 89Z"/>
+        <path
+          class="fox-fur"
+          d="M65 89
+             C66 57 86 42 112 42
+             C140 42 160 59 160 91
+             C160 124 140 144 112 145
+             C83 144 63 123 65 89Z"
+        />
 
-        <ellipse class="fox-cream" cx="87" cy="105" rx="28" ry="25"/>
-        <ellipse class="fox-cream" cx="137" cy="105" rx="28" ry="25"/>
+        <ellipse
+          class="fox-cream"
+          cx="87"
+          cy="105"
+          rx="28"
+          ry="25"
+        />
 
-        <path class="fox-muzzle"
-          d="M88 105C91 91 103 88 112 99C121 88 134 91 137 105C135 121 125 130 112 130C99 130 89 121 88 105Z"/>
+        <ellipse
+          class="fox-cream"
+          cx="137"
+          cy="105"
+          rx="28"
+          ry="25"
+        />
+
+        <path
+          class="fox-muzzle"
+          d="M88 105
+             C91 91 103 88 112 99
+             C121 88 134 91 137 105
+             C135 121 125 130 112 130
+             C99 130 89 121 88 105Z"
+        />
 
         <ellipse class="fox-eye" cx="91" cy="91" rx="8" ry="10"/>
         <ellipse class="fox-eye" cx="133" cy="91" rx="8" ry="10"/>
@@ -117,10 +177,18 @@
         <path class="fox-smile" d="M112 109C109 116 103 119 98 117"/>
         <path class="fox-smile" d="M112 109C115 116 121 119 126 117"/>
 
-        <path class="fox-scarf"
-          d="M77 133C98 145 128 145 148 132L144 151C124 162 99 161 81 151Z"/>
+        <path
+          class="fox-scarf"
+          d="M77 133
+             C98 145 128 145 148 132
+             L144 151
+             C124 162 99 161 81 151Z"
+        />
 
-        <path class="fox-scarf" d="M132 150L158 187L134 174Z"/>
+        <path
+          class="fox-scarf"
+          d="M132 150L158 187L134 174Z"
+        />
 
         <ellipse class="fox-fur" cx="78" cy="201" rx="21" ry="13"/>
         <ellipse class="fox-fur" cx="143" cy="201" rx="21" ry="13"/>
@@ -132,27 +200,103 @@
 
       </svg>
 
-      <div class="botanical-sprig sprig-one" aria-hidden="true">
-        <svg viewBox="0 0 70 100">
-          <path d="M34 96C34 68 38 35 57 8"/>
-          <path d="M39 64C27 52 17 47 7 46"/>
-          <path d="M42 48C30 35 27 25 28 14"/>
-          <path d="M38 75C50 65 59 61 67 62"/>
-          <ellipse cx="51" cy="20" rx="8" ry="18" transform="rotate(34 51 20)"/>
-          <ellipse cx="20" cy="48" rx="8" ry="16" transform="rotate(-58 20 48)"/>
-          <ellipse cx="57" cy="67" rx="8" ry="16" transform="rotate(55 57 67)"/>
-          <ellipse cx="31" cy="31" rx="7" ry="15" transform="rotate(-34 31 31)"/>
+
+      <!-- LUSH BOTANICAL SPRIG -->
+
+      <div class="botanical-sprig sprig-one">
+
+        <svg viewBox="0 0 80 120">
+
+          <path d="M10 112C27 86 45 58 70 10"/>
+
+          <path d="M22 92C15 80 14 68 20 58"/>
+          <path d="M34 73C29 61 31 50 39 42"/>
+          <path d="M47 51C45 39 50 29 59 23"/>
+
+          <ellipse
+            cx="19"
+            cy="58"
+            rx="8"
+            ry="16"
+            transform="rotate(-34 19 58)"
+          />
+
+          <ellipse
+            cx="39"
+            cy="42"
+            rx="8"
+            ry="16"
+            transform="rotate(35 39 42)"
+          />
+
+          <ellipse
+            cx="58"
+            cy="23"
+            rx="8"
+            ry="16"
+            transform="rotate(-35 58 23)"
+          />
+
+          <ellipse
+            cx="32"
+            cy="78"
+            rx="7"
+            ry="14"
+            transform="rotate(50 32 78)"
+          />
+
+          <circle cx="67" cy="14" r="3"/>
+          <circle cx="73" cy="18" r="2.5"/>
+          <circle cx="65" cy="22" r="2"/>
+
         </svg>
+
       </div>
 
-      <div class="botanical-sprig sprig-two" aria-hidden="true">
-        <svg viewBox="0 0 70 100">
-          <path d="M37 95C37 70 31 40 12 10"/>
-          <ellipse cx="22" cy="22" rx="8" ry="17" transform="rotate(-35 22 22)"/>
-          <ellipse cx="31" cy="42" rx="8" ry="17" transform="rotate(48 31 42)"/>
-          <ellipse cx="23" cy="61" rx="8" ry="16" transform="rotate(-48 23 61)"/>
-          <ellipse cx="43" cy="66" rx="8" ry="17" transform="rotate(55 43 66)"/>
+
+      <div class="botanical-sprig sprig-two">
+
+        <svg viewBox="0 0 80 120">
+
+          <path d="M68 114C51 87 36 59 12 9"/>
+
+          <ellipse
+            cx="61"
+            cy="94"
+            rx="7"
+            ry="15"
+            transform="rotate(-48 61 94)"
+          />
+
+          <ellipse
+            cx="48"
+            cy="72"
+            rx="8"
+            ry="16"
+            transform="rotate(38 48 72)"
+          />
+
+          <ellipse
+            cx="35"
+            cy="48"
+            rx="7"
+            ry="15"
+            transform="rotate(-42 35 48)"
+          />
+
+          <ellipse
+            cx="23"
+            cy="27"
+            rx="7"
+            ry="14"
+            transform="rotate(35 23 27)"
+          />
+
+          <circle cx="11" cy="10" r="3"/>
+          <circle cx="17" cy="13" r="2"/>
+
         </svg>
+
       </div>
 
     </div>
@@ -160,101 +304,255 @@
   </div>
 
 
+  <!-- SAFE TO SPEND -->
+
   <div class="hero-card">
 
-    <div class="botanical-corner corner-one"></div>
-    <div class="botanical-corner corner-two"></div>
-    <div class="botanical-corner corner-three"></div>
-    <div class="botanical-corner corner-four"></div>
+    <div class="botanical-corner corner-one">
+      <span></span>
+      <i></i>
+      <b></b>
+    </div>
+
+    <div class="botanical-corner corner-two">
+      <span></span>
+      <i></i>
+      <b></b>
+    </div>
+
+    <div class="botanical-corner corner-three">
+      <span></span>
+      <i></i>
+      <b></b>
+    </div>
+
+    <div class="botanical-corner corner-four">
+      <span></span>
+      <i></i>
+      <b></b>
+    </div>
+
 
     <div class="hero-top">
 
       <div class="hero-label">
+
         <span class="status-dot"></span>
+
         SAFE TO SPEND
+
       </div>
 
-      <span class="hero-star">✦</span>
+      <span class="hero-star">
+        ✦
+      </span>
 
     </div>
 
-    <div id="safeSpend" class="big">$0.00</div>
 
-    <div id="safeNote" class="hero-note">
+    <div
+      id="safeSpend"
+      class="big"
+    >
+      $0.00
+    </div>
+
+
+    <div
+      id="safeNote"
+      class="hero-note"
+    >
       Add your balance, income, and bills to get started.
     </div>
 
+
     <div class="hero-bottom">
-      <span>Based on your current plan</span>
-      <span>✦ Plan first. Spend freely.</span>
+
+      <span>
+        Based on your current plan
+      </span>
+
+      <span>
+        ✦ Plan first. Spend freely.
+      </span>
+
     </div>
 
   </div>
 
 
+  <!-- SNAPSHOT -->
+
   <div class="section-heading">
-    <div class="eyebrow">YOUR MONEY</div>
-    <h2>Your snapshot</h2>
+
+    <div class="eyebrow">
+      YOUR MONEY
+    </div>
+
+    <h2>
+      Your snapshot
+    </h2>
+
   </div>
 
 
   <div class="money-grid">
 
+
+    <!-- BALANCE -->
+
     <div class="money-card">
 
-      <div class="luxury-icon green">
-        <svg viewBox="0 0 50 50">
-          <path d="M25 42V12" class="icon-stem"/>
-          <path d="M25 28C16 27 11 21 12 13C21 13 27 19 25 28Z" class="icon-leaf"/>
-          <path d="M25 23C27 15 34 10 42 11C41 19 34 24 25 23Z" class="icon-leaf-soft"/>
-          <path d="M25 36C18 35 13 31 11 25C19 25 24 29 25 36Z" class="icon-leaf-light"/>
+      <div class="luxury-icon green botanical-icon">
+
+        <svg viewBox="0 0 70 70">
+
+          <path
+            class="icon-stem"
+            d="M36 60C35 43 39 25 54 10"
+          />
+
+          <path
+            class="icon-leaf"
+            d="M34 45C23 44 15 38 14 29C25 29 33 35 34 45Z"
+          />
+
+          <path
+            class="icon-leaf-soft"
+            d="M41 34C39 24 44 15 53 11C55 21 50 30 41 34Z"
+          />
+
+          <path
+            class="icon-leaf-light"
+            d="M38 50C47 43 56 43 62 48C56 55 47 56 38 50Z"
+          />
+
+          <circle class="icon-berry" cx="57" cy="10" r="2.5"/>
+          <circle class="icon-berry" cx="63" cy="14" r="2"/>
+
         </svg>
+
       </div>
 
-      <span>Current balance</span>
-      <strong id="balanceOut">$0.00</strong>
+      <span>
+        Current balance
+      </span>
+
+      <strong id="balanceOut">
+        $0.00
+      </strong>
 
     </div>
 
 
+    <!-- BILLS -->
+
     <div class="money-card">
 
-      <div class="luxury-icon terracotta">
-        <svg viewBox="0 0 50 50">
-          <path d="M25 42C25 29 28 18 39 9" class="icon-stem"/>
-          <ellipse cx="35" cy="16" rx="7" ry="14"
-            transform="rotate(38 35 16)" class="icon-leaf"/>
-          <ellipse cx="25" cy="29" rx="7" ry="13"
-            transform="rotate(-55 25 29)" class="icon-leaf-soft"/>
-          <ellipse cx="34" cy="34" rx="6" ry="12"
-            transform="rotate(55 34 34)" class="icon-leaf-light"/>
+      <div class="luxury-icon terracotta botanical-icon">
+
+        <svg viewBox="0 0 70 70">
+
+          <path
+            class="icon-stem"
+            d="M35 60C34 43 29 28 17 14"
+          />
+
+          <path
+            class="icon-leaf"
+            d="M30 43C20 42 14 36 14 27C24 27 30 33 30 43Z"
+          />
+
+          <path
+            class="icon-leaf-soft"
+            d="M38 34C43 25 52 21 61 23C57 32 48 36 38 34Z"
+          />
+
+          <path
+            class="icon-leaf-light"
+            d="M36 51C43 44 53 43 59 48C53 55 44 56 36 51Z"
+          />
+
+          <circle class="icon-berry" cx="16" cy="14" r="2.5"/>
+          <circle class="icon-berry" cx="11" cy="18" r="2"/>
+
         </svg>
+
       </div>
 
-      <span>Upcoming bills</span>
-      <strong id="billsOut">$0.00</strong>
+      <span>
+        Upcoming bills
+      </span>
+
+      <strong id="billsOut">
+        $0.00
+      </strong>
 
     </div>
 
   </div>
 
 
-  <div id="warning" class="notice hidden"></div>
+  <div
+    id="warning"
+    class="notice hidden"
+  ></div>
 
 
-  <div class="card afford-card">
+  <!-- AFFORD -->
 
-    <div class="card-heading-botanical" aria-hidden="true">
-      <svg viewBox="0 0 90 60">
-        <path d="M5 52C28 42 48 27 83 7"/>
-        <ellipse cx="25" cy="39" rx="7" ry="16" transform="rotate(55 25 39)"/>
-        <ellipse cx="39" cy="31" rx="7" ry="16" transform="rotate(-42 39 31)"/>
-        <ellipse cx="56" cy="22" rx="7" ry="16" transform="rotate(48 56 22)"/>
-        <ellipse cx="70" cy="15" rx="6" ry="14" transform="rotate(-38 70 15)"/>
+  <div class="card botanical-card">
+
+    <div class="card-heading-botanical">
+
+      <svg viewBox="0 0 140 80">
+
+        <path d="M5 72C32 55 49 35 72 8"/>
+
+        <ellipse
+          cx="31"
+          cy="54"
+          rx="8"
+          ry="18"
+          transform="rotate(48 31 54)"
+        />
+
+        <ellipse
+          cx="49"
+          cy="38"
+          rx="8"
+          ry="18"
+          transform="rotate(-45 49 38)"
+        />
+
+        <ellipse
+          cx="68"
+          cy="20"
+          rx="8"
+          ry="17"
+          transform="rotate(42 68 20)"
+        />
+
+        <ellipse
+          cx="82"
+          cy="17"
+          rx="7"
+          ry="15"
+          transform="rotate(-35 82 17)"
+        />
+
+        <circle cx="93" cy="11" r="3"/>
+        <circle cx="101" cy="14" r="2.5"/>
+
       </svg>
+
     </div>
 
-    <h2>Can I afford this?</h2>
+
+    <h2>
+      Can I afford this?
+    </h2>
+
 
     <div class="row">
 
@@ -266,26 +564,88 @@
         placeholder="Amount"
       >
 
-      <button id="affordBtn">Check</button>
+      <button id="affordBtn">
+        Check
+      </button>
 
     </div>
 
-    <div id="affordResult" class="result muted">
+
+    <div
+      id="affordResult"
+      class="result muted"
+    >
       Enter an amount to check.
     </div>
 
   </div>
 
 
-  <div class="card">
+  <!-- NEXT BILLS -->
+
+  <div class="card botanical-card">
+
+    <div class="card-heading-botanical olive">
+
+      <svg viewBox="0 0 140 80">
+
+        <path d="M4 72C28 54 51 37 79 9"/>
+
+        <ellipse
+          cx="28"
+          cy="55"
+          rx="7"
+          ry="17"
+          transform="rotate(43 28 55)"
+        />
+
+        <ellipse
+          cx="46"
+          cy="40"
+          rx="7"
+          ry="17"
+          transform="rotate(-42 46 40)"
+        />
+
+        <ellipse
+          cx="64"
+          cy="26"
+          rx="7"
+          ry="16"
+          transform="rotate(40 64 26)"
+        />
+
+        <ellipse
+          cx="81"
+          cy="13"
+          rx="7"
+          ry="15"
+          transform="rotate(-36 81 13)"
+        />
+
+        <circle cx="91" cy="9" r="2.5"/>
+        <circle cx="97" cy="13" r="2"/>
+
+      </svg>
+
+    </div>
+
 
     <div class="section-head">
-      <h2>Next bills</h2>
 
-      <button class="textbtn" data-screen="bills">
+      <h2>
+        Next bills
+      </h2>
+
+      <button
+        class="textbtn"
+        data-screen="bills"
+      >
         View all
       </button>
+
     </div>
+
 
     <div id="nextBills"></div>
 
@@ -294,39 +654,78 @@
 </section>
 
 
+<!-- ================= INCOME ================= -->
+
 <section id="income" class="screen">
 
   <div class="section-title">
-    <div class="section-botanical" aria-hidden="true">
-      <svg viewBox="0 0 100 70">
-        <path d="M8 62C33 48 57 29 91 7"/>
-        <ellipse cx="28" cy="49" rx="8" ry="19" transform="rotate(54 28 49)"/>
-        <ellipse cx="44" cy="39" rx="8" ry="18" transform="rotate(-42 44 39)"/>
-        <ellipse cx="61" cy="28" rx="8" ry="18" transform="rotate(49 61 28)"/>
-        <ellipse cx="78" cy="17" rx="7" ry="16" transform="rotate(-38 78 17)"/>
+
+    <div class="section-botanical">
+
+      <svg viewBox="0 0 150 100">
+
+        <path d="M10 88C40 70 64 44 98 8"/>
+
+        <ellipse cx="30" cy="69" rx="8" ry="20"
+          transform="rotate(45 30 69)"/>
+
+        <ellipse cx="49" cy="53" rx="8" ry="19"
+          transform="rotate(-40 49 53)"/>
+
+        <ellipse cx="69" cy="35" rx="8" ry="19"
+          transform="rotate(42 69 35)"/>
+
+        <ellipse cx="90" cy="16" rx="8" ry="18"
+          transform="rotate(-35 90 16)"/>
+
+        <circle cx="105" cy="9" r="3"/>
+        <circle cx="112" cy="13" r="2.3"/>
+
       </svg>
+
     </div>
 
-    <h1>Income</h1>
-    <p>Add money you expect to receive.</p>
+
+    <h1>
+      Income
+    </h1>
+
+    <p>
+      Add money you expect to receive.
+    </p>
+
   </div>
 
 
   <div class="card balance-entry-card">
 
     <div class="section-head">
+
       <div>
-        <div class="eyebrow">YOUR MONEY</div>
-        <h2>Current balance</h2>
+
+        <div class="eyebrow">
+          YOUR MONEY
+        </div>
+
+        <h2>
+          Current balance
+        </h2>
+
       </div>
+
     </div>
+
 
     <p class="muted">
       Enter the amount currently in your bank account.
     </p>
 
+
     <div class="balance-entry-row">
-      <span class="currency-symbol">$</span>
+
+      <span class="currency-symbol">
+        $
+      </span>
 
       <input
         id="balanceInput"
@@ -336,122 +735,262 @@
         inputmode="decimal"
         placeholder="0.00"
       >
+
     </div>
 
-    <button id="saveBalanceBtn" type="button">
+
+    <button
+      id="saveBalanceBtn"
+      type="button"
+    >
       Save balance
     </button>
 
-    <div id="balanceSaved" class="result muted"></div>
+
+    <div
+      id="balanceSaved"
+      class="result muted"
+    ></div>
 
   </div>
 
 
-  <form id="incomeForm" class="card form">
+  <form
+    id="incomeForm"
+    class="card form"
+  >
 
     <label>
       Source
-      <input id="incomeSource" required placeholder="Paycheck, VA, BAH, etc.">
+
+      <input
+        id="incomeSource"
+        required
+        placeholder="Paycheck, VA, BAH, etc."
+      >
+
     </label>
+
 
     <label>
       Amount
-      <input id="incomeAmount" required type="number" min="0" step="0.01">
+
+      <input
+        id="incomeAmount"
+        required
+        type="number"
+        min="0"
+        step="0.01"
+      >
+
     </label>
+
 
     <label>
       Date
-      <input id="incomeDate" required type="date">
+
+      <input
+        id="incomeDate"
+        required
+        type="date"
+      >
+
     </label>
+
 
     <label class="check">
-      <input id="incomeRecurring" type="checkbox">
+
+      <input
+        id="incomeRecurring"
+        type="checkbox"
+      >
+
       Repeats monthly
+
     </label>
 
-    <button type="submit">Add income</button>
+
+    <button type="submit">
+      Add income
+    </button>
 
   </form>
+
 
   <div id="incomeList"></div>
 
 </section>
 
 
+<!-- ================= BILLS ================= -->
+
 <section id="bills" class="screen">
 
   <div class="section-title">
-    <div class="section-botanical terracotta-botanical" aria-hidden="true">
-      <svg viewBox="0 0 100 70">
-        <path d="M8 62C33 48 57 29 91 7"/>
-        <ellipse cx="28" cy="49" rx="8" ry="19" transform="rotate(54 28 49)"/>
-        <ellipse cx="44" cy="39" rx="8" ry="18" transform="rotate(-42 44 39)"/>
-        <ellipse cx="61" cy="28" rx="8" ry="18" transform="rotate(49 61 28)"/>
-        <ellipse cx="78" cy="17" rx="7" ry="16" transform="rotate(-38 78 17)"/>
+
+    <div class="section-botanical terracotta-botanical">
+
+      <svg viewBox="0 0 150 100">
+
+        <path d="M10 88C40 70 64 44 98 8"/>
+
+        <ellipse cx="30" cy="69" rx="8" ry="20"
+          transform="rotate(45 30 69)"/>
+
+        <ellipse cx="49" cy="53" rx="8" ry="19"
+          transform="rotate(-40 49 53)"/>
+
+        <ellipse cx="69" cy="35" rx="8" ry="19"
+          transform="rotate(42 69 35)"/>
+
+        <ellipse cx="90" cy="16" rx="8" ry="18"
+          transform="rotate(-35 90 16)"/>
+
+        <circle cx="105" cy="9" r="3"/>
+        <circle cx="112" cy="13" r="2.3"/>
+
       </svg>
+
     </div>
 
-    <h1>Bills</h1>
-    <p>Track what must be paid and when.</p>
+
+    <h1>
+      Bills
+    </h1>
+
+    <p>
+      Track what must be paid and when.
+    </p>
+
   </div>
 
 
-  <form id="billForm" class="card form">
+  <form
+    id="billForm"
+    class="card form"
+  >
 
     <label>
       Bill name
-      <input id="billName" required placeholder="Rent, electric, internet...">
+
+      <input
+        id="billName"
+        required
+        placeholder="Rent, electric, internet..."
+      >
+
     </label>
+
 
     <label>
       Amount
-      <input id="billAmount" required type="number" min="0" step="0.01">
+
+      <input
+        id="billAmount"
+        required
+        type="number"
+        min="0"
+        step="0.01"
+      >
+
     </label>
+
 
     <label>
       Due date
-      <input id="billDate" required type="date">
+
+      <input
+        id="billDate"
+        required
+        type="date"
+      >
+
     </label>
 
+
     <label class="check">
-      <input id="billPaid" type="checkbox">
+
+      <input
+        id="billPaid"
+        type="checkbox"
+      >
+
       Already paid
+
     </label>
+
 
     <label class="check">
-      <input id="billRecurring" type="checkbox">
+
+      <input
+        id="billRecurring"
+        type="checkbox"
+      >
+
       Repeats monthly
+
     </label>
 
-    <button type="submit">Add bill</button>
+
+    <button type="submit">
+      Add bill
+    </button>
 
   </form>
+
 
   <div id="billList"></div>
 
 </section>
 
 
+<!-- ================= CALENDAR ================= -->
+
 <section id="calendar" class="screen">
 
   <div class="section-title">
-    <div class="section-botanical olive-botanical" aria-hidden="true">
-      <svg viewBox="0 0 100 70">
-        <path d="M8 62C33 48 57 29 91 7"/>
-        <ellipse cx="28" cy="49" rx="8" ry="19" transform="rotate(54 28 49)"/>
-        <ellipse cx="44" cy="39" rx="8" ry="18" transform="rotate(-42 44 39)"/>
-        <ellipse cx="61" cy="28" rx="8" ry="18" transform="rotate(49 61 28)"/>
-        <ellipse cx="78" cy="17" rx="7" ry="16" transform="rotate(-38 78 17)"/>
+
+    <div class="section-botanical olive-botanical">
+
+      <svg viewBox="0 0 150 100">
+
+        <path d="M10 88C40 70 64 44 98 8"/>
+
+        <ellipse cx="30" cy="69" rx="8" ry="20"
+          transform="rotate(45 30 69)"/>
+
+        <ellipse cx="49" cy="53" rx="8" ry="19"
+          transform="rotate(-40 49 53)"/>
+
+        <ellipse cx="69" cy="35" rx="8" ry="19"
+          transform="rotate(42 69 35)"/>
+
+        <ellipse cx="90" cy="16" rx="8" ry="18"
+          transform="rotate(-35 90 16)"/>
+
+        <circle cx="105" cy="9" r="3"/>
+        <circle cx="112" cy="13" r="2.3"/>
+
       </svg>
+
     </div>
 
-    <h1>Calendar</h1>
-    <p>See income and bills together.</p>
+
+    <h1>
+      Calendar
+    </h1>
+
+    <p>
+      See income and bills together.
+    </p>
+
   </div>
 
 
   <div class="card">
+
     <div id="calendarList"></div>
+
   </div>
 
 </section>
@@ -459,77 +998,130 @@
 </main>
 
 
+<!-- ================= NAVIGATION ================= -->
+
 <nav class="nav">
 
-  <button class="navbtn active" data-screen="dashboard">
+  <button
+    class="navbtn active"
+    data-screen="dashboard"
+  >
 
-    <span class="nav-icon botanical-nav">
-      <svg viewBox="0 0 50 50">
-        <path d="M25 42V19"/>
-        <path d="M25 31C17 30 12 24 13 16C21 16 27 22 25 31Z"/>
-        <path d="M26 27C28 19 34 14 42 15C40 23 34 28 26 27Z"/>
-        <path d="M25 38C19 36 15 32 14 27C21 27 25 31 25 38Z"/>
+    <span
+      class="nav-icon botanical-nav"
+      aria-hidden="true"
+    >
+
+      <svg viewBox="0 0 70 70">
+
+        <path d="M35 60C34 43 39 27 54 10"/>
+
+        <path d="M34 46C24 45 17 39 16 30C26 30 33 35 34 46Z"/>
+
+        <path d="M41 35C40 25 45 16 54 11C56 21 51 30 41 35Z"/>
+
+        <path d="M39 51C47 45 56 45 62 50C56 56 47 57 39 51Z"/>
+
       </svg>
+
     </span>
 
-    <span>Home</span>
+    <span>
+      Home
+    </span>
 
   </button>
 
 
-  <button class="navbtn" data-screen="income">
+  <button
+    class="navbtn"
+    data-screen="income"
+  >
 
-    <span class="nav-icon botanical-nav">
-      <svg viewBox="0 0 50 50">
-        <path d="M25 43C25 30 29 19 40 9"/>
-        <ellipse cx="35" cy="17" rx="7" ry="15"
-          transform="rotate(38 35 17)"/>
-        <ellipse cx="25" cy="29" rx="7" ry="14"
-          transform="rotate(-54 25 29)"/>
-        <ellipse cx="34" cy="35" rx="6" ry="12"
-          transform="rotate(54 34 35)"/>
+    <span
+      class="nav-icon botanical-nav"
+      aria-hidden="true"
+    >
+
+      <svg viewBox="0 0 70 70">
+
+        <path d="M35 60C34 43 29 28 16 13"/>
+
+        <path d="M30 44C20 43 14 37 14 28C24 28 30 34 30 44Z"/>
+
+        <path d="M39 35C44 25 53 21 62 23C58 32 49 36 39 35Z"/>
+
+        <path d="M37 52C45 45 54 44 60 49C54 56 45 57 37 52Z"/>
+
       </svg>
+
     </span>
 
-    <span>Income</span>
+    <span>
+      Income
+    </span>
 
   </button>
 
 
-  <button class="navbtn" data-screen="bills">
+  <button
+    class="navbtn"
+    data-screen="bills"
+  >
 
-    <span class="nav-icon botanical-nav">
-      <svg viewBox="0 0 50 50">
-        <path d="M25 42C25 30 30 19 41 10"/>
-        <ellipse cx="35" cy="18" rx="7" ry="15"
-          transform="rotate(40 35 18)"/>
-        <ellipse cx="26" cy="30" rx="7" ry="14"
-          transform="rotate(-52 26 30)"/>
-        <ellipse cx="35" cy="36" rx="6" ry="12"
-          transform="rotate(55 35 36)"/>
+    <span
+      class="nav-icon botanical-nav"
+      aria-hidden="true"
+    >
+
+      <svg viewBox="0 0 70 70">
+
+        <path d="M35 60C34 43 39 28 55 12"/>
+
+        <path d="M34 46C24 45 17 39 16 30C26 30 33 35 34 46Z"/>
+
+        <path d="M42 35C41 25 46 17 55 12C57 22 52 31 42 35Z"/>
+
+        <path d="M39 51C47 45 56 45 62 50C56 56 47 57 39 51Z"/>
+
       </svg>
+
     </span>
 
-    <span>Bills</span>
+    <span>
+      Bills
+    </span>
 
   </button>
 
 
-  <button class="navbtn" data-screen="calendar">
+  <button
+    class="navbtn"
+    data-screen="calendar"
+  >
 
-    <span class="nav-icon botanical-nav">
-      <svg viewBox="0 0 50 50">
-        <path d="M25 43C25 30 21 20 10 10"/>
-        <ellipse cx="17" cy="18" rx="7" ry="15"
-          transform="rotate(-40 17 18)"/>
-        <ellipse cx="25" cy="30" rx="7" ry="14"
-          transform="rotate(52 25 30)"/>
-        <ellipse cx="16" cy="36" rx="6" ry="12"
-          transform="rotate(-55 16 36)"/>
+    <span
+      class="nav-icon botanical-nav"
+      aria-hidden="true"
+    >
+
+      <svg viewBox="0 0 70 70">
+
+        <path d="M35 60C34 43 30 28 16 13"/>
+
+        <path d="M30 44C20 43 14 37 14 28C24 28 30 34 30 44Z"/>
+
+        <path d="M39 35C44 25 53 21 62 23C58 32 49 36 39 35Z"/>
+
+        <path d="M37 52C45 45 54 44 60 49C54 56 45 57 37 52Z"/>
+
       </svg>
+
     </span>
 
-    <span>Calendar</span>
+    <span>
+      Calendar
+    </span>
 
   </button>
 
@@ -539,4 +1131,4 @@
 <script src="app.js"></script>
 
 </body>
-</html>
+          </html>
