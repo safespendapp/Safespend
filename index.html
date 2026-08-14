@@ -9,110 +9,6 @@
 
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Elegant typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
-
-  <style>
-    /* ================= SAFE SPEND BRAND TYPE ================= */
-
-    .brand,
-    .welcome h1,
-    .section-title h1,
-    .section-heading h2,
-    .card h2,
-    .card-top h2,
-    .message-title,
-    .money-card strong,
-    .big {
-      font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-    }
-
-    .brand {
-      font-size: 28px;
-      font-weight: 600;
-      letter-spacing: -1.2px;
-    }
-
-    .tagline,
-    body {
-      font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    /* ================= BEAUTIFUL BOTANICAL LEAF ================= */
-
-    .brand-leaf {
-      width: 48px;
-      height: 48px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 17px;
-
-      background:
-        radial-gradient(
-          circle at 30% 25%,
-          rgba(255,255,255,.95),
-          transparent 38%
-        ),
-        linear-gradient(
-          145deg,
-          #f0f5ed,
-          #dce9da
-        );
-
-      border: 1px solid rgba(80,105,87,.16);
-
-      box-shadow:
-        0 8px 20px rgba(80,105,87,.10),
-        inset 0 1px 0 rgba(255,255,255,.8);
-    }
-
-    .brand-leaf::before {
-      content: "";
-      position: absolute;
-      width: 34px;
-      height: 34px;
-      left: 7px;
-      top: 8px;
-      border-radius: 100% 0 100% 0;
-      background: rgba(113,135,116,.08);
-      transform: rotate(-8deg);
-    }
-
-    .brand-leaf svg {
-      position: relative;
-      z-index: 2;
-      width: 38px;
-      height: 38px;
-    }
-
-    .brand-leaf .leaf-stem {
-      fill: none;
-      stroke: #506957;
-      stroke-width: 1.5;
-      stroke-linecap: round;
-    }
-
-    .brand-leaf .leaf-main {
-      fill: #718774;
-    }
-
-    .brand-leaf .leaf-light {
-      fill: #929b72;
-    }
-
-    .brand-leaf .leaf-vein {
-      fill: none;
-      stroke: rgba(255,255,255,.55);
-      stroke-width: 1;
-      stroke-linecap: round;
-    }
-  </style>
 </head>
 
 <body>
@@ -121,49 +17,47 @@
 
   <div class="brand-area">
 
-    <div class="brand-leaf" aria-hidden="true">
+    <div class="brand-leaf">
+      <svg viewBox="0 0 70 70" aria-hidden="true">
 
-      <svg viewBox="0 0 50 50">
-
-        <!-- graceful curved stem -->
         <path
-          class="leaf-stem"
-          d="M19 43
-             C20 34 24 25 32 17
-             C35 14 38 12 42 10"
-        />
-
-        <!-- large botanical leaf -->
-        <path
-          class="leaf-main"
-          d="M24 31
-             C13 30 7 23 9 12
-             C20 12 28 19 24 31Z"
-        />
-
-        <!-- upper leaf -->
-        <path
-          class="leaf-light"
-          d="M28 23
-             C27 14 33 7 43 8
-             C43 18 37 24 28 23Z"
-        />
-
-        <!-- delicate leaf veins -->
-        <path
-          class="leaf-vein"
-          d="M12 14
-             C17 18 21 22 23 27"
+          d="M35 61C35 43 39 25 55 9"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
         />
 
         <path
-          class="leaf-vein"
-          d="M40 11
-             C35 14 31 18 29 21"
+          d="M36 47C25 46 16 40 13 29C24 27 34 34 36 47Z"
+          fill="currentColor"
+        />
+
+        <path
+          d="M39 38C39 27 46 18 58 16C59 27 51 36 39 38Z"
+          fill="currentColor"
+          opacity=".72"
+        />
+
+        <path
+          d="M35 54C25 56 17 52 11 44C21 41 30 45 35 54Z"
+          fill="currentColor"
+          opacity=".62"
+        />
+
+        <path
+          d="M43 27C47 18 55 12 64 13C61 22 54 27 43 27Z"
+          fill="currentColor"
+          opacity=".48"
+        />
+
+        <path
+          d="M30 39C22 36 17 29 18 21C27 23 31 30 30 39Z"
+          fill="currentColor"
+          opacity=".45"
         />
 
       </svg>
-
     </div>
 
     <div>
@@ -179,8 +73,6 @@
 
 
 <main>
-
-<!-- ================= HOME ================= -->
 
 <section id="dashboard" class="screen active">
 
@@ -201,168 +93,64 @@
 
     </div>
 
-    <!-- FOX CHARACTER -->
-
     <div class="fox-wrap">
 
       <div class="fox-glow"></div>
 
       <svg class="fox" viewBox="0 0 220 230" aria-label="SafeSpend fox">
 
-        <path
-          class="fox-fur"
-          d="M153 174
-             C205 160 210 111 176 101
-             C185 128 165 145 137 145Z"
-        />
+        <path class="fox-fur"
+          d="M153 174 C205 160 210 111 176 101 C185 128 165 145 137 145Z"/>
 
-        <ellipse
-          class="fox-fur"
-          cx="111"
-          cy="164"
-          rx="55"
-          ry="51"
-        />
+        <ellipse class="fox-fur"
+          cx="111" cy="164" rx="55" ry="51"/>
 
-        <path
-          class="fox-cream"
-          d="M79 145
-             C79 184 96 204 113 204
-             C132 202 145 181 143 143
-             C124 155 97 156 79 145Z"
-        />
+        <path class="fox-cream"
+          d="M79 145 C79 184 96 204 113 204 C132 202 145 181 143 143 C124 155 97 156 79 145Z"/>
 
-        <path
-          class="fox-fur"
-          d="M73 86L58 30L99 62Z"
-        />
+        <path class="fox-fur"
+          d="M73 86L58 30L99 62Z"/>
 
-        <path
-          class="fox-fur"
-          d="M125 62L166 30L151 88Z"
-        />
+        <path class="fox-fur"
+          d="M125 62L166 30L151 88Z"/>
 
-        <path
-          class="fox-ear-inner"
-          d="M72 72L66 45L87 64Z"
-        />
+        <path class="fox-ear-inner"
+          d="M72 72L66 45L87 64Z"/>
 
-        <path
-          class="fox-ear-inner"
-          d="M135 64L157 45L150 73Z"
-        />
+        <path class="fox-ear-inner"
+          d="M135 64L157 45L150 73Z"/>
 
-        <path
-          class="fox-fur"
-          d="M65 89
-             C66 57 86 42 112 42
-             C140 42 160 59 160 91
-             C160 124 140 144 112 145
-             C83 144 63 123 65 89Z"
-        />
+        <path class="fox-fur"
+          d="M65 89 C66 57 86 42 112 42 C140 42 160 59 160 91 C160 124 140 144 112 145 C83 144 63 123 65 89Z"/>
 
-        <ellipse
-          class="fox-cream"
-          cx="87"
-          cy="105"
-          rx="28"
-          ry="25"
-        />
+        <ellipse class="fox-cream" cx="87" cy="105" rx="28" ry="25"/>
+        <ellipse class="fox-cream" cx="137" cy="105" rx="28" ry="25"/>
 
-        <ellipse
-          class="fox-cream"
-          cx="137"
-          cy="105"
-          rx="28"
-          ry="25"
-        />
+        <path class="fox-muzzle"
+          d="M88 105 C91 91 103 88 112 99 C121 88 134 91 137 105 C135 121 125 130 112 130 C99 130 89 121 88 105Z"/>
 
-        <path
-          class="fox-muzzle"
-          d="M88 105
-             C91 91 103 88 112 99
-             C121 88 134 91 137 105
-             C135 121 125 130 112 130
-             C99 130 89 121 88 105Z"
-        />
-
-        <ellipse
-          class="fox-eye"
-          cx="91"
-          cy="91"
-          rx="8"
-          ry="10"
-        />
-
-        <ellipse
-          class="fox-eye"
-          cx="133"
-          cy="91"
-          rx="8"
-          ry="10"
-        />
+        <ellipse class="fox-eye" cx="91" cy="91" rx="8" ry="10"/>
+        <ellipse class="fox-eye" cx="133" cy="91" rx="8" ry="10"/>
 
         <circle class="fox-glint" cx="94" cy="87" r="3"/>
         <circle class="fox-glint" cx="136" cy="87" r="3"/>
 
-        <path
-          class="fox-brow"
-          d="M81 78C87 74 94 74 100 78"
-        />
+        <path class="fox-brow" d="M81 78C87 74 94 74 100 78"/>
+        <path class="fox-brow" d="M124 78C130 74 137 74 143 78"/>
 
-        <path
-          class="fox-brow"
-          d="M124 78C130 74 137 74 143 78"
-        />
+        <ellipse class="fox-nose" cx="112" cy="105" rx="7" ry="5"/>
 
-        <ellipse
-          class="fox-nose"
-          cx="112"
-          cy="105"
-          rx="7"
-          ry="5"
-        />
+        <path class="fox-smile" d="M112 109 C109 116 103 119 98 117"/>
+        <path class="fox-smile" d="M112 109 C115 116 121 119 126 117"/>
 
-        <path
-          class="fox-smile"
-          d="M112 109
-             C109 116 103 119 98 117"
-        />
+        <path class="fox-scarf"
+          d="M77 133 C98 145 128 145 148 132 L144 151 C124 162 99 161 81 151Z"/>
 
-        <path
-          class="fox-smile"
-          d="M112 109
-             C115 116 121 119 126 117"
-        />
+        <path class="fox-scarf"
+          d="M132 150L158 187L134 174Z"/>
 
-        <path
-          class="fox-scarf"
-          d="M77 133
-             C98 145 128 145 148 132
-             L144 151
-             C124 162 99 161 81 151Z"
-        />
-
-        <path
-          class="fox-scarf"
-          d="M132 150L158 187L134 174Z"
-        />
-
-        <ellipse
-          class="fox-fur"
-          cx="78"
-          cy="201"
-          rx="21"
-          ry="13"
-        />
-
-        <ellipse
-          class="fox-fur"
-          cx="143"
-          cy="201"
-          rx="21"
-          ry="13"
-        />
+        <ellipse class="fox-fur" cx="78" cy="201" rx="21" ry="13"/>
+        <ellipse class="fox-fur" cx="143" cy="201" rx="21" ry="13"/>
 
         <circle class="paw-mark" cx="74" cy="201" r="2"/>
         <circle class="paw-mark" cx="81" cy="199" r="2"/>
@@ -371,15 +159,48 @@
 
       </svg>
 
-      <span class="floating-leaf leaf-a">❧</span>
-      <span class="floating-leaf leaf-b">❧</span>
+      <svg class="floating-botanical botanical-a" viewBox="0 0 60 60" aria-hidden="true">
+        <path d="M9 53C20 37 30 23 48 8"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"/>
+        <ellipse cx="19" cy="39" rx="6" ry="12"
+          transform="rotate(-48 19 39)"
+          fill="currentColor"/>
+        <ellipse cx="31" cy="27" rx="6" ry="12"
+          transform="rotate(48 31 27)"
+          fill="currentColor"
+          opacity=".72"/>
+        <ellipse cx="42" cy="16" rx="5" ry="10"
+          transform="rotate(47 42 16)"
+          fill="currentColor"
+          opacity=".52"/>
+      </svg>
+
+      <svg class="floating-botanical botanical-b" viewBox="0 0 60 60" aria-hidden="true">
+        <path d="M49 53C38 40 28 26 10 10"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"/>
+        <ellipse cx="40" cy="41" rx="6" ry="12"
+          transform="rotate(48 40 41)"
+          fill="currentColor"/>
+        <ellipse cx="29" cy="29" rx="6" ry="12"
+          transform="rotate(-48 29 29)"
+          fill="currentColor"
+          opacity=".72"/>
+        <ellipse cx="18" cy="18" rx="5" ry="10"
+          transform="rotate(-47 18 18)"
+          fill="currentColor"
+          opacity=".52"/>
+      </svg>
 
     </div>
 
   </div>
 
-
-  <!-- SAFE TO SPEND -->
 
   <div class="hero-card">
 
@@ -391,7 +212,21 @@
     <div class="hero-top">
 
       <div class="hero-label">
-        <span class="status-dot"></span>
+        <span class="botanical-status">
+          <svg viewBox="0 0 34 34">
+            <path d="M17 29C17 20 20 12 28 5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"/>
+            <ellipse cx="12" cy="19" rx="4" ry="8"
+              transform="rotate(-40 12 19)"
+              fill="currentColor"/>
+            <ellipse cx="21" cy="12" rx="4" ry="8"
+              transform="rotate(43 21 12)"
+              fill="currentColor"
+              opacity=".72"/>
+          </svg>
+        </span>
         SAFE TO SPEND
       </div>
 
@@ -413,14 +248,9 @@
   </div>
 
 
-  <!-- SNAPSHOT -->
-
   <div class="section-heading">
-
     <div class="eyebrow">YOUR MONEY</div>
-
     <h2>Your snapshot</h2>
-
   </div>
 
 
@@ -429,49 +259,40 @@
     <div class="money-card">
 
       <div class="luxury-icon green">
+        <svg viewBox="0 0 50 50" aria-hidden="true">
 
-        <svg viewBox="0 0 40 40">
+          <rect x="13" y="16" width="25" height="18" rx="4"
+            fill="none" stroke="currentColor" stroke-width="1.5"/>
 
-          <rect
-            x="7"
-            y="11"
-            width="26"
-            height="18"
-            rx="4"
+          <circle cx="25.5" cy="25" r="4"
+            fill="none" stroke="currentColor" stroke-width="1.5"/>
+
+          <path d="M16 13C20 10 25 9 30 11"
             fill="none"
             stroke="currentColor"
-            stroke-width="1.5"
-          />
+            stroke-width="1.3"
+            stroke-linecap="round"/>
 
-          <circle
-            cx="20"
-            cy="20"
-            r="4"
+          <path d="M16 13L12 10"
             fill="none"
             stroke="currentColor"
-            stroke-width="1.5"
-          />
+            stroke-width="1.3"
+            stroke-linecap="round"/>
 
-          <path
-            d="M11 8h18"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-          />
+          <ellipse cx="10" cy="9" rx="3" ry="6"
+            transform="rotate(-42 10 9)"
+            fill="currentColor"
+            opacity=".65"/>
 
-          <path
-            d="M27 20h2"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-          />
+          <ellipse cx="34" cy="12" rx="3" ry="6"
+            transform="rotate(42 34 12)"
+            fill="currentColor"
+            opacity=".45"/>
 
         </svg>
-
       </div>
 
       <span>Current balance</span>
-
       <strong id="balanceOut">$0.00</strong>
 
     </div>
@@ -480,42 +301,39 @@
     <div class="money-card">
 
       <div class="luxury-icon terracotta">
+        <svg viewBox="0 0 50 50" aria-hidden="true">
 
-        <svg viewBox="0 0 40 40">
-
-          <rect
-            x="9"
-            y="6"
-            width="22"
-            height="28"
-            rx="4"
+          <rect x="14" y="10" width="23" height="30" rx="4"
             fill="none"
             stroke="currentColor"
-            stroke-width="1.5"
-          />
+            stroke-width="1.5"/>
 
-          <path
-            d="M14 13h12M14 19h12M14 25h7"
+          <path d="M19 18h13M19 24h13M19 30h8"
             fill="none"
             stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-          />
+            stroke-width="1.4"
+            stroke-linecap="round"/>
 
-          <path
-            d="M27 27c3-2 4-5 2-8"
+          <path d="M37 39C42 33 42 27 38 22"
             fill="none"
             stroke="currentColor"
             stroke-width="1.2"
-            stroke-linecap="round"
-          />
+            stroke-linecap="round"/>
+
+          <ellipse cx="41" cy="20" rx="3" ry="7"
+            transform="rotate(28 41 20)"
+            fill="currentColor"
+            opacity=".65"/>
+
+          <ellipse cx="42" cy="31" rx="3" ry="7"
+            transform="rotate(48 42 31)"
+            fill="currentColor"
+            opacity=".42"/>
 
         </svg>
-
       </div>
 
       <span>Upcoming bills</span>
-
       <strong id="billsOut">$0.00</strong>
 
     </div>
@@ -526,21 +344,56 @@
   <div id="warning" class="notice hidden"></div>
 
 
-  <!-- CAN I AFFORD THIS -->
+  <div class="card afford-card">
 
-  <div class="card">
+    <div class="card-top">
 
-    <h2>Can I afford this?</h2>
+      <div>
+        <div class="eyebrow">A QUICK DECISION</div>
+        <h2>Can I afford this?</h2>
+      </div>
+
+      <div class="question-botanical">
+        <svg viewBox="0 0 50 50">
+          <path d="M25 43C25 31 28 19 40 8"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.2"/>
+          <ellipse cx="19" cy="31" rx="4" ry="9"
+            transform="rotate(-43 19 31)"
+            fill="currentColor"/>
+          <ellipse cx="29" cy="22" rx="4" ry="9"
+            transform="rotate(43 29 22)"
+            fill="currentColor"
+            opacity=".65"/>
+          <circle cx="28" cy="31" r="7"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.3"/>
+          <path d="M26 29c.5-3 6-3 6 1 0 2-3 2-3 5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"/>
+          <circle cx="29" cy="39" r="1"
+            fill="currentColor"/>
+        </svg>
+      </div>
+
+    </div>
 
     <div class="row">
 
-      <input
-        id="affordAmount"
-        type="number"
-        min="0"
-        step="0.01"
-        placeholder="Amount"
-      >
+      <div class="money-input">
+        <span>$</span>
+        <input
+          id="affordAmount"
+          type="number"
+          min="0"
+          step="0.01"
+          placeholder="Amount"
+        >
+      </div>
 
       <button id="affordBtn">
         Check
@@ -548,31 +401,21 @@
 
     </div>
 
-    <div
-      id="affordResult"
-      class="result muted"
-    >
+    <div id="affordResult" class="result muted">
       Enter an amount to check.
     </div>
 
   </div>
 
 
-  <!-- NEXT BILLS -->
-
   <div class="card">
 
     <div class="section-head">
-
       <h2>Next bills</h2>
 
-      <button
-        class="textbtn"
-        data-screen="bills"
-      >
+      <button class="textbtn" data-screen="bills">
         View all
       </button>
-
     </div>
 
     <div id="nextBills"></div>
@@ -582,37 +425,64 @@
 </section>
 
 
-<!-- ================= INCOME ================= -->
-
 <section id="income" class="screen">
 
   <div class="section-title">
 
+    <div class="title-botanical">
+      <svg viewBox="0 0 70 40">
+        <path d="M4 34C20 26 35 17 64 5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.3"/>
+        <ellipse cx="20" cy="27" rx="5" ry="11"
+          transform="rotate(-47 20 27)"
+          fill="currentColor"/>
+        <ellipse cx="34" cy="20" rx="5" ry="11"
+          transform="rotate(45 34 20)"
+          fill="currentColor"
+          opacity=".7"/>
+        <ellipse cx="49" cy="12" rx="4" ry="9"
+          transform="rotate(43 49 12)"
+          fill="currentColor"
+          opacity=".5"/>
+      </svg>
+    </div>
+
     <h1>Income</h1>
 
-    <p>
-      Add money you expect to receive.
-    </p>
+    <p>Add money you expect to receive.</p>
 
   </div>
 
-
-  <!-- CURRENT BALANCE -->
 
   <div class="card balance-entry-card">
 
     <div class="section-head">
 
       <div>
+        <div class="eyebrow">YOUR MONEY</div>
+        <h2>Current balance</h2>
+      </div>
 
-        <div class="eyebrow">
-          YOUR MONEY
-        </div>
-
-        <h2>
-          Current balance
-        </h2>
-
+      <div class="small-botanical">
+        <svg viewBox="0 0 50 50">
+          <path d="M8 43C18 31 27 20 43 7"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.2"/>
+          <ellipse cx="16" cy="34" rx="4" ry="9"
+            transform="rotate(-43 16 34)"
+            fill="currentColor"/>
+          <ellipse cx="27" cy="24" rx="4" ry="9"
+            transform="rotate(43 27 24)"
+            fill="currentColor"
+            opacity=".7"/>
+          <ellipse cx="38" cy="13" rx="4" ry="8"
+            transform="rotate(43 38 13)"
+            fill="currentColor"
+            opacity=".5"/>
+        </svg>
       </div>
 
     </div>
@@ -636,43 +506,28 @@
 
     </div>
 
-    <button
-      id="saveBalanceBtn"
-      type="button"
-    >
+    <button id="saveBalanceBtn" type="button">
       Save balance
     </button>
 
-    <div
-      id="balanceSaved"
-      class="result muted"
-    ></div>
+    <div id="balanceSaved" class="result muted"></div>
 
   </div>
 
 
-  <!-- INCOME FORM -->
-
-  <form
-    id="incomeForm"
-    class="card form"
-  >
+  <form id="incomeForm" class="card form">
 
     <label>
       Source
-
       <input
         id="incomeSource"
         required
         placeholder="Paycheck, VA, BAH, etc."
       >
-
     </label>
-
 
     <label>
       Amount
-
       <input
         id="incomeAmount"
         required
@@ -680,33 +535,17 @@
         min="0"
         step="0.01"
       >
-
     </label>
-
 
     <label>
       Date
-
-      <input
-        id="incomeDate"
-        required
-        type="date"
-      >
-
+      <input id="incomeDate" required type="date">
     </label>
-
 
     <label class="check">
-
-      <input
-        id="incomeRecurring"
-        type="checkbox"
-      >
-
+      <input id="incomeRecurring" type="checkbox">
       Repeats monthly
-
     </label>
-
 
     <button type="submit">
       Add income
@@ -714,47 +553,55 @@
 
   </form>
 
-
   <div id="incomeList"></div>
 
 </section>
 
 
-<!-- ================= BILLS ================= -->
-
 <section id="bills" class="screen">
 
   <div class="section-title">
 
+    <div class="title-botanical terracotta-botanical">
+      <svg viewBox="0 0 70 40">
+        <path d="M4 34C20 26 35 17 64 5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.3"/>
+        <ellipse cx="20" cy="27" rx="5" ry="11"
+          transform="rotate(-47 20 27)"
+          fill="currentColor"/>
+        <ellipse cx="34" cy="20" rx="5" ry="11"
+          transform="rotate(45 34 20)"
+          fill="currentColor"
+          opacity=".7"/>
+        <ellipse cx="49" cy="12" rx="4" ry="9"
+          transform="rotate(43 49 12)"
+          fill="currentColor"
+          opacity=".5"/>
+      </svg>
+    </div>
+
     <h1>Bills</h1>
 
-    <p>
-      Track what must be paid and when.
-    </p>
+    <p>Track what must be paid and when.</p>
 
   </div>
 
 
-  <form
-    id="billForm"
-    class="card form"
-  >
+  <form id="billForm" class="card form">
 
     <label>
       Bill name
-
       <input
         id="billName"
         required
         placeholder="Rent, electric, internet..."
       >
-
     </label>
-
 
     <label>
       Amount
-
       <input
         id="billAmount"
         required
@@ -762,45 +609,22 @@
         min="0"
         step="0.01"
       >
-
     </label>
-
 
     <label>
       Due date
-
-      <input
-        id="billDate"
-        required
-        type="date"
-      >
-
+      <input id="billDate" required type="date">
     </label>
 
-
     <label class="check">
-
-      <input
-        id="billPaid"
-        type="checkbox"
-      >
-
+      <input id="billPaid" type="checkbox">
       Already paid
-
     </label>
-
 
     <label class="check">
-
-      <input
-        id="billRecurring"
-        type="checkbox"
-      >
-
+      <input id="billRecurring" type="checkbox">
       Repeats monthly
-
     </label>
-
 
     <button type="submit">
       Add bill
@@ -808,23 +632,38 @@
 
   </form>
 
-
   <div id="billList"></div>
 
 </section>
 
 
-<!-- ================= CALENDAR ================= -->
-
 <section id="calendar" class="screen">
 
   <div class="section-title">
 
+    <div class="title-botanical olive-botanical">
+      <svg viewBox="0 0 70 40">
+        <path d="M4 34C20 26 35 17 64 5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.3"/>
+        <ellipse cx="20" cy="27" rx="5" ry="11"
+          transform="rotate(-47 20 27)"
+          fill="currentColor"/>
+        <ellipse cx="34" cy="20" rx="5" ry="11"
+          transform="rotate(45 34 20)"
+          fill="currentColor"
+          opacity=".7"/>
+        <ellipse cx="49" cy="12" rx="4" ry="9"
+          transform="rotate(43 49 12)"
+          fill="currentColor"
+          opacity=".5"/>
+      </svg>
+    </div>
+
     <h1>Calendar</h1>
 
-    <p>
-      See income and bills together.
-    </p>
+    <p>See income and bills together.</p>
 
   </div>
 
@@ -840,43 +679,158 @@
 </main>
 
 
-<!-- ================= NAVIGATION ================= -->
-
 <nav class="nav">
 
-  <button
-    class="navbtn active"
-    data-screen="dashboard"
-  >
-    🏠
+  <button class="navbtn active" data-screen="dashboard">
+
+    <span class="nav-icon">
+      <svg viewBox="0 0 50 50">
+        <path d="M8 27C17 18 25 10 42 5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"/>
+        <ellipse cx="13" cy="24" rx="5" ry="11"
+          transform="rotate(-48 13 24)"
+          fill="currentColor"/>
+        <ellipse cx="25" cy="17" rx="5" ry="11"
+          transform="rotate(48 25 17)"
+          fill="currentColor"
+          opacity=".72"/>
+        <path d="M12 31v11h25V19"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"/>
+        <path d="M8 31l17-16 17 16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+        <ellipse cx="38" cy="10" rx="4" ry="8"
+          transform="rotate(43 38 10)"
+          fill="currentColor"
+          opacity=".52"/>
+      </svg>
+    </span>
+
     <span>Home</span>
+
   </button>
 
 
-  <button
-    class="navbtn"
-    data-screen="income"
-  >
-    💵
+  <button class="navbtn" data-screen="income">
+
+    <span class="nav-icon">
+      <svg viewBox="0 0 50 50">
+        <path d="M10 42C18 30 27 18 42 7"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.3"
+          stroke-linecap="round"/>
+        <ellipse cx="16" cy="34" rx="5" ry="10"
+          transform="rotate(-46 16 34)"
+          fill="currentColor"/>
+        <ellipse cx="27" cy="24" rx="5" ry="10"
+          transform="rotate(45 27 24)"
+          fill="currentColor"
+          opacity=".72"/>
+        <ellipse cx="39" cy="12" rx="4" ry="9"
+          transform="rotate(43 39 12)"
+          fill="currentColor"
+          opacity=".48"/>
+        <circle cx="26" cy="31" r="8"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.3"/>
+        <path d="M26 26v10M23 29c0-2 6-2 6 1s-6 2-6 4 6 3 6 0"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.2"
+          stroke-linecap="round"/>
+      </svg>
+    </span>
+
     <span>Income</span>
+
   </button>
 
 
-  <button
-    class="navbtn"
-    data-screen="bills"
-  >
-    🧾
+  <button class="navbtn" data-screen="bills">
+
+    <span class="nav-icon">
+      <svg viewBox="0 0 50 50">
+        <path d="M9 42C19 29 28 18 43 7"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.3"/>
+        <ellipse cx="16" cy="34" rx="5" ry="10"
+          transform="rotate(-44 16 34)"
+          fill="currentColor"/>
+        <ellipse cx="27" cy="23" rx="5" ry="10"
+          transform="rotate(45 27 23)"
+          fill="currentColor"
+          opacity=".7"/>
+        <rect x="14" y="14" width="24" height="28" rx="4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"/>
+        <path d="M20 22h12M20 28h12M20 34h7"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.3"
+          stroke-linecap="round"/>
+        <ellipse cx="40" cy="10" rx="4" ry="8"
+          transform="rotate(43 40 10)"
+          fill="currentColor"
+          opacity=".5"/>
+      </svg>
+    </span>
+
     <span>Bills</span>
+
   </button>
 
 
-  <button
-    class="navbtn"
-    data-screen="calendar"
-  >
-    📅
+  <button class="navbtn" data-screen="calendar">
+
+    <span class="nav-icon">
+      <svg viewBox="0 0 50 50">
+        <path d="M8 42C17 31 27 18 43 7"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.3"/>
+        <ellipse cx="15" cy="35" rx="5" ry="10"
+          transform="rotate(-44 15 35)"
+          fill="currentColor"/>
+        <ellipse cx="27" cy="23" rx="5" ry="10"
+          transform="rotate(44 27 23)"
+          fill="currentColor"
+          opacity=".7"/>
+        <rect x="13" y="14" width="27" height="27" rx="5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"/>
+        <path d="M13 22h27M20 10v8M33 10v8"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"/>
+        <circle cx="21" cy="28" r="1.5" fill="currentColor"/>
+        <circle cx="27" cy="28" r="1.5" fill="currentColor"/>
+        <circle cx="33" cy="28" r="1.5" fill="currentColor"/>
+        <circle cx="21" cy="34" r="1.5" fill="currentColor"/>
+        <circle cx="27" cy="34" r="1.5" fill="currentColor"/>
+        <ellipse cx="41" cy="10" rx="4" ry="8"
+          transform="rotate(43 41 10)"
+          fill="currentColor"
+          opacity=".48"/>
+      </svg>
+    </span>
+
     <span>Calendar</span>
+
   </button>
 
 </nav>
