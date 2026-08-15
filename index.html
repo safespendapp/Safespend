@@ -1,27 +1,23 @@
 <!doctype html>
-
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
 
-<meta
-name="viewport"
-content="width=device-width,initial-scale=1,viewport-fit=cover"
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1,viewport-fit=cover"
+  >
 
->
+  <meta
+    name="theme-color"
+    content="#718774"
+  >
 
-<meta
-name="theme-color"
-content="#718774"
-
->
-
-<meta
-name="description"
-content="SafeSpend — know what you can safely spend."
-
->
+  <meta
+    name="description"
+    content="SafeSpend — know what you can safely spend."
+  >
 
   <title>SafeSpend — Know what you can safely spend.</title>
 
@@ -46,40 +42,33 @@ content="SafeSpend — know what you can safely spend."
 
   <div class="brand-area">
 
-```
-<div class="brand-botanical">
-  <img
-    src="safespend-logo.png"
-    alt="SafeSpend logo"
+    <div class="brand-botanical">
+      <img
+        src="safespend-logo.png"
+        alt="SafeSpend logo"
+      >
+    </div>
+
+    <div class="brand-copy">
+
+      <div class="brand">
+        SafeSpend
+      </div>
+
+      <div class="tagline">
+        Know what you can safely spend.
+      </div>
+
+    </div>
+
+  </div>
+
+  <button
+    id="resetBtn"
+    class="ghost small"
+    type="button"
   >
-</div>
-
-<div class="brand-copy">
-
-  <div class="brand">
-    SafeSpend
-  </div>
-
-  <div class="tagline">
-    Know what you can safely spend.
-  </div>
-
-</div>
-```
-
-  </div>
-
-<button
-id="resetBtn"
-class="ghost small"
-type="button"
-
->
-
-```
-Reset
-```
-
+    Reset
   </button>
 
 </header>
@@ -99,34 +88,31 @@ Reset
 
   <div class="welcome">
 
-```
-<div class="welcome-copy">
+    <div class="welcome-copy">
 
-  <div class="eyebrow">
-    A CALMER WAY TO MANAGE MONEY
-  </div>
+      <div class="eyebrow">
+        A CALMER WAY TO MANAGE MONEY
+      </div>
 
-  <h1>
-    Spend with<br>
-    confidence.
-  </h1>
+      <h1>
+        Spend with<br>
+        confidence.
+      </h1>
 
-  <p>
-    Know what's yours to spend—and what's already spoken for.
-  </p>
+      <p>
+        Know what's yours to spend—and what's already spoken for.
+      </p>
 
-</div>
+    </div>
 
+    <div class="welcome-art">
 
-<div class="welcome-art">
+      <img
+        src="dashboard.png"
+        alt="SafeSpend dashboard artwork"
+      >
 
-  <img
-    src="dashboard.png"
-    alt="SafeSpend dashboard artwork"
-  >
-
-</div>
-```
+    </div>
 
   </div>
 
@@ -134,63 +120,56 @@ Reset
 
   <div class="hero-card">
 
-```
-<div class="hero-botanical">
+    <div class="hero-botanical">
 
-  <img
-    src="botanical-divider.png"
-    alt=""
-  >
+      <img
+        src="botanical-divider.png"
+        alt=""
+      >
 
-</div>
+    </div>
 
+    <div class="hero-top">
 
-<div class="hero-top">
+      <div class="hero-label">
 
-  <div class="hero-label">
+        <span class="status-dot"></span>
 
-    <span class="status-dot"></span>
+        SAFE TO SPEND
 
-    SAFE TO SPEND
+      </div>
 
-  </div>
+      <span class="hero-star">
+        ✦
+      </span>
 
+    </div>
 
-  <span class="hero-star">
-    ✦
-  </span>
+    <div
+      id="safeSpend"
+      class="big"
+    >
+      $0.00
+    </div>
 
-</div>
+    <div
+      id="safeNote"
+      class="hero-note"
+    >
+      Add your balance, income, and bills to get started.
+    </div>
 
+    <div class="hero-bottom">
 
-<div
-  id="safeSpend"
-  class="big"
->
-  $0.00
-</div>
+      <span>
+        Based on your current plan
+      </span>
 
+      <span>
+        Plan first. Spend freely.
+      </span>
 
-<div
-  id="safeNote"
-  class="hero-note"
->
-  Add your balance, income, and bills to get started.
-</div>
-
-
-<div class="hero-bottom">
-
-  <span>
-    Based on your current plan
-  </span>
-
-  <span>
-    Plan first. Spend freely.
-  </span>
-
-</div>
-```
+    </div>
 
   </div>
 
@@ -198,73 +177,63 @@ Reset
 
   <div class="section-heading">
 
-```
-<div class="eyebrow">
-  YOUR MONEY
-</div>
+    <div class="eyebrow">
+      YOUR MONEY
+    </div>
 
-<h2>
-  Your snapshot
-</h2>
-```
+    <h2>
+      Your snapshot
+    </h2>
 
   </div>
 
   <div class="money-grid">
 
-```
-<!-- CURRENT BALANCE -->
+    <!-- CURRENT BALANCE -->
 
-<div class="money-card">
+    <div class="money-card">
 
-  <div class="image-icon green">
+      <div class="image-icon green">
 
-    <img
-      src="balance.png"
-      alt="Current balance"
-    >
+        <img
+          src="balance.png"
+          alt="Current balance"
+        >
 
-  </div>
+      </div>
 
+      <span>
+        Current balance
+      </span>
 
-  <span>
-    Current balance
-  </span>
+      <strong id="balanceOut">
+        $0.00
+      </strong>
 
+    </div>
 
-  <strong id="balanceOut">
-    $0.00
-  </strong>
+    <!-- UPCOMING BILLS -->
 
-</div>
+    <div class="money-card">
 
+      <div class="image-icon terracotta">
 
+        <img
+          src="bills.png"
+          alt="Upcoming bills"
+        >
 
-<!-- UPCOMING BILLS -->
+      </div>
 
-<div class="money-card">
+      <span>
+        Upcoming bills
+      </span>
 
-  <div class="image-icon terracotta">
+      <strong id="billsOut">
+        $0.00
+      </strong>
 
-    <img
-      src="bills.png"
-      alt="Upcoming bills"
-    >
-
-  </div>
-
-
-  <span>
-    Upcoming bills
-  </span>
-
-
-  <strong id="billsOut">
-    $0.00
-  </strong>
-
-</div>
-```
+    </div>
 
   </div>
 
@@ -279,49 +248,43 @@ Reset
 
   <div class="card image-card">
 
-```
-<img
-  class="card-art"
-  src="can-i-afford-it.png"
-  alt=""
->
+    <img
+      class="card-art"
+      src="can-i-afford-it.png"
+      alt=""
+    >
 
+    <h2>
+      Can I afford this?
+    </h2>
 
-<h2>
-  Can I afford this?
-</h2>
+    <div class="row">
 
+      <input
+        id="affordAmount"
+        type="number"
+        min="0"
+        step="0.01"
+        placeholder="Amount"
+        inputmode="decimal"
+        aria-label="Purchase amount"
+      >
 
-<div class="row">
+      <button
+        id="affordBtn"
+        type="button"
+      >
+        Check
+      </button>
 
-  <input
-    id="affordAmount"
-    type="number"
-    min="0"
-    step="0.01"
-    placeholder="Amount"
-    inputmode="decimal"
-    aria-label="Purchase amount"
-  >
+    </div>
 
-
-  <button
-    id="affordBtn"
-    type="button"
-  >
-    Check
-  </button>
-
-</div>
-
-
-<div
-  id="affordResult"
-  class="result muted"
->
-  Enter an amount to check.
-</div>
-```
+    <div
+      id="affordResult"
+      class="result muted"
+    >
+      Enter an amount to check.
+    </div>
 
   </div>
 
@@ -329,31 +292,27 @@ Reset
 
   <div class="card image-card">
 
-```
-<div class="section-head">
+    <div class="section-head">
 
-  <div>
+      <div>
 
-    <h2>
-      Next bills
-    </h2>
+        <h2>
+          Next bills
+        </h2>
 
-  </div>
+      </div>
 
+      <button
+        class="textbtn"
+        data-screen="bills"
+        type="button"
+      >
+        View all
+      </button>
 
-  <button
-    class="textbtn"
-    data-screen="bills"
-    type="button"
-  >
-    View all
-  </button>
+    </div>
 
-</div>
-
-
-<div id="nextBills"></div>
-```
+    <div id="nextBills"></div>
 
   </div>
 
@@ -370,28 +329,23 @@ Reset
 
   <div class="section-title">
 
-```
-<img
-  class="section-art"
-  src="income.png"
-  alt=""
->
+    <img
+      class="section-art"
+      src="income.png"
+      alt=""
+    >
 
+    <div class="eyebrow">
+      MONEY COMING IN
+    </div>
 
-<div class="eyebrow">
-  MONEY COMING IN
-</div>
+    <h1>
+      Income
+    </h1>
 
-
-<h1>
-  Income
-</h1>
-
-
-<p>
-  Add money you expect to receive.
-</p>
-```
+    <p>
+      Add money you expect to receive.
+    </p>
 
   </div>
 
@@ -399,69 +353,61 @@ Reset
 
   <div class="card image-card">
 
-```
-<img
-  class="card-art"
-  src="balance.png"
-  alt=""
->
+    <img
+      class="card-art"
+      src="balance.png"
+      alt=""
+    >
 
+    <div class="section-head">
 
-<div class="section-head">
+      <div>
 
-  <div>
+        <div class="eyebrow">
+          YOUR MONEY
+        </div>
 
-    <div class="eyebrow">
-      YOUR MONEY
+        <h2>
+          Current balance
+        </h2>
+
+      </div>
+
     </div>
 
-    <h2>
-      Current balance
-    </h2>
+    <p class="muted">
+      Enter the amount currently in your bank account.
+    </p>
 
-  </div>
+    <div class="balance-entry-row">
 
-</div>
+      <span class="currency-symbol">
+        $
+      </span>
 
+      <input
+        id="balanceInput"
+        type="number"
+        min="0"
+        step="0.01"
+        inputmode="decimal"
+        placeholder="0.00"
+        aria-label="Current bank balance"
+      >
 
-<p class="muted">
-  Enter the amount currently in your bank account.
-</p>
+    </div>
 
+    <button
+      id="saveBalanceBtn"
+      type="button"
+    >
+      Save balance
+    </button>
 
-<div class="balance-entry-row">
-
-  <span class="currency-symbol">
-    $
-  </span>
-
-
-  <input
-    id="balanceInput"
-    type="number"
-    min="0"
-    step="0.01"
-    inputmode="decimal"
-    placeholder="0.00"
-    aria-label="Current bank balance"
-  >
-
-</div>
-
-
-<button
-  id="saveBalanceBtn"
-  type="button"
->
-  Save balance
-</button>
-
-
-<div
-  id="balanceSaved"
-  class="result muted"
-></div>
-```
+    <div
+      id="balanceSaved"
+      class="result muted"
+    ></div>
 
   </div>
 
@@ -472,74 +418,67 @@ Reset
     class="card form image-card"
   >
 
-```
-<img
-  class="card-art"
-  src="income-label.png"
-  alt=""
->
+    <img
+      class="card-art"
+      src="income-label.png"
+      alt=""
+    >
 
+    <label>
 
-<label>
+      Source
 
-  Source
+      <input
+        id="incomeSource"
+        required
+        placeholder="Paycheck, VA, BAH, etc."
+      >
 
-  <input
-    id="incomeSource"
-    required
-    placeholder="Paycheck, VA, BAH, etc."
-  >
+    </label>
 
-</label>
+    <label>
 
+      Amount
 
-<label>
+      <input
+        id="incomeAmount"
+        required
+        type="number"
+        min="0"
+        step="0.01"
+        inputmode="decimal"
+      >
 
-  Amount
+    </label>
 
-  <input
-    id="incomeAmount"
-    required
-    type="number"
-    min="0"
-    step="0.01"
-    inputmode="decimal"
-  >
+    <label>
 
-</label>
+      Date
 
+      <input
+        id="incomeDate"
+        required
+        type="date"
+      >
 
-<label>
+    </label>
 
-  Date
+    <label class="check">
 
-  <input
-    id="incomeDate"
-    required
-    type="date"
-  >
+      <input
+        id="incomeRecurring"
+        type="checkbox"
+      >
 
-</label>
+      <span>
+        Repeats monthly
+      </span>
 
+    </label>
 
-<label class="check">
-
-  <input
-    id="incomeRecurring"
-    type="checkbox"
-  >
-
-  <span>
-    Repeats monthly
-  </span>
-
-</label>
-
-
-<button type="submit">
-  Add income
-</button>
-```
+    <button type="submit">
+      Add income
+    </button>
 
   </form>
 
@@ -558,28 +497,23 @@ Reset
 
   <div class="section-title">
 
-```
-<img
-  class="section-art"
-  src="bills.png"
-  alt=""
->
+    <img
+      class="section-art"
+      src="bills.png"
+      alt=""
+    >
 
+    <div class="eyebrow">
+      MONEY GOING OUT
+    </div>
 
-<div class="eyebrow">
-  MONEY GOING OUT
-</div>
+    <h1>
+      Bills
+    </h1>
 
-
-<h1>
-  Bills
-</h1>
-
-
-<p>
-  Track what must be paid and when.
-</p>
-```
+    <p>
+      Track what must be paid and when.
+    </p>
 
   </div>
 
@@ -590,88 +524,80 @@ Reset
     class="card form image-card"
   >
 
-```
-<img
-  class="card-art"
-  src="bills.png"
-  alt=""
->
+    <img
+      class="card-art"
+      src="bills.png"
+      alt=""
+    >
 
+    <label>
 
-<label>
+      Bill name
 
-  Bill name
+      <input
+        id="billName"
+        required
+        placeholder="Rent, electric, internet..."
+      >
 
-  <input
-    id="billName"
-    required
-    placeholder="Rent, electric, internet..."
-  >
+    </label>
 
-</label>
+    <label>
 
+      Amount
 
-<label>
+      <input
+        id="billAmount"
+        required
+        type="number"
+        min="0"
+        step="0.01"
+        inputmode="decimal"
+      >
 
-  Amount
+    </label>
 
-  <input
-    id="billAmount"
-    required
-    type="number"
-    min="0"
-    step="0.01"
-    inputmode="decimal"
-  >
+    <label>
 
-</label>
+      Due date
 
+      <input
+        id="billDate"
+        required
+        type="date"
+      >
 
-<label>
+    </label>
 
-  Due date
+    <label class="check">
 
-  <input
-    id="billDate"
-    required
-    type="date"
-  >
+      <input
+        id="billPaid"
+        type="checkbox"
+      >
 
-</label>
+      <span>
+        Already paid
+      </span>
 
+    </label>
 
-<label class="check">
+    <label class="check">
 
-  <input
-    id="billPaid"
-    type="checkbox"
-  >
+      <input
+        id="billRecurring"
+        type="checkbox"
+      >
 
-  <span>
-    Already paid
-  </span>
+      <span>
+        Repeats monthly
+      </span>
 
-</label>
+    </label>
 
-
-<label class="check">
-
-  <input
-    id="billRecurring"
-    type="checkbox"
-  >
-
-  <span>
-    Repeats monthly
-  </span>
-
-</label>
-
-
-<button type="submit">
-  Add bill
-</button>
-```
+    <button type="submit">
+      Add bill
+    </button>
 
   </form>
 
@@ -690,43 +616,35 @@ Reset
 
   <div class="section-title">
 
-```
-<img
-  class="section-art"
-  src="calendar.png"
-  alt=""
->
+    <img
+      class="section-art"
+      src="calendar.png"
+      alt=""
+    >
 
+    <div class="eyebrow">
+      YOUR MONEY TIMELINE
+    </div>
 
-<div class="eyebrow">
-  YOUR MONEY TIMELINE
-</div>
+    <h1>
+      Calendar
+    </h1>
 
-
-<h1>
-  Calendar
-</h1>
-
-
-<p>
-  See income and bills together.
-</p>
-```
+    <p>
+      See income and bills together.
+    </p>
 
   </div>
 
   <div class="card image-card">
 
-```
-<img
-  class="card-art"
-  src="calendar.png"
-  alt=""
->
+    <img
+      class="card-art"
+      src="calendar.png"
+      alt=""
+    >
 
-
-<div id="calendarList"></div>
-```
+    <div id="calendarList"></div>
 
   </div>
 
@@ -745,109 +663,93 @@ Reset
 
   <!-- HOME -->
 
-<button
-class="navbtn active"
-data-screen="dashboard"
-type="button"
-
->
-
-```
-<span class="nav-icon">
-
-  <img
-    src="dashboard.png"
-    alt=""
+  <button
+    class="navbtn active"
+    data-screen="dashboard"
+    type="button"
   >
 
-</span>
+    <span class="nav-icon">
 
+      <img
+        src="dashboard.png"
+        alt=""
+      >
 
-<span>
-  Home
-</span>
-```
+    </span>
+
+    <span>
+      Home
+    </span>
 
   </button>
 
   <!-- INCOME -->
 
-<button
-class="navbtn"
-data-screen="income"
-type="button"
-
->
-
-```
-<span class="nav-icon">
-
-  <img
-    src="income.png"
-    alt=""
+  <button
+    class="navbtn"
+    data-screen="income"
+    type="button"
   >
 
-</span>
+    <span class="nav-icon">
 
+      <img
+        src="income.png"
+        alt=""
+      >
 
-<span>
-  Income
-</span>
-```
+    </span>
+
+    <span>
+      Income
+    </span>
 
   </button>
 
   <!-- BILLS -->
 
-<button
-class="navbtn"
-data-screen="bills"
-type="button"
-
->
-
-```
-<span class="nav-icon">
-
-  <img
-    src="bills.png"
-    alt=""
+  <button
+    class="navbtn"
+    data-screen="bills"
+    type="button"
   >
 
-</span>
+    <span class="nav-icon">
 
+      <img
+        src="bills.png"
+        alt=""
+      >
 
-<span>
-  Bills
-</span>
-```
+    </span>
+
+    <span>
+      Bills
+    </span>
 
   </button>
 
   <!-- CALENDAR -->
 
-<button
-class="navbtn"
-data-screen="calendar"
-type="button"
-
->
-
-```
-<span class="nav-icon">
-
-  <img
-    src="calendar.png"
-    alt=""
+  <button
+    class="navbtn"
+    data-screen="calendar"
+    type="button"
   >
 
-</span>
+    <span class="nav-icon">
 
+      <img
+        src="calendar.png"
+        alt=""
+      >
 
-<span>
-  Calendar
-</span>
-```
+    </span>
+
+    <span>
+      Calendar
+    </span>
 
   </button>
 
