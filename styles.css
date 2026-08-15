@@ -1,1946 +1,1132 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root{
-  --ivory:#f8f6ef;
-  --cream:#eee9dc;
-  --paper:#fffdf8;
-
-  --sage:#718774;
-  --sage-dark:#365b46;
-  --sage-deep:#284637;
-  --sage-light:#e5eee4;
-
-  --olive:#87966f;
-
-  --terracotta:#bd7658;
-  --terracotta-dark:#9d5945;
-
-  --gold:#b89a60;
-  --gold-soft:#ead9b2;
-
-  --ink:#29352d;
-  --muted:#7e8981;
-
-  --line:#dfe5dc;
-
-  --serif:
-    "Cormorant Garamond",
-    "Baskerville",
-    "Palatino Linotype",
-    Georgia,
-    serif;
-
-  --sans:
-    "DM Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  --shadow:
-    0 18px 45px rgba(45,65,51,.075);
+--ivory:#f8f6ef;
+--cream:#eee9dc;
+--paper:#fffdf8;
+--sage:#718774;
+--sage-dark:#365b46;
+--sage-deep:#284637;
+--sage-light:#e5eee4;
+--olive:#87966f;
+--terracotta:#bd7658;
+--terracotta-dark:#9d5945;
+--gold:#b89a60;
+--gold-soft:#ead9b2;
+--ink:#29352d;
+--muted:#7e8981;
+--line:#dfe5dc;
+--serif:"Cormorant Garamond","Baskerville","Palatino Linotype",Georgia,serif;
+--sans:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+--shadow:0 18px 45px rgba(45,65,51,.075);
 }
-
 
 *{
-  box-sizing:border-box;
+box-sizing:border-box;
 }
-
 
 html{
-  background:var(--ivory);
+background:var(--ivory);
 }
-
 
 body{
-  margin:0;
-  min-height:100vh;
-
-  background:
-    radial-gradient(
-      circle at 90% 3%,
-      rgba(120,145,112,.14),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 3% 42%,
-      rgba(188,116,84,.055),
-      transparent 27%
-    ),
-    linear-gradient(
-      180deg,
-      #faf9f4 0%,
-      var(--ivory) 100%
-    );
-
-  color:var(--ink);
-  font-family:var(--sans);
-
-  padding-bottom:100px;
+margin:0;
+min-height:100vh;
+background:
+radial-gradient(circle at 90% 3%,rgba(120,145,112,.14),transparent 30%),
+radial-gradient(circle at 3% 42%,rgba(188,116,84,.055),transparent 27%),
+linear-gradient(180deg,#faf9f4 0%,var(--ivory) 100%);
+color:var(--ink);
+font-family:var(--sans);
+padding-bottom:100px;
 }
-
 
 button,
 input{
-  font:inherit;
+font:inherit;
 }
-
 
 button{
-  cursor:pointer;
+cursor:pointer;
 }
 
-
-/* ================= BRAND ================= */
-
-.topbar{
-  width:min(calc(100% - 30px),720px);
-  margin:auto;
-
-  padding:16px 0 8px;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-
-.brand-area{
-  display:flex;
-  align-items:center;
-  gap:11px;
-}
-
-
-.brand-botanical{
-  width:53px;
-  height:53px;
-
-  display:grid;
-  place-items:center;
-
-  border-radius:18px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #f1f5ee,
-      #dbe8da
-    );
-
-  border:1px solid rgba(54,91,70,.16);
-
-  box-shadow:
-    0 9px 24px rgba(54,91,70,.11),
-    inset 0 0 0 1px rgba(255,255,255,.8);
-
-  color:var(--sage-dark);
-}
-
-
-.brand-botanical svg{
-  width:46px;
-  height:46px;
-}
-
-
-.brand-botanical .stem{
-  fill:none;
-  stroke:currentColor;
-  stroke-width:1.5;
-  stroke-linecap:round;
-}
-
-
-.brand-botanical .leaf{
-  fill:currentColor;
-}
-
-
-.brand-botanical .soft{
-  opacity:.7;
-}
-
-
-.brand-botanical .light{
-  opacity:.42;
-}
-
-
-.brand-botanical .berry{
-  fill:var(--gold);
-  opacity:.75;
-}
-
-
-.brand{
-  font-family:var(--serif);
-
-  font-size:32px;
-  font-weight:500;
-
-  line-height:.86;
-
-  letter-spacing:-1.5px;
-
-  color:#294335;
-}
-
-
-.tagline{
-  margin-top:4px;
-
-  color:var(--muted);
-
-  font-size:8.5px;
-
-  letter-spacing:.35px;
-}
-
-
-.ghost{
-  border:1px solid var(--line);
-
-  background:rgba(255,255,255,.78);
-
-  color:var(--muted);
-
-  border-radius:12px;
-}
-
-
-.ghost.small{
-  padding:7px 10px;
-
-  font-size:10px;
-}
-
-
-/* ================= MAIN ================= */
-
-main{
-  width:min(calc(100% - 30px),720px);
-  margin:auto;
-}
-
-
-.screen{
-  display:none;
-  padding-bottom:28px;
-}
-
-
-.screen.active{
-  display:block;
-}
-
-
-/* ================= WELCOME ================= */
-
-.welcome{
-  padding:24px 2px 9px;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-
-.welcome-copy{
-  position:relative;
-  z-index:3;
-}
-
-
-.eyebrow{
-  color:var(--sage-dark);
-
-  font-size:8px;
-  font-weight:700;
-
-  letter-spacing:1.8px;
-}
-
-
-.welcome h1{
-  margin:7px 0 0;
-
-  font-family:var(--serif);
-
-  font-size:clamp(37px,9vw,49px);
-
-  font-weight:500;
-
-  line-height:.94;
-
-  letter-spacing:-2.1px;
-}
-
-
-.welcome p{
-  max-width:280px;
-
-  margin:12px 0 0;
-
-  color:var(--muted);
-
-  font-size:11px;
-
-  line-height:1.5;
-}
-
-
-/* ================= FOX ================= */
-
-.fox-wrap{
-  position:relative;
-
-  width:150px;
-  height:164px;
-
-  flex:0 0 150px;
-
-  display:grid;
-  place-items:center;
-}
-
-
-.fox-glow{
-  position:absolute;
-
-  width:115px;
-  height:92px;
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(
-      ellipse,
-      rgba(189,118,88,.15),
-      transparent 68%
-    );
-
-  bottom:8px;
-}
-
-
-.fox{
-  position:relative;
-  z-index:2;
-
-  width:140px;
-  height:151px;
-
-  filter:
-    drop-shadow(
-      0 9px 9px rgba(66,51,42,.12)
-    );
-}
-
-
-.fox-fur{
-  fill:#c87958;
-}
-
-
-.fox-cream{
-  fill:#fff1e3;
-}
-
-
-.fox-muzzle{
-  fill:#fff8ef;
-}
-
-
-.fox-ear-inner{
-  fill:#a85e48;
-  opacity:.65;
-}
-
-
-.fox-eye{
-  fill:#343a34;
-}
-
-
-.fox-glint{
-  fill:white;
-}
-
-
-.fox-brow{
-  fill:none;
-
-  stroke:#7d4537;
-
-  stroke-width:2;
-
-  stroke-linecap:round;
-
-  opacity:.8;
-}
-
-
-.fox-nose{
-  fill:#3b3530;
-}
-
-
-.fox-smile{
-  fill:none;
-
-  stroke:#543e37;
-
-  stroke-width:2.2;
-
-  stroke-linecap:round;
-}
-
-
-.fox-scarf{
-  fill:var(--sage);
-}
-
-
-.paw-mark{
-  fill:#a85e48;
-
-  opacity:.55;
-}
-
-
-/* ================= LUSH BOTANICAL SPRIGS ================= */
-
-.botanical-sprig{
-  position:absolute;
-
-  z-index:5;
-
-  pointer-events:none;
-
-  color:var(--sage-dark);
-
-  filter:
-    drop-shadow(
-      0 4px 5px rgba(70,88,73,.08)
-    );
-}
-
-
-.botanical-sprig svg{
-  width:100%;
-  height:100%;
-}
-
-
-.botanical-sprig path{
-  fill:none;
-
-  stroke:currentColor;
-
-  stroke-width:1.2;
-
-  stroke-linecap:round;
-}
-
-
-.botanical-sprig ellipse{
-  fill:currentColor;
-}
-
-
-.botanical-sprig circle{
-  fill:var(--gold);
-}
-
-
-.sprig-one{
-  width:58px;
-  height:82px;
-
-  right:-2px;
-  bottom:-1px;
-
-  opacity:.68;
-
-  transform:rotate(5deg);
-}
-
-
-.sprig-two{
-  width:48px;
-  height:72px;
-
-  left:-7px;
-  bottom:4px;
-
-  opacity:.45;
-
-  transform:rotate(-14deg);
-}
-
-
-/* ================= HERO ================= */
-
-.hero-card{
-  position:relative;
-
-  overflow:hidden;
-
-  padding:31px 27px 24px;
-
-  border-radius:30px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #fffefb 0%,
-      #f1f6ef 100%
-    );
-
-  border:1px solid #d6e1d4;
-
-  box-shadow:
-    0 22px 55px rgba(48,75,55,.11),
-    inset 0 0 0 1px rgba(255,255,255,.9);
-}
-
-
-.hero-card::before{
-  content:"";
-
-  position:absolute;
-
-  inset:7px;
-
-  border:1px solid rgba(54,91,70,.18);
-
-  border-radius:24px;
-
-  pointer-events:none;
-}
-
-
-.hero-top{
-  position:relative;
-  z-index:3;
-
-  display:flex;
-
-  justify-content:space-between;
-}
-
-
-.hero-label{
-  display:flex;
-  align-items:center;
-
-  gap:8px;
-
-  color:var(--sage-dark);
-
-  font-size:9px;
-
-  font-weight:700;
-
-  letter-spacing:1.5px;
-}
-
-
-.status-dot{
-  width:8px;
-  height:8px;
-
-  border-radius:50%;
-
-  background:var(--sage);
-
-  box-shadow:
-    0 0 0 4px rgba(113,135,116,.11);
-}
-
-
-.hero-star{
-  color:var(--gold);
-
-  font-size:17px;
-}
-
-
-.big{
-  position:relative;
-  z-index:3;
-
-  margin-top:12px;
-
-  font-family:var(--serif);
-
-  font-size:clamp(57px,15vw,78px);
-
-  font-weight:500;
-
-  line-height:.9;
-
-  letter-spacing:-3px;
-
-  color:#303b32;
-}
-
-
-.hero-note{
-  position:relative;
-  z-index:3;
-
-  max-width:520px;
-
-  margin-top:15px;
-
-  color:var(--muted);
-
-  font-size:12px;
-
-  line-height:1.55;
-}
-
-
-.hero-bottom{
-  position:relative;
-  z-index:3;
-
-  display:flex;
-
-  justify-content:space-between;
-
-  margin-top:21px;
-
-  padding:13px 8px 0;
-
-  border-top:1px solid rgba(54,91,70,.15);
-
-  color:#89928b;
-
-  font-size:9px;
-}
-
-
-/* ================= LUXURY BOTANICAL CORNERS ================= */
-
-.botanical-corner{
-  position:absolute;
-
-  width:100px;
-  height:100px;
-
-  color:var(--sage-dark);
-
-  opacity:.24;
-
-  pointer-events:none;
-}
-
-
-.botanical-corner::before{
-  content:"";
-
-  position:absolute;
-
-  width:3px;
-  height:78px;
-
-  background:currentColor;
-
-  border-radius:99px;
-
-  transform:rotate(39deg);
-
-  left:38px;
-  top:8px;
-}
-
-
-.botanical-corner span,
-.botanical-corner i,
-.botanical-corner b{
-  position:absolute;
-
-  width:20px;
-  height:39px;
-
-  background:currentColor;
-
-  border-radius:100% 0 100% 0;
-}
-
-
-.botanical-corner span{
-  left:27px;
-  top:18px;
-
-  transform:rotate(-37deg);
-}
-
-
-.botanical-corner i{
-  left:17px;
-  top:43px;
-
-  transform:rotate(-57deg);
-
-  opacity:.75;
-}
-
-
-.botanical-corner b{
-  left:50px;
-  top:5px;
-
-  transform:rotate(24deg);
-
-  opacity:.55;
-}
-
-
-.corner-one{
-  left:-4px;
-  top:-3px;
-
-  transform:rotate(-10deg);
-}
-
-
-.corner-two{
-  right:-4px;
-  top:-3px;
-
-  transform:
-    scaleX(-1)
-    rotate(-10deg);
-}
-
-
-.corner-three{
-  left:-4px;
-  bottom:-4px;
-
-  transform:
-    scaleY(-1)
-    rotate(-10deg);
-}
-
-
-.corner-four{
-  right:-4px;
-  bottom:-4px;
-
-  transform:
-    scale(-1)
-    rotate(-10deg);
-}
-
-
-/* ================= HEADINGS ================= */
-
-.section-heading{
-  margin:31px 2px 12px;
-}
-
-
-.section-heading h2{
-  margin:5px 0 0;
-
-  font-family:var(--serif);
-
-  font-size:27px;
-
-  font-weight:500;
-
-  letter-spacing:-.8px;
-}
-
-
-.section-title{
-  position:relative;
-
-  padding:30px 2px 12px;
-}
-
-
-.section-title h1{
-  position:relative;
-  z-index:2;
-
-  margin:6px 0 4px;
-
-  font-family:var(--serif);
-
-  font-size:44px;
-
-  font-weight:500;
-
-  line-height:.9;
-
-  letter-spacing:-1.8px;
-}
-
-
-.section-title p{
-  position:relative;
-  z-index:2;
-
-  margin:0;
-
-  color:var(--muted);
-
-  font-size:12px;
-}
-
-
-/* ================= SECTION BOTANICAL ================= */
-
-.section-botanical{
-  position:absolute;
-
-  right:1px;
-  top:4px;
-
-  width:125px;
-  height:82px;
-
-  color:var(--sage);
-
-  opacity:.22;
-
-  transform:rotate(3deg);
-
-  pointer-events:none;
-}
-
-
-.section-botanical.terracotta-botanical{
-  color:var(--terracotta);
-}
-
-
-.section-botanical.olive-botanical{
-  color:var(--olive);
-}
-
-
-.section-botanical svg{
-  width:100%;
-  height:100%;
-}
-
-
-.section-botanical path{
-  fill:none;
-
-  stroke:currentColor;
-
-  stroke-width:1.2;
-
-  stroke-linecap:round;
-}
-
-
-.section-botanical ellipse{
-  fill:currentColor;
-}
-
-
-.section-botanical circle{
-  fill:var(--gold);
-}
-
-
-/* ================= MONEY ================= */
-
-.money-grid{
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:12px;
-}
-
-
-.money-card{
-  position:relative;
-
-  min-height:148px;
-
-  padding:18px;
-
-  border-radius:23px;
-
-  background:var(--paper);
-
-  border:1px solid var(--line);
-
-  box-shadow:var(--shadow);
-
-  overflow:hidden;
-}
-
-
-.money-card::after{
-  content:"";
-
-  position:absolute;
-
-  width:75px;
-  height:75px;
-
-  right:-28px;
-  bottom:-32px;
-
-  border-radius:50%;
-
-  border:1px solid rgba(54,91,70,.09);
-}
-
-
-.luxury-icon{
-  width:52px;
-  height:52px;
-
-  display:grid;
-  place-items:center;
-
-  border-radius:17px;
-
-  border:1px solid currentColor;
-
-  position:relative;
-
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.45);
-}
-
-
-.luxury-icon::after{
-  content:"";
-
-  position:absolute;
-
-  inset:4px;
-
-  border:1px solid currentColor;
-
-  border-radius:13px;
-
-  opacity:.11;
-}
-
-
-.luxury-icon svg{
-  position:relative;
-  z-index:2;
-
-  width:42px;
-  height:42px;
-}
-
-
-.luxury-icon .icon-stem{
-  fill:none;
-
-  stroke:currentColor;
-
-  stroke-width:1.35;
-
-  stroke-linecap:round;
-}
-
-
-.luxury-icon .icon-leaf{
-  fill:currentColor;
-}
-
-
-.luxury-icon .icon-leaf-soft{
-  fill:currentColor;
-
-  opacity:.7;
-}
-
-
-.luxury-icon .icon-leaf-light{
-  fill:currentColor;
-
-  opacity:.4;
-}
-
-
-.luxury-icon .icon-berry{
-  fill:var(--gold);
-
-  opacity:.8;
-}
-
-
-.luxury-icon.green{
-  color:var(--sage-dark);
-
-  background:
-    linear-gradient(
-      145deg,
-      #edf4eb,
-      #e1ecdf
-    );
-}
-
-
-.luxury-icon.terracotta{
-  color:var(--terracotta-dark);
-
-  background:
-    linear-gradient(
-      145deg,
-      #f6e9df,
-      #f1ded1
-    );
-}
-
-
-.money-card > span{
-  display:block;
-
-  margin-top:14px;
-
-  color:var(--muted);
-
-  font-size:10px;
-}
-
-
-.money-card strong{
-  display:block;
-
-  margin-top:5px;
-
-  font-family:var(--serif);
-
-  font-size:27px;
-
-  font-weight:500;
-
-  letter-spacing:-.8px;
-}
-
-
-/* ================= CARDS ================= */
-
-.card{
-  position:relative;
-
-  margin-top:16px;
-
-  padding:21px;
-
-  border-radius:23px;
-
-  background:var(--paper);
-
-  border:1px solid var(--line);
-
-  box-shadow:var(--shadow);
-
-  overflow:hidden;
-}
-
-
-.card h2{
-  margin:5px 0 0;
-
-  font-family:var(--serif);
-
-  font-size:25px;
-
-  font-weight:500;
-
-  letter-spacing:-.6px;
-}
-
-
-.card-heading-botanical{
-  position:absolute;
-
-  right:10px;
-  top:3px;
-
-  width:100px;
-  height:68px;
-
-  color:var(--sage);
-
-  opacity:.18;
-
-  pointer-events:none;
-}
-
-
-.card-heading-botanical.olive{
-  color:var(--olive);
-}
-
-
-.card-heading-botanical svg{
-  width:100%;
-  height:100%;
-}
-
-
-.card-heading-botanical path{
-  fill:none;
-
-  stroke:currentColor;
-
-  stroke-width:1.2;
-
-  stroke-linecap:round;
-}
-
-
-.card-heading-botanical ellipse{
-  fill:currentColor;
-}
-
-
-.card-heading-botanical circle{
-  fill:var(--gold);
-}
-
-
-/* ================= AFFORD ================= */
-
-.row{
-  display:flex;
-
-  gap:9px;
-
-  margin-top:15px;
-}
-
-
-.row input{
-  flex:1;
-
-  min-width:0;
-
-  height:51px;
-
-  border:1px solid var(--line);
-
-  border-radius:15px;
-
-  background:var(--ivory);
-
-  padding:0 14px;
-
-  outline:none;
-}
-
-
-.row button,
-.form > button,
-.balance-entry-card > button{
-  min-height:51px;
-
-  border:0;
-
-  border-radius:15px;
-
-  padding:0 24px;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--sage),
-      var(--sage-dark)
-    );
-
-  color:white;
-
-  font-weight:700;
-
-  box-shadow:
-    0 8px 18px rgba(80,105,87,.20);
-
-  transition:transform .2s ease;
-}
-
-
-.row button:hover,
-.form > button:hover,
-.balance-entry-card > button:hover{
-  transform:translateY(-1px);
-}
-
-
-.result{
-  margin-top:12px;
-
-  padding:12px 14px;
-
-  border-radius:13px;
-
-  background:var(--sage-light);
-
-  font-size:11px;
-
-  line-height:1.45;
-}
-
-
-.result.good{
-  color:#56725c;
-  background:#edf5ed;
-}
-
-
-.result.bad{
-  color:#925b55;
-  background:#f8eae8;
-}
-
-
-/* ================= WARNING ================= */
-
-.notice{
-  margin-top:15px;
-
-  padding:15px;
-
-  border-radius:17px;
-
-  background:#f8eae8;
-
-  color:#a55f58;
-
-  font-size:11px;
-
-  line-height:1.5;
-}
-
-
-.hidden{
-  display:none !important;
-}
-
-
-/* ================= LISTS ================= */
-
-.item{
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  gap:14px;
-
-  padding:15px 0;
-
-  border-bottom:1px solid var(--line);
-}
-
-
-.item:last-child{
-  border-bottom:0;
-
-  padding-bottom:2px;
-}
-
-
-.item-title{
-  font-size:13px;
-
-  font-weight:700;
-}
-
-
-.item-sub{
-  margin-top:4px;
-
-  color:var(--muted);
-
-  font-size:9px;
-}
-
-
-.item-actions{
-  display:flex;
-
-  align-items:center;
-
-  gap:9px;
-}
-
-
-.item-actions strong{
-  font-size:13px;
-}
-
-
-.delete{
-  width:30px;
-  height:30px;
-
-  border:0;
-
-  border-radius:50%;
-
-  background:#edf0e9;
-
-  color:#718074;
-
-  font-size:18px;
-}
-
-
-.pill{
-  display:inline-block;
-
-  padding:3px 7px;
-
-  border-radius:99px;
-
-  background:var(--sage-light);
-
-  color:var(--sage-dark);
-
-  font-size:8px;
-
-  font-weight:700;
-}
-
-
-.pill.paid{
-  background:#edf3ed;
-
-  color:#58715c;
-}
-
-
-.empty{
-  padding:16px 0;
-
-  color:var(--muted);
-
-  font-size:11px;
-}
-
-
-/* ================= FORMS ================= */
-
-.form{
-  display:grid;
-
-  gap:16px;
-}
-
-
-.form label{
-  display:grid;
-
-  gap:7px;
-
-  font-size:11px;
-
-  font-weight:700;
-}
-
-
-.form input{
-  width:100%;
-
-  min-height:49px;
-
-  border:1px solid var(--line);
-
-  border-radius:14px;
-
-  background:var(--ivory);
-
-  padding:0 13px;
-
-  outline:none;
-}
-
-
-.form input:focus,
-.row input:focus,
-.balance-entry-row input:focus{
-  border-color:var(--sage);
-
-  box-shadow:
-    0 0 0 3px rgba(113,135,116,.1);
-}
-
-
-.form .check{
-  display:flex;
-
-  align-items:center;
-
-  gap:8px;
-
-  font-weight:550;
-}
-
-
-.form .check input{
-  width:17px;
-
-  min-height:17px;
-
-  accent-color:var(--sage);
-}
-
-
-/* ================= BALANCE ================= */
-
-.balance-entry-card h2{
-  margin-top:4px;
-}
-
-
-.muted{
-  color:var(--muted);
-}
-
-
-.balance-entry-card > p{
-  font-size:11px;
-
-  line-height:1.5;
-}
-
-
-.balance-entry-row{
-  display:flex;
-
-  align-items:center;
-
-  height:51px;
-
-  margin:15px 0 10px;
-
-  border:1px solid var(--line);
-
-  border-radius:15px;
-
-  background:var(--ivory);
-
-  overflow:hidden;
-}
-
-
-.currency-symbol{
-  padding-left:14px;
-
-  color:var(--muted);
-
-  font-weight:700;
-}
-
-
-.balance-entry-row input{
-  flex:1;
-
-  width:100%;
-
-  height:100%;
-
-  border:0;
-
-  outline:0;
-
-  background:transparent;
-
-  padding:0 14px 0 7px;
-}
-
-
-/* ================= NAVIGATION ================= */
-
-.nav{
-  position:fixed;
-
-  z-index:50;
-
-  left:50%;
-  bottom:0;
-
-  transform:translateX(-50%);
-
-  width:min(100%,720px);
-
-  display:grid;
-
-  grid-template-columns:repeat(4,1fr);
-
-  padding:
-    8px
-    10px
-    max(9px,env(safe-area-inset-bottom));
-
-  background:rgba(255,255,255,.95);
-
-  backdrop-filter:blur(20px);
-
-  border-top:1px solid rgba(220,225,218,.9);
-
-  box-shadow:
-    0 -10px 30px rgba(45,58,48,.05);
-}
-
-
-.navbtn{
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-
-  gap:2px;
-
-  border:0;
-
-  background:transparent;
-
-  color:#929b94;
-
-  padding:3px 2px;
-
-  font-size:8px;
-
-  font-weight:700;
-
-  letter-spacing:.25px;
-}
-
-
-.nav-icon{
-  width:48px;
-  height:40px;
-
-  display:grid;
-  place-items:center;
-
-  border-radius:15px;
-
-  transition:
-    transform .2s ease,
-    background .2s ease;
-}
-
-
-.nav-icon svg{
-  width:39px;
-  height:39px;
-}
-
-
-.botanical-nav svg path{
-  fill:currentColor;
-}
-
-
-.botanical-nav svg path:first-child{
-  fill:none;
-
-  stroke:currentColor;
-
-  stroke-width:1.35;
-
-  stroke-linecap:round;
-}
-
-
-.navbtn.active{
-  color:var(--sage-dark);
-}
-
-
-.navbtn.active .nav-icon{
-  background:var(--sage-light);
-
-  box-shadow:
-    inset 0 0 0 1px rgba(113,135,116,.08);
-
-  transform:translateY(-1px);
-}
-
-
-.navbtn:nth-child(2) .nav-icon{
-  color:var(--gold);
-}
-
-
-.navbtn:nth-child(3) .nav-icon{
-  color:var(--terracotta);
-}
-
-
-.navbtn:nth-child(4) .nav-icon{
-  color:var(--olive);
-}
-
-
-/* ================= MOBILE ================= */
-
-@media(max-width:430px){
-
-  main,
-  .topbar{
-    width:calc(100% - 24px);
-  }
-
-
-  .brand{
-    font-size:28px;
-  }
-
-
-  .brand-botanical{
-    width:49px;
-    height:49px;
-  }
-
-
-  .welcome h1{
-    font-size:32px;
-  }
-
-
-  .fox-wrap{
-    width:124px;
-    flex-basis:124px;
-  }
-
-
-  .fox{
-    width:123px;
-    height:140px;
-  }
-
-
-  .big{
-    font-size:55px;
-  }
-
-
-  .section-title h1{
-    font-size:39px;
-  }
-
-
-  .section-botanical{
-    width:110px;
-  }
-
-}
-
-
-@media(max-width:360px){
-
-  .money-grid{
-    grid-template-columns:1fr;
-  }
-
-
-  .row{
-    flex-direction:column;
-  }
-
-
-  .row button{
-    width:100%;
-  }
-
-  
-
-  .fox-wrap{
-    width:105px;
-    flex-basis:105px;
-  }
-
-
-  .fox{
-    width:108px;
-  }
-
-}
 /* =========================================================
-SAFESPEND UPLOADED ARTWORK — IMAGE SIZING
-Added to keep uploaded PNG artwork elegant and compact.
+IMAGE CONTROL
+IMPORTANT: These rules prevent the uploaded PNGs from
+displaying at their full original dimensions.
 ========================================================= */
 
-/* General protection:
-Never allow an uploaded image to overflow its container. */
-img {
-max-width: 100%;
-height: auto;
+img{
+max-width:100%;
+height:auto;
 }
 
-/* ================= BRAND LOGO ================= */
-
-.brand-botanical img {
-width: 42px;
-height: 42px;
-object-fit: contain;
-display: block;
+.brand-botanical img{
+width:42px !important;
+height:42px !important;
+max-width:42px !important;
+object-fit:contain;
+display:block;
 }
 
-/* ================= WELCOME / DASHBOARD ART ================= */
-
-.welcome-art {
-width: 105px;
-height: 105px;
-flex: 0 0 105px;
-
-display: flex;
-align-items: center;
-justify-content: center;
-
-overflow: hidden;
+.welcome-art img{
+width:90px !important;
+height:90px !important;
+max-width:90px !important;
+object-fit:contain;
+display:block;
 }
 
-.welcome-art img {
-width: 105px;
-height: 105px;
-
-object-fit: contain;
-display: block;
+.hero-botanical img{
+width:85px !important;
+height:42px !important;
+max-width:85px !important;
+object-fit:contain;
+display:block;
 }
 
-/* ================= HERO BOTANICAL DIVIDER ================= */
-
-.hero-botanical {
-position: absolute;
-right: 18px;
-bottom: 48px;
-
-width: 105px;
-height: 48px;
-
-pointer-events: none;
-opacity: .32;
-
-overflow: hidden;
+.image-icon img{
+width:40px !important;
+height:40px !important;
+max-width:40px !important;
+object-fit:contain;
+display:block;
 }
 
-.hero-botanical img {
-width: 105px;
-height: 48px;
-
-object-fit: contain;
-display: block;
+.card-art{
+width:55px !important;
+height:55px !important;
+max-width:55px !important;
+object-fit:contain;
+display:block;
 }
 
-/* ================= MONEY CARD ICONS ================= */
-
-.image-icon {
-width: 52px;
-height: 52px;
-
-display: flex;
-align-items: center;
-justify-content: center;
-
-overflow: hidden;
-border-radius: 17px;
+.section-art{
+width:70px !important;
+height:70px !important;
+max-width:70px !important;
+object-fit:contain;
+display:block;
 }
 
-.image-icon img {
-width: 42px;
-height: 42px;
-
-object-fit: contain;
-display: block;
+.nav-icon img{
+width:27px !important;
+height:27px !important;
+max-width:27px !important;
+object-fit:contain;
+display:block;
 }
 
-/* ================= CARD ART ================= */
-
-/*
-These are your uploaded:
-can-i-afford-it.png
-bills.png
-balance.png
-income.png
-income-label.png
-calendar.png
-*/
-
-.card-art {
-position: absolute;
-
-width: 72px;
-height: 72px;
-
-right: 15px;
-top: 12px;
-
-object-fit: contain;
-display: block;
-
-opacity: .90;
-
-pointer-events: none;
+.item img{
+max-width:32px;
+max-height:32px;
+object-fit:contain;
 }
 
-/* Keep card headings away from artwork */
+/* =========================================================
+BRAND
+========================================================= */
+
+.topbar{
+width:min(calc(100% - 30px),720px);
+margin:auto;
+padding:16px 0 8px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.brand-area{
+display:flex;
+align-items:center;
+gap:11px;
+}
+
+.brand-botanical{
+width:53px;
+height:53px;
+display:grid;
+place-items:center;
+border-radius:18px;
+background:linear-gradient(145deg,#f1f5ee,#dbe8da);
+border:1px solid rgba(54,91,70,.16);
+box-shadow:
+0 9px 24px rgba(54,91,70,.11),
+inset 0 0 0 1px rgba(255,255,255,.8);
+color:var(--sage-dark);
+overflow:hidden;
+}
+
+.brand{
+font-family:var(--serif);
+font-size:32px;
+font-weight:500;
+line-height:.86;
+letter-spacing:-1.5px;
+color:#294335;
+}
+
+.tagline{
+margin-top:4px;
+color:var(--muted);
+font-size:8.5px;
+letter-spacing:.35px;
+}
+
+.ghost{
+border:1px solid var(--line);
+background:rgba(255,255,255,.78);
+color:var(--muted);
+border-radius:12px;
+}
+
+.ghost.small{
+padding:7px 10px;
+font-size:10px;
+}
+
+/* =========================================================
+MAIN
+========================================================= */
+
+main{
+width:min(calc(100% - 30px),720px);
+margin:auto;
+}
+
+.screen{
+display:none;
+padding-bottom:28px;
+}
+
+.screen.active{
+display:block;
+}
+
+/* =========================================================
+WELCOME
+========================================================= */
+
+.welcome{
+padding:24px 2px 9px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+}
+
+.welcome-copy{
+position:relative;
+z-index:3;
+min-width:0;
+}
+
+.welcome-art{
+position:relative;
+width:90px;
+height:90px;
+flex:0 0 90px;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+}
+
+.eyebrow{
+color:var(--sage-dark);
+font-size:8px;
+font-weight:700;
+letter-spacing:1.8px;
+}
+
+.welcome h1{
+margin:7px 0 0;
+font-family:var(--serif);
+font-size:clamp(37px,9vw,49px);
+font-weight:500;
+line-height:.94;
+letter-spacing:-2.1px;
+}
+
+.welcome p{
+max-width:280px;
+margin:12px 0 0;
+color:var(--muted);
+font-size:11px;
+line-height:1.5;
+}
+
+/* =========================================================
+HERO CARD
+========================================================= */
+
+.hero-card{
+position:relative;
+overflow:hidden;
+margin-top:10px;
+padding:22px 22px 18px;
+border-radius:25px;
+background:
+linear-gradient(145deg,#edf3eb,#dfe9df);
+border:1px solid rgba(54,91,70,.13);
+box-shadow:var(--shadow);
+}
+
+.hero-top{
+position:relative;
+z-index:2;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.hero-label{
+display:flex;
+align-items:center;
+gap:7px;
+color:var(--sage-dark);
+font-size:9px;
+font-weight:700;
+letter-spacing:1.5px;
+}
+
+.status-dot{
+width:7px;
+height:7px;
+border-radius:50%;
+background:var(--sage);
+}
+
+.hero-star{
+color:var(--gold);
+font-size:18px;
+}
+
+.big{
+position:relative;
+z-index:2;
+margin-top:8px;
+font-family:var(--serif);
+font-size:clamp(46px,12vw,70px);
+line-height:.9;
+color:var(--sage-deep);
+letter-spacing:-2px;
+}
+
+.hero-note{
+position:relative;
+z-index:2;
+max-width:390px;
+margin-top:9px;
+color:var(--muted);
+font-size:11px;
+line-height:1.5;
+}
+
+.hero-bottom{
+position:relative;
+z-index:2;
+display:flex;
+justify-content:space-between;
+gap:10px;
+margin-top:20px;
+padding-top:12px;
+border-top:1px solid rgba(54,91,70,.12);
+color:var(--muted);
+font-size:8px;
+}
+
+.hero-botanical{
+position:absolute;
+right:15px;
+bottom:45px;
+width:85px;
+height:42px;
+display:flex;
+justify-content:flex-end;
+align-items:center;
+overflow:hidden;
+opacity:.35;
+pointer-events:none;
+}
+
+/* =========================================================
+SECTION HEADINGS
+========================================================= */
+
+.section-heading{
+margin:28px 2px 12px;
+}
+
+.section-heading h2{
+margin:4px 0 0;
+font-family:var(--serif);
+font-size:27px;
+font-weight:500;
+line-height:1;
+}
+
+.section-title{
+position:relative;
+min-height:100px;
+padding:25px 90px 18px 2px;
+}
+
+.section-title h1{
+margin:5px 0 0;
+font-family:var(--serif);
+font-size:42px;
+font-weight:500;
+line-height:.95;
+letter-spacing:-1.5px;
+}
+
+.section-title p{
+margin:9px 0 0;
+color:var(--muted);
+font-size:11px;
+line-height:1.5;
+}
+
+.section-art{
+position:absolute;
+right:4px;
+top:14px;
+}
+
+/* =========================================================
+MONEY GRID
+========================================================= */
+
+.money-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.money-card{
+min-width:0;
+padding:15px;
+border-radius:20px;
+background:rgba(255,253,248,.86);
+border:1px solid var(--line);
+box-shadow:0 10px 25px rgba(45,65,51,.045);
+}
+
+.image-icon{
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:16px;
+overflow:hidden;
+margin-bottom:9px;
+}
+
+.image-icon.green{
+background:#e5eee4;
+}
+
+.image-icon.terracotta{
+background:#f3e4dc;
+}
+
+.money-card span{
+display:block;
+color:var(--muted);
+font-size:9px;
+}
+
+.money-card strong{
+display:block;
+margin-top:3px;
+font-family:var(--serif);
+font-size:24px;
+font-weight:600;
+color:var(--sage-deep);
+}
+
+/* =========================================================
+CARDS
+========================================================= */
+
+.card{
+position:relative;
+overflow:hidden;
+margin-top:12px;
+padding:19px;
+border-radius:21px;
+background:rgba(255,253,248,.9);
+border:1px solid var(--line);
+box-shadow:0 10px 28px rgba(45,65,51,.045);
+}
+
+.image-card{
+position:relative;
+}
+
+.image-card > .card-art{
+position:absolute;
+right:13px;
+top:11px;
+pointer-events:none;
+opacity:.9;
+}
+
 .image-card h2,
 .image-card .section-head,
 .image-card label,
 .image-card .row,
-.image-card .result {
-position: relative;
-z-index: 2;
+.image-card .result,
+.image-card p,
+.image-card .balance-entry-row,
+.image-card > button{
+position:relative;
+z-index:2;
 }
 
-/* ================= SECTION ART ================= */
-
-.section-art {
-position: absolute;
-
-right: 5px;
-top: 16px;
-
-width: 90px;
-height: 90px;
-
-object-fit: contain;
-display: block;
-
-opacity: .85;
-
-pointer-events: none;
+.card h2{
+margin:0;
+font-family:var(--serif);
+font-size:25px;
+font-weight:500;
 }
 
-/* ================= NAVIGATION IMAGES ================= */
-
-.nav-icon img {
-width: 30px;
-height: 30px;
-
-object-fit: contain;
-display: block;
+.card p{
+font-size:10px;
+line-height:1.5;
 }
 
-/* ================= RESPONSIVE PHONE SIZING ================= */
-
-@media (max-width: 430px) {
-
-.welcome-art {
-width: 88px;
-height: 88px;
-flex-basis: 88px;
+.section-head{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
 }
 
-.welcome-art img {
-width: 88px;
-height: 88px;
+.textbtn{
+border:0;
+background:transparent;
+color:var(--sage-dark);
+font-size:9px;
+font-weight:700;
 }
 
-.hero-botanical {
-width: 82px;
-height: 40px;
+/* =========================================================
+FORMS
+========================================================= */
 
-```
-right: 14px;
-bottom: 47px;
-```
-
+.form{
+display:grid;
+gap:13px;
 }
 
-.hero-botanical img {
-width: 82px;
-height: 40px;
+.form label{
+display:grid;
+gap:6px;
+color:var(--sage-dark);
+font-size:9px;
+font-weight:700;
 }
 
-.image-icon {
-width: 46px;
-height: 46px;
+.form input,
+.balance-entry-row input,
+.row input{
+width:100%;
+min-height:42px;
+padding:10px 12px;
+border:1px solid var(--line);
+border-radius:12px;
+background:#fff;
+color:var(--ink);
+outline:none;
 }
 
-.image-icon img {
-width: 37px;
-height: 37px;
+.form input:focus,
+.balance-entry-row input:focus,
+.row input:focus{
+border-color:rgba(113,135,116,.6);
+box-shadow:0 0 0 3px rgba(113,135,116,.08);
 }
 
-.card-art {
-width: 58px;
-height: 58px;
-
-```
-right: 12px;
-top: 10px;
-```
-
+.check{
+display:flex !important;
+grid-template-columns:none !important;
+align-items:center;
+gap:8px !important;
+font-weight:500 !important;
 }
 
-.section-art {
-width: 70px;
-height: 70px;
-
-```
-right: 2px;
-top: 12px;
-```
-
+.check input{
+width:16px;
+min-height:16px;
+margin:0;
+accent-color:var(--sage);
 }
 
-.nav-icon img {
-width: 27px;
-height: 27px;
+button:not(.navbtn):not(.ghost):not(.textbtn):not(.delete){
+border:0;
+border-radius:12px;
+padding:11px 15px;
+background:var(--sage-dark);
+color:white;
+font-size:10px;
+font-weight:700;
+}
+
+.row{
+display:flex;
+gap:8px;
+margin-top:14px;
+}
+
+.row input{
+flex:1;
+}
+
+.row button{
+flex:0 0 auto;
+}
+
+/* =========================================================
+BALANCE
+========================================================= */
+
+.balance-entry-row{
+display:flex;
+align-items:center;
+gap:5px;
+margin:12px 0;
+padding:0 12px;
+min-height:46px;
+border:1px solid var(--line);
+border-radius:13px;
+background:white;
+}
+
+.currency-symbol{
+color:var(--sage-dark);
+font-family:var(--serif);
+font-size:22px;
+}
+
+.balance-entry-row input{
+border:0;
+min-height:42px;
+padding-left:2px;
+outline:none;
+}
+
+/* =========================================================
+RESULTS / WARNINGS
+========================================================= */
+
+.result{
+margin-top:10px;
+font-size:10px;
+line-height:1.5;
+}
+
+.muted{
+color:var(--muted);
+}
+
+.good{
+color:var(--sage-dark);
+}
+
+.bad{
+color:var(--terracotta-dark);
+}
+
+.notice{
+margin-top:12px;
+padding:12px 14px;
+border-radius:14px;
+background:#f5e4de;
+color:var(--terracotta-dark);
+border:1px solid #ead1c8;
+font-size:10px;
+line-height:1.45;
+}
+
+.hidden{
+display:none !important;
+}
+
+/* =========================================================
+LISTS
+========================================================= */
+
+#incomeList,
+#billList{
+margin-top:12px;
+}
+
+.item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:12px;
+padding:13px 3px;
+border-bottom:1px solid var(--line);
+}
+
+.item:last-child{
+border-bottom:0;
+}
+
+.item-title{
+color:var(--ink);
+font-size:11px;
+font-weight:600;
+}
+
+.item-sub{
+margin-top:4px;
+color:var(--muted);
+font-size:8px;
+}
+
+.item-actions{
+display:flex;
+align-items:center;
+gap:9px;
+flex-shrink:0;
+}
+
+.item-actions strong{
+color:var(--sage-deep);
+font-family:var(--serif);
+font-size:18px;
+}
+
+.delete{
+width:28px;
+height:28px;
+padding:0;
+border:1px solid var(--line);
+border-radius:9px;
+background:#fff;
+color:var(--terracotta-dark);
+font-size:17px;
+line-height:1;
+}
+
+.pill{
+display:inline-block;
+padding:3px 7px;
+border-radius:20px;
+background:var(--sage-light);
+color:var(--sage-dark);
+font-size:7px;
+font-weight:700;
+}
+
+.pill.paid{
+background:#eee9dc;
+color:#77705f;
+}
+
+.empty{
+padding:18px 4px;
+color:var(--muted);
+text-align:center;
+font-size:10px;
+}
+
+/* =========================================================
+CALENDAR
+========================================================= */
+
+#calendarList{
+margin-top:0;
+}
+
+/* =========================================================
+NAVIGATION
+========================================================= */
+
+.nav{
+position:fixed;
+z-index:50;
+left:50%;
+bottom:12px;
+transform:translateX(-50%);
+width:min(calc(100% - 24px),520px);
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:4px;
+padding:7px;
+border:1px solid rgba(54,91,70,.12);
+border-radius:21px;
+background:rgba(255,253,248,.94);
+backdrop-filter:blur(16px);
+box-shadow:0 15px 40px rgba(45,65,51,.13);
+}
+
+.navbtn{
+min-width:0;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:3px;
+padding:7px 3px;
+border:0;
+border-radius:14px;
+background:transparent;
+color:var(--muted);
+font-size:7px;
+font-weight:600;
+}
+
+.navbtn.active{
+background:var(--sage-light);
+color:var(--sage-dark);
+}
+
+.nav-icon{
+width:29px;
+height:29px;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+}
+
+.nav-icon img{
+object-fit:contain;
+}
+
+/* =========================================================
+SMALL PHONES
+========================================================= */
+
+@media(max-width:430px){
+
+body{
+padding-bottom:92px;
+}
+
+.topbar,
+main{
+width:calc(100% - 24px);
+}
+
+.brand{
+font-size:29px;
+}
+
+.brand-botanical{
+width:49px;
+height:49px;
+}
+
+.brand-botanical img{
+width:38px !important;
+height:38px !important;
+max-width:38px !important;
+}
+
+.welcome{
+padding-top:18px;
+}
+
+.welcome-art{
+width:78px;
+height:78px;
+flex-basis:78px;
+}
+
+.welcome-art img{
+width:78px !important;
+height:78px !important;
+max-width:78px !important;
+}
+
+.welcome h1{
+font-size:38px;
+}
+
+.welcome p{
+max-width:230px;
+font-size:10px;
+}
+
+.hero-card{
+padding:19px;
+border-radius:21px;
+}
+
+.big{
+font-size:50px;
+}
+
+.hero-botanical{
+width:75px;
+height:38px;
+right:12px;
+bottom:43px;
+}
+
+.hero-botanical img{
+width:75px !important;
+height:38px !important;
+max-width:75px !important;
+}
+
+.money-grid{
+gap:8px;
+}
+
+.money-card{
+padding:13px;
+}
+
+.image-icon{
+width:45px;
+height:45px;
+}
+
+.image-icon img{
+width:35px !important;
+height:35px !important;
+max-width:35px !important;
+}
+
+.money-card strong{
+font-size:21px;
+}
+
+.section-title{
+min-height:92px;
+padding-right:75px;
+}
+
+.section-title h1{
+font-size:38px;
+}
+
+.section-art{
+width:62px !important;
+height:62px !important;
+max-width:62px !important;
+right:2px;
+top:10px;
+}
+
+.card{
+padding:16px;
+border-radius:18px;
+}
+
+.image-card > .card-art{
+width:48px !important;
+height:48px !important;
+max-width:48px !important;
+right:11px;
+top:9px;
+}
+
+.card h2{
+font-size:23px;
+}
+
+.item-actions strong{
+font-size:16px;
+}
+
+.nav{
+bottom:8px;
+width:calc(100% - 18px);
+}
+
+.nav-icon{
+width:27px;
+height:27px;
+}
+
+.nav-icon img{
+width:25px !important;
+height:25px !important;
+max-width:25px !important;
 }
 }
 
-/* ================= VERY SMALL PHONES ================= */
+/* =========================================================
+VERY SMALL PHONES
+========================================================= */
 
-@media (max-width: 360px) {
+@media(max-width:360px){
 
-.welcome-art {
-width: 75px;
-height: 75px;
-flex-basis: 75px;
+.brand{
+font-size:26px;
 }
 
-.welcome-art img {
-width: 75px;
-height: 75px;
+.tagline{
+font-size:7.5px;
 }
 
-.card-art {
-width: 52px;
-height: 52px;
+.welcome-art{
+width:68px;
+height:68px;
+flex-basis:68px;
 }
 
-.section-art {
-width: 62px;
-height: 62px;
+.welcome-art img{
+width:68px !important;
+height:68px !important;
+max-width:68px !important;
+}
+
+.welcome h1{
+font-size:34px;
+}
+
+.hero-card{
+padding:17px;
+}
+
+.big{
+font-size:44px;
+}
+
+.section-title h1{
+font-size:35px;
+}
+
+.section-art{
+width:55px !important;
+height:55px !important;
+max-width:55px !important;
+}
+
+.image-card > .card-art{
+width:43px !important;
+height:43px !important;
+max-width:43px !important;
+}
+
+.money-card{
+padding:11px;
+}
+
+.money-card strong{
+font-size:19px;
 }
 }
 
-/* ================= PREVENT IMAGE DISTORTION ================= */
+/* =========================================================
+EXTRA PROTECTION AGAINST OVERSIZED UPLOADED ARTWORK
+========================================================= */
 
-.brand-botanical img,
-.welcome-art img,
-.hero-botanical img,
-.image-icon img,
-.card-art,
-.section-art,
-.nav-icon img {
-object-fit: contain;
-object-position: center;
+img[src="safespend-logo.png"]{
+width:42px !important;
+height:42px !important;
+max-width:42px !important;
+max-height:42px !important;
 }
 
-/* ================= HIDE ART IF IT EVER FAILS ================= */
+img[src="dashboard.png"]{
+width:90px !important;
+height:90px !important;
+max-width:90px !important;
+max-height:90px !important;
+}
 
-img {
-overflow: hidden;
+img[src="botanical-divider.png"]{
+width:85px !important;
+height:42px !important;
+max-width:85px !important;
+max-height:42px !important;
+}
+
+img[src="balance.png"],
+img[src="bills.png"]{
+width:40px !important;
+height:40px !important;
+max-width:40px !important;
+max-height:40px !important;
+}
+
+img[src="can-i-afford-it.png"],
+img[src="income-label.png"]{
+width:55px !important;
+height:55px !important;
+max-width:55px !important;
+max-height:55px !important;
+}
+
+img[src="income.png"],
+img[src="calendar.png"]{
+width:70px !important;
+height:70px !important;
+max-width:70px !important;
+max-height:70px !important;
+}
+
+img[src="delete.png"],
+img[src="due.png"],
+img[src="paid.png"],
+img[src="reset.png"],
+img[src="settings.png"]{
+width:32px !important;
+height:32px !important;
+max-width:32px !important;
+max-height:32px !important;
+object-fit:contain !important;
+}
+
+@media(max-width:430px){
+
+img[src="dashboard.png"]{
+width:78px !important;
+height:78px !important;
+max-width:78px !important;
+max-height:78px !important;
+}
+
+img[src="botanical-divider.png"]{
+width:75px !important;
+height:38px !important;
+max-width:75px !important;
+max-height:38px !important;
+}
+
+img[src="balance.png"],
+img[src="bills.png"]{
+width:35px !important;
+height:35px !important;
+max-width:35px !important;
+max-height:35px !important;
+}
+
+img[src="can-i-afford-it.png"],
+img[src="income-label.png"]{
+width:48px !important;
+height:48px !important;
+max-width:48px !important;
+max-height:48px !important;
+}
+
+img[src="income.png"],
+img[src="calendar.png"]{
+width:62px !important;
+height:62px !important;
+max-width:62px !important;
+max-height:62px !important;
+}
+
+img[src="delete.png"],
+img[src="due.png"],
+img[src="paid.png"],
+img[src="reset.png"],
+img[src="settings.png"]{
+width:28px !important;
+height:28px !important;
+max-width:28px !important;
+max-height:28px !important;
+}
 }
