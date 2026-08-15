@@ -1,8 +1,14 @@
 <!doctype html>
 <html lang="en">
+
 <head>
+
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1,viewport-fit=cover"
+  >
 
   <meta
     name="theme-color"
@@ -14,108 +20,43 @@
     content="SafeSpend — know what you can safely spend."
   >
 
-  <title>SafeSpend — Know what you can safely spend.</title>
+  <title>
+    SafeSpend — Know what you can safely spend.
+  </title>
 
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="styles.css">
+  <link
+    rel="manifest"
+    href="manifest.json"
+  >
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+
 </head>
 
+
 <body>
+
+
+<!-- ================= HEADER ================= -->
 
 <header class="topbar">
 
   <div class="brand-area">
 
-    <div class="brand-botanical" aria-hidden="true">
+    <div class="brand-botanical">
 
-      <svg viewBox="0 0 90 90">
-
-        <path
-          class="stem"
-          d="M18 75C31 58 38 40 67 17"
-        />
-
-        <path
-          class="stem"
-          d="M29 60C21 52 17 42 18 30"
-        />
-
-        <path
-          class="stem"
-          d="M40 48C51 45 59 38 63 28"
-        />
-
-        <ellipse
-          class="leaf"
-          cx="23"
-          cy="28"
-          rx="8"
-          ry="18"
-          transform="rotate(-30 23 28)"
-        />
-
-        <ellipse
-          class="leaf-soft"
-          cx="36"
-          cy="45"
-          rx="7"
-          ry="16"
-          transform="rotate(-48 36 45)"
-        />
-
-        <ellipse
-          class="leaf"
-          cx="48"
-          cy="39"
-          rx="8"
-          ry="18"
-          transform="rotate(42 48 39)"
-        />
-
-        <ellipse
-          class="leaf-soft"
-          cx="57"
-          cy="29"
-          rx="7"
-          ry="15"
-          transform="rotate(48 57 29)"
-        />
-
-        <ellipse
-          class="leaf-light"
-          cx="66"
-          cy="19"
-          rx="6"
-          ry="13"
-          transform="rotate(48 66 19)"
-        />
-
-        <circle
-          class="berry"
-          cx="71"
-          cy="16"
-          r="3"
-        />
-
-        <circle
-          class="berry"
-          cx="77"
-          cy="20"
-          r="2.5"
-        />
-
-        <circle
-          class="berry"
-          cx="72"
-          cy="25"
-          r="2.5"
-        />
-
-      </svg>
+      <img
+        src="safespend-logo.png"
+        alt="SafeSpend"
+      >
 
     </div>
 
-    <div>
+
+    <div class="brand-copy">
 
       <div class="brand">
         SafeSpend
@@ -129,9 +70,11 @@
 
   </div>
 
+
   <button
     id="resetBtn"
     class="ghost small"
+    type="button"
   >
     Reset
   </button>
@@ -139,14 +82,21 @@
 </header>
 
 
+
 <main>
 
-<!-- ================= HOME ================= -->
+
+<!-- =========================================================
+     DASHBOARD
+========================================================= -->
 
 <section
   id="dashboard"
   class="screen active"
 >
+
+
+  <!-- ================= WELCOME ================= -->
 
   <div class="welcome">
 
@@ -156,10 +106,12 @@
         A CALMER WAY TO MANAGE MONEY
       </div>
 
+
       <h1>
         Spend with<br>
         confidence.
       </h1>
+
 
       <p>
         Know what's yours to spend—and what's already spoken for.
@@ -168,351 +120,32 @@
     </div>
 
 
-    <div class="fox-wrap">
+    <div class="welcome-art">
 
-      <div class="fox-glow"></div>
-
-      <svg
-        class="fox"
-        viewBox="0 0 220 230"
-        aria-label="SafeSpend fox"
+      <img
+        src="dashboard.png"
+        alt="SafeSpend dashboard illustration"
       >
-
-        <path
-          class="fox-fur"
-          d="M153 174
-             C205 160 210 111 176 101
-             C185 128 165 145 137 145Z"
-        />
-
-        <ellipse
-          class="fox-fur"
-          cx="111"
-          cy="164"
-          rx="55"
-          ry="51"
-        />
-
-        <path
-          class="fox-cream"
-          d="M79 145
-             C79 184 96 204 113 204
-             C132 202 145 181 143 143
-             C124 155 97 156 79 145Z"
-        />
-
-        <path
-          class="fox-fur"
-          d="M73 86L58 30L99 62Z"
-        />
-
-        <path
-          class="fox-fur"
-          d="M125 62L166 30L151 88Z"
-        />
-
-        <path
-          class="fox-ear-inner"
-          d="M72 72L66 45L87 64Z"
-        />
-
-        <path
-          class="fox-ear-inner"
-          d="M135 64L157 45L150 73Z"
-        />
-
-        <path
-          class="fox-fur"
-          d="M65 89
-             C66 57 86 42 112 42
-             C140 42 160 59 160 91
-             C160 124 140 144 112 145
-             C83 144 63 123 65 89Z"
-        />
-
-        <ellipse
-          class="fox-cream"
-          cx="87"
-          cy="105"
-          rx="28"
-          ry="25"
-        />
-
-        <ellipse
-          class="fox-cream"
-          cx="137"
-          cy="105"
-          rx="28"
-          ry="25"
-        />
-
-        <path
-          class="fox-muzzle"
-          d="M88 105
-             C91 91 103 88 112 99
-             C121 88 134 91 137 105
-             C135 121 125 130 112 130
-             C99 130 89 121 88 105Z"
-        />
-
-        <ellipse
-          class="fox-eye"
-          cx="91"
-          cy="91"
-          rx="8"
-          ry="10"
-        />
-
-        <ellipse
-          class="fox-eye"
-          cx="133"
-          cy="91"
-          rx="8"
-          ry="10"
-        />
-
-        <circle
-          class="fox-glint"
-          cx="94"
-          cy="87"
-          r="3"
-        />
-
-        <circle
-          class="fox-glint"
-          cx="136"
-          cy="87"
-          r="3"
-        />
-
-        <path
-          class="fox-brow"
-          d="M81 78C87 74 94 74 100 78"
-        />
-
-        <path
-          class="fox-brow"
-          d="M124 78C130 74 137 74 143 78"
-        />
-
-        <ellipse
-          class="fox-nose"
-          cx="112"
-          cy="105"
-          rx="7"
-          ry="5"
-        />
-
-        <path
-          class="fox-smile"
-          d="M112 109C109 116 103 119 98 117"
-        />
-
-        <path
-          class="fox-smile"
-          d="M112 109C115 116 121 119 126 117"
-        />
-
-        <path
-          class="fox-scarf"
-          d="M77 133
-             C98 145 128 145 148 132
-             L144 151
-             C124 162 99 161 81 151Z"
-        />
-
-        <path
-          class="fox-scarf"
-          d="M132 150L158 187L134 174Z"
-        />
-
-        <ellipse
-          class="fox-fur"
-          cx="78"
-          cy="201"
-          rx="21"
-          ry="13"
-        />
-
-        <ellipse
-          class="fox-fur"
-          cx="143"
-          cy="201"
-          rx="21"
-          ry="13"
-        />
-
-        <circle
-          class="paw-mark"
-          cx="74"
-          cy="201"
-          r="2"
-        />
-
-        <circle
-          class="paw-mark"
-          cx="81"
-          cy="199"
-          r="2"
-        />
-
-        <circle
-          class="paw-mark"
-          cx="139"
-          cy="199"
-          r="2"
-        />
-
-        <circle
-          class="paw-mark"
-          cx="146"
-          cy="201"
-          r="2"
-        />
-
-      </svg>
-
-
-      <!-- FULLER BOTANICAL SPRIG -->
-
-      <div class="fox-botanical botanical-right">
-
-        <svg viewBox="0 0 100 150">
-
-          <path
-            d="M18 142C29 111 44 82 78 16"
-          />
-
-          <ellipse
-            cx="27"
-            cy="119"
-            rx="9"
-            ry="22"
-            transform="rotate(-38 27 119)"
-          />
-
-          <ellipse
-            cx="37"
-            cy="99"
-            rx="8"
-            ry="20"
-            transform="rotate(35 37 99)"
-          />
-
-          <ellipse
-            cx="44"
-            cy="79"
-            rx="9"
-            ry="23"
-            transform="rotate(-38 44 79)"
-          />
-
-          <ellipse
-            cx="55"
-            cy="59"
-            rx="8"
-            ry="20"
-            transform="rotate(35 55 59)"
-          />
-
-          <ellipse
-            cx="65"
-            cy="39"
-            rx="8"
-            ry="20"
-            transform="rotate(-34 65 39)"
-          />
-
-          <ellipse
-            cx="76"
-            cy="20"
-            rx="7"
-            ry="17"
-            transform="rotate(35 76 20)"
-          />
-
-          <circle cx="82" cy="13" r="3"/>
-          <circle cx="88" cy="19" r="2.5"/>
-          <circle cx="84" cy="27" r="2.5"/>
-
-        </svg>
-
-      </div>
-
-
-      <div class="fox-botanical botanical-left">
-
-        <svg viewBox="0 0 100 150">
-
-          <path
-            d="M78 144C65 111 54 81 20 17"
-          />
-
-          <ellipse
-            cx="69"
-            cy="118"
-            rx="9"
-            ry="22"
-            transform="rotate(38 69 118)"
-          />
-
-          <ellipse
-            cx="59"
-            cy="98"
-            rx="8"
-            ry="20"
-            transform="rotate(-35 59 98)"
-          />
-
-          <ellipse
-            cx="52"
-            cy="78"
-            rx="9"
-            ry="23"
-            transform="rotate(38 52 78)"
-          />
-
-          <ellipse
-            cx="42"
-            cy="58"
-            rx="8"
-            ry="20"
-            transform="rotate(-35 42 58)"
-          />
-
-          <ellipse
-            cx="32"
-            cy="38"
-            rx="8"
-            ry="20"
-            transform="rotate(34 32 38)"
-          />
-
-          <ellipse
-            cx="22"
-            cy="19"
-            rx="7"
-            ry="17"
-            transform="rotate(-35 22 19)"
-          />
-
-        </svg>
-
-      </div>
 
     </div>
 
   </div>
 
 
-  <!-- SAFE TO SPEND -->
+
+  <!-- ================= SAFE TO SPEND ================= -->
 
   <div class="hero-card">
 
-    <div class="botanical-corner corner-one"></div>
-    <div class="botanical-corner corner-two"></div>
-    <div class="botanical-corner corner-three"></div>
-    <div class="botanical-corner corner-four"></div>
+    <div class="hero-botanical">
+
+      <img
+        src="botanical-divider.png"
+        alt=""
+      >
+
+    </div>
+
 
     <div class="hero-top">
 
@@ -524,11 +157,13 @@
 
       </div>
 
+
       <span class="hero-star">
         ✦
       </span>
 
     </div>
+
 
     <div
       id="safeSpend"
@@ -537,12 +172,14 @@
       $0.00
     </div>
 
+
     <div
       id="safeNote"
       class="hero-note"
     >
       Add your balance, income, and bills to get started.
     </div>
+
 
     <div class="hero-bottom">
 
@@ -551,7 +188,7 @@
       </span>
 
       <span>
-        ✦ Plan first. Spend freely.
+        Plan first. Spend freely.
       </span>
 
     </div>
@@ -559,7 +196,8 @@
   </div>
 
 
-  <!-- SNAPSHOT -->
+
+  <!-- ================= SNAPSHOT ================= -->
 
   <div class="section-heading">
 
@@ -576,67 +214,25 @@
 
   <div class="money-grid">
 
+
+    <!-- BALANCE -->
+
     <div class="money-card">
 
-      <div class="luxury-icon green">
+      <div class="image-icon green">
 
-        <svg viewBox="0 0 70 70">
-
-          <path
-            class="icon-stem"
-            d="M18 55C26 40 37 28 54 16"
-          />
-
-          <ellipse
-            class="icon-leaf"
-            cx="22"
-            cy="46"
-            rx="7"
-            ry="15"
-            transform="rotate(-35 22 46)"
-          />
-
-          <ellipse
-            class="icon-leaf-soft"
-            cx="31"
-            cy="35"
-            rx="7"
-            ry="15"
-            transform="rotate(42 31 35)"
-          />
-
-          <ellipse
-            class="icon-leaf"
-            cx="40"
-            cy="29"
-            rx="7"
-            ry="16"
-            transform="rotate(-38 40 29)"
-          />
-
-          <ellipse
-            class="icon-leaf-soft"
-            cx="49"
-            cy="20"
-            rx="6"
-            ry="13"
-            transform="rotate(43 49 20)"
-          />
-
-          <circle
-            class="icon-leaf-light"
-            cx="57"
-            cy="15"
-            r="4"
-          />
-
-        </svg>
+        <img
+          src="balance.png"
+          alt=""
+        >
 
       </div>
+
 
       <span>
         Current balance
       </span>
+
 
       <strong id="balanceOut">
         $0.00
@@ -645,67 +241,25 @@
     </div>
 
 
+
+    <!-- BILLS -->
+
     <div class="money-card">
 
-      <div class="luxury-icon terracotta">
+      <div class="image-icon terracotta">
 
-        <svg viewBox="0 0 70 70">
-
-          <path
-            class="icon-stem"
-            d="M17 54C29 39 40 29 55 17"
-          />
-
-          <ellipse
-            class="icon-leaf"
-            cx="21"
-            cy="47"
-            rx="7"
-            ry="15"
-            transform="rotate(-35 21 47)"
-          />
-
-          <ellipse
-            class="icon-leaf-soft"
-            cx="32"
-            cy="38"
-            rx="7"
-            ry="15"
-            transform="rotate(42 32 38)"
-          />
-
-          <ellipse
-            class="icon-leaf"
-            cx="42"
-            cy="28"
-            rx="7"
-            ry="15"
-            transform="rotate(-35 42 28)"
-          />
-
-          <ellipse
-            class="icon-leaf-soft"
-            cx="51"
-            cy="20"
-            rx="6"
-            ry="13"
-            transform="rotate(42 51 20)"
-          />
-
-          <circle
-            class="icon-leaf-light"
-            cx="58"
-            cy="15"
-            r="4"
-          />
-
-        </svg>
+        <img
+          src="bills.png"
+          alt=""
+        >
 
       </div>
+
 
       <span>
         Upcoming bills
       </span>
+
 
       <strong id="billsOut">
         $0.00
@@ -716,21 +270,31 @@
   </div>
 
 
+
+  <!-- ================= WARNING ================= -->
+
   <div
     id="warning"
     class="notice hidden"
   ></div>
 
 
-  <!-- CAN I AFFORD -->
 
-  <div class="card botanical-card">
+  <!-- ================= CAN I AFFORD ================= -->
 
-    <div class="card-botanical"></div>
+  <div class="card image-card">
+
+    <img
+      class="card-art"
+      src="can-i-afford-it.png"
+      alt=""
+    >
+
 
     <h2>
       Can I afford this?
     </h2>
+
 
     <div class="row">
 
@@ -740,13 +304,19 @@
         min="0"
         step="0.01"
         placeholder="Amount"
+        inputmode="decimal"
       >
 
-      <button id="affordBtn">
+
+      <button
+        id="affordBtn"
+        type="button"
+      >
         Check
       </button>
 
     </div>
+
 
     <div
       id="affordResult"
@@ -758,48 +328,72 @@
   </div>
 
 
-  <!-- NEXT BILLS -->
 
-  <div class="card botanical-card">
+  <!-- ================= NEXT BILLS ================= -->
 
-    <div class="card-botanical"></div>
+  <div class="card image-card">
 
     <div class="section-head">
 
-      <h2>
-        Next bills
-      </h2>
+      <div>
+
+        <h2>
+          Next bills
+        </h2>
+
+      </div>
+
 
       <button
         class="textbtn"
         data-screen="bills"
+        type="button"
       >
         View all
       </button>
 
     </div>
 
-    <div id="nextBills"></div>
+
+    <div
+      id="nextBills"
+    ></div>
 
   </div>
+
 
 </section>
 
 
-<!-- ================= INCOME ================= -->
+
+<!-- =========================================================
+     INCOME
+========================================================= -->
 
 <section
   id="income"
   class="screen"
 >
 
+
   <div class="section-title">
 
-    <div class="section-botanical"></div>
+    <img
+      class="section-art"
+      src="income.png"
+      alt=""
+    >
+
+
+    <div class="eyebrow">
+      MONEY COMING IN
+    </div>
+
 
     <h1>
       Income
     </h1>
+
 
     <p>
       Add money you expect to receive.
@@ -808,9 +402,17 @@
   </div>
 
 
-  <div class="card balance-entry-card botanical-card">
 
-    <div class="card-botanical"></div>
+  <!-- ================= CURRENT BALANCE ================= -->
+
+  <div class="card image-card">
+
+    <img
+      class="card-art"
+      src="balance.png"
+      alt=""
+    >
+
 
     <div class="section-head">
 
@@ -820,6 +422,7 @@
           YOUR MONEY
         </div>
 
+
         <h2>
           Current balance
         </h2>
@@ -828,15 +431,18 @@
 
     </div>
 
+
     <p class="muted">
       Enter the amount currently in your bank account.
     </p>
+
 
     <div class="balance-entry-row">
 
       <span class="currency-symbol">
         $
       </span>
+
 
       <input
         id="balanceInput"
@@ -849,12 +455,14 @@
 
     </div>
 
+
     <button
       id="saveBalanceBtn"
       type="button"
     >
       Save balance
     </button>
+
 
     <div
       id="balanceSaved"
@@ -864,14 +472,23 @@
   </div>
 
 
+
+  <!-- ================= INCOME FORM ================= -->
+
   <form
     id="incomeForm"
-    class="card form botanical-card"
+    class="card form image-card"
   >
 
-    <div class="card-botanical"></div>
+    <img
+      class="card-art"
+      src="income-label.png"
+      alt=""
+    >
+
 
     <label>
+
       Source
 
       <input
@@ -882,7 +499,9 @@
 
     </label>
 
+
     <label>
+
       Amount
 
       <input
@@ -891,11 +510,14 @@
         type="number"
         min="0"
         step="0.01"
+        inputmode="decimal"
       >
 
     </label>
 
+
     <label>
+
       Date
 
       <input
@@ -906,6 +528,7 @@
 
     </label>
 
+
     <label class="check">
 
       <input
@@ -913,36 +536,58 @@
         type="checkbox"
       >
 
-      Repeats monthly
+      <span>
+        Repeats monthly
+      </span>
 
     </label>
 
-    <button type="submit">
+
+    <button
+      type="submit"
+    >
       Add income
     </button>
 
   </form>
 
 
+
   <div id="incomeList"></div>
+
 
 </section>
 
 
-<!-- ================= BILLS ================= -->
+
+<!-- =========================================================
+     BILLS
+========================================================= -->
 
 <section
   id="bills"
   class="screen"
 >
 
+
   <div class="section-title">
 
-    <div class="section-botanical terracotta-botanical"></div>
+    <img
+      class="section-art"
+      src="bills.png"
+      alt=""
+    >
+
+
+    <div class="eyebrow">
+      MONEY GOING OUT
+    </div>
+
 
     <h1>
       Bills
     </h1>
+
 
     <p>
       Track what must be paid and when.
@@ -951,14 +596,23 @@
   </div>
 
 
+
+  <!-- ================= BILL FORM ================= -->
+
   <form
     id="billForm"
-    class="card form botanical-card"
+    class="card form image-card"
   >
 
-    <div class="card-botanical"></div>
+    <img
+      class="card-art"
+      src="bills.png"
+      alt=""
+    >
+
 
     <label>
+
       Bill name
 
       <input
@@ -969,7 +623,9 @@
 
     </label>
 
+
     <label>
+
       Amount
 
       <input
@@ -978,11 +634,14 @@
         type="number"
         min="0"
         step="0.01"
+        inputmode="decimal"
       >
 
     </label>
 
+
     <label>
+
       Due date
 
       <input
@@ -993,6 +652,7 @@
 
     </label>
 
+
     <label class="check">
 
       <input
@@ -1000,9 +660,12 @@
         type="checkbox"
       >
 
-      Already paid
+      <span>
+        Already paid
+      </span>
 
     </label>
+
 
     <label class="check">
 
@@ -1011,36 +674,58 @@
         type="checkbox"
       >
 
-      Repeats monthly
+      <span>
+        Repeats monthly
+      </span>
 
     </label>
 
-    <button type="submit">
+
+    <button
+      type="submit"
+    >
       Add bill
     </button>
 
   </form>
 
 
+
   <div id="billList"></div>
+
 
 </section>
 
 
-<!-- ================= CALENDAR ================= -->
+
+<!-- =========================================================
+     CALENDAR
+========================================================= -->
 
 <section
   id="calendar"
   class="screen"
 >
 
+
   <div class="section-title">
 
-    <div class="section-botanical olive-botanical"></div>
+    <img
+      class="section-art"
+      src="calendar.png"
+      alt=""
+    >
+
+
+    <div class="eyebrow">
+      YOUR MONEY TIMELINE
+    </div>
+
 
     <h1>
       Calendar
     </h1>
+
 
     <p>
       See income and bills together.
@@ -1049,87 +734,49 @@
   </div>
 
 
-  <div class="card botanical-card">
 
-    <div class="card-botanical"></div>
+  <div class="card image-card">
 
-    <div id="calendarList"></div>
+    <img
+      class="card-art"
+      src="calendar.png"
+      alt=""
+    >
+
+
+    <div
+      id="calendarList"
+    ></div>
 
   </div>
 
+
 </section>
+
 
 </main>
 
 
-<!-- ================= NAVIGATION ================= -->
+
+<!-- =========================================================
+     BOTTOM NAVIGATION
+========================================================= -->
 
 <nav class="nav">
+
 
   <button
     class="navbtn active"
     data-screen="dashboard"
+    type="button"
   >
 
     <span class="nav-icon">
 
-      <svg viewBox="0 0 70 70">
-
-        <path
-          d="M12 56C23 42 35 27 58 13"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-        />
-
-        <ellipse
-          cx="20"
-          cy="48"
-          rx="8"
-          ry="18"
-          transform="rotate(-38 20 48)"
-          fill="currentColor"
-        />
-
-        <ellipse
-          cx="31"
-          cy="37"
-          rx="8"
-          ry="18"
-          transform="rotate(42 31 37)"
-          fill="currentColor"
-          opacity=".78"
-        />
-
-        <ellipse
-          cx="41"
-          cy="27"
-          rx="8"
-          ry="18"
-          transform="rotate(-38 41 27)"
-          fill="currentColor"
-        />
-
-        <ellipse
-          cx="52"
-          cy="18"
-          rx="7"
-          ry="15"
-          transform="rotate(42 52 18)"
-          fill="currentColor"
-          opacity=".7"
-        />
-
-        <circle
-          cx="59"
-          cy="13"
-          r="4"
-          fill="currentColor"
-          opacity=".55"
-        />
-
-      </svg>
+      <img
+        src="dashboard.png"
+        alt=""
+      >
 
     </span>
 
@@ -1140,62 +787,19 @@
   </button>
 
 
+
   <button
     class="navbtn"
     data-screen="income"
+    type="button"
   >
 
     <span class="nav-icon">
 
-      <svg viewBox="0 0 70 70">
-
-        <path
-          d="M13 57C23 42 37 28 57 13"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-        />
-
-        <ellipse
-          cx="20"
-          cy="48"
-          rx="8"
-          ry="18"
-          transform="rotate(-38 20 48)"
-          fill="currentColor"
-        />
-
-        <ellipse
-          cx="31"
-          cy="38"
-          rx="8"
-          ry="18"
-          transform="rotate(42 31 38)"
-          fill="currentColor"
-          opacity=".78"
-        />
-
-        <ellipse
-          cx="41"
-          cy="28"
-          rx="8"
-          ry="18"
-          transform="rotate(-38 41 28)"
-          fill="currentColor"
-        />
-
-        <ellipse
-          cx="52"
-          cy="18"
-          rx="7"
-          ry="15"
-          transform="rotate(42 52 18)"
-          fill="currentColor"
-          opacity=".68"
-        />
-
-      </svg>
+      <img
+        src="income.png"
+        alt=""
+      >
 
     </span>
 
@@ -1206,70 +810,19 @@
   </button>
 
 
+
   <button
     class="navbtn"
     data-screen="bills"
+    type="button"
   >
 
     <span class="nav-icon">
 
-      <svg viewBox="0 0 70 70">
-
-        <path
-          d="M13 57C23 42 37 28 57 13"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-        />
-
-        <ellipse
-          cx="20"
-          cy="48"
-          rx="8"
-          ry="18"
-          transform="rotate(-38 20 48)"
-          fill="currentColor"
-        />
-
-        <ellipse
-          cx="31"
-          cy="38"
-          rx="8"
-          ry="18"
-          transform="rotate(42 31 38)"
-          fill="currentColor"
-          opacity=".78"
-        />
-
-        <ellipse
-          cx="42"
-          cy="27"
-          rx="8"
-          ry="18"
-          transform="rotate(-38 42 27)"
-          fill="currentColor"
-        />
-
-        <ellipse
-          cx="53"
-          cy="18"
-          rx="7"
-          ry="15"
-          transform="rotate(42 53 18)"
-          fill="currentColor"
-          opacity=".68"
-        />
-
-        <circle
-          cx="59"
-          cy="12"
-          r="4"
-          fill="currentColor"
-          opacity=".5"
-        />
-
-      </svg>
+      <img
+        src="bills.png"
+        alt=""
+      >
 
     </span>
 
@@ -1280,62 +833,19 @@
   </button>
 
 
+
   <button
     class="navbtn"
     data-screen="calendar"
+    type="button"
   >
 
     <span class="nav-icon">
 
-      <svg viewBox="0 0 70 70">
-
-        <path
-          d="M12 56C23 42 36 28 58 13"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-        />
-
-        <ellipse
-          cx="20"
-          cy="48"
-          rx="8"
-          ry="18"
-          transform="rotate(-38 20 48)"
-          fill="currentColor"
-        />
-
-        <ellipse
-          cx="31"
-          cy="38"
-          rx="8"
-          ry="18"
-          transform="rotate(42 31 38)"
-          fill="currentColor"
-          opacity=".78"
-        />
-
-        <ellipse
-          cx="41"
-          cy="28"
-          rx="8"
-          ry="18"
-          transform="rotate(-38 41 28)"
-          fill="currentColor"
-        />
-
-        <ellipse
-          cx="52"
-          cy="18"
-          rx="7"
-          ry="15"
-          transform="rotate(42 52 18)"
-          fill="currentColor"
-          opacity=".68"
-        />
-
-      </svg>
+      <img
+        src="calendar.png"
+        alt=""
+      >
 
     </span>
 
@@ -1345,10 +855,13 @@
 
   </button>
 
+
 </nav>
+
 
 
 <script src="app.js"></script>
 
 </body>
-      </html>
+
+</html>
