@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#718774">
-  <meta name="description" content="SafeSpend — know what you can safely spend.">
-  <title>SafeSpend — Know what you can safely spend.</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
+  <meta
+    name="theme-color"
+    content="#718774"
   >
+
+  <meta
+    name="description"
+    content="SafeSpend — know what you can safely spend."
+  >
+
+  <title>SafeSpend — Know what you can safely spend.</title>
 
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css">
@@ -29,32 +30,109 @@
 
       <svg viewBox="0 0 90 90">
 
-        <path class="stem" d="M43 78C43 55 48 31 67 12"/>
-        <path class="stem soft" d="M43 64C34 53 25 45 13 41"/>
-        <path class="stem soft" d="M47 48C57 39 63 29 67 18"/>
+        <path
+          class="stem"
+          d="M18 75C31 58 38 40 67 17"
+        />
 
-        <path class="leaf" d="M29 54C18 53 10 47 9 37C20 37 28 42 29 54Z"/>
-        <path class="leaf light" d="M38 43C28 39 23 31 25 21C36 24 41 32 38 43Z"/>
-        <path class="leaf" d="M51 38C49 27 54 18 64 14C66 25 61 34 51 38Z"/>
-        <path class="leaf soft" d="M57 28C62 18 72 13 82 16C77 26 68 31 57 28Z"/>
-        <path class="leaf light" d="M45 61C53 52 63 49 72 53C67 62 57 66 45 61Z"/>
+        <path
+          class="stem"
+          d="M29 60C21 52 17 42 18 30"
+        />
 
-        <circle class="berry" cx="72" cy="12" r="2.2"/>
-        <circle class="berry" cx="77" cy="15" r="1.8"/>
-        <circle class="berry" cx="69" cy="18" r="1.7"/>
+        <path
+          class="stem"
+          d="M40 48C51 45 59 38 63 28"
+        />
+
+        <ellipse
+          class="leaf"
+          cx="23"
+          cy="28"
+          rx="8"
+          ry="18"
+          transform="rotate(-30 23 28)"
+        />
+
+        <ellipse
+          class="leaf-soft"
+          cx="36"
+          cy="45"
+          rx="7"
+          ry="16"
+          transform="rotate(-48 36 45)"
+        />
+
+        <ellipse
+          class="leaf"
+          cx="48"
+          cy="39"
+          rx="8"
+          ry="18"
+          transform="rotate(42 48 39)"
+        />
+
+        <ellipse
+          class="leaf-soft"
+          cx="57"
+          cy="29"
+          rx="7"
+          ry="15"
+          transform="rotate(48 57 29)"
+        />
+
+        <ellipse
+          class="leaf-light"
+          cx="66"
+          cy="19"
+          rx="6"
+          ry="13"
+          transform="rotate(48 66 19)"
+        />
+
+        <circle
+          class="berry"
+          cx="71"
+          cy="16"
+          r="3"
+        />
+
+        <circle
+          class="berry"
+          cx="77"
+          cy="20"
+          r="2.5"
+        />
+
+        <circle
+          class="berry"
+          cx="72"
+          cy="25"
+          r="2.5"
+        />
 
       </svg>
 
     </div>
 
     <div>
-      <div class="brand">SafeSpend</div>
-      <div class="tagline">Know what you can safely spend.</div>
+
+      <div class="brand">
+        SafeSpend
+      </div>
+
+      <div class="tagline">
+        Know what you can safely spend.
+      </div>
+
     </div>
 
   </div>
 
-  <button id="resetBtn" class="ghost small">
+  <button
+    id="resetBtn"
+    class="ghost small"
+  >
     Reset
   </button>
 
@@ -63,10 +141,12 @@
 
 <main>
 
-
 <!-- ================= HOME ================= -->
 
-<section id="dashboard" class="screen active">
+<section
+  id="dashboard"
+  class="screen active"
+>
 
   <div class="welcome">
 
@@ -87,8 +167,6 @@
 
     </div>
 
-
-    <!-- FOX -->
 
     <div class="fox-wrap">
 
@@ -123,11 +201,25 @@
              C124 155 97 156 79 145Z"
         />
 
-        <path class="fox-fur" d="M73 86L58 30L99 62Z"/>
-        <path class="fox-fur" d="M125 62L166 30L151 88Z"/>
+        <path
+          class="fox-fur"
+          d="M73 86L58 30L99 62Z"
+        />
 
-        <path class="fox-ear-inner" d="M72 72L66 45L87 64Z"/>
-        <path class="fox-ear-inner" d="M135 64L157 45L150 73Z"/>
+        <path
+          class="fox-fur"
+          d="M125 62L166 30L151 88Z"
+        />
+
+        <path
+          class="fox-ear-inner"
+          d="M72 72L66 45L87 64Z"
+        />
+
+        <path
+          class="fox-ear-inner"
+          d="M135 64L157 45L150 73Z"
+        />
 
         <path
           class="fox-fur"
@@ -163,19 +255,63 @@
              C99 130 89 121 88 105Z"
         />
 
-        <ellipse class="fox-eye" cx="91" cy="91" rx="8" ry="10"/>
-        <ellipse class="fox-eye" cx="133" cy="91" rx="8" ry="10"/>
+        <ellipse
+          class="fox-eye"
+          cx="91"
+          cy="91"
+          rx="8"
+          ry="10"
+        />
 
-        <circle class="fox-glint" cx="94" cy="87" r="3"/>
-        <circle class="fox-glint" cx="136" cy="87" r="3"/>
+        <ellipse
+          class="fox-eye"
+          cx="133"
+          cy="91"
+          rx="8"
+          ry="10"
+        />
 
-        <path class="fox-brow" d="M81 78C87 74 94 74 100 78"/>
-        <path class="fox-brow" d="M124 78C130 74 137 74 143 78"/>
+        <circle
+          class="fox-glint"
+          cx="94"
+          cy="87"
+          r="3"
+        />
 
-        <ellipse class="fox-nose" cx="112" cy="105" rx="7" ry="5"/>
+        <circle
+          class="fox-glint"
+          cx="136"
+          cy="87"
+          r="3"
+        />
 
-        <path class="fox-smile" d="M112 109C109 116 103 119 98 117"/>
-        <path class="fox-smile" d="M112 109C115 116 121 119 126 117"/>
+        <path
+          class="fox-brow"
+          d="M81 78C87 74 94 74 100 78"
+        />
+
+        <path
+          class="fox-brow"
+          d="M124 78C130 74 137 74 143 78"
+        />
+
+        <ellipse
+          class="fox-nose"
+          cx="112"
+          cy="105"
+          rx="7"
+          ry="5"
+        />
+
+        <path
+          class="fox-smile"
+          d="M112 109C109 116 103 119 98 117"
+        />
+
+        <path
+          class="fox-smile"
+          d="M112 109C115 116 121 119 126 117"
+        />
 
         <path
           class="fox-scarf"
@@ -190,110 +326,175 @@
           d="M132 150L158 187L134 174Z"
         />
 
-        <ellipse class="fox-fur" cx="78" cy="201" rx="21" ry="13"/>
-        <ellipse class="fox-fur" cx="143" cy="201" rx="21" ry="13"/>
+        <ellipse
+          class="fox-fur"
+          cx="78"
+          cy="201"
+          rx="21"
+          ry="13"
+        />
 
-        <circle class="paw-mark" cx="74" cy="201" r="2"/>
-        <circle class="paw-mark" cx="81" cy="199" r="2"/>
-        <circle class="paw-mark" cx="139" cy="199" r="2"/>
-        <circle class="paw-mark" cx="146" cy="201" r="2"/>
+        <ellipse
+          class="fox-fur"
+          cx="143"
+          cy="201"
+          rx="21"
+          ry="13"
+        />
+
+        <circle
+          class="paw-mark"
+          cx="74"
+          cy="201"
+          r="2"
+        />
+
+        <circle
+          class="paw-mark"
+          cx="81"
+          cy="199"
+          r="2"
+        />
+
+        <circle
+          class="paw-mark"
+          cx="139"
+          cy="199"
+          r="2"
+        />
+
+        <circle
+          class="paw-mark"
+          cx="146"
+          cy="201"
+          r="2"
+        />
 
       </svg>
 
 
-      <!-- LUSH BOTANICAL SPRIG -->
+      <!-- FULLER BOTANICAL SPRIG -->
 
-      <div class="botanical-sprig sprig-one">
+      <div class="fox-botanical botanical-right">
 
-        <svg viewBox="0 0 80 120">
+        <svg viewBox="0 0 100 150">
 
-          <path d="M10 112C27 86 45 58 70 10"/>
-
-          <path d="M22 92C15 80 14 68 20 58"/>
-          <path d="M34 73C29 61 31 50 39 42"/>
-          <path d="M47 51C45 39 50 29 59 23"/>
-
-          <ellipse
-            cx="19"
-            cy="58"
-            rx="8"
-            ry="16"
-            transform="rotate(-34 19 58)"
+          <path
+            d="M18 142C29 111 44 82 78 16"
           />
 
           <ellipse
-            cx="39"
-            cy="42"
-            rx="8"
-            ry="16"
-            transform="rotate(35 39 42)"
+            cx="27"
+            cy="119"
+            rx="9"
+            ry="22"
+            transform="rotate(-38 27 119)"
           />
 
           <ellipse
-            cx="58"
-            cy="23"
+            cx="37"
+            cy="99"
             rx="8"
-            ry="16"
-            transform="rotate(-35 58 23)"
+            ry="20"
+            transform="rotate(35 37 99)"
           />
 
           <ellipse
-            cx="32"
-            cy="78"
+            cx="44"
+            cy="79"
+            rx="9"
+            ry="23"
+            transform="rotate(-38 44 79)"
+          />
+
+          <ellipse
+            cx="55"
+            cy="59"
+            rx="8"
+            ry="20"
+            transform="rotate(35 55 59)"
+          />
+
+          <ellipse
+            cx="65"
+            cy="39"
+            rx="8"
+            ry="20"
+            transform="rotate(-34 65 39)"
+          />
+
+          <ellipse
+            cx="76"
+            cy="20"
             rx="7"
-            ry="14"
-            transform="rotate(50 32 78)"
+            ry="17"
+            transform="rotate(35 76 20)"
           />
 
-          <circle cx="67" cy="14" r="3"/>
-          <circle cx="73" cy="18" r="2.5"/>
-          <circle cx="65" cy="22" r="2"/>
+          <circle cx="82" cy="13" r="3"/>
+          <circle cx="88" cy="19" r="2.5"/>
+          <circle cx="84" cy="27" r="2.5"/>
 
         </svg>
 
       </div>
 
 
-      <div class="botanical-sprig sprig-two">
+      <div class="fox-botanical botanical-left">
 
-        <svg viewBox="0 0 80 120">
+        <svg viewBox="0 0 100 150">
 
-          <path d="M68 114C51 87 36 59 12 9"/>
-
-          <ellipse
-            cx="61"
-            cy="94"
-            rx="7"
-            ry="15"
-            transform="rotate(-48 61 94)"
+          <path
+            d="M78 144C65 111 54 81 20 17"
           />
 
           <ellipse
-            cx="48"
-            cy="72"
+            cx="69"
+            cy="118"
+            rx="9"
+            ry="22"
+            transform="rotate(38 69 118)"
+          />
+
+          <ellipse
+            cx="59"
+            cy="98"
             rx="8"
-            ry="16"
-            transform="rotate(38 48 72)"
+            ry="20"
+            transform="rotate(-35 59 98)"
           />
 
           <ellipse
-            cx="35"
-            cy="48"
-            rx="7"
-            ry="15"
-            transform="rotate(-42 35 48)"
+            cx="52"
+            cy="78"
+            rx="9"
+            ry="23"
+            transform="rotate(38 52 78)"
           />
 
           <ellipse
-            cx="23"
-            cy="27"
-            rx="7"
-            ry="14"
-            transform="rotate(35 23 27)"
+            cx="42"
+            cy="58"
+            rx="8"
+            ry="20"
+            transform="rotate(-35 42 58)"
           />
 
-          <circle cx="11" cy="10" r="3"/>
-          <circle cx="17" cy="13" r="2"/>
+          <ellipse
+            cx="32"
+            cy="38"
+            rx="8"
+            ry="20"
+            transform="rotate(34 32 38)"
+          />
+
+          <ellipse
+            cx="22"
+            cy="19"
+            rx="7"
+            ry="17"
+            transform="rotate(-35 22 19)"
+          />
 
         </svg>
 
@@ -308,30 +509,10 @@
 
   <div class="hero-card">
 
-    <div class="botanical-corner corner-one">
-      <span></span>
-      <i></i>
-      <b></b>
-    </div>
-
-    <div class="botanical-corner corner-two">
-      <span></span>
-      <i></i>
-      <b></b>
-    </div>
-
-    <div class="botanical-corner corner-three">
-      <span></span>
-      <i></i>
-      <b></b>
-    </div>
-
-    <div class="botanical-corner corner-four">
-      <span></span>
-      <i></i>
-      <b></b>
-    </div>
-
+    <div class="botanical-corner corner-one"></div>
+    <div class="botanical-corner corner-two"></div>
+    <div class="botanical-corner corner-three"></div>
+    <div class="botanical-corner corner-four"></div>
 
     <div class="hero-top">
 
@@ -349,7 +530,6 @@
 
     </div>
 
-
     <div
       id="safeSpend"
       class="big"
@@ -357,14 +537,12 @@
       $0.00
     </div>
 
-
     <div
       id="safeNote"
       class="hero-note"
     >
       Add your balance, income, and bills to get started.
     </div>
-
 
     <div class="hero-bottom">
 
@@ -398,37 +576,59 @@
 
   <div class="money-grid">
 
-
-    <!-- BALANCE -->
-
     <div class="money-card">
 
-      <div class="luxury-icon green botanical-icon">
+      <div class="luxury-icon green">
 
         <svg viewBox="0 0 70 70">
 
           <path
             class="icon-stem"
-            d="M36 60C35 43 39 25 54 10"
+            d="M18 55C26 40 37 28 54 16"
           />
 
-          <path
+          <ellipse
             class="icon-leaf"
-            d="M34 45C23 44 15 38 14 29C25 29 33 35 34 45Z"
+            cx="22"
+            cy="46"
+            rx="7"
+            ry="15"
+            transform="rotate(-35 22 46)"
           />
 
-          <path
+          <ellipse
             class="icon-leaf-soft"
-            d="M41 34C39 24 44 15 53 11C55 21 50 30 41 34Z"
+            cx="31"
+            cy="35"
+            rx="7"
+            ry="15"
+            transform="rotate(42 31 35)"
           />
 
-          <path
+          <ellipse
+            class="icon-leaf"
+            cx="40"
+            cy="29"
+            rx="7"
+            ry="16"
+            transform="rotate(-38 40 29)"
+          />
+
+          <ellipse
+            class="icon-leaf-soft"
+            cx="49"
+            cy="20"
+            rx="6"
+            ry="13"
+            transform="rotate(43 49 20)"
+          />
+
+          <circle
             class="icon-leaf-light"
-            d="M38 50C47 43 56 43 62 48C56 55 47 56 38 50Z"
+            cx="57"
+            cy="15"
+            r="4"
           />
-
-          <circle class="icon-berry" cx="57" cy="10" r="2.5"/>
-          <circle class="icon-berry" cx="63" cy="14" r="2"/>
 
         </svg>
 
@@ -445,36 +645,59 @@
     </div>
 
 
-    <!-- BILLS -->
-
     <div class="money-card">
 
-      <div class="luxury-icon terracotta botanical-icon">
+      <div class="luxury-icon terracotta">
 
         <svg viewBox="0 0 70 70">
 
           <path
             class="icon-stem"
-            d="M35 60C34 43 29 28 17 14"
+            d="M17 54C29 39 40 29 55 17"
           />
 
-          <path
+          <ellipse
             class="icon-leaf"
-            d="M30 43C20 42 14 36 14 27C24 27 30 33 30 43Z"
+            cx="21"
+            cy="47"
+            rx="7"
+            ry="15"
+            transform="rotate(-35 21 47)"
           />
 
-          <path
+          <ellipse
             class="icon-leaf-soft"
-            d="M38 34C43 25 52 21 61 23C57 32 48 36 38 34Z"
+            cx="32"
+            cy="38"
+            rx="7"
+            ry="15"
+            transform="rotate(42 32 38)"
           />
 
-          <path
+          <ellipse
+            class="icon-leaf"
+            cx="42"
+            cy="28"
+            rx="7"
+            ry="15"
+            transform="rotate(-35 42 28)"
+          />
+
+          <ellipse
+            class="icon-leaf-soft"
+            cx="51"
+            cy="20"
+            rx="6"
+            ry="13"
+            transform="rotate(42 51 20)"
+          />
+
+          <circle
             class="icon-leaf-light"
-            d="M36 51C43 44 53 43 59 48C53 55 44 56 36 51Z"
+            cx="58"
+            cy="15"
+            r="4"
           />
-
-          <circle class="icon-berry" cx="16" cy="14" r="2.5"/>
-          <circle class="icon-berry" cx="11" cy="18" r="2"/>
 
         </svg>
 
@@ -499,60 +722,15 @@
   ></div>
 
 
-  <!-- AFFORD -->
+  <!-- CAN I AFFORD -->
 
   <div class="card botanical-card">
 
-    <div class="card-heading-botanical">
-
-      <svg viewBox="0 0 140 80">
-
-        <path d="M5 72C32 55 49 35 72 8"/>
-
-        <ellipse
-          cx="31"
-          cy="54"
-          rx="8"
-          ry="18"
-          transform="rotate(48 31 54)"
-        />
-
-        <ellipse
-          cx="49"
-          cy="38"
-          rx="8"
-          ry="18"
-          transform="rotate(-45 49 38)"
-        />
-
-        <ellipse
-          cx="68"
-          cy="20"
-          rx="8"
-          ry="17"
-          transform="rotate(42 68 20)"
-        />
-
-        <ellipse
-          cx="82"
-          cy="17"
-          rx="7"
-          ry="15"
-          transform="rotate(-35 82 17)"
-        />
-
-        <circle cx="93" cy="11" r="3"/>
-        <circle cx="101" cy="14" r="2.5"/>
-
-      </svg>
-
-    </div>
-
+    <div class="card-botanical"></div>
 
     <h2>
       Can I afford this?
     </h2>
-
 
     <div class="row">
 
@@ -570,7 +748,6 @@
 
     </div>
 
-
     <div
       id="affordResult"
       class="result muted"
@@ -585,51 +762,7 @@
 
   <div class="card botanical-card">
 
-    <div class="card-heading-botanical olive">
-
-      <svg viewBox="0 0 140 80">
-
-        <path d="M4 72C28 54 51 37 79 9"/>
-
-        <ellipse
-          cx="28"
-          cy="55"
-          rx="7"
-          ry="17"
-          transform="rotate(43 28 55)"
-        />
-
-        <ellipse
-          cx="46"
-          cy="40"
-          rx="7"
-          ry="17"
-          transform="rotate(-42 46 40)"
-        />
-
-        <ellipse
-          cx="64"
-          cy="26"
-          rx="7"
-          ry="16"
-          transform="rotate(40 64 26)"
-        />
-
-        <ellipse
-          cx="81"
-          cy="13"
-          rx="7"
-          ry="15"
-          transform="rotate(-36 81 13)"
-        />
-
-        <circle cx="91" cy="9" r="2.5"/>
-        <circle cx="97" cy="13" r="2"/>
-
-      </svg>
-
-    </div>
-
+    <div class="card-botanical"></div>
 
     <div class="section-head">
 
@@ -646,7 +779,6 @@
 
     </div>
 
-
     <div id="nextBills"></div>
 
   </div>
@@ -656,35 +788,14 @@
 
 <!-- ================= INCOME ================= -->
 
-<section id="income" class="screen">
+<section
+  id="income"
+  class="screen"
+>
 
   <div class="section-title">
 
-    <div class="section-botanical">
-
-      <svg viewBox="0 0 150 100">
-
-        <path d="M10 88C40 70 64 44 98 8"/>
-
-        <ellipse cx="30" cy="69" rx="8" ry="20"
-          transform="rotate(45 30 69)"/>
-
-        <ellipse cx="49" cy="53" rx="8" ry="19"
-          transform="rotate(-40 49 53)"/>
-
-        <ellipse cx="69" cy="35" rx="8" ry="19"
-          transform="rotate(42 69 35)"/>
-
-        <ellipse cx="90" cy="16" rx="8" ry="18"
-          transform="rotate(-35 90 16)"/>
-
-        <circle cx="105" cy="9" r="3"/>
-        <circle cx="112" cy="13" r="2.3"/>
-
-      </svg>
-
-    </div>
-
+    <div class="section-botanical"></div>
 
     <h1>
       Income
@@ -697,7 +808,9 @@
   </div>
 
 
-  <div class="card balance-entry-card">
+  <div class="card balance-entry-card botanical-card">
+
+    <div class="card-botanical"></div>
 
     <div class="section-head">
 
@@ -715,11 +828,9 @@
 
     </div>
 
-
     <p class="muted">
       Enter the amount currently in your bank account.
     </p>
-
 
     <div class="balance-entry-row">
 
@@ -738,14 +849,12 @@
 
     </div>
 
-
     <button
       id="saveBalanceBtn"
       type="button"
     >
       Save balance
     </button>
-
 
     <div
       id="balanceSaved"
@@ -757,8 +866,10 @@
 
   <form
     id="incomeForm"
-    class="card form"
+    class="card form botanical-card"
   >
+
+    <div class="card-botanical"></div>
 
     <label>
       Source
@@ -770,7 +881,6 @@
       >
 
     </label>
-
 
     <label>
       Amount
@@ -785,7 +895,6 @@
 
     </label>
 
-
     <label>
       Date
 
@@ -797,7 +906,6 @@
 
     </label>
 
-
     <label class="check">
 
       <input
@@ -808,7 +916,6 @@
       Repeats monthly
 
     </label>
-
 
     <button type="submit">
       Add income
@@ -824,35 +931,14 @@
 
 <!-- ================= BILLS ================= -->
 
-<section id="bills" class="screen">
+<section
+  id="bills"
+  class="screen"
+>
 
   <div class="section-title">
 
-    <div class="section-botanical terracotta-botanical">
-
-      <svg viewBox="0 0 150 100">
-
-        <path d="M10 88C40 70 64 44 98 8"/>
-
-        <ellipse cx="30" cy="69" rx="8" ry="20"
-          transform="rotate(45 30 69)"/>
-
-        <ellipse cx="49" cy="53" rx="8" ry="19"
-          transform="rotate(-40 49 53)"/>
-
-        <ellipse cx="69" cy="35" rx="8" ry="19"
-          transform="rotate(42 69 35)"/>
-
-        <ellipse cx="90" cy="16" rx="8" ry="18"
-          transform="rotate(-35 90 16)"/>
-
-        <circle cx="105" cy="9" r="3"/>
-        <circle cx="112" cy="13" r="2.3"/>
-
-      </svg>
-
-    </div>
-
+    <div class="section-botanical terracotta-botanical"></div>
 
     <h1>
       Bills
@@ -867,8 +953,10 @@
 
   <form
     id="billForm"
-    class="card form"
+    class="card form botanical-card"
   >
+
+    <div class="card-botanical"></div>
 
     <label>
       Bill name
@@ -880,7 +968,6 @@
       >
 
     </label>
-
 
     <label>
       Amount
@@ -895,7 +982,6 @@
 
     </label>
 
-
     <label>
       Due date
 
@@ -906,7 +992,6 @@
       >
 
     </label>
-
 
     <label class="check">
 
@@ -919,7 +1004,6 @@
 
     </label>
 
-
     <label class="check">
 
       <input
@@ -930,7 +1014,6 @@
       Repeats monthly
 
     </label>
-
 
     <button type="submit">
       Add bill
@@ -946,35 +1029,14 @@
 
 <!-- ================= CALENDAR ================= -->
 
-<section id="calendar" class="screen">
+<section
+  id="calendar"
+  class="screen"
+>
 
   <div class="section-title">
 
-    <div class="section-botanical olive-botanical">
-
-      <svg viewBox="0 0 150 100">
-
-        <path d="M10 88C40 70 64 44 98 8"/>
-
-        <ellipse cx="30" cy="69" rx="8" ry="20"
-          transform="rotate(45 30 69)"/>
-
-        <ellipse cx="49" cy="53" rx="8" ry="19"
-          transform="rotate(-40 49 53)"/>
-
-        <ellipse cx="69" cy="35" rx="8" ry="19"
-          transform="rotate(42 69 35)"/>
-
-        <ellipse cx="90" cy="16" rx="8" ry="18"
-          transform="rotate(-35 90 16)"/>
-
-        <circle cx="105" cy="9" r="3"/>
-        <circle cx="112" cy="13" r="2.3"/>
-
-      </svg>
-
-    </div>
-
+    <div class="section-botanical olive-botanical"></div>
 
     <h1>
       Calendar
@@ -987,7 +1049,9 @@
   </div>
 
 
-  <div class="card">
+  <div class="card botanical-card">
+
+    <div class="card-botanical"></div>
 
     <div id="calendarList"></div>
 
@@ -1007,20 +1071,63 @@
     data-screen="dashboard"
   >
 
-    <span
-      class="nav-icon botanical-nav"
-      aria-hidden="true"
-    >
+    <span class="nav-icon">
 
       <svg viewBox="0 0 70 70">
 
-        <path d="M35 60C34 43 39 27 54 10"/>
+        <path
+          d="M12 56C23 42 35 27 58 13"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
 
-        <path d="M34 46C24 45 17 39 16 30C26 30 33 35 34 46Z"/>
+        <ellipse
+          cx="20"
+          cy="48"
+          rx="8"
+          ry="18"
+          transform="rotate(-38 20 48)"
+          fill="currentColor"
+        />
 
-        <path d="M41 35C40 25 45 16 54 11C56 21 51 30 41 35Z"/>
+        <ellipse
+          cx="31"
+          cy="37"
+          rx="8"
+          ry="18"
+          transform="rotate(42 31 37)"
+          fill="currentColor"
+          opacity=".78"
+        />
 
-        <path d="M39 51C47 45 56 45 62 50C56 56 47 57 39 51Z"/>
+        <ellipse
+          cx="41"
+          cy="27"
+          rx="8"
+          ry="18"
+          transform="rotate(-38 41 27)"
+          fill="currentColor"
+        />
+
+        <ellipse
+          cx="52"
+          cy="18"
+          rx="7"
+          ry="15"
+          transform="rotate(42 52 18)"
+          fill="currentColor"
+          opacity=".7"
+        />
+
+        <circle
+          cx="59"
+          cy="13"
+          r="4"
+          fill="currentColor"
+          opacity=".55"
+        />
 
       </svg>
 
@@ -1038,20 +1145,55 @@
     data-screen="income"
   >
 
-    <span
-      class="nav-icon botanical-nav"
-      aria-hidden="true"
-    >
+    <span class="nav-icon">
 
       <svg viewBox="0 0 70 70">
 
-        <path d="M35 60C34 43 29 28 16 13"/>
+        <path
+          d="M13 57C23 42 37 28 57 13"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
 
-        <path d="M30 44C20 43 14 37 14 28C24 28 30 34 30 44Z"/>
+        <ellipse
+          cx="20"
+          cy="48"
+          rx="8"
+          ry="18"
+          transform="rotate(-38 20 48)"
+          fill="currentColor"
+        />
 
-        <path d="M39 35C44 25 53 21 62 23C58 32 49 36 39 35Z"/>
+        <ellipse
+          cx="31"
+          cy="38"
+          rx="8"
+          ry="18"
+          transform="rotate(42 31 38)"
+          fill="currentColor"
+          opacity=".78"
+        />
 
-        <path d="M37 52C45 45 54 44 60 49C54 56 45 57 37 52Z"/>
+        <ellipse
+          cx="41"
+          cy="28"
+          rx="8"
+          ry="18"
+          transform="rotate(-38 41 28)"
+          fill="currentColor"
+        />
+
+        <ellipse
+          cx="52"
+          cy="18"
+          rx="7"
+          ry="15"
+          transform="rotate(42 52 18)"
+          fill="currentColor"
+          opacity=".68"
+        />
 
       </svg>
 
@@ -1069,20 +1211,63 @@
     data-screen="bills"
   >
 
-    <span
-      class="nav-icon botanical-nav"
-      aria-hidden="true"
-    >
+    <span class="nav-icon">
 
       <svg viewBox="0 0 70 70">
 
-        <path d="M35 60C34 43 39 28 55 12"/>
+        <path
+          d="M13 57C23 42 37 28 57 13"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
 
-        <path d="M34 46C24 45 17 39 16 30C26 30 33 35 34 46Z"/>
+        <ellipse
+          cx="20"
+          cy="48"
+          rx="8"
+          ry="18"
+          transform="rotate(-38 20 48)"
+          fill="currentColor"
+        />
 
-        <path d="M42 35C41 25 46 17 55 12C57 22 52 31 42 35Z"/>
+        <ellipse
+          cx="31"
+          cy="38"
+          rx="8"
+          ry="18"
+          transform="rotate(42 31 38)"
+          fill="currentColor"
+          opacity=".78"
+        />
 
-        <path d="M39 51C47 45 56 45 62 50C56 56 47 57 39 51Z"/>
+        <ellipse
+          cx="42"
+          cy="27"
+          rx="8"
+          ry="18"
+          transform="rotate(-38 42 27)"
+          fill="currentColor"
+        />
+
+        <ellipse
+          cx="53"
+          cy="18"
+          rx="7"
+          ry="15"
+          transform="rotate(42 53 18)"
+          fill="currentColor"
+          opacity=".68"
+        />
+
+        <circle
+          cx="59"
+          cy="12"
+          r="4"
+          fill="currentColor"
+          opacity=".5"
+        />
 
       </svg>
 
@@ -1100,20 +1285,55 @@
     data-screen="calendar"
   >
 
-    <span
-      class="nav-icon botanical-nav"
-      aria-hidden="true"
-    >
+    <span class="nav-icon">
 
       <svg viewBox="0 0 70 70">
 
-        <path d="M35 60C34 43 30 28 16 13"/>
+        <path
+          d="M12 56C23 42 36 28 58 13"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
 
-        <path d="M30 44C20 43 14 37 14 28C24 28 30 34 30 44Z"/>
+        <ellipse
+          cx="20"
+          cy="48"
+          rx="8"
+          ry="18"
+          transform="rotate(-38 20 48)"
+          fill="currentColor"
+        />
 
-        <path d="M39 35C44 25 53 21 62 23C58 32 49 36 39 35Z"/>
+        <ellipse
+          cx="31"
+          cy="38"
+          rx="8"
+          ry="18"
+          transform="rotate(42 31 38)"
+          fill="currentColor"
+          opacity=".78"
+        />
 
-        <path d="M37 52C45 45 54 44 60 49C54 56 45 57 37 52Z"/>
+        <ellipse
+          cx="41"
+          cy="28"
+          rx="8"
+          ry="18"
+          transform="rotate(-38 41 28)"
+          fill="currentColor"
+        />
+
+        <ellipse
+          cx="52"
+          cy="18"
+          rx="7"
+          ry="15"
+          transform="rotate(42 52 18)"
+          fill="currentColor"
+          opacity=".68"
+        />
 
       </svg>
 
@@ -1131,4 +1351,4 @@
 <script src="app.js"></script>
 
 </body>
-          </html>
+      </html>
