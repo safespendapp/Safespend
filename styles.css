@@ -1,7 +1,3 @@
-/* =========================
-   SAFE SPEND — COMPLETE STYLE
-========================= */
-
 :root {
   --ivory: #faf8f2;
   --cream: #f3e9dc;
@@ -22,7 +18,12 @@
 
   --line: #e2e6df;
 
-  --serif: Georgia, "Times New Roman", serif;
+  --serif:
+    "Cormorant Garamond",
+    "Baskerville",
+    "Palatino Linotype",
+    Georgia,
+    serif;
 
   --sans:
     -apple-system,
@@ -97,61 +98,85 @@ button {
 .brand-area {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 
-.brand-leaf {
-  width: 45px;
-  height: 45px;
+.brand-botanical {
+  width: 52px;
+  height: 52px;
 
   display: grid;
   place-items: center;
 
-  border-radius: 15px;
+  border-radius: 17px;
 
   background:
     linear-gradient(
       145deg,
-      #eef3eb,
+      #f1f5ee,
       #dce8dc
     );
 
-  border: 1px solid rgba(80,105,87,.15);
-
-  color: var(--sage-dark);
+  border: 1px solid rgba(80,105,87,.16);
 
   box-shadow:
-    0 7px 18px rgba(80,105,87,.08);
+    0 8px 22px rgba(80,105,87,.10),
+    inset 0 0 0 1px rgba(255,255,255,.65);
+
+  color: var(--sage-dark);
 }
 
 
-.brand-leaf svg {
-  width: 31px;
-  height: 31px;
+.brand-botanical svg {
+  width: 43px;
+  height: 43px;
+}
+
+
+.brand-botanical .stem {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+
+.brand-botanical .leaf {
+  fill: currentColor;
+}
+
+
+.brand-botanical .leaf-soft {
+  opacity: .76;
+}
+
+
+.brand-botanical .leaf-light {
+  opacity: .48;
 }
 
 
 .brand {
   font-family: var(--serif);
 
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 500;
 
-  letter-spacing: -1px;
+  letter-spacing: -1.4px;
 
   color: #29352d;
 }
 
 
 .tagline {
-  margin-top: 2px;
+  margin-top: 1px;
 
   color: var(--muted);
 
   font-size: 9px;
 
-  letter-spacing: .15px;
+  letter-spacing: .2px;
 }
 
 
@@ -223,13 +248,13 @@ main {
 
   font-family: var(--serif);
 
-  font-size: clamp(31px, 8vw, 43px);
+  font-size: clamp(35px, 8vw, 47px);
 
   font-weight: 500;
 
   line-height: 1.01;
 
-  letter-spacing: -1.8px;
+  letter-spacing: -2px;
 }
 
 
@@ -327,13 +352,9 @@ main {
 
 .fox-brow {
   fill: none;
-
   stroke: #7d4537;
-
   stroke-width: 2;
-
   stroke-linecap: round;
-
   opacity: .8;
 }
 
@@ -345,11 +366,8 @@ main {
 
 .fox-smile {
   fill: none;
-
   stroke: #543e37;
-
   stroke-width: 2.2;
-
   stroke-linecap: round;
 }
 
@@ -365,30 +383,66 @@ main {
 }
 
 
-.floating-leaf {
+/* ================= BOTANICAL FOX ACCENTS ================= */
+
+.botanical-sprig {
   position: absolute;
 
-  z-index: 4;
+  z-index: 5;
 
-  color: var(--sage);
+  pointer-events: none;
 
-  font-size: 18px;
+  color: var(--sage-dark);
 
-  opacity: .65;
+  opacity: .72;
+
+  filter:
+    drop-shadow(
+      0 4px 5px rgba(70,88,73,.08)
+    );
 }
 
 
-.leaf-a {
-  right: 1px;
-  bottom: 17px;
-  transform: rotate(25deg);
+.botanical-sprig svg {
+  width: 100%;
+  height: 100%;
 }
 
 
-.leaf-b {
-  left: 4px;
-  bottom: 4px;
-  transform: rotate(-25deg);
+.botanical-sprig path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.35;
+  stroke-linecap: round;
+}
+
+
+.botanical-sprig ellipse {
+  fill: currentColor;
+}
+
+
+.sprig-one {
+  width: 50px;
+  height: 74px;
+
+  right: -2px;
+  bottom: 1px;
+
+  transform: rotate(5deg);
+}
+
+
+.sprig-two {
+  width: 42px;
+  height: 65px;
+
+  left: -5px;
+  bottom: 8px;
+
+  opacity: .46;
+
+  transform: rotate(-14deg);
 }
 
 
@@ -530,13 +584,17 @@ main {
 }
 
 
+/* ================= LUXURY BOTANICAL CORNERS ================= */
+
 .botanical-corner {
   position: absolute;
 
-  width: 55px;
-  height: 55px;
+  width: 78px;
+  height: 78px;
 
-  opacity: .38;
+  opacity: .25;
+
+  color: var(--sage-dark);
 }
 
 
@@ -546,18 +604,18 @@ main {
 
   position: absolute;
 
-  width: 18px;
-  height: 29px;
+  width: 23px;
+  height: 40px;
 
-  background: var(--sage);
+  background: currentColor;
 
   border-radius: 100% 0 100% 0;
 }
 
 
 .botanical-corner::before {
-  left: 5px;
-  top: 4px;
+  left: 8px;
+  top: 7px;
 
   transform: rotate(-38deg);
 }
@@ -565,7 +623,7 @@ main {
 
 .botanical-corner::after {
   right: 3px;
-  bottom: 2px;
+  bottom: 4px;
 
   transform: rotate(40deg);
 }
@@ -580,7 +638,6 @@ main {
 .corner-two {
   right: 5px;
   top: 5px;
-
   transform: scaleX(-1);
 }
 
@@ -588,7 +645,6 @@ main {
 .corner-three {
   left: 5px;
   bottom: 5px;
-
   transform: scaleY(-1);
 }
 
@@ -596,7 +652,6 @@ main {
 .corner-four {
   right: 5px;
   bottom: 5px;
-
   transform: scale(-1);
 }
 
@@ -613,42 +668,43 @@ main {
 
   font-family: var(--serif);
 
-  font-size: 24px;
+  font-size: 25px;
 
   font-weight: 500;
 
-  letter-spacing: -.7px;
-}
-
-
-.section-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  letter-spacing: -.8px;
 }
 
 
 .section-title {
+  position: relative;
+
   padding: 28px 2px 12px;
 }
 
 
 .section-title h1 {
+  position: relative;
+  z-index: 2;
+
   margin: 6px 0 4px;
 
   font-family: var(--serif);
 
-  font-size: 39px;
+  font-size: 42px;
 
   font-weight: 500;
 
   line-height: 1;
 
-  letter-spacing: -1.5px;
+  letter-spacing: -1.8px;
 }
 
 
 .section-title p {
+  position: relative;
+  z-index: 2;
+
   margin: 0;
 
   color: var(--muted);
@@ -657,16 +713,49 @@ main {
 }
 
 
-.textbtn {
-  border: 0;
+.section-botanical {
+  position: absolute;
 
-  background: transparent;
+  right: 5px;
+  top: 8px;
 
-  color: var(--sage-dark);
+  width: 105px;
+  height: 72px;
 
-  font-size: 10px;
+  color: var(--sage);
 
-  font-weight: 800;
+  opacity: .20;
+
+  transform: rotate(2deg);
+}
+
+
+.section-botanical svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+.section-botanical path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+}
+
+
+.section-botanical ellipse {
+  fill: currentColor;
+}
+
+
+.terracotta-botanical {
+  color: var(--terracotta);
+}
+
+
+.olive-botanical {
+  color: var(--olive);
 }
 
 
@@ -699,13 +788,13 @@ main {
 
 
 .luxury-icon {
-  width: 45px;
-  height: 45px;
+  width: 48px;
+  height: 48px;
 
   display: grid;
   place-items: center;
 
-  border-radius: 15px;
+  border-radius: 16px;
 
   border: 1px solid currentColor;
 
@@ -722,7 +811,7 @@ main {
 
   border: 1px solid currentColor;
 
-  border-radius: 11px;
+  border-radius: 12px;
 
   opacity: .12;
 }
@@ -732,8 +821,39 @@ main {
   position: relative;
   z-index: 2;
 
-  width: 31px;
-  height: 31px;
+  width: 35px;
+  height: 35px;
+}
+
+
+.luxury-icon svg path,
+.luxury-icon svg ellipse {
+  stroke: none;
+}
+
+
+.luxury-icon .icon-stem {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+
+.luxury-icon .icon-leaf {
+  fill: currentColor;
+}
+
+
+.luxury-icon .icon-leaf-soft {
+  fill: currentColor;
+  opacity: .70;
+}
+
+
+.luxury-icon .icon-leaf-light {
+  fill: currentColor;
+  opacity: .42;
 }
 
 
@@ -790,6 +910,8 @@ main {
 /* ================= CARDS ================= */
 
 .card {
+  position: relative;
+
   margin-top: 16px;
 
   padding: 21px;
@@ -804,136 +926,66 @@ main {
 }
 
 
-.card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-
-.card-top h2 {
+.card h2 {
   margin: 5px 0 0;
 
   font-family: var(--serif);
 
-  font-size: 22px;
+  font-size: 23px;
 
   font-weight: 500;
 }
 
 
-.card-description {
-  margin: 8px 0 16px;
+.card-heading-botanical {
+  position: absolute;
 
-  color: var(--muted);
+  right: 13px;
+  top: 9px;
 
-  font-size: 11px;
+  width: 82px;
+  height: 55px;
 
-  line-height: 1.45;
+  color: var(--sage);
+
+  opacity: .18;
 }
 
 
-.question-mark {
-  width: 38px;
-  height: 38px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 50%;
-
-  background: var(--cream);
-
-  color: var(--terracotta-dark);
-
-  font-family: var(--serif);
-
-  font-size: 19px;
+.card-heading-botanical svg {
+  width: 100%;
+  height: 100%;
 }
 
 
-/* ================= FOX MESSAGE ================= */
-
-.fox-message {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-
-  margin: 18px 2px;
-
-  padding: 17px;
-
-  border-radius: 22px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f5eee7,
-      #faf5ed
-    );
-
-  border: 1px solid #e8ddd2;
+.card-heading-botanical path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.3;
+  stroke-linecap: round;
 }
 
 
-.mini-fox-holder {
-  width: 60px;
-  height: 60px;
-
-  flex: 0 0 60px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 18px;
-
-  background: #ecdfd3;
-
-  overflow: hidden;
-}
-
-
-.mini-fox {
-  width: 58px;
-  height: 58px;
-
-  transform: translateY(4px);
-}
-
-
-.message-title {
-  font-family: var(--serif);
-
-  font-size: 17px;
-}
-
-
-.fox-message p {
-  margin: 3px 0 0;
-
-  color: var(--muted);
-
-  font-size: 10px;
-
-  line-height: 1.45;
+.card-heading-botanical ellipse {
+  fill: currentColor;
 }
 
 
 /* ================= AFFORD ================= */
 
-.afford-row {
+.row {
   display: flex;
   gap: 9px;
+
+  margin-top: 15px;
 }
 
 
-.money-input {
+.row input {
   flex: 1;
 
-  display: flex;
-  align-items: center;
-
   min-width: 0;
+
   height: 51px;
 
   border: 1px solid var(--line);
@@ -942,32 +994,15 @@ main {
 
   background: var(--ivory);
 
-  padding-left: 14px;
+  padding: 0 14px;
+
+  outline: none;
 }
 
 
-.money-input span {
-  color: var(--muted);
-
-  font-weight: 750;
-}
-
-
-.money-input input {
-  width: 100%;
-  height: 100%;
-
-  border: 0;
-  outline: 0;
-
-  background: transparent;
-
-  padding: 0 12px 0 7px;
-}
-
-
-.afford-row button,
-.primary-btn {
+.row button,
+.form > button,
+.balance-entry-card > button {
   min-height: 51px;
 
   border: 0;
@@ -994,8 +1029,9 @@ main {
 }
 
 
-.afford-row button:hover,
-.primary-btn:hover {
+.row button:hover,
+.form > button:hover,
+.balance-entry-card > button:hover {
   transform: translateY(-1px);
 }
 
@@ -1070,14 +1106,12 @@ main {
 
 .item:last-child {
   border-bottom: 0;
-
   padding-bottom: 2px;
 }
 
 
 .item-title {
   font-size: 13px;
-
   font-weight: 700;
 }
 
@@ -1093,9 +1127,7 @@ main {
 
 .item-actions {
   display: flex;
-
   align-items: center;
-
   gap: 9px;
 }
 
@@ -1138,7 +1170,6 @@ main {
 
 .pill.paid {
   background: #edf3ed;
-
   color: #58715c;
 }
 
@@ -1156,18 +1187,15 @@ main {
 
 .form {
   display: grid;
-
   gap: 16px;
 }
 
 
 .form label {
   display: grid;
-
   gap: 7px;
 
   font-size: 11px;
-
   font-weight: 700;
 }
 
@@ -1189,7 +1217,9 @@ main {
 }
 
 
-.form input:focus {
+.form input:focus,
+.row input:focus,
+.balance-entry-row input:focus {
   border-color: var(--sage);
 
   box-shadow:
@@ -1214,6 +1244,67 @@ main {
   min-height: 17px;
 
   accent-color: var(--sage);
+}
+
+
+/* ================= BALANCE ================= */
+
+.balance-entry-card h2 {
+  margin-top: 4px;
+}
+
+
+.muted {
+  color: var(--muted);
+}
+
+
+.balance-entry-card > p {
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+.balance-entry-row {
+  display: flex;
+
+  align-items: center;
+
+  height: 51px;
+
+  margin: 15px 0 10px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 15px;
+
+  background: var(--ivory);
+
+  overflow: hidden;
+}
+
+
+.currency-symbol {
+  padding-left: 14px;
+
+  color: var(--muted);
+
+  font-weight: 750;
+}
+
+
+.balance-entry-row input {
+  flex: 1;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  padding: 0 14px 0 7px;
 }
 
 
@@ -1258,7 +1349,7 @@ main {
 
   align-items: center;
 
-  gap: 4px;
+  gap: 3px;
 
   border: 0;
 
@@ -1266,7 +1357,7 @@ main {
 
   color: #969d96;
 
-  padding: 5px 2px;
+  padding: 4px 2px;
 
   font-size: 8px;
 
@@ -1277,21 +1368,41 @@ main {
 
 
 .nav-icon {
-  width: 44px;
-  height: 35px;
+  width: 46px;
+  height: 37px;
 
   display: grid;
   place-items: center;
 
-  border-radius: 13px;
+  border-radius: 14px;
 
-  transition: .2s ease;
+  transition:
+    transform .2s ease,
+    background .2s ease;
 }
 
 
 .nav-icon svg {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
+}
+
+
+.botanical-nav svg path {
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.35;
+
+  stroke-linecap: round;
+}
+
+
+.botanical-nav svg path:not(:first-child) {
+  fill: currentColor;
+
+  stroke: none;
 }
 
 
@@ -1305,6 +1416,8 @@ main {
 
   box-shadow:
     inset 0 0 0 1px rgba(113,135,116,.08);
+
+  transform: translateY(-1px);
 }
 
 
@@ -1332,8 +1445,17 @@ main {
     width: calc(100% - 24px);
   }
 
+  .brand {
+    font-size: 27px;
+  }
+
+  .brand-botanical {
+    width: 48px;
+    height: 48px;
+  }
+
   .welcome h1 {
-    font-size: 29px;
+    font-size: 31px;
   }
 
   .fox-wrap {
@@ -1350,6 +1472,10 @@ main {
     font-size: 54px;
   }
 
+  .section-title h1 {
+    font-size: 38px;
+  }
+
 }
 
 
@@ -1359,11 +1485,11 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .afford-row {
+  .row {
     flex-direction: column;
   }
 
-  .afford-row button {
+  .row button {
     width: 100%;
   }
 
@@ -1380,21 +1506,22 @@ main {
 
 
 /* =========================================================
-   MEADOW — CAN I AFFORD THIS
+   MEADOW — SAFE SPEND CHARACTER
    ========================================================= */
 
 .afford-card {
   position: relative;
   overflow: hidden;
-  min-height: 210px;
+
+  min-height: 220px;
 }
 
 
-.afford-content {
+.afford-card .afford-content {
   position: relative;
   z-index: 3;
 
-  padding-right: 150px;
+  padding-right: 155px;
 }
 
 
@@ -1403,13 +1530,13 @@ main {
 
   z-index: 2;
 
-  right: 2px;
-  bottom: -8px;
+  right: 4px;
+  bottom: -5px;
 
-  width: 160px;
+  width: 150px;
   height: auto;
 
-  max-height: 215px;
+  max-height: 210px;
 
   object-fit: contain;
   object-position: bottom right;
@@ -1423,24 +1550,21 @@ main {
 }
 
 
-/* =========================
-   MEADOW MOBILE
-========================= */
-
 @media (max-width:430px) {
 
   .afford-card {
     min-height: 215px;
   }
 
-  .afford-content {
-    padding-right: 120px;
+  .afford-card .afford-content {
+    padding-right: 125px;
   }
 
   .meadow-afford {
-    width: 135px;
-    right: -3px;
-    bottom: -6px;
+    width: 130px;
+
+    right: -2px;
+    bottom: -5px;
   }
 
 }
@@ -1449,15 +1573,16 @@ main {
 @media (max-width:360px) {
 
   .afford-card {
-    min-height: 235px;
+    min-height: 225px;
   }
 
-  .afford-content {
+  .afford-card .afford-content {
     padding-right: 0;
   }
 
   .meadow-afford {
     width: 118px;
+
     right: -2px;
     bottom: -3px;
 
