@@ -1507,39 +1507,53 @@ main {
 
 /* =========================================================
    MEADOW — SAFE SPEND CHARACTER
+   This uses the existing Can I Afford This card.
+   No HTML change is required.
    ========================================================= */
 
-.afford-card {
+.card:has(#affordAmount) {
   position: relative;
   overflow: hidden;
 
-  min-height: 220px;
+  min-height: 260px;
+
+  padding-bottom: 28px;
 }
 
 
-.afford-card .afford-content {
+/* Keep all existing Can I Afford This content above Meadow */
+
+.card:has(#affordAmount) > * {
   position: relative;
   z-index: 3;
-
-  padding-right: 155px;
 }
 
 
-.meadow-afford {
+/* Meadow herself */
+
+.card:has(#affordAmount)::after {
+  content: "";
+
   position: absolute;
 
   z-index: 2;
 
-  right: 4px;
-  bottom: -5px;
+  right: -2px;
+  bottom: -7px;
 
-  width: 150px;
-  height: auto;
+  width: 155px;
+  height: 215px;
 
-  max-height: 210px;
+  background-image:
+    url("d55d9c8d-9edc-4b9b-9b01-d1ca17b49da9.png");
 
-  object-fit: contain;
-  object-position: bottom right;
+  background-repeat: no-repeat;
+
+  background-position:
+    right bottom;
+
+  background-size:
+    contain;
 
   filter:
     drop-shadow(
@@ -1550,21 +1564,73 @@ main {
 }
 
 
+/* Soft botanical glow behind Meadow */
+
+.card:has(#affordAmount)::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: 1;
+
+  right: 20px;
+  bottom: 8px;
+
+  width: 165px;
+  height: 150px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(113,135,116,.12),
+      rgba(113,135,116,.04) 45%,
+      transparent 72%
+    );
+
+  pointer-events: none;
+}
+
+
+/* Give the Can I Afford content breathing room */
+
+.card:has(#affordAmount) .row {
+  position: relative;
+  z-index: 4;
+
+  padding-right: 125px;
+}
+
+
+.card:has(#affordAmount) .result {
+  position: relative;
+  z-index: 4;
+
+  margin-right: 125px;
+}
+
+
 @media (max-width:430px) {
 
-  .afford-card {
-    min-height: 215px;
+  .card:has(#affordAmount) {
+    min-height: 245px;
   }
 
-  .afford-card .afford-content {
-    padding-right: 125px;
+  .card:has(#affordAmount)::after {
+    width: 135px;
+    height: 190px;
+
+    right: -3px;
+    bottom: -6px;
   }
 
-  .meadow-afford {
-    width: 130px;
+  .card:has(#affordAmount) .row {
+    padding-right: 105px;
+  }
 
-    right: -2px;
-    bottom: -5px;
+  .card:has(#affordAmount) .result {
+    margin-right: 105px;
   }
 
 }
@@ -1572,21 +1638,24 @@ main {
 
 @media (max-width:360px) {
 
-  .afford-card {
-    min-height: 225px;
+  .card:has(#affordAmount) {
+    min-height: 265px;
   }
 
-  .afford-card .afford-content {
+  .card:has(#affordAmount)::after {
+    width: 120px;
+    height: 170px;
+
+    right: -2px;
+    bottom: -4px;
+  }
+
+  .card:has(#affordAmount) .row {
     padding-right: 0;
   }
 
-  .meadow-afford {
-    width: 118px;
-
-    right: -2px;
-    bottom: -3px;
-
-    opacity: .96;
+  .card:has(#affordAmount) .result {
+    margin-right: 0;
   }
 
 }
