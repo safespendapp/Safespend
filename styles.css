@@ -971,7 +971,7 @@ main {
 }
 
 
-/* ================= AFFORD ================= */
+/* ================= MEADOW — SOFT BOTANICAL AFFORD CARD ================= */
 
 .afford-card {
   position: relative;
@@ -982,62 +982,60 @@ main {
 .afford-content {
   position: relative;
   z-index: 3;
-  padding-right: 118px;
+  padding-right: 105px;
 }
 
-/* Soft circle behind Meadow / house */
+/* Soft greenery tucked into the lower edges */
 
 .afford-card::before {
   content: "";
-
   position: absolute;
-
   z-index: 1;
-
-  right: 12px;
-  bottom: 8px;
-
-  width: 145px;
-  height: 125px;
-
-  border-radius: 50%;
-
+  right: -7px;
+  bottom: -17px;
+  width: 138px;
+  height: 82px;
+  opacity: .28;
   background:
-    radial-gradient(
-      ellipse,
-      rgba(113,135,116,.14),
-      rgba(113,135,116,.05) 48%,
-      transparent 73%
-    );
-
+    radial-gradient(ellipse at 84% 78%, rgba(80,105,87,.22) 0 8%, transparent 9%),
+    radial-gradient(ellipse at 66% 92%, rgba(113,135,116,.20) 0 10%, transparent 11%),
+    radial-gradient(ellipse at 46% 82%, rgba(146,155,114,.17) 0 9%, transparent 10%),
+    radial-gradient(ellipse at 27% 96%, rgba(80,105,87,.16) 0 8%, transparent 9%);
+  filter: blur(.15px);
   pointer-events: none;
 }
 
-/* Meadow */
+.afford-card::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: -8px;
+  bottom: -7px;
+  width: 116px;
+  height: 92px;
+  opacity: .20;
+  background:
+    linear-gradient(54deg, transparent 46%, var(--sage-dark) 47% 48%, transparent 49%),
+    linear-gradient(117deg, transparent 47%, var(--sage) 48% 49%, transparent 50%),
+    linear-gradient(28deg, transparent 58%, var(--olive) 59% 60%, transparent 61%);
+  border-radius: 70% 30% 65% 35%;
+  transform: rotate(-7deg);
+  pointer-events: none;
+}
+
+/* Meadow — smaller and softly tucked into the greenery */
 
 .meadow-afford {
   position: absolute;
-
   z-index: 2;
-
-  right: 0;
-  bottom: -5px;
-
-  width: 125px;
-
-  max-height: 175px;
-
+  right: 2px;
+  bottom: -4px;
+  width: 94px;
+  max-height: 142px;
   height: auto;
-
   object-fit: contain;
-
   object-position: bottom right;
-
-  filter:
-    drop-shadow(
-      0 8px 10px rgba(66,51,42,.11)
-    );
-
+  filter: drop-shadow(0 7px 9px rgba(66,51,42,.10));
   pointer-events: none;
 }
 
@@ -1547,13 +1545,14 @@ main {
   }
 
   .afford-content {
-    padding-right: 125px;
+    padding-right: 88px;
   }
 
   .meadow-afford {
-    width: 125px;
-    right: -3px;
-    bottom: -6px;
+    width: 92px;
+    max-height: 138px;
+    right: -2px;
+    bottom: -5px;
   }
 
 
@@ -1587,8 +1586,9 @@ main {
   }
 
   .meadow-afford {
-    width: 116px;
-    right: -2px;
+    width: 84px;
+    max-height: 126px;
+    right: -1px;
     bottom: -4px;
   }
 
