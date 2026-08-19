@@ -1,24 +1,1000 @@
-/* =========================================================
-   MEADOW — REFINED SIZE
-   ========================================================= */
+:root {
+  --ivory: #faf8f2;
+  --cream: #f3e9dc;
+  --paper: #fffefa;
 
-.card:has(#affordAmount) {
-  position: relative;
-  overflow: hidden;
-  min-height: 235px;
+  --sage: #718774;
+  --sage-dark: #506957;
+  --sage-light: #e7eee6;
+
+  --olive: #929b72;
+  --terracotta: #c87958;
+  --terracotta-dark: #a96048;
+
+  --gold: #b49a68;
+
+  --ink: #303832;
+  --muted: #858d86;
+
+  --line: #e2e6df;
+
+  --serif:
+    "Cormorant Garamond",
+    "Baskerville",
+    "Palatino Linotype",
+    Georgia,
+    serif;
+
+  --sans:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --shadow:
+    0 18px 45px rgba(52,67,55,.075);
 }
 
 
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  background: var(--ivory);
+}
+
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 92% 4%,
+      rgba(146,155,114,.13),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 0% 38%,
+      rgba(200,121,88,.06),
+      transparent 28%
+    ),
+    var(--ivory);
+
+  color: var(--ink);
+  font-family: var(--sans);
+
+  padding-bottom: 96px;
+}
+
+
+button,
+input {
+  font: inherit;
+}
+
+
+button {
+  cursor: pointer;
+}
+
+
+/* ================= BRAND ================= */
+
+.topbar {
+  width: min(calc(100% - 30px), 720px);
+  margin: auto;
+
+  padding: 18px 0 9px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.brand-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.brand-botanical {
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f1f5ee,
+      #dce8dc
+    );
+
+  border: 1px solid rgba(80,105,87,.16);
+
+  box-shadow:
+    0 8px 22px rgba(80,105,87,.10),
+    inset 0 0 0 1px rgba(255,255,255,.65);
+
+  color: var(--sage-dark);
+}
+
+
+.brand-botanical svg {
+  width: 43px;
+  height: 43px;
+}
+
+
+.brand-botanical .stem {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+
+.brand-botanical .leaf {
+  fill: currentColor;
+}
+
+
+.brand-botanical .leaf-soft {
+  opacity: .76;
+}
+
+
+.brand-botanical .leaf-light {
+  opacity: .48;
+}
+
+
+.brand {
+  font-family: var(--serif);
+
+  font-size: 30px;
+  font-weight: 500;
+
+  letter-spacing: -1.4px;
+
+  color: #29352d;
+}
+
+
+.tagline {
+  margin-top: 1px;
+
+  color: var(--muted);
+
+  font-size: 9px;
+
+  letter-spacing: .2px;
+}
+
+
+.ghost {
+  border: 1px solid var(--line);
+
+  background: rgba(255,255,255,.75);
+
+  color: var(--muted);
+
+  border-radius: 12px;
+}
+
+
+.ghost.small {
+  padding: 7px 10px;
+  font-size: 10px;
+}
+
+
+/* ================= MAIN ================= */
+
+main {
+  width: min(calc(100% - 30px), 720px);
+  margin: auto;
+}
+
+
+.screen {
+  display: none;
+  padding-bottom: 28px;
+}
+
+
+.screen.active {
+  display: block;
+}
+
+
+/* ================= WELCOME ================= */
+
+.welcome {
+  padding: 23px 2px 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.welcome-copy {
+  position: relative;
+  z-index: 3;
+}
+
+
+.eyebrow {
+  color: var(--sage-dark);
+
+  font-size: 8px;
+  font-weight: 850;
+
+  letter-spacing: 1.7px;
+}
+
+
+.welcome h1 {
+  margin: 7px 0 0;
+
+  font-family: var(--serif);
+
+  font-size: clamp(35px, 8vw, 47px);
+
+  font-weight: 500;
+
+  line-height: 1.01;
+
+  letter-spacing: -2px;
+}
+
+
+.welcome p {
+  max-width: 270px;
+
+  margin: 11px 0 0;
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* ================= FOX ================= */
+
+.fox-wrap {
+  position: relative;
+
+  width: 145px;
+  height: 158px;
+
+  flex: 0 0 145px;
+
+  display: grid;
+  place-items: center;
+}
+
+
+.fox-glow {
+  position: absolute;
+
+  width: 110px;
+  height: 90px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(200,121,88,.15),
+      transparent 68%
+    );
+
+  bottom: 12px;
+}
+
+
+.fox {
+  position: relative;
+  z-index: 2;
+
+  width: 138px;
+  height: 150px;
+
+  filter:
+    drop-shadow(
+      0 9px 9px rgba(66,51,42,.12)
+    );
+}
+
+
+.fox-fur {
+  fill: #c87958;
+}
+
+
+.fox-cream {
+  fill: #fff1e3;
+}
+
+
+.fox-muzzle {
+  fill: #fff8ef;
+}
+
+
+.fox-ear-inner {
+  fill: #a85e48;
+  opacity: .65;
+}
+
+
+.fox-eye {
+  fill: #343a34;
+}
+
+
+.fox-glint {
+  fill: white;
+}
+
+
+.fox-brow {
+  fill: none;
+  stroke: #7d4537;
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: .8;
+}
+
+
+.fox-nose {
+  fill: #3b3530;
+}
+
+
+.fox-smile {
+  fill: none;
+  stroke: #543e37;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}
+
+
+.fox-scarf {
+  fill: var(--sage);
+}
+
+
+.paw-mark {
+  fill: #a85e48;
+  opacity: .55;
+}
+
+
+/* ================= BOTANICAL FOX ACCENTS ================= */
+
+.botanical-sprig {
+  position: absolute;
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  color: var(--sage-dark);
+
+  opacity: .72;
+
+  filter:
+    drop-shadow(
+      0 4px 5px rgba(70,88,73,.08)
+    );
+}
+
+
+.botanical-sprig svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+.botanical-sprig path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.35;
+  stroke-linecap: round;
+}
+
+
+.botanical-sprig ellipse {
+  fill: currentColor;
+}
+
+
+.sprig-one {
+  width: 50px;
+  height: 74px;
+
+  right: -2px;
+  bottom: 1px;
+
+  transform: rotate(5deg);
+}
+
+
+.sprig-two {
+  width: 42px;
+  height: 65px;
+
+  left: -5px;
+  bottom: 8px;
+
+  opacity: .46;
+
+  transform: rotate(-14deg);
+}
+
+
+/* ================= HERO ================= */
+
+.hero-card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 30px 27px 23px;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffefa,
+      #eef4ed
+    );
+
+  border: 1px solid #dbe4d9;
+
+  box-shadow:
+    0 20px 50px rgba(57,76,61,.10),
+    inset 0 0 0 1px rgba(255,255,255,.85);
+}
+
+
+.hero-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 7px;
+
+  border: 1px solid rgba(113,135,116,.20);
+
+  border-radius: 24px;
+
+  pointer-events: none;
+}
+
+
+.hero-top {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.hero-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--sage-dark);
+
+  font-size: 9px;
+  font-weight: 850;
+
+  letter-spacing: 1.5px;
+}
+
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: var(--sage);
+
+  box-shadow:
+    0 0 0 4px rgba(113,135,116,.11);
+}
+
+
+.hero-star {
+  color: var(--gold);
+  font-size: 17px;
+}
+
+
+.big {
+  position: relative;
+  z-index: 3;
+
+  margin-top: 12px;
+
+  font-family: var(--serif);
+
+  font-size: clamp(55px, 15vw, 75px);
+
+  font-weight: 500;
+
+  line-height: .94;
+
+  letter-spacing: -3px;
+
+  color: #303b32;
+}
+
+
+.hero-note {
+  position: relative;
+  z-index: 3;
+
+  max-width: 520px;
+
+  margin-top: 14px;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  line-height: 1.55;
+}
+
+
+.hero-bottom {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 21px;
+
+  padding: 13px 8px 0;
+
+  border-top: 1px solid rgba(113,135,116,.16);
+
+  color: #8a928b;
+
+  font-size: 9px;
+}
+
+
+/* ================= LUXURY BOTANICAL CORNERS ================= */
+
+.botanical-corner {
+  position: absolute;
+
+  width: 78px;
+  height: 78px;
+
+  opacity: .25;
+
+  color: var(--sage-dark);
+}
+
+
+.botanical-corner::before,
+.botanical-corner::after {
+  content: "";
+
+  position: absolute;
+
+  width: 23px;
+  height: 40px;
+
+  background: currentColor;
+
+  border-radius: 100% 0 100% 0;
+}
+
+
+.botanical-corner::before {
+  left: 8px;
+  top: 7px;
+
+  transform: rotate(-38deg);
+}
+
+
+.botanical-corner::after {
+  right: 3px;
+  bottom: 4px;
+
+  transform: rotate(40deg);
+}
+
+
+.corner-one {
+  left: 5px;
+  top: 5px;
+}
+
+
+.corner-two {
+  right: 5px;
+  top: 5px;
+  transform: scaleX(-1);
+}
+
+
+.corner-three {
+  left: 5px;
+  bottom: 5px;
+  transform: scaleY(-1);
+}
+
+
+.corner-four {
+  right: 5px;
+  bottom: 5px;
+  transform: scale(-1);
+}
+
+
+/* ================= HEADINGS ================= */
+
+.section-heading {
+  margin: 30px 2px 12px;
+}
+
+
+.section-heading h2 {
+  margin: 5px 0 0;
+
+  font-family: var(--serif);
+
+  font-size: 25px;
+
+  font-weight: 500;
+
+  letter-spacing: -.8px;
+}
+
+
+.section-title {
+  position: relative;
+
+  padding: 28px 2px 12px;
+}
+
+
+.section-title h1 {
+  position: relative;
+  z-index: 2;
+
+  margin: 6px 0 4px;
+
+  font-family: var(--serif);
+
+  font-size: 42px;
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: -1.8px;
+}
+
+
+.section-title p {
+  position: relative;
+  z-index: 2;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 12px;
+}
+
+
+.section-botanical {
+  position: absolute;
+
+  right: 5px;
+  top: 8px;
+
+  width: 105px;
+  height: 72px;
+
+  color: var(--sage);
+
+  opacity: .20;
+
+  transform: rotate(2deg);
+}
+
+
+.section-botanical svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+.section-botanical path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+}
+
+
+.section-botanical ellipse {
+  fill: currentColor;
+}
+
+
+.terracotta-botanical {
+  color: var(--terracotta);
+}
+
+
+.olive-botanical {
+  color: var(--olive);
+}
+
+
+/* ================= MONEY ================= */
+
+.money-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+}
+
+
+.money-card {
+  position: relative;
+
+  min-height: 142px;
+
+  padding: 18px;
+
+  border-radius: 22px;
+
+  background: var(--paper);
+
+  border: 1px solid var(--line);
+
+  box-shadow: var(--shadow);
+}
+
+
+.luxury-icon {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 16px;
+
+  border: 1px solid currentColor;
+
+  position: relative;
+}
+
+
+.luxury-icon::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 4px;
+
+  border: 1px solid currentColor;
+
+  border-radius: 12px;
+
+  opacity: .12;
+}
+
+
+.luxury-icon svg {
+  position: relative;
+  z-index: 2;
+
+  width: 35px;
+  height: 35px;
+}
+
+
+.luxury-icon svg path,
+.luxury-icon svg ellipse {
+  stroke: none;
+}
+
+
+.luxury-icon .icon-stem {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+
+.luxury-icon .icon-leaf {
+  fill: currentColor;
+}
+
+
+.luxury-icon .icon-leaf-soft {
+  fill: currentColor;
+  opacity: .70;
+}
+
+
+.luxury-icon .icon-leaf-light {
+  fill: currentColor;
+  opacity: .42;
+}
+
+
+.luxury-icon.green {
+  color: var(--sage-dark);
+
+  background:
+    linear-gradient(
+      145deg,
+      #edf3eb,
+      #e4ede2
+    );
+}
+
+
+.luxury-icon.terracotta {
+  color: var(--terracotta-dark);
+
+  background:
+    linear-gradient(
+      145deg,
+      #f6e9df,
+      #f2e1d5
+    );
+}
+
+
+.money-card > span {
+  display: block;
+
+  margin-top: 14px;
+
+  color: var(--muted);
+
+  font-size: 10px;
+}
+
+
+.money-card strong {
+  display: block;
+
+  margin-top: 5px;
+
+  font-family: var(--serif);
+
+  font-size: 25px;
+
+  font-weight: 500;
+
+  letter-spacing: -.8px;
+}
+
+
+/* ================= CARDS ================= */
+
+.card {
+  position: relative;
+
+  margin-top: 16px;
+
+  padding: 21px;
+
+  border-radius: 23px;
+
+  background: var(--paper);
+
+  border: 1px solid var(--line);
+
+  box-shadow: var(--shadow);
+}
+
+
+.card h2 {
+  margin: 5px 0 0;
+
+  font-family: var(--serif);
+
+  font-size: 23px;
+
+  font-weight: 500;
+}
+
+
+.card-heading-botanical {
+  position: absolute;
+
+  right: 13px;
+  top: 9px;
+
+  width: 82px;
+  height: 55px;
+
+  color: var(--sage);
+
+  opacity: .18;
+}
+
+
+.card-heading-botanical svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+.card-heading-botanical path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+}
+
+
+.card-heading-botanical ellipse {
+  fill: currentColor;
+}
+
+
+/* ================= AFFORD ================= */
+
+.afford-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 218px;
+}
+
+.afford-content {
+  position: relative;
+  z-index: 3;
+  padding-right: 118px;
+}
+
 /* Soft circle behind Meadow / house */
 
-.card:has(#affordAmount)::before {
+.afford-card::before {
   content: "";
 
   position: absolute;
 
   z-index: 1;
 
-  right: 18px;
+  right: 12px;
   bottom: 8px;
 
   width: 145px;
@@ -29,38 +1005,33 @@
   background:
     radial-gradient(
       ellipse,
-      rgba(113,135,116,.13),
-      rgba(113,135,116,.045) 48%,
+      rgba(113,135,116,.14),
+      rgba(113,135,116,.05) 48%,
       transparent 73%
     );
 
   pointer-events: none;
 }
 
-
 /* Meadow */
 
-.card:has(#affordAmount)::after {
-  content: "";
-
+.meadow-afford {
   position: absolute;
 
   z-index: 2;
 
-  right: 1px;
-  bottom: -4px;
+  right: 0;
+  bottom: -5px;
 
-  width: 122px;
-  height: 172px;
+  width: 125px;
 
-  background-image:
-    url("d55d9c8d-9edc-4b9b-9b01-d1ca17b49da9.png");
+  max-height: 175px;
 
-  background-repeat: no-repeat;
+  height: auto;
 
-  background-position: right bottom;
+  object-fit: contain;
 
-  background-size: contain;
+  object-position: bottom right;
 
   filter:
     drop-shadow(
@@ -71,86 +1042,564 @@
 }
 
 
-/* Keep the actual card content in front */
+/* ================= AFFORD ================= */
 
-.card:has(#affordAmount) > * {
-  position: relative;
-  z-index: 3;
+.row {
+  display: flex;
+  gap: 9px;
+
+  margin-top: 15px;
 }
 
 
-/* Give the input/button a little breathing room,
-   without making the text tiny */
+.row input {
+  flex: 1;
 
-.card:has(#affordAmount) .row {
-  position: relative;
-  z-index: 4;
+  min-width: 0;
 
-  padding-right: 92px;
+  height: 51px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 15px;
+
+  background: var(--ivory);
+
+  padding: 0 14px;
+
+  outline: none;
 }
 
 
-.card:has(#affordAmount) .result {
-  position: relative;
-  z-index: 4;
+.row button,
+.form > button,
+.balance-entry-card > button {
+  min-height: 51px;
 
-  margin-right: 92px;
+  border: 0;
+
+  border-radius: 15px;
+
+  padding: 0 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--sage),
+      var(--sage-dark)
+    );
+
+  color: white;
+
+  font-weight: 750;
+
+  box-shadow:
+    0 8px 18px rgba(80,105,87,.20);
+
+  transition: transform .2s ease;
 }
 
+
+.row button:hover,
+.form > button:hover,
+.balance-entry-card > button:hover {
+  transform: translateY(-1px);
+}
+
+
+.result {
+  margin-top: 12px;
+
+  padding: 12px 14px;
+
+  border-radius: 13px;
+
+  background: var(--sage-light);
+
+  font-size: 11px;
+
+  line-height: 1.45;
+}
+
+
+.result.good {
+  color: #56725c;
+  background: #edf5ed;
+}
+
+
+.result.bad {
+  color: #925b55;
+  background: #f8eae8;
+}
+
+
+/* ================= WARNING ================= */
+
+.notice {
+  margin-top: 15px;
+
+  padding: 15px;
+
+  border-radius: 17px;
+
+  background: #f8eae8;
+
+  color: #a55f58;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+
+/* ================= LISTS ================= */
+
+.item {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 14px;
+
+  padding: 15px 0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+
+.item:last-child {
+  border-bottom: 0;
+  padding-bottom: 2px;
+}
+
+
+.item-title {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+.item-sub {
+  margin-top: 4px;
+
+  color: var(--muted);
+
+  font-size: 9px;
+}
+
+
+.item-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+
+.item-actions strong {
+  font-size: 13px;
+}
+
+
+.delete {
+  width: 28px;
+  height: 28px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #f1f1ec;
+
+  color: var(--muted);
+}
+
+
+.pill {
+  display: inline-block;
+
+  padding: 3px 7px;
+
+  border-radius: 99px;
+
+  background: var(--sage-light);
+
+  color: var(--sage-dark);
+
+  font-size: 8px;
+
+  font-weight: 750;
+}
+
+
+.pill.paid {
+  background: #edf3ed;
+  color: #58715c;
+}
+
+
+.empty {
+  padding: 16px 0;
+
+  color: var(--muted);
+
+  font-size: 11px;
+}
+
+
+/* ================= FORMS ================= */
+
+.form {
+  display: grid;
+  gap: 16px;
+}
+
+
+.form label {
+  display: grid;
+  gap: 7px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+.form input {
+  width: 100%;
+
+  min-height: 49px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 14px;
+
+  background: var(--ivory);
+
+  padding: 0 13px;
+
+  outline: none;
+}
+
+
+.form input:focus,
+.row input:focus,
+.balance-entry-row input:focus {
+  border-color: var(--sage);
+
+  box-shadow:
+    0 0 0 3px rgba(113,135,116,.1);
+}
+
+
+.form .check {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-weight: 550;
+}
+
+
+.form .check input {
+  width: 17px;
+
+  min-height: 17px;
+
+  accent-color: var(--sage);
+}
+
+
+/* ================= BALANCE ================= */
+
+.balance-entry-card h2 {
+  margin-top: 4px;
+}
+
+
+.muted {
+  color: var(--muted);
+}
+
+
+.balance-entry-card > p {
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+.balance-entry-row {
+  display: flex;
+  align-items: center;
+
+  height: 51px;
+
+  margin: 15px 0 10px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 15px;
+
+  background: var(--ivory);
+
+  overflow: hidden;
+}
+
+
+.currency-symbol {
+  padding-left: 14px;
+
+  color: var(--muted);
+
+  font-weight: 750;
+}
+
+
+.balance-entry-row input {
+  flex: 1;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  padding: 0 14px 0 7px;
+}
+
+
+/* ================= NAV ================= */
+
+.nav {
+  position: fixed;
+
+  z-index: 50;
+
+  left: 50%;
+  bottom: 0;
+
+  transform: translateX(-50%);
+
+  width: min(100%,720px);
+
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+
+  padding:
+    8px
+    10px
+    max(9px,env(safe-area-inset-bottom));
+
+  background: rgba(255,255,255,.96);
+
+  backdrop-filter: blur(20px);
+
+  border-top: 1px solid rgba(220,225,218,.9);
+
+  box-shadow:
+    0 -10px 30px rgba(45,58,48,.05);
+}
+
+
+.navbtn {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 3px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #969d96;
+
+  padding: 4px 2px;
+
+  font-size: 8px;
+
+  font-weight: 750;
+
+  letter-spacing: .2px;
+}
+
+
+.nav-icon {
+  width: 46px;
+  height: 37px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 14px;
+
+  transition:
+    transform .2s ease,
+    background .2s ease;
+}
+
+
+.nav-icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+
+.botanical-nav svg path {
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.35;
+
+  stroke-linecap: round;
+}
+
+
+.botanical-nav svg path:not(:first-child) {
+  fill: currentColor;
+
+  stroke: none;
+}
+
+
+.navbtn.active {
+  color: var(--sage-dark);
+}
+
+
+.navbtn.active .nav-icon {
+  background: var(--sage-light);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(113,135,116,.08);
+
+  transform: translateY(-1px);
+}
+
+
+.navbtn:nth-child(2) .nav-icon {
+  color: var(--gold);
+}
+
+
+.navbtn:nth-child(3) .nav-icon {
+  color: var(--terracotta);
+}
+
+
+.navbtn:nth-child(4) .nav-icon {
+  color: var(--olive);
+}
+
+
+/* ================= MOBILE ================= */
 
 @media (max-width:430px) {
 
-  .card:has(#affordAmount) {
-    min-height: 225px;
+  main,
+  .topbar {
+    width: calc(100% - 24px);
   }
 
-  .card:has(#affordAmount)::before {
-    width: 132px;
-    height: 112px;
-
-    right: 14px;
-    bottom: 7px;
+  .brand {
+    font-size: 27px;
   }
 
-  .card:has(#affordAmount)::after {
-    width: 110px;
-    height: 155px;
-
-    right: -2px;
-    bottom: -3px;
+  .brand-botanical {
+    width: 48px;
+    height: 48px;
   }
 
-  .card:has(#affordAmount) .row {
-    padding-right: 78px;
+  .welcome h1 {
+    font-size: 31px;
   }
 
-  .card:has(#affordAmount) .result {
-    margin-right: 78px;
+  .fox-wrap {
+    width: 124px;
+    flex-basis: 124px;
   }
+
+  .fox {
+    width: 123px;
+    height: 140px;
+  }
+
+  .big {
+    font-size: 54px;
+  }
+
+  .afford-card {
+    min-height: 220px;
+  }
+
+  .afford-content {
+    padding-right: 125px;
+  }
+
+  .meadow-afford {
+    width: 125px;
+    right: -3px;
+    bottom: -6px;
+  }
+
+
+  .section-title h1 {
+    font-size: 38px;
+  }
+
 }
 
 
 @media (max-width:360px) {
 
-  .card:has(#affordAmount) {
-    min-height: 235px;
+  .money-grid {
+    grid-template-columns: 1fr;
   }
 
-  .card:has(#affordAmount)::before {
-    width: 120px;
-    height: 105px;
+  .row {
+    flex-direction: column;
   }
 
-  .card:has(#affordAmount)::after {
-    width: 100px;
-    height: 143px;
+  .row button {
+    width: 100%;
   }
 
-  .card:has(#affordAmount) .row {
+  .afford-card {
+    min-height: 250px;
+  }
+
+  .afford-content {
     padding-right: 0;
   }
 
-  .card:has(#affordAmount) .result {
-    margin-right: 0;
+  .meadow-afford {
+    width: 116px;
+    right: -2px;
+    bottom: -4px;
   }
+
+
+  .fox-wrap {
+    width: 105px;
+    flex-basis: 105px;
+  }
+
+  .fox {
+    width: 108px;
+  }
+
 }
