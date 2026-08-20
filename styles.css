@@ -89,10 +89,10 @@ img{
 }
 
 .brand-botanical img{
-  width:40px !important;
-  height:40px !important;
-  max-width:40px !important;
-  max-height:40px !important;
+  width:42px !important;
+  height:42px !important;
+  max-width:42px !important;
+  max-height:42px !important;
   object-fit:contain;
 }
 
@@ -168,10 +168,10 @@ main{
 }
 
 .welcome-art img{
-  width:82px !important;
-  height:82px !important;
-  max-width:82px !important;
-  max-height:82px !important;
+  width:90px !important;
+  height:90px !important;
+  max-width:90px !important;
+  max-height:90px !important;
   object-fit:contain;
 }
 
@@ -312,6 +312,95 @@ main{
   object-fit:contain;
 }
 
+/* =========================================================
+   FOX COMPANION
+   EXACT USER FOX IMAGE
+========================================================= */
+
+.fox-companion{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  min-height:210px;
+  margin-top:18px;
+  padding:14px 12px 8px 20px;
+  border-radius:25px;
+  overflow:hidden;
+  background:
+    radial-gradient(
+      circle at 75% 55%,
+      rgba(229,238,228,.8),
+      transparent 48%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255,253,248,.96),
+      rgba(239,245,237,.92)
+    );
+  border:1px solid rgba(113,135,116,.18);
+  box-shadow:0 14px 35px rgba(45,65,51,.07);
+}
+
+.fox-companion::before{
+  content:"";
+  position:absolute;
+  width:155px;
+  height:155px;
+  right:35px;
+  bottom:-90px;
+  border-radius:50%;
+  border:1px solid rgba(113,135,116,.12);
+}
+
+.fox-copy{
+  position:relative;
+  z-index:3;
+  width:45%;
+  min-width:145px;
+  padding-bottom:12px;
+}
+
+.fox-copy h2{
+  margin:6px 0 0;
+  font-family:var(--serif);
+  font-size:29px;
+  font-weight:500;
+  line-height:.95;
+  letter-spacing:-.8px;
+  color:#30483a;
+}
+
+.fox-copy p{
+  margin:9px 0 0;
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.5;
+}
+
+.fox-art{
+  position:relative;
+  z-index:2;
+  width:55%;
+  height:205px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-end;
+  overflow:hidden;
+  mix-blend-mode:multiply;
+}
+
+.fox-art img{
+  width:245px !important;
+  height:245px !important;
+  max-width:245px !important;
+  max-height:245px !important;
+  object-fit:contain;
+  object-position:center bottom;
+  transform:translate(10px,18px);
+}
+
 /* ================= HEADINGS ================= */
 
 .section-heading{
@@ -355,10 +444,10 @@ main{
   position:absolute;
   right:4px;
   top:10px;
-  width:64px !important;
-  height:64px !important;
-  max-width:64px !important;
-  max-height:64px !important;
+  width:70px !important;
+  height:70px !important;
+  max-width:70px !important;
+  max-height:70px !important;
   object-fit:contain;
 }
 
@@ -396,22 +485,22 @@ main{
 }
 
 .image-icon{
-  width:43px;
-  height:43px;
+  width:50px;
+  height:50px;
   display:flex;
   align-items:center;
   justify-content:center;
-  border-radius:14px;
+  border-radius:17px;
   overflow:hidden;
   position:relative;
   z-index:2;
 }
 
 .image-icon img{
-  width:32px !important;
-  height:32px !important;
-  max-width:32px !important;
-  max-height:32px !important;
+  width:40px !important;
+  height:40px !important;
+  max-width:40px !important;
+  max-height:40px !important;
   object-fit:contain;
 }
 
@@ -463,10 +552,10 @@ main{
   z-index:1;
   right:13px;
   top:11px;
-  width:50px !important;
-  height:50px !important;
-  max-width:50px !important;
-  max-height:50px !important;
+  width:55px !important;
+  height:55px !important;
+  max-width:55px !important;
+  max-height:55px !important;
   object-fit:contain;
   opacity:.9;
   pointer-events:none;
@@ -720,7 +809,6 @@ main{
 
 /* =========================================================
    BOTTOM NAVIGATION
-   SMALLER CLEAN ORIGINAL ARTWORK
 ========================================================= */
 
 .nav{
@@ -743,12 +831,12 @@ main{
 
 .navbtn{
   min-width:0;
-  min-height:58px;
+  min-height:65px;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:3px;
+  gap:2px;
   padding:3px;
   border:0;
   border-radius:14px;
@@ -764,8 +852,8 @@ main{
 }
 
 .nav-icon{
-  width:42px !important;
-  height:38px !important;
+  width:50px !important;
+  height:47px !important;
   display:flex !important;
   align-items:center !important;
   justify-content:center !important;
@@ -776,10 +864,10 @@ main{
 }
 
 .nav-icon img{
-  width:34px !important;
-  height:34px !important;
-  max-width:34px !important;
-  max-height:34px !important;
+  width:45px !important;
+  height:45px !important;
+  max-width:45px !important;
+  max-height:45px !important;
   object-fit:contain !important;
   display:block !important;
   background:transparent !important;
@@ -796,7 +884,7 @@ main{
 @media(max-width:430px){
 
   body{
-    padding-bottom:96px;
+    padding-bottom:100px;
   }
 
   .topbar,
@@ -814,10 +902,10 @@ main{
   }
 
   .brand-botanical img{
-    width:36px !important;
-    height:36px !important;
-    max-width:36px !important;
-    max-height:36px !important;
+    width:38px !important;
+    height:38px !important;
+    max-width:38px !important;
+    max-height:38px !important;
   }
 
   .welcome{
@@ -831,10 +919,10 @@ main{
   }
 
   .welcome-art img{
-    width:72px !important;
-    height:72px !important;
-    max-width:72px !important;
-    max-height:72px !important;
+    width:78px !important;
+    height:78px !important;
+    max-width:78px !important;
+    max-height:78px !important;
   }
 
   .welcome h1{
@@ -869,7 +957,43 @@ main{
     max-height:38px !important;
   }
 
-  /* SNAPSHOT STAYS TWO COLUMNS */
+  /* FOX */
+
+  .fox-companion{
+    min-height:190px;
+    padding:10px 6px 4px 15px;
+    border-radius:21px;
+    gap:4px;
+  }
+
+  .fox-copy{
+    width:44%;
+    min-width:120px;
+  }
+
+  .fox-copy h2{
+    font-size:25px;
+  }
+
+  .fox-copy p{
+    font-size:9px;
+    line-height:1.45;
+  }
+
+  .fox-art{
+    width:56%;
+    height:190px;
+  }
+
+  .fox-art img{
+    width:215px !important;
+    height:215px !important;
+    max-width:215px !important;
+    max-height:215px !important;
+    transform:translate(8px,15px);
+  }
+
+  /* SNAPSHOT ALWAYS TWO COLUMNS */
 
   .money-grid{
     display:grid !important;
@@ -885,16 +1009,15 @@ main{
   }
 
   .image-icon{
-    width:40px;
-    height:40px;
-    border-radius:13px;
+    width:45px;
+    height:45px;
   }
 
   .image-icon img{
-    width:29px !important;
-    height:29px !important;
-    max-width:29px !important;
-    max-height:29px !important;
+    width:35px !important;
+    height:35px !important;
+    max-width:35px !important;
+    max-height:35px !important;
   }
 
   .money-card > span{
@@ -919,10 +1042,10 @@ main{
   }
 
   .section-art{
-    width:58px !important;
-    height:58px !important;
-    max-width:58px !important;
-    max-height:58px !important;
+    width:62px !important;
+    height:62px !important;
+    max-width:62px !important;
+    max-height:62px !important;
   }
 
   .card{
@@ -931,15 +1054,15 @@ main{
   }
 
   .card-art{
-    width:46px !important;
-    height:46px !important;
-    max-width:46px !important;
-    max-height:46px !important;
+    width:48px !important;
+    height:48px !important;
+    max-width:48px !important;
+    max-height:48px !important;
     right:11px;
     top:9px;
   }
 
-  /* BOTTOM NAV */
+  /* LARGE BOTTOM PICTURES */
 
   .nav{
     bottom:7px;
@@ -948,21 +1071,21 @@ main{
   }
 
   .navbtn{
-    min-height:57px;
+    min-height:65px;
     padding:2px;
     gap:2px;
   }
 
   .nav-icon{
-    width:40px !important;
-    height:36px !important;
+    width:52px !important;
+    height:48px !important;
   }
 
   .nav-icon img{
-    width:33px !important;
-    height:33px !important;
-    max-width:33px !important;
-    max-height:33px !important;
+    width:44px !important;
+    height:44px !important;
+    max-width:44px !important;
+    max-height:44px !important;
   }
 
   .navbtn.active .nav-icon,
@@ -991,10 +1114,10 @@ main{
   }
 
   .welcome-art img{
-    width:64px !important;
-    height:64px !important;
-    max-width:64px !important;
-    max-height:64px !important;
+    width:68px !important;
+    height:68px !important;
+    max-width:68px !important;
+    max-height:68px !important;
   }
 
   .welcome h1{
@@ -1007,6 +1130,37 @@ main{
 
   .big{
     font-size:45px;
+  }
+
+  /* FOX */
+
+  .fox-companion{
+    min-height:175px;
+    padding-left:12px;
+  }
+
+  .fox-copy{
+    min-width:105px;
+  }
+
+  .fox-copy h2{
+    font-size:22px;
+  }
+
+  .fox-copy p{
+    font-size:8px;
+  }
+
+  .fox-art{
+    height:175px;
+  }
+
+  .fox-art img{
+    width:195px !important;
+    height:195px !important;
+    max-width:195px !important;
+    max-height:195px !important;
+    transform:translate(7px,12px);
   }
 
   /* DO NOT STACK SNAPSHOT */
@@ -1034,15 +1188,15 @@ main{
   }
 
   .image-icon{
-    width:38px;
-    height:38px;
+    width:42px;
+    height:42px;
   }
 
   .image-icon img{
-    width:27px !important;
-    height:27px !important;
-    max-width:27px !important;
-    max-height:27px !important;
+    width:32px !important;
+    height:32px !important;
+    max-width:32px !important;
+    max-height:32px !important;
   }
 
   .section-title h1{
@@ -1050,17 +1204,17 @@ main{
   }
 
   .section-art{
-    width:53px !important;
-    height:53px !important;
-    max-width:53px !important;
-    max-height:53px !important;
+    width:55px !important;
+    height:55px !important;
+    max-width:55px !important;
+    max-height:55px !important;
   }
 
   .card-art{
-    width:42px !important;
-    height:42px !important;
-    max-width:42px !important;
-    max-height:42px !important;
+    width:43px !important;
+    height:43px !important;
+    max-width:43px !important;
+    max-height:43px !important;
   }
 
   .nav{
@@ -1068,19 +1222,19 @@ main{
   }
 
   .navbtn{
-    min-height:55px;
+    min-height:63px;
   }
 
   .nav-icon{
-    width:38px !important;
-    height:34px !important;
+    width:49px !important;
+    height:46px !important;
   }
 
   .nav-icon img{
-    width:31px !important;
-    height:31px !important;
-    max-width:31px !important;
-    max-height:31px !important;
+    width:42px !important;
+    height:42px !important;
+    max-width:42px !important;
+    max-height:42px !important;
   }
 
   .navbtn.active .nav-icon,
@@ -1091,22 +1245,22 @@ main{
 }
 
 /* =========================================================
-   UPLOADED IMAGE SIZING
-   ========================================================= */
+   UPLOADED IMAGE SAFETY
+========================================================= */
 
 img[src="safespend-logo.png"]{
-  width:40px !important;
-  height:40px !important;
-  max-width:40px !important;
-  max-height:40px !important;
+  width:42px !important;
+  height:42px !important;
+  max-width:42px !important;
+  max-height:42px !important;
   object-fit:contain !important;
 }
 
 img[src="dashboard.png"]{
-  width:82px !important;
-  height:82px !important;
-  max-width:82px !important;
-  max-height:82px !important;
+  width:90px !important;
+  height:90px !important;
+  max-width:90px !important;
+  max-height:90px !important;
   object-fit:contain !important;
 }
 
@@ -1120,28 +1274,28 @@ img[src="botanical-divider.png"]{
 
 img[src="balance.png"],
 img[src="bills.png"]{
-  width:32px !important;
-  height:32px !important;
-  max-width:32px !important;
-  max-height:32px !important;
+  width:40px !important;
+  height:40px !important;
+  max-width:40px !important;
+  max-height:40px !important;
   object-fit:contain !important;
 }
 
 img[src="can-i-afford-it.png"],
 img[src="income-label.png"]{
-  width:50px !important;
-  height:50px !important;
-  max-width:50px !important;
-  max-height:50px !important;
+  width:55px !important;
+  height:55px !important;
+  max-width:55px !important;
+  max-height:55px !important;
   object-fit:contain !important;
 }
 
 img[src="income.png"],
 img[src="calendar.png"]{
-  width:64px !important;
-  height:64px !important;
-  max-width:64px !important;
-  max-height:64px !important;
+  width:70px !important;
+  height:70px !important;
+  max-width:70px !important;
+  max-height:70px !important;
   object-fit:contain !important;
 }
 
@@ -1150,33 +1304,44 @@ img[src="due.png"],
 img[src="paid.png"],
 img[src="reset.png"],
 img[src="settings.png"]{
-  width:28px !important;
-  height:28px !important;
-  max-width:28px !important;
-  max-height:28px !important;
+  width:32px !important;
+  height:32px !important;
+  max-width:32px !important;
+  max-height:32px !important;
   object-fit:contain !important;
 }
 
-/* Bottom navigation gets its own smaller size */
+/* Bottom navigation pictures remain large */
+
 .nav-icon img[src="dashboard.png"],
 .nav-icon img[src="income.png"],
 .nav-icon img[src="bills.png"],
 .nav-icon img[src="calendar.png"]{
-  width:34px !important;
-  height:34px !important;
-  max-width:34px !important;
-  max-height:34px !important;
+  width:45px !important;
+  height:45px !important;
+  max-width:45px !important;
+  max-height:45px !important;
   object-fit:contain !important;
   background:transparent !important;
 }
 
+/* Fox image */
+
+img[src="d55d9c8d-9edc-4b9b-9b01-d1ca17b49da9.png"]{
+  object-fit:contain !important;
+}
+
+/* =========================================================
+   MOBILE IMAGE SAFETY
+========================================================= */
+
 @media(max-width:430px){
 
   img[src="dashboard.png"]{
-    width:72px !important;
-    height:72px !important;
-    max-width:72px !important;
-    max-height:72px !important;
+    width:78px !important;
+    height:78px !important;
+    max-width:78px !important;
+    max-height:78px !important;
   }
 
   img[src="botanical-divider.png"]{
@@ -1188,26 +1353,26 @@ img[src="settings.png"]{
 
   img[src="balance.png"],
   img[src="bills.png"]{
-    width:29px !important;
-    height:29px !important;
-    max-width:29px !important;
-    max-height:29px !important;
+    width:35px !important;
+    height:35px !important;
+    max-width:35px !important;
+    max-height:35px !important;
   }
 
   img[src="can-i-afford-it.png"],
   img[src="income-label.png"]{
-    width:46px !important;
-    height:46px !important;
-    max-width:46px !important;
-    max-height:46px !important;
+    width:48px !important;
+    height:48px !important;
+    max-width:48px !important;
+    max-height:48px !important;
   }
 
   img[src="income.png"],
   img[src="calendar.png"]{
-    width:58px !important;
-    height:58px !important;
-    max-width:58px !important;
-    max-height:58px !important;
+    width:62px !important;
+    height:62px !important;
+    max-width:62px !important;
+    max-height:62px !important;
   }
 
   img[src="delete.png"],
@@ -1215,19 +1380,24 @@ img[src="settings.png"]{
   img[src="paid.png"],
   img[src="reset.png"],
   img[src="settings.png"]{
-    width:26px !important;
-    height:26px !important;
-    max-width:26px !important;
-    max-height:26px !important;
+    width:28px !important;
+    height:28px !important;
+    max-width:28px !important;
+    max-height:28px !important;
   }
 
   .nav-icon img[src="dashboard.png"],
   .nav-icon img[src="income.png"],
   .nav-icon img[src="bills.png"],
   .nav-icon img[src="calendar.png"]{
-    width:33px !important;
-    height:33px !important;
-    max-width:33px !important;
-    max-height:33px !important;
+    width:44px !important;
+    height:44px !important;
+    max-width:44px !important;
+    max-height:44px !important;
   }
+
+  img[src="d55d9c8d-9edc-4b9b-9b01-d1ca17b49da9.png"]{
+    max-width:215px !important;
+    max-height:215px !important;
   }
+}
