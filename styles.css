@@ -971,7 +971,7 @@ main {
 }
 
 
-/* ================= MEADOW — SOFT BOTANICAL AFFORD CARD ================= */
+/* ================= MEADOW — SOFT BOTANICAL ================= */
 
 .afford-card {
   position: relative;
@@ -979,63 +979,129 @@ main {
   min-height: 218px;
 }
 
+
 .afford-content {
   position: relative;
-  z-index: 3;
-  padding-right: 105px;
+  z-index: 4;
+
+  padding-right: 92px;
 }
 
-/* Soft greenery tucked into the lower edges */
+
+/* soft foliage emerging naturally from the lower-right edge */
 
 .afford-card::before {
   content: "";
+
   position: absolute;
+
   z-index: 1;
-  right: -7px;
-  bottom: -17px;
-  width: 138px;
-  height: 82px;
-  opacity: .28;
+
+  right: -17px;
+  bottom: -23px;
+
+  width: 150px;
+  height: 105px;
+
+  opacity: .22;
+
   background:
-    radial-gradient(ellipse at 84% 78%, rgba(80,105,87,.22) 0 8%, transparent 9%),
-    radial-gradient(ellipse at 66% 92%, rgba(113,135,116,.20) 0 10%, transparent 11%),
-    radial-gradient(ellipse at 46% 82%, rgba(146,155,114,.17) 0 9%, transparent 10%),
-    radial-gradient(ellipse at 27% 96%, rgba(80,105,87,.16) 0 8%, transparent 9%);
-  filter: blur(.15px);
+    radial-gradient(
+      ellipse at 82% 78%,
+      rgba(80,105,87,.50) 0 7%,
+      transparent 8%
+    ),
+    radial-gradient(
+      ellipse at 65% 93%,
+      rgba(113,135,116,.42) 0 8%,
+      transparent 9%
+    ),
+    radial-gradient(
+      ellipse at 47% 76%,
+      rgba(146,155,114,.38) 0 7%,
+      transparent 8%
+    ),
+    radial-gradient(
+      ellipse at 28% 96%,
+      rgba(80,105,87,.34) 0 7%,
+      transparent 8%
+    );
+
+  filter: blur(.2px);
+
   pointer-events: none;
 }
+
+
+/* delicate stems/leaves at the edge */
 
 .afford-card::after {
   content: "";
+
   position: absolute;
+
   z-index: 1;
-  right: -8px;
-  bottom: -7px;
-  width: 116px;
-  height: 92px;
-  opacity: .20;
+
+  right: -5px;
+  bottom: -10px;
+
+  width: 128px;
+  height: 105px;
+
+  opacity: .24;
+
   background:
-    linear-gradient(54deg, transparent 46%, var(--sage-dark) 47% 48%, transparent 49%),
-    linear-gradient(117deg, transparent 47%, var(--sage) 48% 49%, transparent 50%),
-    linear-gradient(28deg, transparent 58%, var(--olive) 59% 60%, transparent 61%);
-  border-radius: 70% 30% 65% 35%;
+    linear-gradient(
+      58deg,
+      transparent 48%,
+      var(--sage-dark) 49% 50%,
+      transparent 51%
+    ),
+    linear-gradient(
+      116deg,
+      transparent 49%,
+      var(--sage) 50% 51%,
+      transparent 52%
+    ),
+    linear-gradient(
+      28deg,
+      transparent 58%,
+      var(--olive) 59% 60%,
+      transparent 61%
+    );
+
+  border-radius: 75% 25% 70% 30%;
+
   transform: rotate(-7deg);
+
   pointer-events: none;
 }
 
-/* Meadow — smaller and softly tucked into the greenery */
+
+/* Meadow — deliberately small */
 
 .meadow-afford {
   position: absolute;
-  z-index: 2;
-  right: 2px;
+
+  z-index: 3;
+
+  right: 3px;
   bottom: -4px;
-  width: 94px;
-  max-height: 142px;
+
+  width: 92px;
+  max-height: 138px;
+
   height: auto;
+
   object-fit: contain;
+
   object-position: bottom right;
-  filter: drop-shadow(0 7px 9px rgba(66,51,42,.10));
+
+  filter:
+    drop-shadow(
+      0 7px 9px rgba(66,51,42,.10)
+    );
+
   pointer-events: none;
 }
 
@@ -1544,15 +1610,32 @@ main {
     min-height: 220px;
   }
 
+  /* IMPORTANT: smaller mobile Meadow */
   .afford-content {
-    padding-right: 88px;
+    padding-right: 82px;
   }
 
   .meadow-afford {
-    width: 92px;
-    max-height: 138px;
-    right: -2px;
+    width: 90px;
+    max-height: 136px;
+    right: -1px;
     bottom: -5px;
+  }
+
+  .afford-card::before {
+    width: 128px;
+    height: 92px;
+    right: -16px;
+    bottom: -21px;
+    opacity: .20;
+  }
+
+  .afford-card::after {
+    width: 110px;
+    height: 92px;
+    right: -5px;
+    bottom: -9px;
+    opacity: .21;
   }
 
 
@@ -1585,11 +1668,26 @@ main {
     padding-right: 0;
   }
 
+  /* IMPORTANT: smallest phone size */
   .meadow-afford {
-    width: 84px;
-    max-height: 126px;
+    width: 82px;
+    max-height: 124px;
     right: -1px;
     bottom: -4px;
+  }
+
+  .afford-card::before {
+    width: 118px;
+    height: 86px;
+    right: -15px;
+    bottom: -20px;
+  }
+
+  .afford-card::after {
+    width: 100px;
+    height: 82px;
+    right: -4px;
+    bottom: -8px;
   }
 
 
