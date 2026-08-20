@@ -788,8 +788,8 @@ main {
 
 
 .luxury-icon {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
 
   display: grid;
   place-items: center;
@@ -821,8 +821,8 @@ main {
   position: relative;
   z-index: 2;
 
-  width: 27px;
-  height: 27px;
+  width: 35px;
+  height: 35px;
 }
 
 
@@ -988,6 +988,8 @@ main {
 }
 
 
+/* soft foliage emerging naturally from the lower-right edge */
+
 .afford-card::before {
   content: "";
 
@@ -1031,6 +1033,8 @@ main {
 }
 
 
+/* delicate stems/leaves at the edge */
+
 .afford-card::after {
   content: "";
 
@@ -1073,6 +1077,8 @@ main {
   pointer-events: none;
 }
 
+
+/* Meadow — deliberately small */
 
 .meadow-afford {
   position: absolute;
@@ -1495,13 +1501,12 @@ main {
 }
 
 
-/* Smaller navigation icon container */
-
 .nav-icon {
-  width: 40px;
+  width: 36px;
   height: 32px;
 
   display: grid;
+
   place-items: center;
 
   border-radius: 14px;
@@ -1512,11 +1517,9 @@ main {
 }
 
 
-/* Smaller actual navigation SVG */
-
 .nav-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
 }
 
 
@@ -1581,7 +1584,6 @@ main {
     font-size: 27px;
   }
 
-
   .brand-botanical {
     width: 48px;
     height: 48px;
@@ -1609,6 +1611,7 @@ main {
     min-height: 220px;
   }
 
+  /* IMPORTANT: smaller mobile Meadow */
   .afford-content {
     padding-right: 82px;
   }
@@ -1666,6 +1669,7 @@ main {
     padding-right: 0;
   }
 
+  /* IMPORTANT: smallest phone size */
   .meadow-afford {
     width: 82px;
     max-height: 124px;
