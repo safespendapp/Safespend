@@ -89,10 +89,10 @@ img{
 }
 
 .brand-botanical img{
-  width:42px !important;
-  height:42px !important;
-  max-width:42px !important;
-  max-height:42px !important;
+  width:40px !important;
+  height:40px !important;
+  max-width:40px !important;
+  max-height:40px !important;
   object-fit:contain;
 }
 
@@ -168,10 +168,10 @@ main{
 }
 
 .welcome-art img{
-  width:90px !important;
-  height:90px !important;
-  max-width:90px !important;
-  max-height:90px !important;
+  width:82px !important;
+  height:82px !important;
+  max-width:82px !important;
+  max-height:82px !important;
   object-fit:contain;
 }
 
@@ -355,21 +355,20 @@ main{
   position:absolute;
   right:4px;
   top:10px;
-  width:70px !important;
-  height:70px !important;
-  max-width:70px !important;
-  max-height:70px !important;
+  width:64px !important;
+  height:64px !important;
+  max-width:64px !important;
+  max-height:64px !important;
   object-fit:contain;
 }
 
 /* ================= SNAPSHOT ================= */
 
 .money-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:12px;
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
+  gap:12px !important;
   width:100%;
-  align-items:stretch;
 }
 
 .money-card{
@@ -397,22 +396,22 @@ main{
 }
 
 .image-icon{
-  width:50px;
-  height:50px;
+  width:43px;
+  height:43px;
   display:flex;
   align-items:center;
   justify-content:center;
-  border-radius:17px;
+  border-radius:14px;
   overflow:hidden;
   position:relative;
   z-index:2;
 }
 
 .image-icon img{
-  width:40px !important;
-  height:40px !important;
-  max-width:40px !important;
-  max-height:40px !important;
+  width:32px !important;
+  height:32px !important;
+  max-width:32px !important;
+  max-height:32px !important;
   object-fit:contain;
 }
 
@@ -464,10 +463,10 @@ main{
   z-index:1;
   right:13px;
   top:11px;
-  width:55px !important;
-  height:55px !important;
-  max-width:55px !important;
-  max-height:55px !important;
+  width:50px !important;
+  height:50px !important;
+  max-width:50px !important;
+  max-height:50px !important;
   object-fit:contain;
   opacity:.9;
   pointer-events:none;
@@ -721,7 +720,7 @@ main{
 
 /* =========================================================
    BOTTOM NAVIGATION
-   LARGER ORIGINAL ARTWORK
+   SMALLER CLEAN ORIGINAL ARTWORK
 ========================================================= */
 
 .nav{
@@ -744,13 +743,13 @@ main{
 
 .navbtn{
   min-width:0;
-  min-height:72px;
+  min-height:58px;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:1px;
-  padding:1px;
+  gap:3px;
+  padding:3px;
   border:0;
   border-radius:14px;
   background:transparent;
@@ -765,32 +764,31 @@ main{
 }
 
 .nav-icon{
-  width:58px;
-  height:56px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  border-radius:0;
-  background:transparent;
-  box-shadow:none;
-  overflow:visible;
+  width:42px !important;
+  height:38px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  overflow:visible !important;
 }
 
 .nav-icon img{
-  width:54px;
-  height:54px;
-  max-width:54px;
-  max-height:54px;
-  object-fit:contain;
-  display:block;
-  background:transparent;
+  width:34px !important;
+  height:34px !important;
+  max-width:34px !important;
+  max-height:34px !important;
+  object-fit:contain !important;
+  display:block !important;
+  background:transparent !important;
 }
 
 .navbtn.active .nav-icon,
 .navbtn.active .nav-icon img{
-  background:transparent;
-  box-shadow:none;
+  background:transparent !important;
+  box-shadow:none !important;
 }
 
 /* ================= MOBILE ================= */
@@ -798,7 +796,7 @@ main{
 @media(max-width:430px){
 
   body{
-    padding-bottom:100px;
+    padding-bottom:96px;
   }
 
   .topbar,
@@ -816,10 +814,10 @@ main{
   }
 
   .brand-botanical img{
-    width:38px !important;
-    height:38px !important;
-    max-width:38px !important;
-    max-height:38px !important;
+    width:36px !important;
+    height:36px !important;
+    max-width:36px !important;
+    max-height:36px !important;
   }
 
   .welcome{
@@ -833,10 +831,10 @@ main{
   }
 
   .welcome-art img{
-    width:78px !important;
-    height:78px !important;
-    max-width:78px !important;
-    max-height:78px !important;
+    width:72px !important;
+    height:72px !important;
+    max-width:72px !important;
+    max-height:72px !important;
   }
 
   .welcome h1{
@@ -871,11 +869,11 @@ main{
     max-height:38px !important;
   }
 
-  /* SNAPSHOT — ALWAYS TWO COLUMNS */
+  /* SNAPSHOT STAYS TWO COLUMNS */
 
   .money-grid{
     display:grid !important;
-    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
     gap:8px !important;
     width:100% !important;
   }
@@ -887,15 +885,16 @@ main{
   }
 
   .image-icon{
-    width:45px;
-    height:45px;
+    width:40px;
+    height:40px;
+    border-radius:13px;
   }
 
   .image-icon img{
-    width:35px !important;
-    height:35px !important;
-    max-width:35px !important;
-    max-height:35px !important;
+    width:29px !important;
+    height:29px !important;
+    max-width:29px !important;
+    max-height:29px !important;
   }
 
   .money-card > span{
@@ -920,10 +919,10 @@ main{
   }
 
   .section-art{
-    width:62px !important;
-    height:62px !important;
-    max-width:62px !important;
-    max-height:62px !important;
+    width:58px !important;
+    height:58px !important;
+    max-width:58px !important;
+    max-height:58px !important;
   }
 
   .card{
@@ -932,44 +931,44 @@ main{
   }
 
   .card-art{
-    width:48px !important;
-    height:48px !important;
-    max-width:48px !important;
-    max-height:48px !important;
+    width:46px !important;
+    height:46px !important;
+    max-width:46px !important;
+    max-height:46px !important;
     right:11px;
     top:9px;
   }
 
-  /* BOTTOM NAV — BIGGER ARTWORK */
+  /* BOTTOM NAV */
 
   .nav{
     bottom:7px;
     width:calc(100% - 16px);
-    padding:4px 6px;
+    padding:5px 7px;
   }
 
   .navbtn{
-    min-height:72px;
-    padding:0;
-    gap:0;
+    min-height:57px;
+    padding:2px;
+    gap:2px;
   }
 
   .nav-icon{
-    width:56px;
-    height:56px;
+    width:40px !important;
+    height:36px !important;
   }
 
   .nav-icon img{
-    width:52px;
-    height:52px;
-    max-width:52px;
-    max-height:52px;
+    width:33px !important;
+    height:33px !important;
+    max-width:33px !important;
+    max-height:33px !important;
   }
 
   .navbtn.active .nav-icon,
   .navbtn.active .nav-icon img{
-    background:transparent;
-    box-shadow:none;
+    background:transparent !important;
+    box-shadow:none !important;
   }
 }
 
@@ -992,10 +991,10 @@ main{
   }
 
   .welcome-art img{
-    width:68px !important;
-    height:68px !important;
-    max-width:68px !important;
-    max-height:68px !important;
+    width:64px !important;
+    height:64px !important;
+    max-width:64px !important;
+    max-height:64px !important;
   }
 
   .welcome h1{
@@ -1014,7 +1013,7 @@ main{
 
   .money-grid{
     display:grid !important;
-    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
     gap:6px !important;
   }
 
@@ -1035,15 +1034,15 @@ main{
   }
 
   .image-icon{
-    width:42px;
-    height:42px;
+    width:38px;
+    height:38px;
   }
 
   .image-icon img{
-    width:32px !important;
-    height:32px !important;
-    max-width:32px !important;
-    max-height:32px !important;
+    width:27px !important;
+    height:27px !important;
+    max-width:27px !important;
+    max-height:27px !important;
   }
 
   .section-title h1{
@@ -1051,64 +1050,63 @@ main{
   }
 
   .section-art{
-    width:55px !important;
-    height:55px !important;
-    max-width:55px !important;
-    max-height:55px !important;
+    width:53px !important;
+    height:53px !important;
+    max-width:53px !important;
+    max-height:53px !important;
   }
 
   .card-art{
-    width:43px !important;
-    height:43px !important;
-    max-width:43px !important;
-    max-height:43px !important;
+    width:42px !important;
+    height:42px !important;
+    max-width:42px !important;
+    max-height:42px !important;
   }
 
   .nav{
     width:calc(100% - 12px);
-    padding:3px 5px;
   }
 
   .navbtn{
-    min-height:68px;
+    min-height:55px;
   }
 
   .nav-icon{
-    width:53px;
-    height:53px;
+    width:38px !important;
+    height:34px !important;
   }
 
   .nav-icon img{
-    width:49px;
-    height:49px;
-    max-width:49px;
-    max-height:49px;
+    width:31px !important;
+    height:31px !important;
+    max-width:31px !important;
+    max-height:31px !important;
   }
 
   .navbtn.active .nav-icon,
   .navbtn.active .nav-icon img{
-    background:transparent;
-    box-shadow:none;
+    background:transparent !important;
+    box-shadow:none !important;
   }
 }
 
 /* =========================================================
    UPLOADED IMAGE SIZING
-========================================================= */
+   ========================================================= */
 
 img[src="safespend-logo.png"]{
-  width:42px !important;
-  height:42px !important;
-  max-width:42px !important;
-  max-height:42px !important;
+  width:40px !important;
+  height:40px !important;
+  max-width:40px !important;
+  max-height:40px !important;
   object-fit:contain !important;
 }
 
 img[src="dashboard.png"]{
-  width:90px !important;
-  height:90px !important;
-  max-width:90px !important;
-  max-height:90px !important;
+  width:82px !important;
+  height:82px !important;
+  max-width:82px !important;
+  max-height:82px !important;
   object-fit:contain !important;
 }
 
@@ -1122,28 +1120,28 @@ img[src="botanical-divider.png"]{
 
 img[src="balance.png"],
 img[src="bills.png"]{
-  width:40px !important;
-  height:40px !important;
-  max-width:40px !important;
-  max-height:40px !important;
+  width:32px !important;
+  height:32px !important;
+  max-width:32px !important;
+  max-height:32px !important;
   object-fit:contain !important;
 }
 
 img[src="can-i-afford-it.png"],
 img[src="income-label.png"]{
-  width:55px !important;
-  height:55px !important;
-  max-width:55px !important;
-  max-height:55px !important;
+  width:50px !important;
+  height:50px !important;
+  max-width:50px !important;
+  max-height:50px !important;
   object-fit:contain !important;
 }
 
 img[src="income.png"],
 img[src="calendar.png"]{
-  width:70px !important;
-  height:70px !important;
-  max-width:70px !important;
-  max-height:70px !important;
+  width:64px !important;
+  height:64px !important;
+  max-width:64px !important;
+  max-height:64px !important;
   object-fit:contain !important;
 }
 
@@ -1152,24 +1150,22 @@ img[src="due.png"],
 img[src="paid.png"],
 img[src="reset.png"],
 img[src="settings.png"]{
-  width:32px !important;
-  height:32px !important;
-  max-width:32px !important;
-  max-height:32px !important;
+  width:28px !important;
+  height:28px !important;
+  max-width:28px !important;
+  max-height:28px !important;
   object-fit:contain !important;
 }
 
-/* NAVIGATION ARTWORK OVERRIDES
-   These must come last so the navigation remains large. */
-
-.nav .nav-icon img[src="dashboard.png"],
-.nav .nav-icon img[src="income.png"],
-.nav .nav-icon img[src="bills.png"],
-.nav .nav-icon img[src="calendar.png"]{
-  width:54px !important;
-  height:54px !important;
-  max-width:54px !important;
-  max-height:54px !important;
+/* Bottom navigation gets its own smaller size */
+.nav-icon img[src="dashboard.png"],
+.nav-icon img[src="income.png"],
+.nav-icon img[src="bills.png"],
+.nav-icon img[src="calendar.png"]{
+  width:34px !important;
+  height:34px !important;
+  max-width:34px !important;
+  max-height:34px !important;
   object-fit:contain !important;
   background:transparent !important;
 }
@@ -1177,10 +1173,10 @@ img[src="settings.png"]{
 @media(max-width:430px){
 
   img[src="dashboard.png"]{
-    width:78px !important;
-    height:78px !important;
-    max-width:78px !important;
-    max-height:78px !important;
+    width:72px !important;
+    height:72px !important;
+    max-width:72px !important;
+    max-height:72px !important;
   }
 
   img[src="botanical-divider.png"]{
@@ -1192,26 +1188,26 @@ img[src="settings.png"]{
 
   img[src="balance.png"],
   img[src="bills.png"]{
-    width:35px !important;
-    height:35px !important;
-    max-width:35px !important;
-    max-height:35px !important;
+    width:29px !important;
+    height:29px !important;
+    max-width:29px !important;
+    max-height:29px !important;
   }
 
   img[src="can-i-afford-it.png"],
   img[src="income-label.png"]{
-    width:48px !important;
-    height:48px !important;
-    max-width:48px !important;
-    max-height:48px !important;
+    width:46px !important;
+    height:46px !important;
+    max-width:46px !important;
+    max-height:46px !important;
   }
 
   img[src="income.png"],
   img[src="calendar.png"]{
-    width:62px !important;
-    height:62px !important;
-    max-width:62px !important;
-    max-height:62px !important;
+    width:58px !important;
+    height:58px !important;
+    max-width:58px !important;
+    max-height:58px !important;
   }
 
   img[src="delete.png"],
@@ -1219,19 +1215,19 @@ img[src="settings.png"]{
   img[src="paid.png"],
   img[src="reset.png"],
   img[src="settings.png"]{
-    width:28px !important;
-    height:28px !important;
-    max-width:28px !important;
-    max-height:28px !important;
+    width:26px !important;
+    height:26px !important;
+    max-width:26px !important;
+    max-height:26px !important;
   }
 
-  .nav .nav-icon img[src="dashboard.png"],
-  .nav .nav-icon img[src="income.png"],
-  .nav .nav-icon img[src="bills.png"],
-  .nav .nav-icon img[src="calendar.png"]{
-    width:52px !important;
-    height:52px !important;
-    max-width:52px !important;
-    max-height:52px !important;
+  .nav-icon img[src="dashboard.png"],
+  .nav-icon img[src="income.png"],
+  .nav-icon img[src="bills.png"],
+  .nav-icon img[src="calendar.png"]{
+    width:33px !important;
+    height:33px !important;
+    max-width:33px !important;
+    max-height:33px !important;
   }
-                              }
+  }
